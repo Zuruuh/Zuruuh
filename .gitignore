@@ -1,0 +1,6 @@
+.vscode/
+.idea/
+.editorconfig
+__IGNORE__/
+.ignored/
+*.code-workspace%  
