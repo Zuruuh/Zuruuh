@@ -1,0 +1,73 @@
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+syntax on
+set tabstop=2
+set shiftwidth=4
+set textwidth=80
+set expandtab
+set smartindent
+set number
+set hlsearch
+set visualbell
+set nocompatible
+set incsearch
+set linebreak
+set modeline
+set modelines=2
+set scrollof=3
+set ignorecase
+set smartcase
+set wildignore=*.o,*.pyc,*.class,*.jar,venv,dist
+filetype one
+filetype plugin on
+filetype indent on
+autocmd BufWrite * set nobomb
+set backspace=indent,eol,start
+set clipboard=unnamed
+
+autocmd FileType xml,xslt,xhtml,html,twig setlocal ts=2 sw=2
+autocmd FileType c set fo=tqrocl
+autocmd FileType ocaml setlocal ts=2 sw=2autocmd BufRead *.atom set ft=xml
+autocmd BufRead *.wsgi set ft=python
+autocmd BufRead *.json set ft=javascript
+autocmd BufRead *.md,*.txt set ft=markdown
+autocmd BufRead *.go setlocal ft=go listchars=tab:\ \ ,trail:_ list noet
+autocmd BufRead *.rc set ft=sh
+autocmd BufRead *.clj set ft=clojure ts=2 sw=2 ai lisp lispwords=defn
+autocmd BufRead *.erl set ft=erlang ts=2 sw=2
+autocmd BufRead *.vala set ft=vala
+autocmd FileType make setlocal noet listchars=tab:>-
+autocmd FileType twig setlocal tw=0
+autocmd BufRead *.t set ft=cram
+autocmd BufRead *.scala setlocal ft=scala ts=2 sw=2
+autocmd BufRead *.coffee setlocal ft=coffee ts=2 sw=2
+autocmd BufRead *.rs setlocal ft=rust
+autocmd FileType *.php set ft=php
+
+set listchars=tab:>-,trail:_ list
+
+autocmd VimEnter * nmap <F3> :NERDTreeToggle<CR>
+autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
+let NERDTreeQuitOnOpen=1
+let NERDTreeWinSize=35
+
+ignore jj <Esc>

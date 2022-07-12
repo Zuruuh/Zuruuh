@@ -1,6 +1,12 @@
-.vscode/
-.idea/
-.editorconfig
-__IGNORE__/
-.ignored/
-*.code-workspace%  
+[user]
+	name = Zuruh
+	email = ziadi.mail.pro@gmail.com
+[core]
+	excludesfile = /home/zuruh/.gitignore
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
