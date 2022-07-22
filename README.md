@@ -8,8 +8,8 @@
   <img src="https://img.shields.io/static/v1?label=&message=PHP&color=777BB4&logo=php&logoColor=white&style=flat-square">
   <img src="https://img.shields.io/static/v1?label=&message=Symfony&color=000&logo=Symfony&logoColor=white&style=flat-square">
   <img src="https://img.shields.io/static/v1?label=&message=Typescript&color=2F74C0&logo=Typescript&logoColor=white&style=flat-square">
-  <img src="https://img.shields.io/static/v1?label=&message=MySQL&color=4169E1&logo=MySQL&logoColor=white&style=flat-square">
   <img src="https://img.shields.io/static/v1?label=&message=Docker&color=2496ED&logo=Docker&logoColor=white&style=flat-square">
+  <img src="https://img.shields.io/static/v1?label=&message=MySQL&color=4169E1&logo=MySQL&logoColor=white&style=flat-square">
   <img src="https://img.shields.io/static/v1?label=&message=Redis&color=d62824&logo=Redis&logoColor=white&style=flat-square">
   <img src="https://img.shields.io/static/v1?label=&message=Nginx&color=009639&logo=Nginx&logoColor=white&style=flat-square">
   <img src="https://img.shields.io/static/v1?label=&message=Rabbit%20MQ&color=f37d01&logo=Rabbitmq&logoColor=white&style=flat-square">
