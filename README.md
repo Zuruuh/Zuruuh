@@ -19,16 +19,17 @@
   <img src="https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=Git&logoColor=white&style=flat-square">
 
 Tools I use everyday:  
- <img src="https://img.shields.io/static/v1?label=&message=PNPM&color=F69220&logo=PNPM&logoColor=white&style=flat-square">
+<img src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=white&style=flat-square">
 <img src="https://img.shields.io/static/v1?label=&message=PHPStorm&color=000&logo=PhpStorm&logoColor=white&style=flat-square">
 <img src="https://img.shields.io/static/v1?label=&message=Vim/Spacevim&color=019733&logo=Vim&logoColor=white&style=flat-square">
-<img src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=white&style=flat-square">
 <img src="https://img.shields.io/static/v1?label=&message=Composer&color=885630&logo=Composer&logoColor=white&style=flat-square">
-<img src="https://img.shields.io/static/v1?label=&message=Vivaldi&color=EF3939&logo=Vivaldi&logoColor=white&style=flat-square">
+<img src="https://img.shields.io/static/v1?label=&message=PNPM&color=F69220&logo=PNPM&logoColor=white&style=flat-square">
 <img src="https://img.shields.io/static/v1?label=&message=Postman&color=FF6C37&logo=Postman&logoColor=white&style=flat-square">
+<img src="https://img.shields.io/static/v1?label=&message=Vivaldi&color=EF3939&logo=Vivaldi&logoColor=white&style=flat-square">
 
 Tech stuff I've used on personnal projects:  
  <img src="https://img.shields.io/static/v1?label=&message=Nest%20JS&color=df224e&logo=Nestjs&logoColor=white&style=flat-square">
+ <img src="https://img.shields.io/static/v1?label=&message=GitHub Actions&color=2088FF&logo=GitHub%20Actions&logoColor=white&style=flat-square">
 <img src="https://img.shields.io/static/v1?label=&message=Bash&color=4EAA25&logo=GNU%20Bash&logoColor=white&style=flat-square">
 <img src="https://img.shields.io/static/v1?label=&message=Vite%20JS&color=646CFF&logo=Vite&logoColor=white&style=flat-square">
 <img src="https://img.shields.io/static/v1?label=&message=Makefile&color=241F31&logo=GNOME%20Terminal">
@@ -46,9 +47,5 @@ Tech stuff I've already toyed with:
 <img src="https://img.shields.io/static/v1?label=&message=Rust&color=000000&logo=Rust&logoColor=white&style=flat-square">
 <img src="https://img.shields.io/static/v1?label=&message=WASM&color=654FF0&logo=WebAssembly&logoColor=white&style=flat-square">
 <img src="https://img.shields.io/static/v1?label=&message=Ansible&color=EE0000&logo=Ansible&logoColor=white&style=flat-square">
-
-</p>
-
-<p>
 
 </p>
