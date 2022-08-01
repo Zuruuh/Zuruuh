@@ -1,0 +1,154 @@
+[options]
+colorscheme = "onedark"
+colorscheme_bg = "dark"
+enable_guicolors = true
+
+# Statusline
+statusline_iseparator = "bar"
+enable_statusline_mode = false
+statusline_separator = "arrow"
+statusline_unicode = true
+buffer_index_type = 0
+
+# Tabline
+enable_tabline_filetype_icon = true
+
+windows_index_type = 3
+bootstrap_before = 'bootstrap#before'
+vimcompatible = true
+filetree_show_hidden = true
+
+[[layers]]
+auto_completion_return_key_behavior = "complete"
+auto_completion_tab_key_behavior = "cycle"
+name = 'autocomplete'
+
+[[layers]]
+default_height = 25
+default_position = 'bottom'
+name = 'shell'
+
+[[layers]]
+name = 'core#statusline'
+
+[[layers]]
+name = 'core#tabline'
+
+[[layers]]
+name = 'colorscheme'
+
+[[layers]]
+name = 'fzf'
+
+[[layers]]
+name = 'format'
+
+[[layers]]
+enabled_clients = ['intelephense']
+filetypes = [
+  "rust",
+  'php',
+]
+name = 'lsp'
+[layers.override_cmd]
+rust = ["rls"]
+
+[[layers]]
+name = 'git'
+
+[[layers]]
+name = 'ctrlspace'
+
+[[layers]]
+name = 'ctrlp'
+
+[[layers]]
+name = 'github'
+
+[[layers]]
+name = 'WebAssembly'
+
+[[layers]]
+enable_clang_syntax_highlight = true
+name = 'lang#c'
+
+[[layers]]
+name = 'lang#dart'
+
+[[layers]]
+name = 'lang#dockerfile'
+
+[[layers]]
+name = 'lang#elixir'
+
+[[layers]]
+name = 'lang#go'
+
+[[layers]]
+name = 'lang#graphql'
+
+[[layers]]
+name = 'lang#html'
+
+[[layers]]
+name = 'lang#java'
+
+[[layers]]
+name = 'lang#javascript'
+
+[[layers]]
+name = 'lang#json'
+
+[[layers]]
+name = 'lang#kotlin'
+
+[[layers]]
+name = 'lang#lua'
+
+[[layers]]
+name = 'lang#markdown'
+
+[[layers]]
+name = 'lang#ocaml'
+
+[[layers]]
+name = 'lang#perl'
+
+[[layers]]
+filetypes = ['php']
+name = 'lang#php'
+[layers.override_cmd]
+php = ['intelephense', '--stdio']
+
+[[layers]]
+name = 'lang#plantuml'
+
+[[layers]]
+name = 'lang#python'
+
+[[layers]]
+name = 'lang#ruby'
+
+[[layers]]
+name = 'lang#rust'
+
+[[layers]]
+name = 'lang#sh'
+
+[[layers]]
+name = 'lang#sql'
+
+[[layers]]
+name = 'lang#toml'
+
+[[layers]]
+name = 'lang#typescript'
+
+[[layers]]
+name = 'lang#vim'
+
+[[layers]]
+name = 'lang#vue'
+
+[[layers]]
+name = 'ssh'
