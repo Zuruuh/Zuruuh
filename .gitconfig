@@ -1,19 +1,19 @@
 [includeIf "gitdir:~/dev/perso"]
-  name = Zuruuh
-  email = ziadi.mail.pro@gmail.com
+    name = Zuruuh
+    email = ziadi.mail.pro@gmail.com
 [includeIf "gitdir:~/dev"]
-	name = yziadi
-	email = younes.ziadi@staffmatch.com
+    name = yziadi
+    email = younes.ziadi@staffmatch.com
 [includeIf "gitdir:~/oc"]
-  name = Zuruuh
-  email = ziadi.mail.pro@gmail.com
+    name = Zuruuh
+    email = ziadi.mail.pro@gmail.com
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [core]
     pager = delta
-	excludesfile = /Users/YZiadi/.gitignore
+    excludesfile = /Users/YZiadi/.gitignore
 
 [interactive]
     diffFilter = delta --color-only
@@ -32,7 +32,13 @@
     colorMoved = default
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[commit]
+    template = /Users/YZiadi/.stCommitMsg
+
+[alias]
+    mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
