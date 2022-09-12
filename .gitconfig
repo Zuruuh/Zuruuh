@@ -1,12 +1,38 @@
-[user]
-	name = Zuruh
-	email = ziadi.mail.pro@gmail.com
+[includeIf "gitdir:~/dev/perso"]
+  name = Zuruuh
+  email = ziadi.mail.pro@gmail.com
+[includeIf "gitdir:~/dev"]
+	name = yziadi
+	email = younes.ziadi@staffmatch.com
+[includeIf "gitdir:~/oc"]
+  name = Zuruuh
+  email = ziadi.mail.pro@gmail.com
+
+[init]
+	defaultBranch = main
+
 [core]
-	excludesfile = /home/zuruh/.gitignore
+    pager = delta
+	excludesfile = /Users/YZiadi/.gitignore
+
+[interactive]
+    diffFilter = delta --color-only
+
+[add.interactive]
+    useBuiltin = false
+
+[delta]
+    navigate = true
+    light = false
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[init]
-	defaultBranch = main
