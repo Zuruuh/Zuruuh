@@ -1,37 +1,42 @@
-export ZSH="/home/zuruh/.oh-my-zsh"
+#!/bin/zsh
+# Load RUST components
+source "$HOME/.cargo/env"
 
-ZSH_THEME="intheloop"
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="random"
 
 # Themes
-# eastwood
-# robbyrussell
-# miloshadzic
-# intheloop
-# simple
-# wezm
-# fletcherm
-# gallois
+ZSH_THEME_RANDOM_CANDIDATES=("eastwood" "robbyrussell" "miloshadzic" "intheloop" "simple" "wezm" "fletcherm" "gallois")
 
 plugins=(
     z
     git
-    calc
+    docker
     bundler
     history
     copypath
     dirhistory
-    auto-notify
     zsh-autosuggestions
+    zsh-history-substring-search
     zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
+zstyle ':omz:update' mode auto      # update automatically without asking
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+zstyle ':omz:update' frequency 7
+
+# DISABLE_MAGIC_FUNCTIONS="true"
+# DISABLE_LS_COLORS="true"
+# DISABLE_AUTO_TITLE="true"
+# ENABLE_CORRECTION="true"
+# HIST_STAMPS="mm/dd/yyyy"
+
+export COLORTERM=truecolor
+
+alias phpversionmanager='pvmp'
+alias phpvm='pvm'
+alias pvm='sudo update-alternatives --config php'
 
 alias c='clear'
 alias zshconfig='vim ~/.zshrc'
@@ -41,19 +46,24 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 alias tf='terraform'
 alias vcc='rm -rf ./var/cache'
 alias dev='cd ~/dev'
-alias vimconfig='vim ~/.SpaceVim.d/init.toml'
-alias john="~/dev/john-the-ripper/run/john"
+alias vim='nvim'
+alias svim='sudo nvim'
+alias vimconfig='vim ~/.config/nvim/init.vim'
 alias hf='history | fzf'
+alias python='python3'
+alias docker-compose='docker compose'
+alias gs='git switch'
+alias gitconfig='vim ~/.gitconfig'
+alias gitignore='vim ~/.gitignore'
+alias gph='git push -u origin HEAD'
+alias gsm='gcm'
+alias gsd='git switch dev'
+alias gpl='git pull'
+alias composer-bin='export PATH="$PATH:$PWD/vendor/bin"'
 
-# opam configuration
-test -r /home/zuruh/.opam/opam-init/init.zsh && . /home/zuruh/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-export PATH=$PATH:/home/zuruh/.spicetify
-
-# NVM Config
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export NODE_PATH="$(npm config get prefix)/lib/node_modules"
 
 # NVM version loader on directory change
 autoload -U add-zsh-hook
@@ -77,4 +87,16 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+source "$HOME/.zshenv"
+source "$ZSH/oh-my-zsh.sh"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "/home/zuruh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# WSL
+# export PATH="/mnt/d/Softwares/Microsoft VS Code/bin:$PATH"
 
