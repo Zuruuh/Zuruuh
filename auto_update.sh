@@ -19,3 +19,7 @@ for file in ${files[@]}; do
         cd -
     fi
 done;
+
+git add .
+git commit -m "Auto-Update"
+git push
