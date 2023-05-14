@@ -43,6 +43,7 @@ source "$ZSH/oh-my-zsh.sh"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Go
 export PATH="/usr/local/go/bin:$PATH"
