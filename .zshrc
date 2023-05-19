@@ -1,4 +1,7 @@
 # Created by Zap installer
+[[ $TERM != "screen" ]] && exec tmux
+
+# ZAP Config
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
@@ -7,6 +10,7 @@ plug "zap-zsh/zap-prompt"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "agkozak/zsh-z"
+plug "zsh-users/zsh-history-substring-search"
 plug "Aloxaf/fzf-tab"
 
 # Load and initialise completion system
@@ -23,7 +27,7 @@ export PATH="$PATH:$HOME/softwares/go/bin"
 export PATH="/home/zuruh/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
-## PyEnv
+# PyEnv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -35,9 +39,19 @@ eval "$(pyenv virtualenv-init -)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Youki
+export PATH="$PATH:$HOME/softwares/youki"
+
+#####################
+#####################
+#####################
+#####################
+#####################
+
 ## Custom config
 
-# export COLORTERM=truecolor
+export COLORTERM=truecolor
+export EDITOR=nvim
 
 ## Custom aliases
 
@@ -61,8 +75,8 @@ alias tf='terraform'
 alias vcc='rm -rf ./var/cache'
 alias dev='cd ~/dev'
 alias vim='nvim'
-alias vimconfig='vim ~/.config/nvim/init.lua'
-alias hf='history | fzf'
+alias vimconfig='vim ~/.config/nvim'
+alias hf='cat -p --no-pager ~/.zsh_history | fzf'
 alias python='python3'
 alias docker-compose='docker compose'
 alias gs='git switch'
@@ -72,6 +86,4 @@ alias gph='git push -u origin HEAD'
 alias gsm='gcm'
 alias gsd='git switch dev'
 alias gpl='git pull'
-# alias open='gio open'
-
-## Custom path entries
+alias open='explorer.exe'
