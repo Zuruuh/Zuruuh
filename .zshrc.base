@@ -1,6 +1,3 @@
-# Created by Zap installer
-[[ $TERM != "screen" ]] && exec tmux
-
 # ZAP Config
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
@@ -24,7 +21,7 @@ source "$HOME/.cargo/env"
 export PATH="$PATH:$HOME/softwares/go/bin"
 
 # Nodejs (fnm)
-export PATH="/home/zuruh/.local/share/fnm:$PATH"
+export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 # PyEnv
@@ -35,23 +32,17 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # bun
-[ -s "/home/zuruh/.bun/_bun" ] && source "/home/zuruh/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "//.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Youki
-export PATH="$PATH:$HOME/softwares/youki"
-
-#####################
-#####################
-#####################
-#####################
-#####################
+export COMPOSER_HOME="$HOME/composer"
 
 ## Custom config
 
 export COLORTERM=truecolor
 export EDITOR=nvim
+export AWS_DEFAULT_REGION=eu-west-3
 
 ## Custom aliases
 
@@ -59,18 +50,11 @@ alias ls='exa -lah --git --icons'
 alias l='ls'
 alias find='fd'
 alias ack='ambr'
-alias grep='rg'
 alias cat='batcat'
-
-alias phpversionmanager='pvmp'
-alias phpvm='pvm'
-alias pvm='sudo update-alternatives --config php'
 
 alias c='clear'
 alias zshconfig='vim ~/.zshrc'
-alias wslconfig='sudo vim /etc/wsl.conf'
 alias rl='source ~/.zshrc'
-# alias audio='rm -rf ~/.config/pulse;pulseaudio -k;pulseaudio -D;reboot'
 alias tf='terraform'
 alias vcc='rm -rf ./var/cache'
 alias dev='cd ~/dev'
@@ -84,6 +68,5 @@ alias gitconfig='vim ~/.gitconfig'
 alias gitignore='vim ~/.gitignore'
 alias gph='git push -u origin HEAD'
 alias gsm='gcm'
-alias gsd='git switch dev'
 alias gpl='git pull'
-alias open='explorer.exe'
+alias gsth="git stash"
