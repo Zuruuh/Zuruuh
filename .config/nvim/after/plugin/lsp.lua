@@ -7,6 +7,7 @@ lsp.ensure_installed({
 	'eslint',
 	'lua_ls',
 	'rust_analyzer',
+
 })
 
 lsp.configure('lua_ls', {
@@ -15,6 +16,14 @@ lsp.configure('lua_ls', {
             diagnostics = {
                 globals = { 'vim' }
             }
+        }
+    }
+})
+
+lsp.configure('yamlls', {
+    settings = {
+        yaml = {
+            keyOrdering = false
         }
     }
 })

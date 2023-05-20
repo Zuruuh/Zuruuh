@@ -26,20 +26,34 @@ return require('packer').startup(function(use)
             -- LSP Support
             {'neovim/nvim-lspconfig'},             -- Required
             {                                      -- Optional
-            'williamboman/mason.nvim',
-            run = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+                'williamboman/mason.nvim',
+                run = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end,
+            },
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},     -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
+            {'L3MON4D3/LuaSnip'},     -- Required
+        }
     }
-}
-use('andweeb/presence.nvim')
-use('windwp/nvim-ts-autotag')
+    use('windwp/nvim-ts-autotag')
+    use('nvim-tree/nvim-tree.lua')
+    use('nvim-tree/nvim-web-devicons')
+    use('prichrd/netrw.nvim')
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
+    use('andweeb/presence.nvim')
+    use('nvim-lualine/lualine.nvim')
+    use({'romgrk/barbar.nvim', requires = {
+        'lewis6991/gitsigns.nvim',
+        'nvim-tree/nvim-web-devicons'
+    }})
 end)
 
