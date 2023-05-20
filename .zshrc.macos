@@ -1,72 +1,137 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
-export ZSH="/Users/YZiaidi/.oh-my-zsh"
+export PATH="/opt/homebrew/bin:$PATH"
 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="eastwood"
-ZSH_THEME_RANDOM_CANDIDATES=( "eastwood" "robbyrussell" "miloshadzic" "intheloop" "simple" "wezm" )
-zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' frequency 13
-COMPLETION_WAITING_DOTS="true"
+# [[ $TERM != "screen" ]] && exec tmux
 
-plugins=(
-    z
-    git
-    bundler
-    history
-    copypath
-    dirhistory
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
+# ZAP Config
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+plug "zsh-users/zsh-autosuggestions"
+plug "hlissner/zsh-autopair"
+plug "zap-zsh/supercharge"
+plug "zap-zsh/zap-prompt"
+plug "zap-zsh/supercharge"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "agkozak/zsh-z"
+# plug "zsh-users/zsh-history-substring-search"
+plug "Aloxaf/fzf-tab"
 
-source $ZSH/oh-my-zsh.sh
-export LANG=en_US.UTF-8
-export EDITOR='vim'
-export ARCHFLAGS="-arch x86_64"
+# Load and initialise completion system
+autoload -Uz compinit
+compinit
 
-setopt APPEND_HISTORY
+# Rust/Cargo
+source "$HOME/.cargo/env"
 
-# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# Nodejs (fnm)
+export PATH="$HOME/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# PyEnv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+eval "$(pyenv virtualenv-init -)"
+
+# bun
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Youki
+export PATH="$PATH:$HOME/softwares/youki"
+
+#####################
+#####################
+#####################
+#####################
+#####################
+
+## Custom config
+
+export COLORTERM=truecolor
+export EDITOR=nvim
+
+## Custom aliases
+
+alias ls='exa -lah --git --icons'
+alias l='ls'
+alias find='fd'
+alias ack='ambr'
+alias cat='batcat'
+
+alias phpversionmanager='pvmp'
+alias phpvm='pvm'
+alias pvm='sudo update-alternatives --config php'
+
+alias c='clear'
+alias zshconfig='vim ~/.zshrc'
+alias wslconfig='sudo vim /etc/wsl.conf'
+alias rl='source ~/.zshrc'
+# alias audio='rm -rf ~/.config/pulse;pulseaudio -k;pulseaudio -D;reboot'
+alias tf='terraform'
+alias vcc='rm -rf ./var/cache'
+alias dev='cd ~/dev'
+alias vim='nvim'
+alias vimconfig='vim ~/.config/nvim'
+alias hf='cat -p --no-pager ~/.zsh_history | fzf'
+alias python='python3'
+alias docker-compose='docker compose'
+alias gs='git switch'
+alias gitconfig='vim ~/.gitconfig'
+alias gitignore='vim ~/.gitignore'
+alias gph='git push -u origin HEAD'
+alias gsm='gcm'
+alias gsd='git switch dev'
+alias gpl='git pull'
+alias open='explorer.exe'
+
+
+
+##### macos stuff
+
+
 export PATH="/usr/local/opt/elasticsearch@6/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 export PATH="$HOME/composer/vendor/bin:$PATH"
-export PATH="$HOME/Softwares/flutter/bin:$PATH"
 export PATH="$DENO_INSTALL/bin:$PATH"
-export PATH="$PATH:/Users/YZiaidi/.spicetify"
-export DENO_INSTALL="/Users/YZiaidi/.deno"
-export COMPOSER_HOME='/Users/YZiaidi/composer'
+export PATH="$PATH:$HOME/.spicetify"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$PATH:/usr/local/go"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/.pyenv/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export DENO_INSTALL="$HOME/.deno"
+export COMPOSER_HOME="$HOME/composer"
 
-export STAFFMATCH_CORE="~/dev/staffmatch-core"
+export STAFFMATCH_CORE="$HOME/dev/staffmatch-core"
 export STAFFMATCH_CORE_CONSOLE="$STAFFMATCH_CORE/bin/console"
 
 alias gs="git switch"
 alias gsd="git switch development"
 alias vcc="rm -rf ./var/cache"
 alias gpl="git pull"
-alias watcher="cd ~/dev/staffmatch-watcher; npm run start"
+alias watcher="cd ~/dev/staffmatch-watcher; activemq purge; npm run start"
 alias csp="rm -rf ~/dev/copy-staffmatch-core; cp -r $STAFFMATCH_CORE ~/dev/copy-staffmatch-core"
 alias dev="cd $STAFFMATCH_CORE; clear"
-alias ss="$STAFFMATCH_CORE_CONSOLE d:s:u --force --env=dev"
+# alias ss="$STAFFMATCH_CORE_CONSOLE d:s:u --force --env=dev"
 alias rl="source ~/.zshrc"
 alias zshconfig="vim ~/.zshrc"
+alias nginxconfig="vim /opt/homebrew/etc/nginx/sites-enabled/staffmatch-core.conf"
 alias c="clear"
 alias vd="vim $STAFFMATCH_CORE"
+alias vim='nvim'
 alias bc="$STAFFMATCH_CORE_CONSOLE"
 alias bcd="$STAFFMATCH_CORE_CONSOLE --env=dev"
 alias bct="$STAFFMATCH_CORE_CONSOLE --env=test"
 alias gph="git push -u origin HEAD"
 alias gsp="git stash pop"
 alias redis="redis-cli"
-alias bb="$STAFFMATCH_CORE/bin/behat"
+alias bb="$STAFFMATCH_CORE/bin/behat -vvv"
 alias b="$STAFFMATCH_CORE/bin"
 alias dccm="bct doctrine:cache:clear-metadata;bcd doctrine:cache:clear-metadata" 
-alias dsu="dccm;bcd d:s:u --force"
+alias dsu="dccm;bcd d:s:u --force --dump-sql"
 alias dst="dccm;bct d:s:u --force"
 alias ds="dsu --dump-sql;dst --dump-sql;"
 alias dstt="dst --dump-sql"
@@ -80,82 +145,93 @@ alias brewrs="brew services restart $@"
 alias gsm="gcm"
 alias services="brew services"
 alias restore="mv $STAFFMATCH_CORE ~/dev/.old/staffmatch-core; mv ~/dev/copy-staffmatch-core $STAFFMATCH_CORE"
-alias loaddb="mysql -u root staffmatch -pPASSWORD < $STAFFMATCH_CORE/database_test.sql"
-alias loadb="mysql -u root staffmatch -pPASSWORD < $STAFFMATCH_CORE/.ignored/dump.sql"
-alias laodb='loadb'
-alias dump="mysqldump staffmatch -u root -pPASSWORD > $STAFFMATCH_CORE/.ignored/dump.sql"
 alias gedit="vim ~/.gitignore"
-alias rdb="bcd d:d:d --force --if-exists;bcd d:d:c; loadb; dsu"
+alias rdb="bcd d:d:d --force --if-exists;bcd d:d:c; loab; dsu"
 alias rtdb="rt;bct d:d:d --force --if-exists;bct d:d:c; dst"
 alias vendor="rm -rf vendor; composer install"
-alias spacevimconfig="vim ~/.SpaceVim.d/init.toml"
-alias vimconfig="vim ~/.SpaceVim.d/init.toml"
+alias vimconfig="vim ~/.config/nvim"
 alias perso="cd ~/dev/perso;c"
 alias gitconfig="vim ~/.gitconfig"
 alias gitignore="vim ~/.gitignore"
-alias vf='vim $(fzf)'
-alias php8.1="/usr/local/opt/php@8.1/bin/php"
+alias hxf='hx $(fzf)'
 alias hf="history | fzf"
 alias es="bcd staffmatch:es:update --env=dev"
 alias phpunit="bin/phpunit $@ -vvv"
-alias phpconfig="sudo vim /usr/local/etc/php/7.4/php.ini"
-alias php8.1config="sudo vim /usr/local/etc/php/8.1/php.ini"
+alias phpconfig="vim $(php-config --ini-path)/php.ini"
 alias pub="dart pub"
-alias admin="cd ~/dev/staffmatch-admin;echo "n" | npm run start &> ~/dev/staffmatch-admin/admin.log"
-alias front="cd ~/dev/staffmatch-front/app;npm run start &> ~/dev/staffmatch-front/front.log"
+alias pip="python -m pip"
+alias python3="python"
+alias notes="code $HOME/Documents/notes"
+alias clearlog="echo '' > $STAFFMATCH_CORE/var/logs/dev.log"
+alias jcurl='curl $@ | jq'
+alias logs='tail -f var/logs/dev.log | grep "app\."'
+alias phpstan='bin/phpstan'
+alias phpd='php -d zend_extension="xdebug.so" -d xdebug.mode=debug -d xdebug.start_with_request=1 -d xdebug.client_host=localhost -d xdebug.client_port=9003 -d xdebug.idekey='
+
+alias ls='exa'
+alias exa='exa -lah --icons --git'
+alias find='fd'
+alias grep='rg'
+alias ack='ambr'
+
+phpdebug() {
+    if [ -f /opt/homebrew/etc/php/7.4/conf.d/ext-xdebug.ini ]; then
+        echo -e "Disabled debug mode"
+        mv /opt/homebrew/etc/php/7.4/conf.d/ext-xdebug.ini "$STAFFMATCH_CORE"/.ignored/xdebug.ini
+    else
+        echo -e "Enabled debug mode"
+        mv "$STAFFMATCH_CORE"/.ignored/xdebug.ini /opt/homebrew/etc/php/7.4/conf.d/ext-xdebug.ini
+    fi
+}
+
+# db dumping stuff
+function dump() {
+    mysqldump staffmatch -u root -pPASSWORD > "$STAFFMATCH_CORE/.ignored/dumps/$1.sql"
+}
+function load() {
+    mysql -u root staffmatch -pPASSWORD < "$STAFFMATCH_CORE/.ignored/dumps/$1.sql"
+}
+
+function dump-test() {
+    mysqldump staffmatch_test -u root -pPASSWORD > "$STAFFMATCH_CORE/.ignored/dumps/$1.test.sql"
+}
+function load-test() {
+    mysql -u root staffmatch_test -pPASSWORD < "$STAFFMATCH_CORE/.ignored/dumps/$1.test.sql"
+}
+
+function dumptest() {
+    mysqldump staffmatch_test -u root -pPASSWORD > "$STAFFMATCH_CORE/.ignored/dumps/$1.test.sql"
+}
+function loadtest() {
+    mysql -u root staffmatch_test -pPASSWORD < "$STAFFMATCH_CORE/.ignored/dumps/$1.test.sql"
+}
+
+function bak() {
+    cp $1 $1.bak
+}
+
+function usephp() {
+    if ! command -v php;then
+        brew link php@$1
+    else
+        CURRENT_PHP_VERSION=$(php -r "echo PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;")
+        brew unlink php@$CURRENT_PHP_VERSION && brew link --overwrite --force php@$1
+    fi
+}
+
+alias admin="cd ~/dev/staffmatch-admin;git pull;echo "n" | npm run start"
+alias front="cd ~/dev/staffmatch-front/app;git pull; npm run start" #&> ~/dev/staffmatch-front/front.log"
 alias oc="cd ~/oc"
-alias sm-services-start="services start php@7.4;services start mysql@5.7;services start activemq;services start elasticsearch@6;services start keydb;services start nginx;"
-alias sm-services-stop="services stop php@7.4;services stop mysql@5.7;services stop activemq;services stop elasticsearch@6;services stop keydb;services stop nginx;"
-alias usephp8.1="export PATH=/usr/local/opt/php@8.1/bin:/usr/local/opt/php@8.1/sbin:$PATH"
+alias sm-services-start="services start php@7.4;services start mysql@5.7;services start activemq;services start elasticsearch@6;services start redis;services start nginx;"
+alias sm-services-stop="services stop php@7.4;services stop mysql@5.7;services stop activemq;services stop elasticsearch@6;services stop redis;services stop nginx;"
 alias openvpn='sudo /usr/local/opt/openvpn/sbin/openvpn'
 alias ddd='bcd d:d:d --force --if-exists'
+alias dddt='bct d:d:d --force --if-exists'
 alias ddc='bcd d:d:c --if-not-exists'
+alias ddct='bct d:d:c --if-not-exists'
 alias cat='bat'
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# BEGIN SNIPPET: Platform.sh CLI configuration
-HOME=${HOME:-'/Users/YZiaidi'}
-export PATH="$HOME/"'.platformsh/bin':"$PATH"
-if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
-
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+alias brwe='brew'
+alias berw='brew'
+alias brwe='brew'
 
 export AWS_DEFAULT_REGION=eu-west-3
-
-# Enables php 8.1:
-export PATH="/usr/local/opt/php@8.1/bin:/usr/local/opt/php@8.1/sbin:$PATH"
-
-# bun completions
-[ -s "/Users/YZiaidi/.bun/_bun" ] && source "/Users/YZiaidi/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/Users/YZiaidi/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# pnpm
-export PNPM_HOME="/Users/YZiaidi/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
