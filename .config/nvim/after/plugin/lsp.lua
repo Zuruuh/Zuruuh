@@ -1,29 +1,38 @@
-local lsp = require('lsp-zero')
+local lsp = require('lsp-zero').preset('recommended')
+local lspconfig = require('lspconfig')
+require('mason').setup()
+require('mason-lspconfig').setup()
 
-lsp.preset('recommended')
+vim.g.phpactorPhpBin = "/usr/local/bin/php8.2"
 
 lsp.ensure_installed({
 	'tsserver',
 	'eslint',
 	'lua_ls',
 	'rust_analyzer',
-
 })
 
-lsp.configure('lua_ls', {
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
+lspconfig.yamlls.setup({
     settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
+        yaml = {
+            keyOrdering = false
         }
     }
 })
 
-lsp.configure('yamlls', {
+lspconfig.phpactor.setup({
     settings = {
-        yaml = {
-            keyOrdering = false
+        init_options = {
+            ["language_server_phpstan.enabled"] = true,
+            ["language_server_psalm.enabled"] = false,
+            ["indexer.exclude_patterns"] = {
+                "/vendor/**/Tests/**/*",
+                "/vendor/**/tests/**/*",
+                "/vendor/composer/**/*",
+                "/var/**/*"
+            }
         }
     }
 })

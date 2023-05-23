@@ -2,11 +2,10 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
-    use {
+    use({
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-
+    })
     use({
         'navarasu/onedark.nvim',
         as = 'onedark',
@@ -14,9 +13,8 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme onedark')
         end
     })
-    use('nvim-treesitter/nvim-treesitter',	{run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
-    use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use {
@@ -51,9 +49,5 @@ return require('packer').startup(function(use)
     }
     use('andweeb/presence.nvim')
     use('nvim-lualine/lualine.nvim')
-    use({'romgrk/barbar.nvim', requires = {
-        'lewis6991/gitsigns.nvim',
-        'nvim-tree/nvim-web-devicons'
-    }})
+    use('romgrk/barbar.nvim')
 end)
-
