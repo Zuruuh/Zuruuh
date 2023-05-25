@@ -1,4 +1,5 @@
 export PATH="/opt/homebrew/bin:$PATH"
+export APP_ENV=dev
 
 source "$HOME/dotfiles/.zshrc.base"
 
@@ -37,7 +38,7 @@ alias bb="$STAFFMATCH_CORE/bin/behat -vvv"
 alias b="$STAFFMATCH_CORE/bin"
 #alias dccm="bct doctrine:cache:clear-metadata;bcd doctrine:cache:clear-metadata" 
 #alias dsu="dccm;bcd d:s:u --force --dump-sql"
-#alias dsu="dccm;bcd d:s:u --force --dump-sql"
+alias dsu="bcd d:s:u --force --dump-sql"
 alias dst="bct d:s:u --force"
 alias dst="bct d:s:u --force"
 alias assets="bcd assets:install --symlink --relative"
