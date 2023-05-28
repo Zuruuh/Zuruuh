@@ -12,28 +12,33 @@ lsp.ensure_installed({
     'rust_analyzer',
 })
 
+-- lsp.configure('yamlls', {
+-- })
+
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
 lspconfig.yamlls.setup({
-    yaml = {
-        keyOrdering = false
-    }
-})
-
---[[
-lspconfig.phpactor.setup({
-    init_options = {
-        ["language_server_phpstan.enabled"] = true,
-        ["language_server_psalm.enabled"] = false,
-        ["indexer.exclude_patterns"] = {
-            "/vendor/**/Tests/**/*",
-            "/vendor/**/tests/**/*",
-            "/vendor/composer/**/*",
-            "/var/**/*"
+    settings = {
+        yaml = {
+            keyOrdering = false
         }
     }
 })
---]]
+
+lspconfig.phpactor.setup({
+    settings = {
+        init_options = {
+            ["language_server_phpstan.enabled"] = true,
+            ["language_server_psalm.enabled"] = false,
+            ["indexer.exclude_patterns"] = {
+                "/vendor/**/Tests/**/*",
+                "/vendor/**/tests/**/*",
+                "/vendor/composer/**/*",
+                "/var/**/*"
+            }
+        }
+    }
+})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }

@@ -8,3 +8,6 @@ alias wslconfig='sudo vim /etc/wsl.conf'
 # alias audio='rm -rf ~/.config/pulse;pulseaudio -k;pulseaudio -D;reboot'
 alias open='explorer.exe'
 alias gsd='git switch dev'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

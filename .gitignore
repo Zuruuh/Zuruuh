@@ -5,3 +5,4 @@
 /.ignored/*
 /.git
 .config/nvim/plugin/packer_compiled.lua
+/phpactor

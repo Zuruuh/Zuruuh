@@ -1,9 +1,17 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # ZAP Config
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
-plug "zap-zsh/zap-prompt"
+plug "romkatv/powerlevel10k"
+plug "chivalryq/git-alias"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "agkozak/zsh-z"
@@ -54,6 +62,8 @@ alias cat='batcat'
 
 alias c='clear'
 alias zshconfig='vim ~/.zshrc'
+alias tmuxconfig='vim ~/.tmux.conf'
+alias dotfiles='vim ~/dotfiles'
 alias rl='source ~/.zshrc'
 alias tf='terraform'
 alias vcc='rm -rf ./var/cache'
