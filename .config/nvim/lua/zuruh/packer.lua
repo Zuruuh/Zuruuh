@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     }
-    use('andweeb/presence.nvim')
+    -- use('andweeb/presence.nvim')
     use('nvim-lualine/lualine.nvim')
     use('romgrk/barbar.nvim')
     use('lukas-reineke/indent-blankline.nvim')
