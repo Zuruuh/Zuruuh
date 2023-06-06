@@ -30,7 +30,7 @@ export PATH="$PATH:$HOME/softwares/go/bin"
 
 # Nodejs (fnm)
 export PATH="$HOME/.local/share/fnm:$PATH"
-eval "`fnm env`"
+eval "`fnm env --use-on-cd`"
 
 # PyEnv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -80,3 +80,4 @@ alias gph='git push -u origin HEAD'
 alias gsm='gcm'
 alias gpl='git pull'
 alias gsth="git stash"
+alias git_current_branch="git branch --show-current"
