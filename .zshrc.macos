@@ -96,6 +96,13 @@ function loadtest() {
     mysql -u root staffmatch_test -pPASSWORD < "$STAFFMATCH_CORE/.ignored/dumps/$1.test.sql"
 }
 
+function phpcs() {
+    make EXEC_PHP='' phpcbf
+    git add .
+    git commit -m 'fix cs'
+    git push
+}
+
 function bak() {
     cp $1 $1.bak
 }

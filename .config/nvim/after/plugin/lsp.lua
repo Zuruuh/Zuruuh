@@ -94,3 +94,5 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+vim.keymap.set("n", "<leader>lr", "<Cmd>LspRestart<CR>")
