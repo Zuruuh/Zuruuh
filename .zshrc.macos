@@ -34,7 +34,7 @@ alias nginxconfig="vim /opt/homebrew/etc/nginx/sites-enabled/staffmatch-core.con
 alias bc="$STAFFMATCH_CORE_CONSOLE"
 alias bcd="$STAFFMATCH_CORE_CONSOLE --env=dev"
 alias bct="$STAFFMATCH_CORE_CONSOLE --env=test"
-alias bb="$STAFFMATCH_CORE/bin/behat -vvv"
+alias bb="$STAFFMATCH_CORE/bin/behat"
 alias b="$STAFFMATCH_CORE/bin"
 #alias dccm="bct doctrine:cache:clear-metadata;bcd doctrine:cache:clear-metadata" 
 #alias dsu="dccm;bcd d:s:u --force --dump-sql"
