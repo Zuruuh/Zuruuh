@@ -68,7 +68,6 @@ alias rl='source ~/.zshrc'
 alias tf='terraform'
 alias vcc='rm -rf ./var/cache'
 alias dev='cd ~/dev'
-alias vim='nvim'
 alias vimconfig='vim ~/.config/nvim'
 alias hf='cat -p --no-pager ~/.zsh_history | fzf'
 alias python='python3'
@@ -81,3 +80,8 @@ alias gsm='gcm'
 alias gpl='git pull'
 alias gsth="git stash"
 alias git_current_branch="git branch --show-current"
+
+function vim() {
+    nvim "$@"
+    echo "Don't forget to save your work!"
+}
