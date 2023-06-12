@@ -16,9 +16,6 @@ return require('packer').startup(function(use)
     use({
         'navarasu/onedark.nvim',
         as = 'onedark',
-        config = function()
-            vim.cmd('colorscheme onedark')
-        end
     })
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/nvim-treesitter-context')
@@ -62,4 +59,5 @@ return require('packer').startup(function(use)
     use('lukas-reineke/indent-blankline.nvim')
     use('phpactor/phpactor')
     use('terrortylor/nvim-comment')
+    use('praem90/nvim-phpcsf')
 end)
