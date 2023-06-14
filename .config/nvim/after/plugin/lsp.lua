@@ -27,6 +27,7 @@ lspconfig.phpactor.setup({
         init_options = {
             ["language_server_phpstan.enabled"] = true,
             ["language_server_psalm.enabled"] = false,
+            ["language_server_php_cs_fixer.enabled"] = true,
             ["indexer.exclude_patterns"] = {
                 "/vendor/**/Tests/**/*",
                 "/vendor/**/tests/**/*",
