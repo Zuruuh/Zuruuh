@@ -14,11 +14,5 @@ vim.keymap.set("n", "<leader>gsd", function () os.execute([[
 vim.keymap.set("n", "<leader>gs-", "<CMD>Git switch -<CR>")
 vim.keymap.set("n", "<leader>gpl", "<CMD>Git pull<CR>")
 vim.keymap.set("n", "<leader>gpp", "<CMD>Git push<CR>")
-<<<<<<< Updated upstream
 vim.keymap.set("n", "<leader>gph", "<CMD>Git push -u origin HEAD<CR>")
-||||||| Stash base
-vim.keymap.set("n", "<leader>gph", "<CMD>Git push origin HEAD<CR>")
-=======
-vim.keymap.set("n", "<leader>gph", "<CMD>Git push origin HEAD<CR>")
 vim.keymap.set("n", "<leader>ggfl", "<CMD>Git push --force-with-lease<CR>")
->>>>>>> Stashed changes
