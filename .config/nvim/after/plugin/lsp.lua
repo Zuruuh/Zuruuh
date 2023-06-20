@@ -22,6 +22,7 @@ lspconfig.yamlls.setup({
     }
 })
 
+--[[
 lspconfig.phpactor.setup({
     settings = {
         init_options = {
@@ -40,6 +41,7 @@ lspconfig.phpactor.setup({
         }
     }
 })
+]]--
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
