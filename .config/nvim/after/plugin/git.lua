@@ -1,7 +1,7 @@
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 vim.keymap.set("n", "<leader>gss", vim.cmd.Git)
-vim.keymap.set("n", "gl", "<CMD>diffget //2<CR>")
-vim.keymap.set("n", "gr", "<CMD>diffget //3<CR>")
+vim.keymap.set("n", "<leader>gl", "<CMD>diffget //2<CR>")
+vim.keymap.set("n", "<leader>gr", "<CMD>diffget //3<CR>")
 vim.keymap.set("n", "<leader>gsd", function () os.execute([[
     command git rev-parse --git-dir &> /dev/null || return
     for branch in dev develop development; do
