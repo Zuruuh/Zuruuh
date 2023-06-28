@@ -6,16 +6,16 @@ barbar.setup({
     tabpages = true,
     clickable = true,
     icons = {
-      buffer_index = true,
+        buffer_index = true,
+        preset = "slanted",
     },
     gitsigns = {
-      added = {enabled = true, icon = '+'},
-      changed = {enabled = true, icon = '~'},
-      deleted = {enabled = true, icon = '-'},
+        added = {enabled = true, icon = '+'},
+        changed = {enabled = true, icon = '~'},
+        deleted = {enabled = true, icon = '-'},
     },
 })
 
--- vim.keymap.set("n", "<C-w>", barbar)
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<C-w>", "<Cmd>BufferClose<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-S-t>", "<Cmd>BufferRestore<CR>", opts)

@@ -11,3 +11,14 @@ theme.setup({
     style = style,
 })
 theme.load()
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+    callback = vim.schedule_wrap(function()
+        vim.cmd([[
+            augroup ColorScheme
+                autocmd! hi BufferCurrentIndex guibg=transparent
+            augroup end
+        ]])
+    end),
+    group = vim.api.nvim_create_augroup('zuruh', {}),
+})
