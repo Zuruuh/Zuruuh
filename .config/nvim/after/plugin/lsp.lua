@@ -84,6 +84,14 @@ lsp.on_attach(function(client, bufnr)
                     )
                 end
 
+                if diagnostic.source ~= nil then
+                    return string.format(
+                        "%s (%s)",
+                        diagnostic.message,
+                        diagnostic.source
+                    )
+                end
+
                 return diagnostic.message
             end
         }
