@@ -82,6 +82,19 @@ function vim() {
     echo "Don't forget to save your work!"
 }
 
+function mkcd() {
+    mkdir $1; cd $1;
+}
+
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+function -() {
+    cd -
+}
+
 # Nodejs (fnm)
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env --use-on-cd`"
