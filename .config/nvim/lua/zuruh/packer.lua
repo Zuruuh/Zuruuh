@@ -63,4 +63,11 @@ return require('packer').startup(function(use)
     use('tpope/vim-dadbod')
     use('kristijanhusak/vim-dadbod-ui')
     use('phelipetls/jsonpath.nvim')
+    use({
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = function ()
+            require('dashboard').setup({})
+        end,
+    })
 end)
