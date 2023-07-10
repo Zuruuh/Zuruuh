@@ -72,6 +72,7 @@ alias gs='git switch'
 alias gitconfig='vim ~/.gitconfig'
 alias gitignore='vim ~/.gitignore'
 alias gph='git push -u origin HEAD'
+alias gpp='gp'
 alias gsm='gcm'
 alias gpl='git pull'
 alias gsth="git stash"
