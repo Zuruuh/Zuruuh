@@ -45,12 +45,12 @@ return require('packer').startup(function(use)
     use('nvim-tree/nvim-tree.lua')
     use('nvim-tree/nvim-web-devicons')
     use('prichrd/netrw.nvim')
-    use {
+    use({
         'lewis6991/gitsigns.nvim',
         config = function()
             require('gitsigns').setup()
         end
-    }
+    })
     use('nvim-lualine/lualine.nvim')
     use('romgrk/barbar.nvim')
     use('lukas-reineke/indent-blankline.nvim')
@@ -70,4 +70,5 @@ return require('packer').startup(function(use)
             require('dashboard').setup({})
         end,
     })
+    use('christoomey/vim-tmux-navigator')
 end)
