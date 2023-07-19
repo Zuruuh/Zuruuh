@@ -57,7 +57,6 @@ alias es="bcd staffmatch:es:update --env=dev"
 alias phpunit="bin/phpunit $@ -vvv"
 alias phpconfig="vim $(php-config --ini-path)/php.ini"
 alias pip="python -m pip"
-alias python3="python"
 alias notes="code $HOME/Documents/notes"
 alias clearlog="echo '' > $STAFFMATCH_CORE/var/logs/dev.log"
 alias logs='tail -f var/logs/dev.log | grep "app\."'
