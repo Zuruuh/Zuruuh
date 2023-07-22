@@ -9,6 +9,8 @@ alias wslconfig='sudo vim /etc/wsl.conf'
 alias open='explorer.exe'
 alias gsd='git switch dev'
 
+export PATH="$PATH:$HOME/go/bin"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
