@@ -15,7 +15,7 @@ plug "chivalryq/git-alias"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "agkozak/zsh-z"
-plug "zsh-users/zsh-history-substring-search"
+# plug "zsh-users/zsh-history-substring-search"
 plug "Aloxaf/fzf-tab"
 
 # Load and initialise completion system
@@ -24,6 +24,10 @@ compinit
 
 # Rust/Cargo
 source "$HOME/.cargo/env"
+
+# Setup atuin completions
+# Must be loaded after cargo crates since atuin is installed with it
+source "$HOME/dotfiles/atuin.zsh"
 
 # Golang
 export PATH="$PATH:$HOME/softwares/go/bin"
