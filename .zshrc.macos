@@ -2,6 +2,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 export APP_ENV=dev
 
 source "$HOME/dotfiles/.zshrc.base"
+export SDKROOT=/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+export MACOSX_DEPLOYMENT_TARGET="13.4"
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
 # Load and initialise completion system
 autoload -Uz compinit
@@ -35,6 +38,7 @@ alias bc="$STAFFMATCH_CORE_CONSOLE"
 alias bcd="$STAFFMATCH_CORE_CONSOLE --env=dev"
 alias bct="$STAFFMATCH_CORE_CONSOLE --env=test"
 alias bb="$STAFFMATCH_CORE/bin/behat"
+alias bbf="bb \$(fd . features/Staffmatch --type file | fzf)"
 alias b="$STAFFMATCH_CORE/bin"
 #alias dccm="bct doctrine:cache:clear-metadata;bcd doctrine:cache:clear-metadata" 
 #alias dsu="dccm;bcd d:s:u --force --dump-sql"
