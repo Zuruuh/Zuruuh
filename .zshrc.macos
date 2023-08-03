@@ -21,7 +21,6 @@ export PATH="$PATH:$HOME/.spicetify"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$PATH:/usr/local/go"
 export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$HOME/.pyenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
 export DENO_INSTALL="$HOME/.deno"
