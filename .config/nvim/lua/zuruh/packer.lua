@@ -71,4 +71,5 @@ return require('packer').startup(function(use)
         end,
     })
     use('christoomey/vim-tmux-navigator')
+    use('NoahTheDuke/vim-just')
 end)
