@@ -8,9 +8,9 @@ return require('packer').startup(function(use)
         requires = { {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-live-grep-args.nvim',
-            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
         } },
     })
+    -- use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
     use({
         'navarasu/onedark.nvim',
         as = 'onedark',
@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
     }
     use('windwp/nvim-ts-autotag')
     use('nvim-tree/nvim-tree.lua')
-    use('nvim-tree/nvim-web-devicons')
+    use('DaikyXendo/nvim-web-devicons')
     use('prichrd/netrw.nvim')
     use({
         'lewis6991/gitsigns.nvim',

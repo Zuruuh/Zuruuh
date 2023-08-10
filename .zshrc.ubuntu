@@ -1,18 +1,13 @@
 source "$HOME/dotfiles/.zshrc.base"
 
-alias phpversionmanager='pvmp'
-alias phpvm='pvm'
-alias pvm='sudo update-alternatives --config php'
-
-alias wslconfig='sudo vim /etc/wsl.conf'
-# alias audio='rm -rf ~/.config/pulse;pulseaudio -k;pulseaudio -D;reboot'
+# alias phpversionmanager='pvmp'
+# alias phpvm='pvm'
+# alias pvm='sudo update-alternatives --config php'
 alias open='explorer.exe'
 alias gsd='git switch dev'
+# alias dockerd='/home/zuruh/.nix-profile/bin/dockerd'
 
 export PATH="$PATH:$HOME/go/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+[[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh

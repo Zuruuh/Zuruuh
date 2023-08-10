@@ -15,7 +15,6 @@ plug "chivalryq/git-alias"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "agkozak/zsh-z"
-# plug "zsh-users/zsh-history-substring-search"
 plug "Aloxaf/fzf-tab"
 
 # Load and initialise completion system
@@ -23,11 +22,11 @@ autoload -Uz compinit
 compinit
 
 # Rust/Cargo
-source "$HOME/.cargo/env"
+# source "$HOME/cargo/env"
 
 # Setup atuin completions
 # Must be loaded after cargo crates since atuin is installed with it
-source "$HOME/dotfiles/atuin.zsh"
+source "$HOME/dotfiles/.atuin.zsh"
 
 # Golang
 export PATH="$PATH:$HOME/softwares/go/bin"
@@ -58,7 +57,7 @@ alias ls='exa -lah --git --icons'
 alias l='ls'
 alias find='fd'
 alias ack='ambr'
-alias cat='batcat'
+alias cat='bat'
 
 alias c='clear'
 alias zshconfig='vim ~/.zshrc'
@@ -81,6 +80,7 @@ alias gpl='git pull'
 alias gsth="git stash"
 alias git_current_branch="git branch --show-current"
 alias tmuxx="tmux && exit"
+alias update="~/dotfiles/nix.sh"
 
 function vim() {
     nvim "$@"
@@ -101,5 +101,5 @@ function -() {
 }
 
 # Nodejs (fnm)
-export PATH="$HOME/.local/share/fnm:$PATH"
-eval "`fnm env --use-on-cd`"
+# export PATH="$HOME/.local/share/fnm:$PATH"
+# eval "`fnm env --use-on-cd`"

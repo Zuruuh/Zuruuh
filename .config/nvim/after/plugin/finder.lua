@@ -13,7 +13,7 @@ telescope.setup({
 })
 
 telescope.load_extension('live_grep_args')
-telescope.load_extension('fzf')
+-- telescope.load_extension('fzf')
 
 vim.keymap.set('n', '<leader>pf', builtin.git_files, {})
 vim.keymap.set('n', '<C-p>', function () builtin.find_files({ hidden = true }) end, {})
