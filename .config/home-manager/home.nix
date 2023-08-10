@@ -93,7 +93,7 @@
     ".config/atuin".source = ~/dotfiles/.config/atuin;
     ".config/nvim".source = ~/dotfiles/.config/nvim;
     ".config/phpactor".source = ~/dotfiles/.config/phpactor;
-    ".config/tmux/tmux.conf".source = ~/dotfiles/.config/tmux/.tmux.conf;
+    ".config/tmux/tmux.conf".source = ~/dotfiles/.config/tmux/tmux.conf;
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
