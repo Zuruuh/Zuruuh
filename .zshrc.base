@@ -27,13 +27,14 @@ source "$HOME/.cargo/env"
 
 # Setup atuin completions
 # Must be loaded after cargo crates since atuin is installed with it
-source "$HOME/dotfiles/atuin.zsh"
+source "$HOME/dotfiles/.atuin.zsh"
 
 # Golang
-export PATH="$PATH:$HOME/softwares/go/bin"
+export GOPATH="$HOME/dev"
+export PATH="$PATH:/usr/local/go/bin"
 
 # PyEnv
-# export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 

@@ -1,8 +1,1 @@
-/.vscode
-/.idea
-/.ignored
-/.ignored/
-/.ignored/*
-/.git
-.config/nvim/plugin/packer_compiled.lua
-/phpactor
+/.config/nvim/plugin/*

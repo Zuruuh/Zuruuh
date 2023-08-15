@@ -2,7 +2,6 @@
 	name = Zuruuh
 	email = ziadi.mail.pro@gmail.com
 [core]
-    excludesfile = ~/.gitignore
 	editor = nvim
     pager = delta
 

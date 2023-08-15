@@ -1,0 +1,7 @@
+/.vscode
+/.idea
+/.ignored
+/.ignored/
+/.ignored/*
+/.git
+/.phpactor.json
