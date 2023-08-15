@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
     }
     use('windwp/nvim-ts-autotag')
     use('nvim-tree/nvim-tree.lua')
-    use('DaikyXendo/nvim-web-devicons')
+    use('nvim-tree/nvim-web-devicons')
     use('prichrd/netrw.nvim')
     use({
         'lewis6991/gitsigns.nvim',

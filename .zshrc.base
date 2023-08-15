@@ -22,7 +22,7 @@ autoload -Uz compinit
 compinit
 
 # Rust/Cargo
-# source "$HOME/cargo/env"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Setup atuin completions
 # Must be loaded after cargo crates since atuin is installed with it
@@ -61,8 +61,9 @@ alias cat='bat'
 
 alias c='clear'
 alias zshconfig='vim ~/.zshrc'
-alias tmuxconfig='vim ~/.tmux.conf'
+alias tmuxconfig='vim ~/.config/tmux/tmux.conf'
 alias dotfiles='vim ~/dotfiles'
+alias nixconfig='vim ~/dotfiles/.config/home-manager/home.nix'
 alias rl='source ~/.zshrc'
 alias tf='terraform'
 alias vcc='rm -rf ./var/cache'
@@ -80,7 +81,6 @@ alias gpl='git pull'
 alias gsth="git stash"
 alias git_current_branch="git branch --show-current"
 alias tmuxx="tmux && exit"
-alias update="~/dotfiles/nix.sh"
 
 function vim() {
     nvim "$@"

@@ -8,6 +8,9 @@ telescope.setup({
             override_generic_sorter = true,
             override_file_sorter = true,
             case_mode = "ignore_case"
+        },
+        live_grep_args = {
+            
         }
     }
 })
@@ -17,4 +20,4 @@ telescope.load_extension('live_grep_args')
 
 vim.keymap.set('n', '<leader>pf', builtin.git_files, {})
 vim.keymap.set('n', '<C-p>', function () builtin.find_files({ hidden = true }) end, {})
-vim.keymap.set("n", "<leader>fg", telescope.extensions.live_grep_args.live_grep_args, {})
+vim.keymap.set("n", "<leader>fg", function () telescope.extensions.live_grep_args.live_grep_args({ hidden = true }) end, {})

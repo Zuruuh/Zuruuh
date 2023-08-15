@@ -27,7 +27,6 @@
     automake
     bat
     bun
-    cargo
     cmake
     curlie
     docker
@@ -44,6 +43,7 @@
     jq
     just
     libgccjit
+    lld_16
     lua
     man
     neofetch
@@ -51,9 +51,11 @@
     openssh
     php82
     php82Packages.composer
+    pkg-config
     python311
     python311Packages.pip
     ripgrep
+    rustup
     spotify-tui
     symfony-cli
     tmux
@@ -63,6 +65,7 @@
     zellij
     zip
     zsh
+    zstd
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
