@@ -25,7 +25,7 @@ bufferline.setup({
 -- })
 
 local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("n", "<C-w>", "<Cmd>BufferLineCycleNext<CR><CMD>BufferLineCloseLeft<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-w>", "<Cmd>BufferLineCycleNext<CR><CMD>bdelete<CR>", opts)
 -- vim.api.nvim_set_keymap("n", "<C-S-t>", "<Cmd>BufferRestore<CR>", opts)
 vim.api.nvim_set_keymap('n', '<leader>1', '<Cmd>BufferLineGoToBuffer 1<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>2', '<Cmd>BufferLineGoToBuffer 2<CR>', opts)
