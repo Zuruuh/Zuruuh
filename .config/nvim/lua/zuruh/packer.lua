@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
         end
     })
     use('nvim-lualine/lualine.nvim')
-    use('romgrk/barbar.nvim')
+    use('akinsho/bufferline.nvim')
     use('lukas-reineke/indent-blankline.nvim')
     use('phpactor/phpactor')
     use('terrortylor/nvim-comment')

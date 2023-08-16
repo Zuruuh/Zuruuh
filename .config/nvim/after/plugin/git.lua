@@ -1,3 +1,5 @@
+local silent = { noremap = true, silent = true }
+
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 vim.keymap.set("n", "<leader>gss", vim.cmd.Git)
 vim.keymap.set("n", "<leader>gf", "<CMD>diffget //2<CR>")
@@ -10,9 +12,10 @@ vim.keymap.set("n", "<leader>gsd", function () os.execute([[
             break
         fi;
     done;
-]]) end)
-vim.keymap.set("n", "<leader>gs-", "<CMD>Git switch -<CR>")
-vim.keymap.set("n", "<leader>gpl", "<CMD>Git pull<CR>")
-vim.keymap.set("n", "<leader>gpp", "<CMD>Git push<CR>")
-vim.keymap.set("n", "<leader>gph", "<CMD>Git push -u origin HEAD<CR>")
-vim.keymap.set("n", "<leader>ggfl", "<CMD>Git push --force-with-lease<CR>")
+]]) end, silent)
+
+vim.keymap.set("n", "<leader>gs-", "<CMD>Git switch -<CR>", silent)
+vim.keymap.set("n", "<leader>gpl", "<CMD>Git pull<CR>", silent)
+vim.keymap.set("n", "<leader>gpp", "<CMD>Git push<CR>", silent)
+vim.keymap.set("n", "<leader>gph", "<CMD>Git push -u origin HEAD<CR>", silent)
+vim.keymap.set("n", "<leader>ggfl", "<CMD>Git push --force-with-lease<CR>", silent)
