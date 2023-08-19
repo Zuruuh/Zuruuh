@@ -23,7 +23,13 @@ require('nvim-treesitter.configs').setup({
   }
 })
 
-require('nvim-treesitter.parsers').get_parser_configs().just = {
+require('treesitter-context').setup({
+    enable=true
+})
+
+local parsers = require('nvim-treesitter.parsers').get_parser_configs()
+
+parsers.just = {
   install_info = {
     url = "https://github.com/IndianBoy42/tree-sitter-just", -- local path or git repo
     files = { "src/parser.c", "src/scanner.cc" },
@@ -33,6 +39,11 @@ require('nvim-treesitter.parsers').get_parser_configs().just = {
   maintainers = { "@IndianBoy42" },
 }
 
-require('treesitter-context').setup({
-    enable=true
-})
+parsers.blade = {
+  install_info = {
+    url = "https://github.com/EmranMR/tree-sitter-blade",
+    files = {"src/parser.c"},
+    branch = "main",
+  },
+  filetype = "blade"
+}

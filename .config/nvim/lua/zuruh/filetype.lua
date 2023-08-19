@@ -1,0 +1,6 @@
+vim.filetype.add({
+  pattern = {
+    ['.*%.blade%.php'] = 'html',
+    ['.*%.html%.twig'] = 'html',
+  },
+})

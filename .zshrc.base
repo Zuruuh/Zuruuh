@@ -30,8 +30,9 @@ source "$HOME/.cargo/env"
 source "$HOME/dotfiles/.atuin.zsh"
 
 # Golang
-export GOPATH="/usr/local/bin"
+export GOPATH="$HOME/.local/share/go"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$GOPATH/bin"
 
 # PyEnv
 export PYENV_ROOT="$HOME/.pyenv"
