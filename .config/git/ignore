@@ -5,3 +5,6 @@
 /.ignored/*
 /.git
 /.phpactor.json
+/.env.local
+/.env.*.local
+/py-env
