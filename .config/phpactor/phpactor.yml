@@ -8,4 +8,4 @@ indexer.exclude_patterns:
   - '/var/**/*'
 
 code_transform.class_new.variants:
-  classes: "classes"
+  strict: 'strict'
