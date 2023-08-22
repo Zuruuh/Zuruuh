@@ -22,24 +22,7 @@ lspconfig.yamlls.setup({
     }
 })
 
-lspconfig.phpactor.setup({
-    settings = {
-        init_options = {
-            ["language_server_phpstan.enabled"] = true,
-            ["language_server_psalm.enabled"] = false,
-            ["language_server_php_cs_fixer.enabled"] = true,
-            ["indexer.exclude_patterns"] = {
-                "/vendor/**/Tests/**/*",
-                "/vendor/**/tests/**/*",
-                "/vendor/composer/**/*",
-                "/var/**/*"
-            },
-            ["code_transform.class_new.variants"] = {
-                ["classes"] = "classes"
-            }
-        }
-    }
-})
+lspconfig.phpactor.setup({})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
