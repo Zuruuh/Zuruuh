@@ -60,22 +60,19 @@ alias ls='exa -lah --git --icons'
 alias l='ls'
 alias find='fd'
 alias ack='ambr'
-alias cat='batcat'
+alias cat='bat'
 
 alias c='clear'
-alias zshconfig='vim ~/.zshrc'
-alias tmuxconfig='vim ~/.tmux.conf'
-alias dotfiles='vim ~/dotfiles'
+alias zshconfig='nvim ~/.zshrc'
+alias tmuxconfig='nvim ~/.config/tmux/tmux.conf'
+alias dotfiles='nvim ~/dotfiles'
 alias rl='source ~/.zshrc'
-alias tf='terraform'
-alias vcc='rm -rf ./var/cache'
 alias dev='cd ~/dev'
-alias vimconfig='vim ~/.config/nvim'
-alias hf='cat -p --no-pager ~/.zsh_history | fzf'
+alias vimconfig='nvim ~/.config/nvim'
 alias docker-compose='docker compose'
 alias gs='git switch'
-alias gitconfig='vim ~/.gitconfig'
-alias gitignore='vim ~/.gitignore'
+alias gitconfig='nvim ~/.gitconfig'
+alias gitignore='nvim ~/.gitignore'
 alias gph='git push -u origin HEAD'
 alias gpp='gp'
 alias gsm='gcm'
@@ -83,11 +80,6 @@ alias gpl='git pull'
 alias gsth="git stash"
 alias git_current_branch="git branch --show-current"
 alias tmuxx="tmux && exit"
-
-function vim() {
-    nvim "$@"
-    echo "Don't forget to save your work!"
-}
 
 function mkcd() {
     mkdir $1; cd $1;

@@ -32,50 +32,38 @@ alias gsd="git switch development"
 alias watcher="cd ~/dev/staffmatch-watcher; activemq purge; npm run start"
 alias csp="rm -rf ~/dev/copy-staffmatch-core; cp -r $STAFFMATCH_CORE ~/dev/copy-staffmatch-core"
 alias dev="cd $STAFFMATCH_CORE; clear"
-alias nginxconfig="vim /opt/homebrew/etc/nginx/sites-enabled/staffmatch-core.conf"
+alias nginxconfig="nvim /opt/homebrew/etc/nginx/sites-enabled/staffmatch-core.conf"
 alias bc="$STAFFMATCH_CORE_CONSOLE"
 alias bcd="$STAFFMATCH_CORE_CONSOLE --env=dev"
 alias bct="$STAFFMATCH_CORE_CONSOLE --env=test"
 alias bb="$STAFFMATCH_CORE/bin/behat"
-alias bbf="bb \$(fd . features/Staffmatch --type file | fzf)"
-alias b="$STAFFMATCH_CORE/bin"
-#alias dccm="bct doctrine:cache:clear-metadata;bcd doctrine:cache:clear-metadata" 
-#alias dsu="dccm;bcd d:s:u --force --dump-sql"
+
+function bbf() {
+    TMP_COMMAND="bb $(fd . features/Staffmatch --type file | fzf)"
+    echo $TMP_COMMAND | pbcopy
+    eval $TMP_COMMAND
+}
+
 alias dsu="bcd d:s:u --force --dump-sql"
 alias dst="bct d:s:u --force"
 alias dst="bct d:s:u --force"
 alias assets="bcd assets:install --symlink --relative"
 alias rt="rm -f /tmp/staffmatch_test.sql; rm -f /tmp/idsArray.csv"
-alias rsp="rt;vcc"
 alias tf="rsp;dst;bb $@ -vvv"
 alias brewrs="brew services restart $@"
 alias gsm="gcm"
 alias services="brew services"
-alias restore="mv $STAFFMATCH_CORE ~/dev/.old/staffmatch-core; mv ~/dev/copy-staffmatch-core $STAFFMATCH_CORE"
-alias gedit="vim ~/.gitignore"
 alias rdb="bcd d:d:d --force --if-exists;bcd d:d:c; loab; dsu"
 alias rtdb="rt;bct d:d:d --force --if-exists;bct d:d:c; dst"
 alias perso="cd ~/dev/perso;c"
-alias es="bcd staffmatch:es:update --env=dev"
+alias es="bcd staffmatch:es:update"
 alias phpunit="bin/phpunit $@ -vvv"
-alias phpconfig="vim $(php-config --ini-path)/php.ini"
+alias phpconfig="nvim $(php-config --ini-path)/php.ini"
 alias python="python3"
 alias pip="python -m pip"
 alias notes="code $HOME/Documents/notes"
-alias clearlog="echo '' > $STAFFMATCH_CORE/var/logs/dev.log"
 alias logs='tail -f var/logs/dev.log | grep "app\."'
-alias phpstan='bin/phpstan'
-alias phpd='php -d zend_extension="xdebug.so" -d xdebug.mode=debug -d xdebug.start_with_request=1 -d xdebug.client_host=localhost -d xdebug.client_port=9003 -d xdebug.idekey='
-
-phpdebug() {
-    if [ -f /opt/homebrew/etc/php/7.4/conf.d/ext-xdebug.ini ]; then
-        echo -e "Disabled debug mode"
-        mv /opt/homebrew/etc/php/7.4/conf.d/ext-xdebug.ini "$STAFFMATCH_CORE"/.ignored/xdebug.ini
-    else
-        echo -e "Enabled debug mode"
-        mv "$STAFFMATCH_CORE"/.ignored/xdebug.ini /opt/homebrew/etc/php/7.4/conf.d/ext-xdebug.ini
-    fi
-}
+alias phpstan='bin/phpstan analyse -c ./phpstan.neon.dist --memory-limit=4g'
 
 # db dumping stuff
 function dump() {
@@ -129,7 +117,6 @@ alias ddd='bcd d:d:d --force --if-exists'
 alias dddt='bct d:d:d --force --if-exists'
 alias ddc='bcd d:d:c --if-not-exists'
 alias ddct='bct d:d:c --if-not-exists'
-alias cat='bat'
 alias brwe='brew'
 alias berw='brew'
 alias brwe='brew'
