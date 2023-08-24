@@ -1,3 +1,4 @@
+-- @TODO - Re-enable this
 -- vim.g.tmux_navigator_no_mappings = 1
 
 -- vim.keymap.set("n", "<Ctrl-Up>", '<CMD>TmuxNavigateUp<CR>')
