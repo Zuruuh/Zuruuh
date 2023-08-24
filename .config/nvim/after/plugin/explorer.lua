@@ -19,4 +19,3 @@ require("nvim-tree").setup({
 		side = "right",
 	},
 })
-vim.keymap.set("n", "<c-n>", ":NvimTreeFindFileToggle<CR>")
