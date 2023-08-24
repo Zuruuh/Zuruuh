@@ -1,1 +1,1 @@
-require('dropbar').setup()
+require("dropbar").setup()

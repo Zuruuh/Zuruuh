@@ -1,6 +1,6 @@
-require('ccc').setup({
-    highligher = {
-        auto_enable = true,
-        lsp = true,
-    }
+require("ccc").setup({
+	highligher = {
+		auto_enable = true,
+		lsp = true,
+	},
 })

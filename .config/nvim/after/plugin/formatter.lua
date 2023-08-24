@@ -26,4 +26,4 @@ require("formatter").setup({
 	},
 })
 
-vim.keymap.set("n", '<leader>f', "<CMD>Format<CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>f", "<CMD>Format<CR>", { silent = true, noremap = true })
