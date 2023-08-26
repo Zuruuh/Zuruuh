@@ -10,7 +10,7 @@ alias gsd='git switch dev'
 
 export PATH="$PATH:$HOME/go/bin"
 
-export PATH="$PATH:$PYENV_ROOT/bin"
+export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
