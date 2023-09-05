@@ -1,5 +1,4 @@
 export PATH="/opt/homebrew/bin:$PATH"
-export APP_ENV=dev
 
 source "$HOME/dotfiles/.zshrc.base"
 export SDKROOT=/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
