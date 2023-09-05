@@ -8,7 +8,7 @@ alias wslconfig='sudo nvim /etc/wsl.conf'
 alias open='explorer.exe'
 alias gsd='git switch dev'
 
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$HOME/.local/share/composer/bin:$PATH"
 
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
