@@ -49,6 +49,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export COMPOSER_HOME="$HOME/composer"
 export APP_ENV=dev
 
+export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
+
 ## Custom config
 
 export COLORTERM=truecolor
