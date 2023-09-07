@@ -119,6 +119,7 @@ if not (which fnm | is-empty) {
 # random stuff
 $env.COLORTERM = 'truecolor'
 $env.EDITOR = 'nvim'
+$env.PAGER = 'less'
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
 
 mkdir ~/.cache/starship
