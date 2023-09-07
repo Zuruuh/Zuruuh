@@ -81,5 +81,44 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
+#=================================================================================#
+
+# Cargo
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.cargo/bin'))
+
+# Golang
+$env.GOPATH = ($env.HOME + '/.local/share/go')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/go/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.GOPATH + '/bin'))
+
+# PyEnv
+$env.PYENV_ROOT = ($env.HOME + '/.pyenv')
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/bin'))
+
+# Bun
+$env.BUN_INSTALL = ($env.HOME + '/.bun')
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.BUN_INSTALL + '/bin'))
+
+# PHP
+$env.COMPOSER_HOME = $env.HOME + '/composer'
+$env.APP_ENV = dev
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/share/composer/bin'))
+
+# Neovim
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/share/bob/nvim-bin'))
+
+# Node
+if not (which fnm | is-empty) {
+    ^fnm env --json | from json | load-env
+    $env.PATH = ($env.PATH | split row (char esep) | prepend [
+        $"($env.FNM_MULTISHELL_PATH)/bin"
+    ])
+}
+
+# random stuff
+$env.COLORTERM = 'truecolor'
+$env.EDITOR = 'nvim'
+$env.AWS_DEFAULT_REGION = 'eu-west-3'
+
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu

@@ -48,28 +48,25 @@ and now just brain-dead copy paste everything below
 # Symlink all config files
 stow .
 
-# Install rust toolchain, make sure you select the following options:
-# default host triple: <default>
-# default toolchain: nightly
-# profile: complete
-# modify PATH variable: no
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# Install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly --profile complete --no-modify-path
 source "$HOME/.cargo/env"
 
-# Install sccache to speed up the next cargo installs
-cargo install sccache
-export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
+# Install cargo-binstall
+curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
-# go grab a drink :D
-# todo: use binstall instead of install here
-cargo install stylua taplo-cli nu starship \
+# Install all binaries with binstall when possible
+# (go grab a drink)
+cargo binstall stylua taplo-cli nu starship \
     bob-nvim spotify-tui bat exa amber fnm \
     ripgrep just git-delta fd-find mprocs bacon \
-    trunk binstall hyperfine
+    trunk binstall hyperfine --verbose --no-confirm
 
-# node
+# Node
 fnm install 18 && fnm default 18 && eval $(fnm env)
-npm i -g eslint_d @fsouza/prettierd pnpm neovim npm
+npm i -g eslint_d @fsouza/prettierd prettier pnpm neovim npm
+
+nu
 
 go install mvdan.cc/sh/v3/cmd/shfmt@latest \
     github.com/rs/curlie@latest \

@@ -139,7 +139,7 @@ let light_theme = {
 
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
-    show_banner: true # true or false to enable or disable the welcome banner at startup
+    show_banner: false # true or false to enable or disable the welcome banner at startup
 
     ls: {
         use_ls_colors: true # use the LS_COLORS environment variable to colorize output
@@ -249,7 +249,11 @@ $env.config = {
         pre_prompt: [{ null }] # run before the prompt is shown
         pre_execution: [{ null }] # run before the repl input is run
         env_change: {
-            PWD: [{|before, after| null }] # run if the PWD environment is different since the last repl input
+            PWD: [{|before, after|
+                if ('FNM_DIR' in $env) and ([.nvmrc .node-version] | path exists | any { |it| $it }) {
+                  fnm use
+                }
+            }] # run if the PWD environment is different since the last repl input
         }
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
         command_not_found: { null } # return an error message when a command is not found
