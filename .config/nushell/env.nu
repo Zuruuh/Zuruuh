@@ -94,6 +94,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.GOPATH + '/bin'))
 # PyEnv
 $env.PYENV_ROOT = ($env.HOME + '/.pyenv')
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/bin'))
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/shims'))
 
 # Bun
 $env.BUN_INSTALL = ($env.HOME + '/.bun')
