@@ -60,11 +60,11 @@ curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-
 cargo binstall stylua taplo-cli nu starship \
     bob-nvim spotify-tui bat exa amber fnm \
     ripgrep just git-delta fd-find mprocs bacon \
-    trunk binstall hyperfine --verbose --no-confirm
+    trunk binstall hyperfine zoxide --verbose --no-confirm
 
 # Node
 fnm install 18 && fnm default 18 && eval $(fnm env)
-npm i -g eslint_d @fsouza/prettierd prettier pnpm neovim npm
+npm i -g eslint_d eslint @fsouza/prettierd prettier pnpm neovim npm
 
 nu
 
@@ -75,7 +75,7 @@ go install mvdan.cc/sh/v3/cmd/shfmt@latest \
 # Neovim
 bob install nightly; bob use nightly
 
-# TMUX
+# Tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
@@ -83,8 +83,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ```bash
 # Install tmux plugins
-tmux
 # Once inside tmux, run CTRL+S+I
+tmux
 
-
+# Plugins should auto-install with lazy.nvim
+nvim .
 ```
