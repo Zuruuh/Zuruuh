@@ -14,10 +14,10 @@ alias watcher = cd ~/dev/staffmatch-watcher; activemq purge; npm run start
 alias csp = rm -rf ~/dev/copy-staffmatch-core; cp -r $env.STAFFMATCH_CORE ~/dev/copy-staffmatch-core
 alias dev = cd $env.STAFFMATCH_CORE; clear
 alias nginxconfig = nvim /opt/homebrew/etc/nginx/sites-enabled/staffmatch-core.conf
-alias bc = $env.STAFFMATCH_CORE_CONSOLE
-alias bcd = $env.STAFFMATCH_CORE_CONSOLE --env=dev
-alias bct = $env.STAFFMATCH_CORE_CONSOLE --env=test
-alias bb = $env.STAFFMATCH_CORE/bin/behat
+alias bc = php $env.STAFFMATCH_CORE_CONSOLE
+alias bcd = bc --env=dev
+alias bct = bc --env=test
+alias bb = php $env.STAFFMATCH_CORE/bin/behat
 
 def bbf [] {
     echo bb (fd . features/Staffmatch --type file | fzf)| pbcopy
@@ -63,22 +63,24 @@ def phpconfig [] {
     nvim ((php-config --ini-path) + '/php.ini')
 }
 alias notes = nvim $env.HOME + '/Documents/notes'
-alias logs = tail -f var/logs/dev.log | grep app\.
+def logs [] {
+    tail -f var/logs/dev.log | grep app\.
+}
 
 # db dumping stuff
 def dump [dump?: string] {
-    mysqldump staffmatch -u root -pPASSWORD > $env.STAFFMATCH_CORE/.ignored/dumps/($dump).sql
+    mysqldump staffmatch -u root -pPASSWORD > $env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql'
 }
 def load [dump?: string] {
-    mysql -u root staffmatch -pPASSWORD < $env.STAFFMATCH_CORE/.ignored/dumps/($dump).test.sql
+    mysql -u root staffmatch -pPASSWORD < $env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql'
 }
 
 # db dumping stuff
 def dump-test [dump?: string] {
-    mysqldump staffmatch -u root -pPASSWORD > $env.STAFFMATCH_CORE/.ignored/dumps/($dump).sql
+    mysqldump staffmatch -u root -pPASSWORD > $env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql'
 }
 def load-test [dump?: string] {
-    mysql -u root staffmatch -pPASSWORD < $env.STAFFMATCH_CORE/.ignored/dumps/($dump).test.sql
+    mysql -u root staffmatch -pPASSWORD < $env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql'
 }
 
 alias dumptest = dump-test
@@ -92,13 +94,13 @@ def phpcs [] {
 }
 
 def usephp [version: float] {
-    if ! command -v php;then
+    if (which php | is-empty) {
         brew link php@$version
-    else
+    } else {
         let current_php_version = (php -r echo PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;)
         brew unlink php@$current_php_version
         brew link --overwrite --force php@$version
-    fi
+    }
 }
 
 def admin [] {
@@ -121,7 +123,7 @@ def sm-services [] {
 def sm-services-start [] {
     sm-services | each {|service| services start $service }
 }
-def sm-services-stop[] {
+def sm-services-stop [] {
     sm-services | each {|service| services stop $service }
 }
 
