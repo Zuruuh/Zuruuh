@@ -781,3 +781,18 @@ if $nu.os-info.name == 'linux' {
 } else if $nu.os-info.name == 'darwin' {
     source $darwin_config
 }
+
+source ~/.config/nushell/plugins_installer.nu
+
+## Load nu_scripts completions
+# doesn't work bcz paths are evaluated at runtime :(
+# echo [cargo, git, glow, just, make, man, nix, npm, zellij] | each {|tool| ls ('~/.config/nushell/plugins/nu_scripts/' + $tool) | each {|$file| source $file.name}}
+
+source ~/.config/nushell/plugins/nu_scripts/custom-completions/cargo/cargo-completions.nu
+source ~/.config/nushell/plugins/nu_scripts/custom-completions/git/git-completions.nu
+source ~/.config/nushell/plugins/nu_scripts/custom-completions/just/just-completions.nu
+source ~/.config/nushell/plugins/nu_scripts/custom-completions/make/make-completions.nu
+source ~/.config/nushell/plugins/nu_scripts/custom-completions/man/man-completions.nu
+source ~/.config/nushell/plugins/nu_scripts/custom-completions/nix/nix-completions.nu
+source ~/.config/nushell/plugins/nu_scripts/custom-completions/npm/npm-completions.nu
+source ~/.config/nushell/plugins/nu_scripts/custom-completions/zellij/zellij-completions.nu
