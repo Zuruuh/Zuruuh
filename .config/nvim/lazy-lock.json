@@ -32,11 +32,11 @@
   "promise-async": { "branch": "main", "commit": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "9bc8237565ded606e6c366a71c64c0af25cd7a50" },
   "telescope-live-grep-args.nvim": { "branch": "master", "commit": "851c0997d55601f2afd7290db0f90dc364e29f58" },
-  "telescope.nvim": { "branch": "master", "commit": "20a37e43bb43c74c6091f9fea6551af0964ad45a" },
+  "telescope.nvim": { "branch": "master", "commit": "18f10f28007cb8b4d50324217349c3f568684be2" },
   "text-case.nvim": { "branch": "main", "commit": "0a8ef564493a850b7646c57d55682e2ba19e50ad" },
   "tree-sitter-nu": { "branch": "main", "commit": "786689b0562b9799ce53e824cb45a1a2a04dc673" },
   "undotree": { "branch": "master", "commit": "0e11ba7325efbbb3f3bebe06213afa3e7ec75131" },
-  "vim-fugitive": { "branch": "master", "commit": "d4914b361b081c4d983e924f1dd337c143152833" },
+  "vim-fugitive": { "branch": "master", "commit": "ba0b3163ca5cdcecf90c5a22dc6bffb332385b73" },
   "vim-just": { "branch": "main", "commit": "927b41825b9cd07a40fc15b4c68635c4b36fa923" },
   "vim-wakatime": { "branch": "master", "commit": "0d2efa2daff34b27b0d227d4c3b136811c93db93" }
 }
