@@ -777,9 +777,9 @@ source ~/.config/nushell/plugins/zoxide.nu
 const debian_config = '~/.config/nushell/os/debian.nu'
 const darwin_config = '~/.config/nushell/os/darwin.nu'
 if $nu.os-info.name == 'linux' {
-    source $debian_config
+    use $debian_config
 } else if $nu.os-info.name == 'macos' {
-    source $darwin_config
+    use $darwin_config
 }
 
 ## Load nu_scripts completions

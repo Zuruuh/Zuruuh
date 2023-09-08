@@ -99,13 +99,14 @@ def phpcs [] {
     git push
 }
 
+echo 'test'
 def usephp [version: float] {
     if (which php | is-empty) {
-        brew link php@$version
+        brew link ('php@' + ($version | to text))
     } else {
-        let current_php_version = (php -r echo PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;)
-        brew unlink php@$current_php_version
-        brew link --overwrite --force php@$version
+        let current_php_version = (php -r "echo PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;")
+        brew unlink ('php@' + ($current_php_version | to text))
+        brew link --overwrite --force ('php@' + ($version | to text))
     }
 }
 
