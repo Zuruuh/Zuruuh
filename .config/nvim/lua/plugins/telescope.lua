@@ -25,7 +25,7 @@ return {
 		telescope.load_extension("fzf")
 
 		vim.keymap.set("n", "<leader>pf", builtin.git_files, {})
-		vim.keymap.set("n", "<C-p>", function()
+		vim.keymap.set("n", "<leader>pp", function()
 			builtin.find_files({ hidden = true })
 		end, {})
 		vim.keymap.set("n", "<leader>fg", telescope.extensions.live_grep_args.live_grep_args, {})
