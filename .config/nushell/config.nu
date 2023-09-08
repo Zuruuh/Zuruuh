@@ -774,14 +774,6 @@ $env.config = {
 use ~/.config/nushell/plugins/starship.nu
 source ~/.config/nushell/plugins/zoxide.nu
 
-const debian_config = '~/.config/nushell/os/debian.nu'
-const darwin_config = '~/.config/nushell/os/darwin.nu'
-if $nu.os-info.name == 'linux' {
-    use $debian_config
-} else if $nu.os-info.name == 'macos' {
-    use $darwin_config
-}
-
 ## Load nu_scripts completions
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/git/git-completions.nu

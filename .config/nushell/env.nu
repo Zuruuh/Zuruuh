@@ -78,14 +78,15 @@ $env.NU_PLUGIN_DIRS = [
     # ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
-# To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-# $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-
 #=================================================================================#
 
-## Doing this now to ensure all clis installed with homebrew are loaded on mac
-if $nu.os-info.name == 'macos' {
-    $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin/')
+if $nu.os-info.name == 'linux' {
+    source-env ~/.config/nushell/os/debian/env.nu
+    source ./os/debian/config.nu
+    export use debian *
+} else if $nu.os-info.name == 'macos' {
+    source-env ./os/darwin/env.nu
+    use ./os/darwin/config.nu *
 }
 
 # Cargo
