@@ -25,7 +25,7 @@ return {
 				"javascript",
 				"json",
 				"json5",
-				"just",
+				-- "just",
 				"lua",
 				"make",
 				"markdown",
