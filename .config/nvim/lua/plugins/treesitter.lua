@@ -9,26 +9,53 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
+				"astro",
+				"bash",
 				"c",
+				"cmake",
+				"cpp",
+				"css",
+				"diff",
+				"dockerfile",
+				"git_config",
+				"gitattributes",
+				"gitcommit",
+				"gitignore",
+				"html",
 				"javascript",
-				"typescript",
-				"rust",
+				"json",
+				"json5",
+				"just",
 				"lua",
+				"make",
+				"markdown",
+				"markdown_inline",
+				"nix",
+				"nu",
+				"ocaml",
+				"php",
+				"python",
+				"requirements",
+				"query",
+				"rust",
+				"scss",
+				"sql",
+				"toml",
+				"tsx",
+				"twig",
+				"typescript",
 				"vim",
 				"vimdoc",
-				"query",
+				"xml",
+				"yaml",
 			},
 
-			sync_install = false,
-
+			sync_install = true,
 			auto_install = true,
 
 			highlight = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
-			},
-			rainbow = {
-				enable = true,
 			},
 		})
 
@@ -53,6 +80,15 @@ return {
 				-- use_makefile = true -- this may be necessary on MacOS (try if you see compiler errors)
 			},
 			maintainers = { "@IndianBoy42" },
+		}
+
+		parsers.nu = {
+			install_info = {
+				url = "https://github.com/nushell/tree-sitter-nu",
+				files = { "src/parser.c" },
+				branch = "main",
+			},
+			filetype = "nu",
 		}
 
 		parsers.blade = {

@@ -772,6 +772,7 @@ $env.config = {
 }
 
 use ~/.cache/starship/init.nu
+source ~/.config/nushell/plugins/zoxide.nu
 
 const debian_config = '~/.config/nushell/os/debian.nu'
 const darwin_config = '~/.config/nushell/os/darwin.nu'

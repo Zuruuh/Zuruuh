@@ -127,4 +127,6 @@ $env.PAGER = 'less'
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
 
 mkdir ~/.cache/starship
+zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
+
 starship init nu | save -f ~/.cache/starship/init.nu

@@ -1,4 +1,4 @@
 return {
-	"LhKipp/nvim-nu",
-	opts = {},
+	"nushell/tree-sitter-nu",
+	config = function() end,
 }
