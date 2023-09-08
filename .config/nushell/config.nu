@@ -772,3 +772,11 @@ $env.config = {
 }
 
 use ~/.cache/starship/init.nu
+
+const debian_config = '~/.config/nushell/os/debian.nu'
+const darwin_config = '~/.config/nushell/os/darwin.nu'
+if $nu.os-info.name == 'linux' {
+    source $debian_config
+} else if $nu.os-info.name == 'darwin' {
+    source $darwin_config
+}

@@ -95,6 +95,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.GOPATH + '/bin'))
 $env.PYENV_ROOT = ($env.HOME + '/.pyenv')
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/bin'))
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/shims'))
+alias pip = python -m pip
 
 # Bun
 $env.BUN_INSTALL = ($env.HOME + '/.bun')
@@ -115,6 +116,9 @@ if not (which fnm | is-empty) {
         $"($env.FNM_MULTISHELL_PATH)/bin"
     ])
 }
+
+# General stuff
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/bin'))
 
 # random stuff
 $env.COLORTERM = 'truecolor'
