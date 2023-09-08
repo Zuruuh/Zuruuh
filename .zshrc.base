@@ -6,45 +6,7 @@ plug "zap-zsh/supercharge"
 plug "romkatv/powerlevel10k"
 plug "chivalryq/git-alias"
 plug "zap-zsh/supercharge"
-plug "zsh-users/zsh-syntax-highlighting"
-plug "agkozak/zsh-z"
+# plug "zsh-users/zsh-syntax-highlighting"
+# plug "agkozak/zsh-z"
 # plug "zsh-users/zsh-history-substring-search"
 plug "Aloxaf/fzf-tab"
-
-alias ls='exa -lah --git --icons'
-alias l='ls'
-alias find='fd'
-alias ack='ambr'
-alias cat='bat'
-
-alias c='clear'
-alias zshconfig='nvim ~/.zshrc'
-alias tmuxconfig='nvim ~/.config/tmux/tmux.conf'
-alias dotfiles='nvim ~/dotfiles'
-alias rl='source ~/.zshrc'
-alias dev='cd ~/dev'
-alias nvimconfig='nvim ~/.config/nvim'
-alias docker-compose='docker compose'
-alias gs='git switch'
-alias gitconfig='nvim ~/.gitconfig'
-alias gitignore='nvim ~/.gitignore'
-alias gph='git push -u origin HEAD'
-alias gpp='gp'
-alias gsm='gcm'
-alias gpl='git pull'
-alias gsth="git stash"
-alias git_current_branch="git branch --show-current"
-alias tmuxx="tmux && exit"
-
-function mkcd() {
-    mkdir $1; cd $1;
-}
-
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-
-function -() {
-    cd -
-}

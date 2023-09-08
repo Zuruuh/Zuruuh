@@ -772,6 +772,7 @@ $env.config = {
 }
 
 use ~/.config/nushell/os/current.nu *
+use ~/.config/nushell/aliases.nu *
 
 use ~/.config/nushell/plugins/starship.nu
 source ~/.config/nushell/plugins/zoxide.nu
