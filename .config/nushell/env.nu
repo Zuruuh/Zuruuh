@@ -80,15 +80,6 @@ $env.NU_PLUGIN_DIRS = [
 
 #=================================================================================#
 
-if $nu.os-info.name == 'linux' {
-    source-env ~/.config/nushell/os/debian/env.nu
-    source ./os/debian/config.nu
-    export use debian *
-} else if $nu.os-info.name == 'macos' {
-    source-env ./os/darwin/env.nu
-    use ./os/darwin/config.nu *
-}
-
 # Cargo
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.cargo/bin'))
 
