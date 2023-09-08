@@ -1,4 +1,4 @@
-# Nushell Environment Config File
+# Nushell Environment Config Fileenv.
 #
 # version = "0.84.0"
 
@@ -83,6 +83,11 @@ $env.NU_PLUGIN_DIRS = [
 
 #=================================================================================#
 
+## Doing this now to ensure all clis installed with homebrew are loaded on mac
+if $nu.os-info.name == 'macos' {
+    $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin/')
+}
+
 # Cargo
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.cargo/bin'))
 
@@ -126,7 +131,7 @@ $env.EDITOR = 'nvim'
 $env.PAGER = 'less'
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
 
-mkdir ~/.cache/starship
+source ~/.config/nushell/plugins_installer.nu
 zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
 
-starship init nu | save -f ~/.cache/starship/init.nu
+starship init nu | save -f ~/.config/nushell/plugins/starship.nu

@@ -10,9 +10,15 @@ $env.STAFFMATCH_CORE = $env.HOME + '/dev/staffmatch-core'
 $env.STAFFMATCH_CORE_CONSOLE = $env.STAFFMATCH_CORE + '/bin/console'
 
 alias gsd = git switch development
-alias watcher = cd ~/dev/staffmatch-watcher; activemq purge; npm run start
-alias csp = rm -rf ~/dev/copy-staffmatch-core; cp -r $env.STAFFMATCH_CORE ~/dev/copy-staffmatch-core
-alias dev = cd $env.STAFFMATCH_CORE; clear
+def watcher [] {
+    cd ~/dev/staffmatch-watcher
+    activemq purge
+    npm run start
+}
+def dev [] {
+    cd $env.STAFFMATCH_CORE
+    clear
+}
 alias nginxconfig = nvim /opt/homebrew/etc/nginx/sites-enabled/staffmatch-core.conf
 alias bc = php $env.STAFFMATCH_CORE_CONSOLE
 alias bcd = bc --env=dev
