@@ -64,7 +64,8 @@ cargo binstall --verbose --no-confirm \
     stylua taplo-cli nu starship \
     bob-nvim spotify-tui bat amber fnm \
     ripgrep just git-delta fd-find mprocs \
-    trunk binstall hyperfine zoxide bacon zellij
+    trunk binstall hyperfine zoxide \
+    bacon zellij sccache exa du-dust
 
 # Node
 fnm install 18 && fnm default 18 && eval $(fnm env)
