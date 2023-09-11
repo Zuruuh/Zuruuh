@@ -4,12 +4,12 @@ export def watcher [] {
     activemq purge
     npm run start
 }
-export alias dev = cd $env.STAFFMATCH_CORE
+export alias dev = cd ($env.STAFFMATCH_CORE)
 export alias nginxconfig = nvim /opt/homebrew/etc/nginx/sites-enabled/staffmatch-core.conf
-export alias bc = php $env.STAFFMATCH_CORE_CONSOLE
+export alias bc = php ($env.STAFFMATCH_CORE_CONSOLE)
 export alias bcd = bc --env=dev
 export alias bct = bc --env=test
-export alias bb = php $env.STAFFMATCH_CORE/bin/behat
+export alias bb = php ($env.STAFFMATCH_CORE + '/bin/behat')
 
 export def bbf [] {
     echo bb (fd . features/Staffmatch --type file | fzf)| pbcopy
