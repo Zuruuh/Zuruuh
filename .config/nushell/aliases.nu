@@ -3,7 +3,6 @@ export alias c = clear
 export alias zshconfig = nvim ~/.zshrc
 export alias tmuxconfig = nvim ~/.config/tmux/tmux.conf
 export alias dotfiles = nvim ~/dotfiles
-# export alias rl = source ~/.zshrc
 export alias dev = cd ~/dev
 export alias nvimconfig = nvim ~/.config/nvim
 export alias docker-compose = docker compose
@@ -16,7 +15,7 @@ export alias gsm = gcm
 export alias gpl = git pull
 export alias gsth = git stash
 export alias git_current_branch = git branch --show-current
-export alias rl = source ~/.config/nushell/config.nu
+# export alias rl = source ~/.config/nushell/config.nu
 
 export def zellijx [] {
     zellij
