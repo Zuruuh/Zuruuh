@@ -61,18 +61,18 @@ export def logs [] {
 
 # db dumping stuff
 export def dump [dump?: string] {
-    mysqldump staffmatch -u root -pPASSWORD > $env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql'
+    mysqldump staffmatch -u root -pPASSWORD | save ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql')
 }
-export def load [dump?: string] {
-    mysql -u root staffmatch -pPASSWORD < $env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql'
+export def load [dump?: string = ''] {
+    cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql') | mysql -u root staffmatch -pPASSWORD
 }
 
 # db dumping stuff
 export def dump-test [dump?: string] {
-    mysqldump staffmatch -u root -pPASSWORD > $env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql'
+    mysqldump staffmatch -u root -pPASSWORD | save ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql')
 }
 export def load-test [dump?: string] {
-    mysql -u root staffmatch -pPASSWORD < $env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql'
+    cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql') | mysql -u root staffmatch -pPASSWORD
 }
 
 export alias dumptest = dump-test
