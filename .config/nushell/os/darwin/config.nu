@@ -64,12 +64,12 @@ export def dump [dump?: string = ''] {
     mysqldump staffmatch -u root -pPASSWORD | save -f ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql')
 }
 export def load [dump?: string = ''] {
-    cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql') | mysql -u root staffmatch -pPASSWORD
+    cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql') | mysql -u root staffmatch -pPASSWORD
 }
 
 # db dumping stuff
 export def dump-test [dump?: string = ''] {
-    mysqldump staffmatch -u root -pPASSWORD | save -f ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql')
+    mysqldump staffmatch -u root -pPASSWORD | save -f ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.tset.sql')
 }
 export def load-test [dump?: string = ''] {
     cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql') | mysql -u root staffmatch -pPASSWORD
