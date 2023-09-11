@@ -60,7 +60,7 @@ export def logs [] {
 }
 
 # db dumping stuff
-export def dump [dump?: string] {
+export def dump [dump?: string = ''] {
     mysqldump staffmatch -u root -pPASSWORD | save ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql')
 }
 export def load [dump?: string = ''] {
@@ -68,10 +68,10 @@ export def load [dump?: string = ''] {
 }
 
 # db dumping stuff
-export def dump-test [dump?: string] {
+export def dump-test [dump?: string = ''] {
     mysqldump staffmatch -u root -pPASSWORD | save ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql')
 }
-export def load-test [dump?: string] {
+export def load-test [dump?: string = ''] {
     cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql') | mysql -u root staffmatch -pPASSWORD
 }
 
