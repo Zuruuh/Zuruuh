@@ -80,6 +80,12 @@ $env.NU_PLUGIN_DIRS = [
 
 #=================================================================================#
 
+# Shared
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/bin'))
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/share/phpactor/bin'))
+
 if $nu.os-info.name == 'linux' {
     source-env ~/.config/nushell/os/debian/env.nu
 } else if $nu.os-info.name == 'macos' {
@@ -105,7 +111,7 @@ $env.BUN_INSTALL = ($env.HOME + '/.bun')
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.BUN_INSTALL + '/bin'))
 
 # PHP
-$env.COMPOSER_HOME = $env.HOME + '/composer'
+$env.COMPOSER_HOME = $env.HOME + '/.local/share/composer'
 $env.APP_ENV = dev
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/share/composer/bin'))
 
@@ -119,9 +125,6 @@ if not (which fnm | is-empty) {
         $"($env.FNM_MULTISHELL_PATH)/bin"
     ])
 }
-
-# General stuff
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/bin'))
 
 # random stuff
 $env.COLORTERM = 'truecolor'

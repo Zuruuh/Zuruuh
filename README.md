@@ -88,10 +88,11 @@ bob install nightly; bob use nightly
 ## Installation
 
 ```bash
-# Install tmux plugins
-# Once inside tmux, run CTRL+S+I
-# tmux
-
 # Plugins should auto-install with lazy.nvim
 nvim .
+
+# requires php
+git clone git@github.com:phpactor/phpactor ~/.local/share/phpactor
+cd ~/.local/share/phpactor
+composer install # (composer ^2 & php ^8.1)
 ```
