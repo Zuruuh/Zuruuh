@@ -4,10 +4,7 @@ export def watcher [] {
     activemq purge
     npm run start
 }
-export def dev [] {
-    cd $env.STAFFMATCH_CORE
-    clear
-}
+export alias dev = cd $env.STAFFMATCH_CORE
 export alias nginxconfig = nvim /opt/homebrew/etc/nginx/sites-enabled/staffmatch-core.conf
 export alias bc = php $env.STAFFMATCH_CORE_CONSOLE
 export alias bcd = bc --env=dev
