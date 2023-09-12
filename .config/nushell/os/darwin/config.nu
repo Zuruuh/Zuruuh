@@ -12,8 +12,9 @@ export alias bct = bc --env=test
 export alias bb = php ($env.STAFFMATCH_CORE + '/bin/behat')
 
 export def bbf [] {
-    echo bb (fd . features/Staffmatch --type file | fzf)| pbcopy
-    bb (fd . features/Staffmatch --type file | fzf)
+    let test_file = (fd . features/Staffmatch --type file | fzf)
+    echo ('bb ' + $test_file) | pbcopy
+    bb ($test_file)
 }
 
 export alias dsu = bcd d:s:u --force --dump-sql
