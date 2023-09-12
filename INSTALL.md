@@ -2,7 +2,7 @@
 
 my personnal dotfiles config, featuring:
 
-- Tmux
+- Zellij
 - Neovim
 - nushell
 - starship prompt
