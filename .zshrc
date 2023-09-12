@@ -1,3 +1,5 @@
+## TODO: deprecate/delete
+
 # ZAP Config
 # [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 # plug "zsh-users/zsh-autosuggestions"
