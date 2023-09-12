@@ -20,7 +20,6 @@ cd ~/dotfiles
 stuff that need to be installed differently depending on the os (bcz no easy way to install):
 
 - git
-- tmux
 - gnu stow
 - curl
 - go
@@ -31,7 +30,7 @@ stuff that need to be installed differently depending on the os (bcz no easy way
 ```bash
 sudo apt update
 # we're going to need some deps after so we download them now
-sudo apt install -y git tmux stow curl wget \
+sudo apt install -y git stow curl wget \
     build-essential libssl-dev pkg-config cmake
 curl https://dl.google.com/go/go1.21.1.linux-amd64.tar.gz -O
 tar -xvf go1.21.1.linux-amd64.tar.gz
@@ -80,9 +79,6 @@ go install mvdan.cc/sh/v3/cmd/shfmt@latest \
 
 # Neovim
 bob install nightly; bob use nightly
-
-# Tmux
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ## Installation
