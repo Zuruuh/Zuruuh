@@ -15,7 +15,9 @@ export alias gsm = gcm
 export alias gpl = git pull
 export alias gsth = git stash
 export alias git_current_branch = git branch --show-current
-# export alias rl = source ~/.config/nushell/config.nu
+export def-env rl [] {
+    $"source '($nu.config-path)'"
+}
 
 export def zellijx [] {
     zellij

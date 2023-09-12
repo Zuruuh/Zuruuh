@@ -4,17 +4,22 @@ export def watcher [] {
     activemq purge
     npm run start
 }
-export alias dev = cd ($env.STAFFMATCH_CORE)
+export def-env dev [] {
+    cd $env.STAFFMATCH_CORE
+}
+
 export alias nginxconfig = nvim /opt/homebrew/etc/nginx/sites-enabled/staffmatch-core.conf
 export alias bc = php ($env.STAFFMATCH_CORE_CONSOLE)
 export alias bcd = bc --env=dev
 export alias bct = bc --env=test
 export alias bb = php ($env.STAFFMATCH_CORE + '/bin/behat')
 
-export def bbf [] {
+export def bbf [verbose: bool = true] {
     let test_file = (fd . features/Staffmatch --type file | fzf)
-    echo ('bb ' + $test_file) | pbcopy
-    bb ($test_file)
+    let verbosity = if $verbose == true { '-vvv ' } else { '' }
+
+    echo ('bb ' + $verbosity + $test_file) | pbcopy
+    bb ($verbosity) ($test_file)
 }
 
 export alias dsu = bcd d:s:u --force --dump-sql
@@ -43,7 +48,7 @@ export def rtdb [] {
     dst
 }
 
-export def perso [] {
+export def-env perso [] {
     cd ~/dev/perso
     clear
 }
