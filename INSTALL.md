@@ -11,7 +11,7 @@ my personnal dotfiles config, featuring:
 get started with
 
 ```bash
-git clone git@github.com:Zuruuh/dotfiles.git ~/dotfiles
+git clone git@github.com:Zuruuh/Zuruuh.git ~/dotfiles
 cd ~/dotfiles
 ```
 
