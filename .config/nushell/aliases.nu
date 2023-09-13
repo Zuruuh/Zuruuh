@@ -24,7 +24,7 @@ export def zellijx [] {
     exit
 }
 
-export def mkcd [dir: string] {
+export def-env mkcd [dir: string] {
     mkdir $dir
     cd $dir
 }
