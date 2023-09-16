@@ -103,7 +103,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.GOPATH + '/bin'))
 # PyEnv
 $env.PYENV_ROOT = ($env.HOME + '/.pyenv')
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/bin'))
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/shims'))
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/versions/' + (pyenv version-name) + '/bin'))
 alias pip = python -m pip
 
 # Bun
