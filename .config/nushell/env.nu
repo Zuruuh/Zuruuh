@@ -126,6 +126,9 @@ if not (which fnm | is-empty) {
     ])
 }
 
+# Pulumi
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.pulumi/bin'))
+
 # random stuff
 $env.COLORTERM = 'truecolor'
 $env.EDITOR = 'nvim'
