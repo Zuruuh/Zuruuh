@@ -1,1 +1,13 @@
 command_timeout = 500
+
+[aws]
+disabled = true
+
+[nodejs]
+version_format = "v${major}"
+
+[php]
+symbol = ' '
+
+[sudo]
+disabled = false
