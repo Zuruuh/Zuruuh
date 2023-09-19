@@ -771,8 +771,6 @@ $env.config = {
     ]
 }
 
-ulimit -n 4096
-
 use ~/.config/nushell/os/current.nu *
 use ~/.config/nushell/aliases.nu *
 
