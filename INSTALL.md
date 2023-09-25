@@ -70,6 +70,9 @@ cargo binstall --verbose --no-confirm \
 fnm install 18 && fnm default 18 && eval $(fnm env)
 npm i -g eslint_d eslint @fsouza/prettierd prettier pnpm neovim npm
 
+# Pyenv
+curl https://pyenv.run | bash
+
 # Enter nushell to continue installation
 nu
 
