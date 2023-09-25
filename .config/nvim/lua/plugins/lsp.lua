@@ -19,8 +19,16 @@ return {
 	config = function()
 		local lsp = require("lsp-zero").preset("recommended")
 		local lspconfig = require("lspconfig")
+		local cmp = require("cmp")
 		require("mason").setup()
 		require("mason-lspconfig").setup()
+
+		cmp.setup({
+			window = {
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
+			},
+		})
 
 		vim.g.phpactorPhpBin = "/usr/local/bin/php8.2"
 
@@ -102,7 +110,9 @@ return {
 			local opts = { buffer = bufnr, remap = false }
 
 			vim.diagnostic.config({
+				virtual_text = { prefix = "■ " },
 				float = {
+					border = "rounded",
 					format = function(diagnostic)
 						if diagnostic.source == "eslint" then
 							return string.format("%s [%s]", diagnostic.message, diagnostic.user_data.lsp.code)
