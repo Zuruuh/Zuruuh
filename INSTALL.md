@@ -45,7 +45,7 @@ and now just brain-dead copy paste everything below
 
 ```bash
 # Enables custom aliases & snippets depending on host OS
-ln -s ./config/nushell/os/<current_os>/config.nu ./config/nushell/os/current.nu
+ln -s ./.config/nushell/os/<current_os>/config.nu ./.config/nushell/os/current.nu
 
 # Symlink all config files
 stow .
