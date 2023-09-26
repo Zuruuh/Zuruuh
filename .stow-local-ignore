@@ -1,4 +1,5 @@
-\.git
-README.md
-.gitignore
-INSTALL.md
+/\.git
+/etc
+/README.md
+/.gitignore
+/INSTALL.md
