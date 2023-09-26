@@ -30,7 +30,7 @@ stuff that need to be installed differently depending on the os (bcz no easy way
 ```bash
 sudo apt update
 # we're going to need some deps after so we download them now
-sudo apt install -y git stow curl wget \
+sudo apt install -y git stow curl wget unzip \
     build-essential libssl-dev pkg-config cmake
 curl https://dl.google.com/go/go1.21.1.linux-amd64.tar.gz -O
 tar -xvf go1.21.1.linux-amd64.tar.gz
@@ -68,10 +68,12 @@ cargo binstall --verbose --no-confirm \
 
 # Node
 fnm install 18 && fnm default 18 && eval $(fnm env)
-npm i -g eslint_d eslint @fsouza/prettierd prettier pnpm neovim npm
+npm i -g eslint_d eslint @fsouza/prettierd prettier pnpm neovim npm tree-sitter-cli
 
 # Pyenv
 curl https://pyenv.run | bash
+pyenv install 3.11; pyenv global 3.11
+python -m pip install neovim
 
 # Enter nushell to continue installation
 nu
