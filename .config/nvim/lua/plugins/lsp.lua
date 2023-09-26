@@ -44,12 +44,9 @@ return {
 			"html",
 			"jsonls",
 			"lua_ls",
-			"luacheck",
 			"rust_analyzer",
-			"shellcheck",
 			"sqlls",
 			"tailwindcss",
-			"twigcs",
 			"tsserver",
 			"yamlls",
 		})
