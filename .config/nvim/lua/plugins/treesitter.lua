@@ -7,10 +7,41 @@ return {
 		"windwp/nvim-ts-autotag",
 	},
 	config = function()
+		local parsers = require("nvim-treesitter.parsers").get_parser_configs()
+
+		parsers.just = {
+			install_info = {
+				url = "https://github.com/IndianBoy42/tree-sitter-just", -- local path or git repo
+				files = { "src/parser.c", "src/scanner.cc" },
+				branch = "main",
+				use_makefile = true,
+			},
+			maintainers = { "@IndianBoy42" },
+		}
+
+		parsers.nu = {
+			install_info = {
+				url = "https://github.com/nushell/tree-sitter-nu",
+				files = { "src/parser.c" },
+				branch = "main",
+			},
+			filetype = "nu",
+		}
+
+		parsers.blade = {
+			install_info = {
+				url = "https://github.com/EmranMR/tree-sitter-blade",
+				files = { "src/parser.c" },
+				branch = "main",
+			},
+			filetype = "blade",
+		}
+
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"astro",
 				"bash",
+				"blade",
 				"c",
 				"cmake",
 				"cpp",
@@ -25,7 +56,7 @@ return {
 				"javascript",
 				"json",
 				"json5",
-				-- "just",
+				"just",
 				"lua",
 				"make",
 				"markdown",
@@ -69,35 +100,5 @@ return {
 				enable = true,
 			},
 		})
-
-		local parsers = require("nvim-treesitter.parsers").get_parser_configs()
-
-		parsers.just = {
-			install_info = {
-				url = "https://github.com/IndianBoy42/tree-sitter-just", -- local path or git repo
-				files = { "src/parser.c", "src/scanner.cc" },
-				branch = "main",
-				-- use_makefile = true -- this may be necessary on MacOS (try if you see compiler errors)
-			},
-			maintainers = { "@IndianBoy42" },
-		}
-
-		parsers.nu = {
-			install_info = {
-				url = "https://github.com/nushell/tree-sitter-nu",
-				files = { "src/parser.c" },
-				branch = "main",
-			},
-			filetype = "nu",
-		}
-
-		parsers.blade = {
-			install_info = {
-				url = "https://github.com/EmranMR/tree-sitter-blade",
-				files = { "src/parser.c" },
-				branch = "main",
-			},
-			filetype = "blade",
-		}
 	end,
 }
