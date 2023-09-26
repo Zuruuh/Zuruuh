@@ -33,10 +33,25 @@ return {
 		vim.g.phpactorPhpBin = "/usr/local/bin/php8.2"
 
 		lsp.ensure_installed({
-			"tsserver",
+			"astro",
+			"bashls",
+			"cssls",
+			"cssmodules_ls",
+			"cucumber_language_server",
+			"docker_compose_language_service",
+			"dockerls",
 			"eslint",
+			"html",
+			"jsonls",
 			"lua_ls",
+			"luacheck",
 			"rust_analyzer",
+			"shellcheck",
+			"sqlls",
+			"tailwindcss",
+			"twigcs",
+			"tsserver",
+			"yamlls",
 		})
 
 		lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
@@ -77,7 +92,6 @@ return {
 
 		lspconfig.phpactor.setup({})
 
-		local cmp = require("cmp")
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		local cmp_mappings = lsp.defaults.cmp_mappings({
 			["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
@@ -160,7 +174,5 @@ return {
 		end)
 
 		lsp.setup()
-
-		vim.keymap.set("n", "<leader>lr", "<Cmd>LspRestart<CR>")
 	end,
 }
