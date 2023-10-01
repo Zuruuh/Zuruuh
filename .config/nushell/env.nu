@@ -134,6 +134,7 @@ $env.COLORTERM = 'truecolor'
 $env.EDITOR = 'nvim'
 $env.PAGER = 'less'
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
+alias exa = eza
 
 source ~/.config/nushell/plugins_installer.nu
 zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
