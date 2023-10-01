@@ -23,10 +23,3 @@
 
 [init]
     defaultBranch = main
-
-[difftool "sourcetree"]
-	cmd = "delta "
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Users/YZiadi/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
