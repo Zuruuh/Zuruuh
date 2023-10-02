@@ -1,6 +1,5 @@
 {
-	"telemetry": {
-		"enabled": false,
-		"anonymousId": "655985a5a3c6ac9af3829a571f65f56a0834dfd71f4bea1b74a2017ae4f1a3f6"
-	}
+  "telemetry": {
+    "enabled": false
+  }
 }
