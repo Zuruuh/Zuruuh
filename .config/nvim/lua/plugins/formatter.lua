@@ -31,7 +31,7 @@ return {
 				markdown = prettier(),
 				sh = require("formatter.filetypes.sh").shfmt,
 				toml = require("formatter.filetypes.toml").taplo,
-				yaml = prettier(),
+				-- yaml = prettier(),
 				rust = require("formatter.filetypes.rust").rustfmt,
 				php = {
 					-- require("formatter.filetypes.php").phpcbf,
