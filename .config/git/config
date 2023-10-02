@@ -2,7 +2,7 @@
 	name = Zuruuh
 	email = ziadi.mail.pro@gmail.com
 [core]
-	editor = nvim
+    editor = nvim
     pager = delta
 
 [interactive]
