@@ -131,7 +131,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.pulumi/
 
 # random stuff
 $env.COLORTERM = 'truecolor'
-$env.EDITOR = 'nvim'
+$env.EDITOR = (which nvim | get path.0)
 $env.PAGER = 'less'
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
 alias exa = eza
