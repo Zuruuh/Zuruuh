@@ -2,3 +2,4 @@
 /.config/nushell/history.*
 # should be a symlink to ./os/*/config.nu
 /.config/nushell/os/current.nu
+/.config/gh/hosts.yml
