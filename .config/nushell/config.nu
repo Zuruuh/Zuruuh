@@ -774,8 +774,10 @@ $env.config = {
 use ~/.config/nushell/os/current.nu *
 use ~/.config/nushell/aliases.nu *
 
-use ~/.config/nushell/plugins/starship.nu
+source ~/.config/nushell/plugins/nu_scripts/aliases/git/git-aliases.nu
+source ~/.config/nushell/plugins/nu_scripts/aliases/eza/eza-aliases.nu
 source ~/.config/nushell/plugins/zoxide.nu
+use ~/.config/nushell/plugins/starship.nu
 
 ## Load nu_scripts completions
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/cargo/cargo-completions.nu
