@@ -23,3 +23,6 @@
 
 [init]
     defaultBranch = main
+
+[safe]
+	directory = /mnt/d/dev
