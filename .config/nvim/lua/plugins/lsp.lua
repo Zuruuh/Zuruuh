@@ -37,7 +37,6 @@ return {
 			"bashls",
 			"cssls",
 			"cssmodules_ls",
-			"cucumber_language_server",
 			"docker_compose_language_service",
 			"dockerls",
 			"eslint",
