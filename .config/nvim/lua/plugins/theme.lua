@@ -5,7 +5,7 @@ return {
 		local theme = require("onedark")
 
 		local style = "dark"
-		if hour >= 8 and hour <= 18 then
+		if hour >= 8 and hour <= 17 then
 			style = "light"
 			vim.o.background = "light"
 		end
