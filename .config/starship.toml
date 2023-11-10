@@ -12,5 +12,5 @@ symbol = ' '
 [sudo]
 disabled = false
 
-[docker]
+[docker_context]
 disabled = true
