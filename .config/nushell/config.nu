@@ -778,7 +778,6 @@ use ~/.config/nushell/plugins/starship.nu
 ## Load nu_scripts completions
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/git/git-completions.nu
-source ~/.config/nushell/plugins/nu_scripts/custom-completions/just/just-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/make/make-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/man/man-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/nix/nix-completions.nu
