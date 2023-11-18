@@ -88,6 +88,24 @@ return {
 
 		lspconfig.phpactor.setup({})
 
+		lspconfig.rust_analyzer.setup({
+			settings = {
+				["rust-analyzer"] = {
+					cargo = {
+						allFeatures = true,
+					},
+					procMacro = {
+						ignored = {
+							leptos_macro = {
+								"component",
+								"server",
+							},
+						},
+					},
+				},
+			},
+		})
+
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		local cmp_mappings = lsp.defaults.cmp_mappings({
 			["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
