@@ -94,14 +94,14 @@ return {
 					cargo = {
 						allFeatures = true,
 					},
-					procMacro = {
-						ignored = {
-							leptos_macro = {
-								"component",
-								"server",
-							},
-						},
-					},
+					-- procMacro = {
+					-- ignored = {
+					-- leptos_macro = {
+					-- "component",
+					-- "server",
+					-- },
+					-- },
+					-- },
 				},
 			},
 		})
