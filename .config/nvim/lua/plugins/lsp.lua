@@ -30,7 +30,13 @@ return {
 			},
 		})
 
-		vim.g.phpactorPhpBin = "/usr/local/bin/php8.2"
+		vim.api.nvim_create_autocmd("BufRead", {
+			group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
+			pattern = "Cargo.toml",
+			callback = function()
+				cmp.setup.buffer({ sources = { { name = "crates" } } })
+			end,
+		})
 
 		lsp.ensure_installed({
 			"astro",
@@ -94,14 +100,14 @@ return {
 					cargo = {
 						allFeatures = true,
 					},
-					-- procMacro = {
-					-- ignored = {
-					-- leptos_macro = {
-					-- "component",
-					-- "server",
-					-- },
-					-- },
-					-- },
+					procMacro = {
+						ignored = {
+							leptos_macro = {
+								"component",
+								"server",
+							},
+						},
+					},
 				},
 			},
 		})
