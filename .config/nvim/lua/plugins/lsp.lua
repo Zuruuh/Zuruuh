@@ -4,14 +4,8 @@ return {
 	lazy = false,
 	dependencies = {
 		{ "neovim/nvim-lspconfig" },
-		{
-			"williamboman/mason.nvim",
-			build = function()
-				pcall(vim.cmd, "MasonUpdate")
-			end,
-		},
+		{ "williamboman/mason.nvim" },
 		{ "williamboman/mason-lspconfig.nvim" },
-
 		{ "hrsh7th/nvim-cmp" },
 		{ "hrsh7th/cmp-nvim-lsp" },
 		{ "L3MON4D3/LuaSnip" },
@@ -92,7 +86,9 @@ return {
 			},
 		})
 
-		lspconfig.phpactor.setup({})
+		lspconfig.phpactor.setup({
+			init_options = {},
+		})
 
 		lspconfig.rust_analyzer.setup({
 			settings = {
