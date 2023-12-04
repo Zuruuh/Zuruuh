@@ -14,7 +14,7 @@ export alias bcd = bc --env=dev
 export alias bct = bc --env=test
 export alias bb = php ($env.STAFFMATCH_CORE + '/bin/behat')
 
-export def bbf [verbose: bool = true] {
+export def bbf [--verbose (-v): bool = true] {
     let test_file = (fd . features/Staffmatch --type file | fzf)
     let verbosity = if $verbose == true { '-vvv ' } else { '' }
 
@@ -65,20 +65,25 @@ export def logs [] {
     tail -f var/logs/dev.log | grep app\.
 }
 
+const MYSQL_FLAGS = "--user root --host localhost --port 3306 --protocol tcp"
+
+alias _mysql = mysql --user root --database staffmatch --host localhost --port 3306 --protocol tcp
+alias _mysqldump = mysqldump --user root --database staffmatch --host localhost --port 3306 --protocol tcp
+
 # db dumping stuff
 export def dump [dump?: string = ''] {
-    mysqldump staffmatch -u root -pPASSWORD | save -f ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql')
+    _mysqldump staffmatch | save -f ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql')
 }
 export def load [dump?: string = ''] {
-    cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql') | mysql -u root staffmatch -pPASSWORD
+    cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.sql') | _mysql
 }
 
 # db dumping stuff
 export def dump-test [dump?: string = ''] {
-    mysqldump staffmatch -u root -pPASSWORD | save -f ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.tset.sql')
+    _mysqldump staffmatch | save -f ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.tset.sql')
 }
 export def load-test [dump?: string = ''] {
-    cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql') | mysql -u root staffmatch -pPASSWORD
+    cat ($env.STAFFMATCH_CORE + '/.ignored/dumps/' + $dump + '.test.sql') | _mysql
 }
 
 export alias dumptest = dump-test

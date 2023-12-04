@@ -5,5 +5,5 @@ $env.SDKROOT = '/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX
 $env.MACOSX_DEPLOYMENT_TARGET = '13.4'
 $env.PYTHON_CONFIGURE_OPTS = '--enable-framework'
 
-$env.STAFFMATCH_CORE = $env.HOME + '/dev/staffmatch-core'
+$env.STAFFMATCH_CORE = $env.HOME + '/dev/staffmatch/staffmatch-core'
 $env.STAFFMATCH_CORE_CONSOLE = $env.STAFFMATCH_CORE + '/bin/console'
