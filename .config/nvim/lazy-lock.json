@@ -32,6 +32,5 @@
   "text-case.nvim": { "branch": "main", "commit": "59dcb71ee9920b888d91c3e20ab20f4b3f667449" },
   "undotree": { "branch": "master", "commit": "36ff7abb6b60980338344982ad4cdf03f7961ecd" },
   "vim-fugitive": { "branch": "master", "commit": "46eaf8918b347906789df296143117774e827616" },
-  "vim-just": { "branch": "main", "commit": "ee884dc7d45251d92f5972c4556c12fc101419c0" },
-  "vim-wakatime": { "branch": "master", "commit": "8c8856327815a077cbebeba8c7456312a3d2c39c" }
+  "vim-just": { "branch": "main", "commit": "ee884dc7d45251d92f5972c4556c12fc101419c0" }
 }
