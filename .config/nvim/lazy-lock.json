@@ -18,7 +18,7 @@
   "nvim-comment": { "branch": "main", "commit": "e9ac16ab056695cad6461173693069ec070d2b23" },
   "nvim-lspconfig": { "branch": "master", "commit": "bd405e45c5fb122c16af8f87fa2dd7ab1981b243" },
   "nvim-tree.lua": { "branch": "master", "commit": "141c0f97c35f274031294267808ada59bb5fb08e" },
-  "nvim-treesitter": { "branch": "master", "commit": "b6b9ca448b7f236e2e60f8393a729902511f9db9" },
+  "nvim-treesitter": { "branch": "master", "commit": "78d75bce03f218ee30aedb6e24e3ec1189a3e9ff" },
   "nvim-treesitter-context": { "branch": "master", "commit": "cfa8ee19ac9bae9b7fb2958eabe2b45b70c56ccb" },
   "nvim-ts-autotag": { "branch": "main", "commit": "8515e48a277a2f4947d91004d9aa92c29fdc5e18" },
   "nvim-ufo": { "branch": "main", "commit": "9fa77fb7e4365a053a5303b773aaf5eaf806d1f4" },
@@ -32,5 +32,5 @@
   "text-case.nvim": { "branch": "main", "commit": "59dcb71ee9920b888d91c3e20ab20f4b3f667449" },
   "undotree": { "branch": "master", "commit": "36ff7abb6b60980338344982ad4cdf03f7961ecd" },
   "vim-fugitive": { "branch": "master", "commit": "46eaf8918b347906789df296143117774e827616" },
-  "vim-just": { "branch": "main", "commit": "ee884dc7d45251d92f5972c4556c12fc101419c0" }
+  "vim-just": { "branch": "main", "commit": "a9761618b04ee1bf22005661cc8f598398d7b8d9" }
 }
