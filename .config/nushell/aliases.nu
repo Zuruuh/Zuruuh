@@ -71,13 +71,6 @@ export def load-test [dump?: string = ''] {
 export alias dumptest = dump-test
 export alias loadtest = load-test
 
-export def phpcs [] {
-    make EXEC_PHP='' phpcbf
-    git add .
-    git commit -m fix cs
-    git push
-}
-
 export alias ddd = bcd d:d:d --force --if-exists
 export alias dddt = bct d:d:d --force --if-exists
 export alias ddc = bcd d:d:c --if-not-exists
