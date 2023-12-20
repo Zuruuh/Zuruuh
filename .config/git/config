@@ -26,3 +26,6 @@
 
 [safe]
 	directory = /mnt/d/dev
+
+[alias]
+    s = switch
