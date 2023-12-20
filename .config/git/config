@@ -1,6 +1,7 @@
 [user]
 	name = Zuruuh
-	email = ziadi.mail.pro@gmail.com
+	email = zuruh.dev@proton.me
+
 [core]
     editor = nvim
     pager = delta
