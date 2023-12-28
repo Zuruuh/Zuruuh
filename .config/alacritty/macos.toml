@@ -1,15 +1,9 @@
+import = ["~/.config/alacritty/base.toml"]
+
 # working_directory = "~/dev" # doesn't work sadly
 
 [shell]
 program = "/usr/local/bin/zellij"
 
-[window]
-startup_mode = "Maximized"
-dynamic_title = false
-
-[font]
-size = 16
-
 [font.normal]
 family = "MonaspiceNe Nerd Font Mono"
-style = "Regular"
