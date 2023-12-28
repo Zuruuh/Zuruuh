@@ -5,5 +5,8 @@ import = ["~/.config/alacritty/base.toml"]
 [shell]
 program = "/usr/local/bin/zellij"
 
+[font]
+size = 16
+
 [font.normal]
 family = "MonaspiceNe Nerd Font Mono"

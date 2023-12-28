@@ -13,5 +13,8 @@ args = [
   "compact",
 ]
 
+[font]
+size = 12
+
 [font.normal]
 family = "MonaspiceNe Nerd Font"
