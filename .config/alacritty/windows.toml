@@ -9,8 +9,6 @@ args = [
   "zuruh",
   "--",
   "/home/zuruh/.cargo/bin/zellij",
-  "-l",
-  "compact",
 ]
 
 [font]
