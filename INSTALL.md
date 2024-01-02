@@ -31,7 +31,7 @@ stuff that need to be installed differently depending on the os (bcz no easy way
 sudo apt update
 # we're going to need some deps after so we download them now
 sudo apt install -y git stow curl wget unzip \
-    build-essential libssl-dev pkg-config cmake
+    build-essential libssl-dev pkg-config cmake fzf
 curl https://dl.google.com/go/go1.21.1.linux-amd64.tar.gz -O
 tar -xvf go1.21.1.linux-amd64.tar.gz
 sudo mv go /usr/local/
@@ -64,7 +64,8 @@ cargo binstall --verbose --no-confirm \
     bob-nvim spotify-tui bat amber fnm \
     ripgrep just git-delta fd-find mprocs \
     trunk binstall hyperfine zoxide \
-    bacon zellij sccache eza du-dust
+    bacon zellij sccache eza du-dust topgrade \
+    skim tokei xh xcp cargo-update
 
 # Node
 fnm install 18 && fnm default 18 && eval $(fnm env)
