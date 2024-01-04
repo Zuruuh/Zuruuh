@@ -31,7 +31,8 @@ stuff that need to be installed differently depending on the os (bcz no easy way
 sudo apt update
 # we're going to need some deps after so we download them now
 sudo apt install -y git stow curl wget unzip \
-    build-essential libssl-dev pkg-config cmake fzf
+    build-essential libssl-dev pkg-config \
+    cmake fzf zstd
 curl https://dl.google.com/go/go1.21.1.linux-amd64.tar.gz -O
 tar -xvf go1.21.1.linux-amd64.tar.gz
 sudo mv go /usr/local/
@@ -62,9 +63,9 @@ curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-
 cargo binstall --verbose --no-confirm \
     stylua taplo-cli nu starship \
     bob-nvim spotify-tui bat amber fnm \
-    ripgrep just git-delta fd-find mprocs \
+    ripgrep just git-delta fd-find \
     trunk binstall hyperfine zoxide \
-    bacon zellij sccache eza du-dust topgrade \
+    zellij sccache eza du-dust topgrade \
     skim tokei xh xcp cargo-update
 
 # Node
