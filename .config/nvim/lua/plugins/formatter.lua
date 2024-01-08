@@ -1,3 +1,5 @@
+-- TODO: replace with conform.nvim
+
 local eslint = function()
 	return require("formatter.defaults").eslint_d
 end
@@ -45,3 +47,26 @@ return {
 		})
 	end,
 }
+
+-- Above is old config using mhartington/formatter.nvim
+--
+-- local biome = { "biome", "eslint_d", "eslint", "prettierd", "prettier" }
+--
+-- return {
+-- 	"stevearc/conform.nvim",
+-- 	opts = {
+-- 		formatters_by_ft = {
+-- 			lua = { "stylua" },
+-- 			javascript = { biome },
+-- 			typescript = { biome },
+-- 			rust = { "cargo" },
+-- 		},
+--         formatters = {
+--             cargo = {
+--                 inherit = false,
+--                 command = "cargo fmt",
+--                 ""
+--             },
+--         },
+-- 	},
+-- }
