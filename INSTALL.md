@@ -66,7 +66,7 @@ cargo binstall --verbose --no-confirm \
     ripgrep just git-delta fd-find \
     trunk binstall hyperfine zoxide \
     zellij sccache eza du-dust topgrade \
-    skim tokei xh xcp cargo-update
+    skim tokei xh xcp cargo-update tailspin
 
 # Node
 fnm install 18 && fnm default 18 && eval $(fnm env)
