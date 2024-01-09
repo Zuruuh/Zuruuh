@@ -1,0 +1,18 @@
+[[keywords]]
+words = ["INSERT", "CREATE"]
+style = { bg = "green" }
+border = true
+
+[[keywords]]
+words = ["UPDATE", "ALTER"]
+style = { bg = "yellow", fg = "black" }
+border = true
+
+[[keywords]]
+words = ["DROP", "TRUNCATE"]
+style = { bg = "red", fg = "black" }
+border = true
+
+[[keywords]]
+words = ["MySQL", "elasticsearch", "php"]
+style = { bold = true }
