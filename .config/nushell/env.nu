@@ -137,8 +137,6 @@ $env.AWS_DEFAULT_REGION = 'eu-west-3'
 alias exa = eza
 
 source ~/.config/nushell/plugins_installer.nu
-if not ("~/.config/nushell/plugins/zoxide.nu" | path exists) {
-    zoxide init nushell | save ~/.config/nushell/plugins/zoxide.nu
-}
+zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
 
 starship init nu | save -f ~/.config/nushell/plugins/starship.nu

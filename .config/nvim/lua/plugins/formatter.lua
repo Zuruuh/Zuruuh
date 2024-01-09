@@ -8,9 +8,7 @@ local prettier = function()
 end
 
 return {
-	-- "mhartington/formatter.nvim",
-	"shreve/formatter.nvim", -- temporary until #empty-fix is merged
-	branch = "empty-fix",
+	"mhartington/formatter.nvim",
 	lazy = false,
 	keys = {
 		{ "<leader>f", "<CMD>Format<CR>", desc = "Format", silent = true, noremap = true },
