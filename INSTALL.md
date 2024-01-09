@@ -33,11 +33,28 @@ sudo apt update
 sudo apt install -y git stow curl wget unzip \
     build-essential libssl-dev pkg-config \
     cmake fzf zstd
-curl https://dl.google.com/go/go1.21.1.linux-amd64.tar.gz -O
-tar -xvf go1.21.1.linux-amd64.tar.gz
-sudo mv go /usr/local/
-rm go1.21.1.linux-amd64.tar.gz
-export PATH="$PATH:/usr/local/go/bin"
+curl https://go.dev/dl/go1.21.5.linux-amd64.tar.gz -O
+tar -xvf go1.21.5.linux-amd64.tar.gz
+sudo mv go ~/.local/share/go/
+rm go1.21.5.linux-amd64.tar.gz
+export PATH="$PATH:~/.local/share/go/bin"
+```
+
+</details>
+
+<details>
+    <summary>MacOS</summary>
+
+```bash
+# First install MacOS developpers toolkit if not done already
+# then install homebrew
+$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+brew install stow
+curl https://go.dev/dl/go1.21.5.darwin-arm64.tar.gz -O
+tar -xvf go1.21.5.darwin-arm64.tar.gz
+sudo mv go ~/.local/share/go/
+rm go1.21.5.darwin-arm64.tar.gz
+export PATH="$PATH:~/.local/share/go/bin"
 ```
 
 </details>
@@ -45,6 +62,7 @@ export PATH="$PATH:/usr/local/go/bin"
 and now just brain-dead copy paste everything below
 
 ```bash
+cd ~/dotfiles
 # Enables custom aliases & snippets depending on host OS
 ln -s ./.config/nushell/os/<current_os>/config.nu ./.config/nushell/os/current.nu
 
@@ -65,12 +83,15 @@ cargo binstall --verbose --no-confirm \
     bob-nvim spotify-tui bat amber fnm \
     ripgrep just git-delta fd-find \
     trunk binstall hyperfine zoxide \
-    zellij sccache eza du-dust topgrade \
+    zellij eza du-dust topgrade \
     skim tokei xh xcp cargo-update tailspin
 
 # Node
-fnm install 18 && fnm default 18 && eval $(fnm env)
-npm i -g eslint_d eslint @fsouza/prettierd prettier pnpm neovim npm tree-sitter-cli
+fnm install 20 && fnm default 20 && eval $(fnm env)
+npm i -g eslint_d eslint @fsouza/prettierd prettier pnpm neovim npm tree-sitter-cli @biomejs/biome
+
+# Bun
+curl -fsSL https://bun.sh/install | bash
 
 # Pyenv
 curl https://pyenv.run | bash
@@ -82,7 +103,8 @@ nu
 
 go install mvdan.cc/sh/v3/cmd/shfmt@latest \
     github.com/rs/curlie@latest \
-    github.com/charmbracelet/glow@latest
+    github.com/charmbracelet/glow@latest \
+    github.com/antonmedv/fx@latest
 
 # Neovim
 bob install nightly; bob use nightly
