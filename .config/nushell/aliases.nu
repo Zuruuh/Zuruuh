@@ -11,7 +11,7 @@ export alias git_current_branch = git branch --show-current
 export alias docker-compose = docker compose
 export alias compose = docker compose
 
-export def --env "search history" [--raw: bool = false, query: string] {
+export def --env "search history" [--raw = false, query: string] {
     return (history | filter {|cmd| $cmd.command =~ $query} | each {|cmd| if $raw { $cmd } else { $cmd.command } })
 }
 
