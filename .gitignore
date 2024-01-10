@@ -5,3 +5,4 @@
 /.config/gh/hosts.yml
 /.config/ngrok/
 /.config/neofetch/
+/.config/rclone/rclone.conf
