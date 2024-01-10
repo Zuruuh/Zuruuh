@@ -16,3 +16,47 @@ size = 12
 
 [font.normal]
 family = "MonaspiceNe Nerd Font"
+
+[[keyboard.bindings]]
+key = "Play"
+action = "None"
+
+[[keyboard.bindings]]
+key = "Pause"
+action = "None"
+
+[[keyboard.bindings]]
+key = "Play"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaPlay"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaPause"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaPlayPause"
+action = "None"
+
+[[keyboard.bindings]]
+key = "AudioVolumeDown"
+action = "None"
+
+[[keyboard.bindings]]
+key = "AudioVolumeUp"
+action = "None"
+
+[[keyboard.bindings]]
+key = "AudioVolumeMute"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaTrackNext"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaTrackPrevious"
+action = "None"
