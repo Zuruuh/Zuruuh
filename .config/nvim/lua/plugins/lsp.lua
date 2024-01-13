@@ -33,10 +33,8 @@ return {
 		})
 
 		lsp.ensure_installed({
-			"astro",
 			"bashls",
 			"cssls",
-			"cssmodules_ls",
 			"docker_compose_language_service",
 			"dockerls",
 			"eslint",
@@ -45,9 +43,9 @@ return {
 			"lua_ls",
 			"rust_analyzer",
 			"sqlls",
-			"tailwindcss",
 			"tsserver",
 			"yamlls",
+			"phpactor",
 		})
 
 		lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
