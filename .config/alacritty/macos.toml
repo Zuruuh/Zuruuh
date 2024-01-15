@@ -15,3 +15,8 @@ family = "MonaspiceNe Nerd Font Mono"
 key = "C"
 mods = "Command"
 chars = "\u0003"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Shift | Control"
+action = "Paste"
