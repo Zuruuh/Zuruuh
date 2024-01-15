@@ -134,7 +134,7 @@ $env.COLORTERM = 'truecolor'
 $env.EDITOR = (which nvim | get path.0)
 $env.PAGER = 'less'
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
-alias exa = eza
+$env.STARSHIP_LOG = 'error'
 
 source ~/.config/nushell/plugins_installer.nu
 zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
