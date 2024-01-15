@@ -10,3 +10,8 @@ size = 18
 
 [font.normal]
 family = "MonaspiceNe Nerd Font Mono"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Command"
+chars = "\u0003"
