@@ -101,10 +101,11 @@ python -m pip install neovim
 # Enter nushell to continue installation
 nu
 
-go install mvdan.cc/sh/v3/cmd/shfmt@latest \
-    github.com/rs/curlie@latest \
-    github.com/charmbracelet/glow@latest \
+[
+    mvdan.cc/sh/v3/cmd/shfmt@latest
+    github.com/charmbracelet/glow@latest
     github.com/antonmedv/fx@latest
+] | each {|package| go install $package}
 
 # Neovim
 bob install nightly; bob use nightly
