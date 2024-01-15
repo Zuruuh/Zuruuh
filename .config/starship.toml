@@ -4,7 +4,7 @@ command_timeout = 500
 disabled = true
 
 [nodejs]
-version_format = "v${major}"
+version_format = "v${major}.${minor}"
 
 [php]
 symbol = ' '
@@ -13,4 +13,13 @@ symbol = ' '
 disabled = false
 
 [docker_context]
-disabled = true
+detect_files = [
+  'docker-compose.yaml',
+  'docker-compose.yml',
+  'compose.yaml',
+  'compose.yml',
+  'Dockerfile',
+  '.dockerignore',
+]
+detect_extensions = ['docker', 'container', 'dockerfile', 'containerfile']
+detect_folders = ['docker']
