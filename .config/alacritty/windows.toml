@@ -18,6 +18,11 @@ size = 12
 family = "MonaspiceNe Nerd Font"
 
 [[keyboard.bindings]]
+key = "v"
+mods = "Control"
+action = "Paste"
+
+[[keyboard.bindings]]
 key = "Play"
 action = "None"
 
@@ -59,4 +64,8 @@ action = "None"
 
 [[keyboard.bindings]]
 key = "MediaTrackPrevious"
+action = "None"
+
+[[keyboard.bindings]]
+key = "ScrollLock"
 action = "None"
