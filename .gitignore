@@ -7,3 +7,6 @@
 /.config/neofetch/
 /.config/rclone/rclone.conf
 /.config/karabiner/automatic_backups
+/.config/asciinema
+# jgit is intellij IDE git integration
+/.config/jgit
