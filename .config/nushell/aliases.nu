@@ -21,3 +21,7 @@ export def --env mkcd [dir: string] {
     mkdir $dir
     cd $dir
 }
+
+export def --env dev [] {
+    cd $"~/dev/(fd . ~/dev --maxdepth 1 --type directory --type symlink -x echo {/} | sk)"
+}
