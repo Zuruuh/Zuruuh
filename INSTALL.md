@@ -70,7 +70,7 @@ ln -s ./.config/nushell/os/<current_os>/config.nu ./.config/nushell/os/current.n
 stow .
 
 # Install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly --profile complete --no-modify-path
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly --profile default --no-modify-path
 source "$HOME/.cargo/env"
 
 # Install cargo-binstall
