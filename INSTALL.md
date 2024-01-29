@@ -88,7 +88,7 @@ cargo binstall --verbose --no-confirm \
 
 # Node
 fnm install 20 && fnm default 20 && eval $(fnm env)
-npm i -g eslint_d eslint @fsouza/prettierd prettier pnpm neovim npm tree-sitter-cli @biomejs/biome
+bun add -g eslint_d eslint @fsouza/prettierd prettier pnpm neovim npm tree-sitter-cli @biomejs/biome
 
 # Bun
 curl -fsSL https://bun.sh/install | bash
