@@ -10,3 +10,5 @@
 /.config/asciinema
 # jgit is intellij IDE git integration
 /.config/jgit
+# wtf yarn
+/.config/yarn

@@ -125,6 +125,7 @@ if not (which fnm | is-empty) {
         $"($env.FNM_MULTISHELL_PATH)/bin"
     ])
 }
+$env.PATH = ($env.PATH | split  row (char esep) | prepend ($env.HOME + '/.yarn/bin'))
 
 # Pulumi
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.pulumi/bin'))
