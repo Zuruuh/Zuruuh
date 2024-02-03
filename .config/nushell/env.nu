@@ -136,7 +136,10 @@ $env.EDITOR = (which nvim | get path.0)
 $env.PAGER = 'less'
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
 $env.STARSHIP_LOG = 'error'
+
+# telemetry
 $env.DO_NOT_TRACK = 1
+$env.STORYBOOK_DISABLE_TELEMETRY = 1
 
 source ~/.config/nushell/plugins_installer.nu
 zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
