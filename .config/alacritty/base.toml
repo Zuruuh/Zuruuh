@@ -1,4 +1,4 @@
-import = ["./theme/dracula.toml"]
+import = ["~/.config/alacritty/theme/dracula.toml"]
 
 [window]
 startup_mode = "Maximized"
