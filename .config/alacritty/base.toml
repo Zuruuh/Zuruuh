@@ -1,3 +1,5 @@
+import = ["./theme/dracula.toml"]
+
 [window]
 startup_mode = "Maximized"
 dynamic_title = false
