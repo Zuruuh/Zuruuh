@@ -4,8 +4,7 @@ return {
 	opts = {
 		options = {
 			icons_enabled = true,
-			theme = "dracula",
-			-- theme = "onedark",
+			theme = "vscode",
 		},
 		sections = {
 			lualine_a = {

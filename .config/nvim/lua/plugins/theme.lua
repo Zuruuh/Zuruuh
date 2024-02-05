@@ -1,9 +1,6 @@
-local theme = "dracula"
--- local theme = "onedark"
-
 return {
 	"f-person/auto-dark-mode.nvim",
-	dependencies = { "navarasu/onedark.nvim", "Mofiqul/dracula.nvim" },
+	dependencies = { "Mofiqul/vscode.nvim" },
 	config = function()
 		local auto_dark_mode = require("auto-dark-mode")
 		auto_dark_mode.setup({
@@ -12,10 +9,15 @@ return {
 				vim.o.background = "dark"
 			end,
 			set_light_mode = function()
-				vim.o.background = "light"
+				-- vim.o.background = "light"
+				vim.o.background = "dark"
 			end,
 		})
 
-		vim.cmd([[colorscheme dracula]])
+		require("vscode").setup({
+			italic_comments = true,
+		})
+
+		require("vscode").load()
 	end,
 }
