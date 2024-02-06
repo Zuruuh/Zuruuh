@@ -137,9 +137,11 @@ $env.PAGER = 'less'
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
 $env.STARSHIP_LOG = 'error'
 
-# telemetry
+# telemetry and ads
 $env.DO_NOT_TRACK = 1
+$env.ADBLOCK = 1
 $env.STORYBOOK_DISABLE_TELEMETRY = 1
+$env.DISABLE_OPENCOLLECTIVE = 1
 
 source ~/.config/nushell/plugins_installer.nu
 zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
