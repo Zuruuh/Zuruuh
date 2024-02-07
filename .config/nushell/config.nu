@@ -193,7 +193,7 @@ $env.config = {
                 max_completion_width: 50,
                 max_completion_height: 15, # will be limited by the available lines in the terminal
                 padding: 0,
-                border: false,
+                border: true,
                 cursor_offset: 0,
                 description_mode: "prefer_right"
                 min_description_width: 0
@@ -251,6 +251,7 @@ $env.config = {
                 until: [
                     { send: menu name: ide_completion_menu }
                     { send: menunext }
+                    { edit: complete }
                 ]
             }
         }
