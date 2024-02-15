@@ -136,6 +136,7 @@ $env.EDITOR = (which nvim | get path.0)
 $env.PAGER = 'less'
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
 $env.STARSHIP_LOG = 'error'
+$env.TERM = 'xterm-256color'
 
 # telemetry and ads
 $env.DO_NOT_TRACK = 1
