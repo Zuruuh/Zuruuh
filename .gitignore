@@ -12,3 +12,5 @@
 /.config/jgit
 # wtf yarn
 /.config/yarn
+# sql tui
+/.config/lazysql
