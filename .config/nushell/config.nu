@@ -1,7 +1,3 @@
-# Nushell Config File
-#
-# version = "0.84.0"
-
 let dark_theme = {
     # color for nushell primitives
     separator: white
