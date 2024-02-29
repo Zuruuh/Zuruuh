@@ -156,10 +156,7 @@ disable = ["containers", "gem", "ruby_gems", "yarn", "pnpm", "vim"]
 # max_concurrency = 5
 
 # Git repositories that you want to pull and push
-# repos = [
-#     "~/src/*/",
-#     "~/.config/something"
-# ]
+repos = ["~/dotfiles/", "~/dotfiles/.config/nushell/plugins/nu_scripts"]
 
 # Repositories that you only want to pull
 # pull_only_repos = [
@@ -176,7 +173,7 @@ disable = ["containers", "gem", "ruby_gems", "yarn", "pnpm", "vim"]
 # pull_predefined = false
 
 # Arguments to pass Git when pulling repositories
-# pull_arguments = "--rebase --autostash"
+arguments = "--rebase --autostash"
 
 # Arguments to pass Git when pushing repositories
 # push_arguments = "--all"
