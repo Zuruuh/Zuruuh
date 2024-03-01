@@ -19,5 +19,14 @@ export def --env mkcd [dir: string] {
 }
 
 export def --env dev [] {
-    cd $"~/dev/(fd . ~/dev --maxdepth 1 --type directory --type symlink -x echo {/} | sk)"
+    let dir = (
+        ls ~/dev
+        | where type == 'dir'
+        | each {get name | path basename}
+        | shuffle
+        | str join (char newline)
+        | sk
+    )
+
+    cd $"~/dev/($dir)"
 }
