@@ -13,6 +13,10 @@ export alias compose = docker compose
 alias j = just
 alias exa = eza
 
+export def bc [...command] {
+    bin/console ...$command
+}
+
 export def --env mkcd [dir: string] {
     mkdir $dir
     cd $dir
