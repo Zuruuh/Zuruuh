@@ -1,0 +1,19 @@
+{
+  "stateVersion": 26,
+  "global_environment_region": "Self-hosted",
+  "global_environment_urls": {
+    "base": "https://vault.zuruh.dev",
+    "api": null,
+    "identity": null,
+    "webVault": null,
+    "icons": null,
+    "notifications": null,
+    "events": null,
+    "keyConnector": null
+  },
+  "global": {
+    "theme": "system",
+    "window": {},
+    "installedVersion": "2024.2.1"
+  }
+}
