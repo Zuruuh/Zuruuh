@@ -16,3 +16,7 @@
 /.config/lazysql
 # UV installation cache
 /.config/uv/uv-receipt.json
+# podman machine lockfile
+/.config/containers/
+# scoop last update lockfile
+/.config/scoop/config.json

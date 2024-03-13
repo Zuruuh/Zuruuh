@@ -530,7 +530,6 @@ $env.config = {
     ]
 }
 
-use ~/.config/nushell/os/current.nu *
 use ~/.config/nushell/aliases.nu *
 
 source ~/.config/nushell/plugins/nu_scripts/aliases/git/git-aliases.nu

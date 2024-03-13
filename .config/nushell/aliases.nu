@@ -8,10 +8,10 @@ export alias gsm = gcm
 export alias gpl = git pull
 export alias gsth = git stash
 export alias git_current_branch = git branch --show-current
-export alias docker-compose = docker compose
-export alias compose = docker compose
-alias j = just
-alias exa = eza
+export alias docker = podman
+export alias docker-compose = podman compose
+export alias compose = podman compose
+export alias code = codium
 
 export def bc [...command] {
     bin/console ...$command

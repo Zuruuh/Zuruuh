@@ -1,10 +1,12 @@
 [user]
-	name = Zuruuh
-	email = zuruh.dev@proton.me
+    name = Zuruuh
+    email = zuruh.dev@proton.me
 
 [core]
     editor = nvim
     pager = delta
+    autocrlf = false
+    eol = lf
 
 [interactive]
     diffFilter = delta --color-only
@@ -26,7 +28,7 @@
     defaultBranch = main
 
 [safe]
-	directory = /mnt/d/dev
+    directory = /mnt/d/dev
 
 [alias]
     s = switch

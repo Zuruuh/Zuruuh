@@ -1,4 +1,7 @@
 # the state of the prompt
+mut path = if ('PATH' in $env) { $env.PATH } else { $env.Path }
+let home = if ('HOME' in $env) { $env.HOME } else { $env.HOMEPATH }
+
 $env.PROMPT_INDICATOR = {|| "> " }
 $env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
@@ -22,58 +25,61 @@ $env.ENV_CONVERSIONS = {
 #=================================================================================#
 
 # Shared
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/bin'))
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/share/phpactor/bin'))
+$path = ($path | split row (char esep) | prepend '/usr/local/bin')
+$path = ($path | split row (char esep) | prepend '/usr/bin')
+$path = ($path | split row (char esep) | prepend ($home + '/.local/bin'))
+$path = ($path | split row (char esep) | prepend ($home + '/.local/share/phpactor/bin'))
 
 if $nu.os-info.name == 'linux' {
-    source-env ~/.config/nushell/os/debian/env.nu
+    source-env ~/.config/nushell/os/debian.nu
 } else if $nu.os-info.name == 'macos' {
-    source-env ~/.config/nushell/os/darwin/env.nu
+    source-env ~/.config/nushell/os/darwin.nu
 }
 
 # Cargo
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.cargo/bin'))
+$path = ($path | split row (char esep) | prepend ($home + '/.cargo/bin'))
 
 # Golang
-$env.GOPATH = ($env.HOME + '/.local/share/go')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/go/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.GOPATH + '/bin'))
+$env.GOPATH = ($home + '/.local/share/go')
+$path = ($path | split row (char esep) | prepend '/usr/local/go/bin')
+$path = ($path | split row (char esep) | prepend ($env.GOPATH + '/bin'))
 
 # PyEnv
-$env.PYENV_ROOT = ($env.HOME + '/.pyenv')
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/bin'))
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PYENV_ROOT + '/versions/' + (pyenv version-name) + '/bin'))
-alias pip = python -m pip
+if ((which pyenv | length) > 0) {
+    $env.PYENV_ROOT = ($home + '/.pyenv')
+    $path = ($path | split row (char esep) | prepend ($env.PYENV_ROOT + '/bin'))
+    $path = ($path | split row (char esep) | prepend ($env.PYENV_ROOT + '/versions/' + (pyenv version-name) + '/bin'))
+    alias pip = python -m pip
+}
 
 # Bun
-$env.BUN_INSTALL = ($env.HOME + '/.bun')
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.BUN_INSTALL + '/bin'))
+$env.BUN_INSTALL = ($home + '/.bun')
+$path = ($path | split row (char esep) | prepend ($env.BUN_INSTALL + '/bin'))
 
 # PHP
-$env.COMPOSER_HOME = $env.HOME + '/.local/share/composer'
+$env.COMPOSER_HOME = $home + '/.local/share/composer'
 $env.APP_ENV = dev
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/share/composer/bin'))
+$path = ($path | split row (char esep) | prepend ($home + '/.local/share/composer/bin'))
 
 # Neovim
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.local/share/bob/nvim-bin'))
+$path = ($path | split row (char esep) | prepend ($home + '/.local/share/bob/nvim-bin'))
 
 # Node
 if not (which fnm | is-empty) {
     ^fnm env --json | from json | load-env
-    $env.PATH = ($env.PATH | split row (char esep) | prepend [
+    $path = ($path | split row (char esep) | prepend [
         $"($env.FNM_MULTISHELL_PATH)/bin"
+        $"($env.FNM_MULTISHELL_PATH)/"
     ])
 }
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.yarn/bin'))
+$path = ($path | split row (char esep) | prepend ($home + '/.yarn/bin'))
 
 # Deno
-$env.DENO_INSTALL = ($env.HOME + '/.deno')
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.DENO_INSTALL + '/bin'))
+$env.DENO_INSTALL = ($home + '/.deno')
+$path = ($path | split row (char esep) | prepend ($env.DENO_INSTALL + '/bin'))
 
 # Pulumi
-$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME + '/.pulumi/bin'))
+$path = ($path | split row (char esep) | prepend ($home + '/.pulumi/bin'))
 
 # random stuff
 $env.COLORTERM = 'truecolor'
@@ -88,6 +94,19 @@ $env.DO_NOT_TRACK = 1
 $env.ADBLOCK = 1
 $env.STORYBOOK_DISABLE_TELEMETRY = 1
 $env.DISABLE_OPENCOLLECTIVE = 1
+
+if ($nu.os-info.name == 'windows') {
+    $env.CONTAINERS_REGISTRIES_CONF = $"C:($home)\\.config\\containers\\registries.conf"
+    $path = ($path | split row (char esep) | prepend 'C:\\Program Files (x86)\\GnuWin32\\bin')
+    $path = ($path | split row (char esep) | prepend 'D:\\Softwares\\php')
+    $path = ($path | split row (char esep) | prepend 'D:\\Softwares\\php-dev')
+}
+
+if ('PATH' in $env) {
+    $env.PATH = $path
+} else {
+    $env.Path = $path
+}
 
 source ~/.config/nushell/plugins_installer.nu
 zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
