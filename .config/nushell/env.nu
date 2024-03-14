@@ -41,6 +41,8 @@ if $nu.os-info.name == 'linux' {
     $path = ($path | prepend 'C:\\Program Files (x86)\\GnuWin32\\bin')
     $path = ($path | prepend 'D:\\Softwares\\php')
     $path = ($path | prepend 'D:\\Softwares\\php-dev')
+    $path = ($path | prepend 'D:\\Softwares\\GnuWin32\\bin')
+    $path = ($path | prepend 'D:\\bin')
 }
 
 # Cargo
