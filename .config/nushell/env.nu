@@ -35,6 +35,7 @@ if $nu.os-info.name == 'linux' {
 } else if $nu.os-info.name == 'macos' {
     $path = ($path | prepend '/opt/homebrew/bin')
     $path = ($path | prepend '/opt/homebrew/sbin')
+    $path = ($path | prepend $"($home)/.orbstack/bin")
 } else if ($nu.os-info.name == 'windows') {
     $env.CONTAINERS_REGISTRIES_CONF = $"($home)\\.config\\containers\\registries.conf"
     $path = ($path | prepend 'C:\\Program Files (x86)\\GnuWin32\\bin')
