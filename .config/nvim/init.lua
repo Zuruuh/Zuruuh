@@ -837,6 +837,7 @@ require('lazy').setup({
       },
       view = {
         side = 'right',
+        relativenumber = true,
       },
     },
   },
