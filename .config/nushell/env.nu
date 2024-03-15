@@ -24,83 +24,82 @@ $env.ENV_CONVERSIONS = {
 #=================================================================================#
 
 # Windows compatibility
-mut path = if ('PATH' in $env) { $env.PATH } else { $env.Path }
 let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
+def --env add_path [dir: string] {
+    if ('PATH' in $env) {
+        $env.PATH = ($env.PATH | prepend $dir)
+    } else {
+        $env.Path = ($env.Path | prepend $dir)
+    }
+    
+}
 
 if $nu.os-info.name == 'linux' {
-    $path = ($path | prepend '/usr/local/bin')
-    $path = ($path | prepend '/usr/bin')
-    $path = ($path | prepend ($home + '/.local/bin'))
-    $path = ($path | prepend ($home + '/.local/share/phpactor/bin'))
+    add_path '/usr/local/bin'
+    add_path '/usr/bin'
+    add_path ($home + '/.local/bin')
+    add_path ($home + '/.local/share/phpactor/bin')
 } else if $nu.os-info.name == 'macos' {
-    $path = ($path | prepend '/opt/homebrew/bin')
-    $path = ($path | prepend '/opt/homebrew/sbin')
-    $path = ($path | prepend $"($home)/.orbstack/bin")
+    add_path '/opt/homebrew/bin'
+    add_path '/opt/homebrew/sbin'
+    add_path $"($home)/.orbstack/bin"
 } else if ($nu.os-info.name == 'windows') {
     $env.CONTAINERS_REGISTRIES_CONF = $"($home)\\.config\\containers\\registries.conf"
-    $path = ($path | prepend 'C:\\Program Files (x86)\\GnuWin32\\bin')
-    $path = ($path | prepend 'D:\\Softwares\\php')
-    $path = ($path | prepend 'D:\\Softwares\\php-dev')
-    $path = ($path | prepend 'D:\\Softwares\\GnuWin32\\bin')
-    $path = ($path | prepend 'D:\\bin')
+    add_path 'C:\\Program Files (x86)\\GnuWin32\\bin'
+    add_path 'D:\\Softwares\\php'
+    add_path 'D:\\Softwares\\php-dev'
+    add_path 'D:\\Softwares\\GnuWin32\\bin'
+    add_path 'D:\\bin'
 }
 
 # Cargo
-$path = ($path | prepend ($home + '/.cargo/bin'))
+add_path ($home + '/.cargo/bin')
 
 # Golang
 $env.GOPATH = ($home + '/.local/share/go')
-$path = ($path | prepend '/usr/local/go/bin')
-$path = ($path | prepend ($env.GOPATH + '/bin'))
+add_path '/usr/local/go/bin'
+add_path ($env.GOPATH + '/bin')
 
 # PyEnv
 if not (which pyenv | is-empty) {
     $env.PYENV_ROOT = ($home + '/.pyenv')
-    $path = ($path | prepend ($env.PYENV_ROOT + '/bin'))
-    $path = ($path | prepend ($env.PYENV_ROOT + '/versions/' + (pyenv version-name) + '/bin'))
+    add_path ($env.PYENV_ROOT + '/bin')
+    add_path ($env.PYENV_ROOT + '/versions/' + (pyenv version-name) + '/bin')
     alias pip = python -m pip
 }
 
 # Bun
 $env.BUN_INSTALL = ($home + '/.bun')
-$path = ($path | prepend ($env.BUN_INSTALL + '/bin'))
+add_path ($env.BUN_INSTALL + '/bin')
 
 # PHP
 $env.COMPOSER_HOME = $home + '/.local/share/composer'
 $env.APP_ENV = dev
-$path = ($path | prepend ($home + '/.local/share/composer/bin'))
+add_path ($home + '/.local/share/composer/bin')
 
 # Neovim
-$path = ($path | prepend ($home + '/.local/share/bob/nvim-bin'))
+add_path ($home + '/.local/share/bob/nvim-bin')
 
 # Node
 if not (which fnm | is-empty) {
     ^fnm env --json | from json | load-env
-    $path = ($path | prepend [
-        $"($env.FNM_MULTISHELL_PATH)/bin"
-        $"($env.FNM_MULTISHELL_PATH)/"
-    ])
+    add_path $"($env.FNM_MULTISHELL_PATH)/bin"
+    add_path $"($env.FNM_MULTISHELL_PATH)/"
 }
-$path = ($path | prepend ($home + '/.yarn/bin'))
+add_path ($home + '/.yarn/bin')
 
 # Deno
 $env.DENO_INSTALL = ($home + '/.deno')
-$path = ($path | prepend ($env.DENO_INSTALL + '/bin'))
+add_path ($env.DENO_INSTALL + '/bin')
 
 # Pulumi
-$path = ($path | prepend ($home + '/.pulumi/bin'))
+add_path ($home + '/.pulumi/bin')
 
 # telemetry and ads
 $env.DO_NOT_TRACK = 1
 $env.ADBLOCK = 1
 $env.STORYBOOK_DISABLE_TELEMETRY = 1
 $env.DISABLE_OPENCOLLECTIVE = 1
-
-if 'PATH' in $env {
-    $env.PATH = $path
-} else {
-    $env.Path = $path
-}
 
 # random stuff
 $env.COLORTERM = 'truecolor'
