@@ -61,7 +61,7 @@ add_path '/usr/local/go/bin'
 add_path ($env.GOPATH + '/bin')
 
 # PyEnv
-if not (which pyenv | is-empty) {
+if ($"($home)/.pyenv" | path exists) {
     $env.PYENV_ROOT = ($home + '/.pyenv')
     add_path ($env.PYENV_ROOT + '/bin')
     add_path ($env.PYENV_ROOT + '/versions/' + (pyenv version-name) + '/bin')
