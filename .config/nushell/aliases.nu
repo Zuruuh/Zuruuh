@@ -13,7 +13,7 @@ export alias compose = docker compose
 export alias code = codium
 
 export def bc [...command] {
-    bin/console ...$command
+    php bin/console ...$command
 }
 
 export def --env mkcd [dir: string] {
@@ -22,14 +22,16 @@ export def --env mkcd [dir: string] {
 }
 
 export def --env dev [] {
+    let dev = if $nu.os-info.name == 'windows' { 'D:\\dev' } else { '~/dev' }
+
     let dir = (
-        ls ~/dev
+        ls $dev
         | where type == 'dir'
         | each {get name | path basename}
         | shuffle
         | str join (char newline)
-        | sk
+        | fzf
     )
 
-    cd $"~/dev/($dir)"
+    cd $"($dev)(char path_sep)($dir)"
 }
