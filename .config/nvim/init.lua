@@ -64,6 +64,8 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.o.shell = os.getenv 'SHELL'
+
 vim.g.loaded_perl_provider = 0
 
 -- [[ Basic Keymaps ]]
@@ -829,6 +831,7 @@ require('lazy').setup({
       {
         '<leader>pv',
         vim.cmd.NvimTreeOpen,
+        'Open file explorer',
       },
     },
     opts = {
