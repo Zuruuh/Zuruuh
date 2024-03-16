@@ -55,6 +55,9 @@ if $nu.os-info.name == 'linux' {
 # Cargo
 add_path ($home + '/.cargo/bin')
 
+# nushell
+$env.SHELL = (which nu | get path.0)
+
 # Golang
 $env.GOPATH = ($home + '/.local/share/go')
 add_path '/usr/local/go/bin'
