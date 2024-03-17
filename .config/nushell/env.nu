@@ -31,7 +31,6 @@ def --env add_path [dir: string] {
     } else {
         $env.Path = ($env.Path | prepend $dir)
     }
-    
 }
 
 if $nu.os-info.name == 'linux' {
@@ -50,6 +49,10 @@ if $nu.os-info.name == 'linux' {
     add_path 'D:\\Softwares\\php-dev'
     add_path 'D:\\Softwares\\GnuWin32\\bin'
     add_path 'D:\\bin'
+
+    # android
+    $env.ANDROID_HOME = 'D:\\Android'
+    $env.NDK_HOME = (ls $"($env.ANDROID_HOME)\\ndk" | get 0.name)
 }
 
 # Cargo
