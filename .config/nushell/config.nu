@@ -1,3 +1,5 @@
+source ~/.config/nushell/dotenv.nu
+
 let dark_theme = {
     # color for nushell primitives
     separator: white
@@ -170,9 +172,17 @@ $env.config = {
         env_change: {
             PWD: [{|before, after|
                 if ('FNM_DIR' in $env) and ([.nvmrc .node-version] | path exists | any { |it| $it }) {
-                  fnm use
+                    fnm use
                 }
-            }] # run if the PWD environment is different since the last repl input
+
+                if ('.env' | path exists) {
+                    load-env-file $"($env.PWD)/.env"
+                }
+
+                if ('.env.local' | path exists) {
+                    load-env-file $"($env.PWD)/.env.local"
+                }
+            }]
         }
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
         command_not_found: { null } # return an error message when a command is not found
@@ -536,7 +546,6 @@ source ~/.config/nushell/plugins/nu_scripts/aliases/git/git-aliases.nu
 source ~/.config/nushell/plugins/nu_scripts/aliases/eza/eza-aliases.nu
 source ~/.config/nushell/plugins/zoxide.nu
 use ~/.config/nushell/plugins/starship.nu
-source ~/.config/nushell/plugins/nu_scripts/nu-hooks/nu-hooks/direnv/direnv.nu
 
 ## Load nu_scripts completions
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/bat/bat-completions.nu

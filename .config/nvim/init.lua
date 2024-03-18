@@ -520,10 +520,28 @@ require('lazy').setup({
   { -- Autoformat
     'stevearc/conform.nvim',
     opts = {
-      notify_on_error = false,
+      notify_on_error = true,
       format_on_save = {
-        timeout_ms = 500,
+        timeout_ms = 2000,
         lsp_fallback = true,
+      },
+      formatters = {
+        phpcbf = function()
+          return {
+            command = require('conform.util').find_executable({
+              'vendor/bin/phpcbf',
+              'bin/phpcbf',
+            }, 'phpcbf'),
+          }
+        end,
+        php_cs_fixer = function()
+          return {
+            command = require('conform.util').find_executable({
+              'vendor/bin/php-cs-fixer',
+              'bin/php-cs-fixer',
+            }, 'php-cs-fixer'),
+          }
+        end,
       },
       formatters_by_ft = {
         lua = { 'stylua' },
@@ -538,7 +556,7 @@ require('lazy').setup({
         markdown = { { 'prettierd', 'prettier' } },
         sh = { 'shfmt' },
         toml = { 'taplo' },
-        php = { { 'php_cs_fixer', 'phpcbf' } },
+        php = { { 'phpcbf', 'php_cs_fixer' } },
         rust = { 'rustfmt' },
       },
     },
