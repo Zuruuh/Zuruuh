@@ -1,5 +1,9 @@
 import = ["~/.config/alacritty/base.toml"]
 
+## wip native zellij on windows
+# shell.program = "D:\\dev\\zellij\\target\\release\\zellij.exe"
+# working_directory = "D:\\dev"
+
 [shell]
 program = "C:\\Windows\\system32\\wsl.exe"
 args = [
