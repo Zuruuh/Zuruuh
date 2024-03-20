@@ -522,12 +522,13 @@ require('lazy').setup({
     opts = {
       notify_on_error = true,
       format_on_save = {
-        timeout_ms = 2000,
+        timeout_ms = 500,
         lsp_fallback = true,
       },
       formatters = {
         phpcbf = function()
           return {
+            async = true,
             command = require('conform.util').find_executable({
               'vendor/bin/phpcbf',
               'bin/phpcbf',
@@ -543,13 +544,22 @@ require('lazy').setup({
           }
         end,
       },
+
+      eslint = function()
+        return {
+          command = require('conform.util').find_executable({
+            'node_modules/.bin/eslint',
+          }, 'eslint'),
+        }
+      end,
+
       formatters_by_ft = {
         lua = { 'stylua' },
         javascript = { { 'biome', 'prettierd', 'prettier' } },
         typescript = { { 'biome', 'prettierd', 'prettier' } },
         javascriptreact = { { 'biome', 'prettierd', 'prettier' } },
         typescriptreact = { { 'biome', 'prettierd', 'prettier' } },
-        astro = { { 'biome', 'prettierd', 'prettier' } },
+        astro = { { 'eslint', 'eslint_d', 'biome', 'prettierd', 'prettier' } },
         html = { { 'prettierd', 'prettier' } },
         css = { { 'prettierd', 'prettier' } },
         json = { { 'biome', 'prettierd', 'prettier' } },
@@ -558,6 +568,8 @@ require('lazy').setup({
         toml = { 'taplo' },
         php = { { 'phpcbf', 'php_cs_fixer' } },
         rust = { 'rustfmt' },
+        ['*'] = { 'typos' },
+        ['_'] = { 'trim_whitespace' },
       },
     },
   },
