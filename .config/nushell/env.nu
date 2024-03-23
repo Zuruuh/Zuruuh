@@ -28,7 +28,10 @@ def --env add_path [dir: string] {
         $env.Path = ($env.Path | prepend $dir)
     }
 }
+
 let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
+
+$env.XDG_CONFIG_HOME = $"($home)/.config"
 
 if $nu.os-info.name in ['linux', 'macos'] {
     add_path $"($home)/.local/bin"
