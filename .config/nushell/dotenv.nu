@@ -3,13 +3,9 @@ export def --env load-env-file [file: string] {
     let parsed_env = cat .env |
         str trim |
         split row (char newline) |
-        each {|string| if $string =~ '^#' or ($string | is-empty) {
-                null
-            } else {
-                'export ' + $string
-            }
-        } |
-        filter {|str| $str != null} |
+        each {|str| $str | str trim} |
+        filter {|str| $str !~ '^#' and ($str | is-not-empty)} |
+        each {|str| $"export ($str)"} |
         str join (char newline)
 
     let with_env = do { bash -c $"($parsed_env) && env" } | complete | get stdout | from dotenv
@@ -28,6 +24,8 @@ export def --env load-env-file [file: string] {
 def "from dotenv" [] {
     str trim |
     split row (char newline) |
+    each {|str| $str | str trim} |
+    filter {|str| $str !~ '^#' and ($str | is-not-empty)} |
     each {|line| split column '='} |
     each {|kv|
         let kv = $kv | values | flatten
