@@ -35,3 +35,18 @@ export def --env dev [] {
 
     cd $"($dev)(char path_sep)($dir)"
 }
+
+export def switch [] {
+    let branch = git branch |
+        str trim |
+        split row (char newline) |
+        filter {|branch| $branch !~ '^\* '} |
+        each {str trim} |
+        prepend '-' |
+        str join (char newline) |
+        fzf --height '50%'
+
+    if ($branch | is-not-empty) {
+        git switch $branch
+    }
+}
