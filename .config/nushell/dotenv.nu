@@ -38,5 +38,6 @@ def "from dotenv" [] {
 
         return {$key: $value}
     } |
-    reduce {|it, acc| $acc | merge $it}
+    default {} |
+    reduce --fold {} {|it, acc| $acc | merge $it}
 }
