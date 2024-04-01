@@ -30,6 +30,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
+vim.opt.swapfile = false
 -- vim.opt.clipboard = 'unnamedplus' -- sync os and nvim clipboard
 
 vim.opt.breakindent = true
@@ -54,6 +55,7 @@ vim.opt.splitbelow = true
 --  NOTE: See `:help 'list'` and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.tabstop = 2
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
