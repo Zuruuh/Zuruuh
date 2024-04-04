@@ -15,6 +15,9 @@ args = [
   "/home/zuruh/.cargo/bin/zellij",
 ]
 
+[env]
+XDG_CONFIG_HOME = "/home/zuruh/.config"
+
 [font]
 size = 12
 

@@ -31,8 +31,6 @@ def --env add_path [dir: string] {
 
 let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
 
-$env.XDG_CONFIG_HOME = $"($home)/.config"
-
 if $nu.os-info.name in ['linux', 'macos'] {
     add_path $"($home)/.local/bin"
     add_path $"($home)/.local/share/phpactor/bin"
@@ -72,8 +70,8 @@ add_path $"($env.GOPATH)/bin"
 if ($"($home)/.pyenv" | path exists) {
     $env.PYENV_ROOT = $"($home)/.pyenv"
     add_path $"($env.PYENV_ROOT)/bin"
-    add_path $"($env.PYENV_ROOT)/versions/(pyenv version-name)/bin")
-    alias pip = python -m pip
+    add_path $"($env.PYENV_ROOT)/versions/(pyenv version-name)/bin"
+    # alias pip = python -m pip
 }
 
 # Bun
