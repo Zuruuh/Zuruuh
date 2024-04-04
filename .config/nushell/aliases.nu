@@ -23,6 +23,7 @@ export def --env mkcd [dir: string] {
 
 export def --env dev [] {
     let dev = if $nu.os-info.name == 'windows' { 'D:\\dev' } else { '~/dev' }
+    let dev = ($dev | path expand)
 
     let dir = (
         ls $dev
