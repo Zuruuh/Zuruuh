@@ -20,3 +20,5 @@
 /.config/containers/
 # scoop last update lockfile
 /.config/scoop/config.json
+/.ssh/*
+!/.ssh/config
