@@ -570,7 +570,6 @@ require('lazy').setup({
         toml = { 'taplo' },
         php = { { 'phpcbf', 'php_cs_fixer' } },
         rust = { 'rustfmt' },
-        ['*'] = { 'typos' },
         ['_'] = { 'trim_whitespace' },
       },
     },
