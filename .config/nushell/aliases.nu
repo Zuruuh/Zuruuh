@@ -1,4 +1,4 @@
-export alias dotfiles = nvim ~/dotfiles
+export alias dotfiles = nvim ~/.dotfiles
 export alias gs = git switch
 export alias gitconfig = nvim ~/.config/git/config
 export alias gitignore = nvim ~/.config/git/ignore
