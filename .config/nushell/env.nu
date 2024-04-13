@@ -126,7 +126,7 @@ $env.TERM = 'xterm-256color'
 
 #================================ PLUGINS ========================================#
 if not ($"($home)/.config/nushell/plugins/nu_scripts" | path exists) {
-    git clone git@github.com:nushell/nu_scripts ~/.config/nushell/plugins/nu_scripts
+    git clone 'https://github.com/nushell/nu_scripts' ~/.config/nushell/plugins/nu_scripts
 }
 
 zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
