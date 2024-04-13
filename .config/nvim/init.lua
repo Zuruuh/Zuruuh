@@ -565,7 +565,7 @@ require('lazy').setup({
         html = { { 'prettierd', 'prettier' } },
         css = { { 'prettierd', 'prettier' } },
         json = { { 'biome', 'prettierd', 'prettier' } },
-        markdown = { { 'prettierd', 'prettier' } },
+        markdown = { { 'deno_fmt', 'prettierd', 'prettier' } },
         sh = { 'shfmt' },
         toml = { 'taplo' },
         php = { { 'phpcbf', 'php_cs_fixer' } },
