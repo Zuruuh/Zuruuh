@@ -10,22 +10,13 @@ cd ~/.dotfiles
 git remote set-url origin git@github.com:Zuruuh/Zuruuh
 # ...link dotfiles configuration.nix
 # sudo rm -rf /etc/nixos/configuration.nix
-# sudo ln "$HOME/.dotfiles/configuration.nix" /etc/nixos/configuration.nix
+# sudo ln "$HOME/.dotfiles/etc/nixos/wsl.nix" /etc/nixos/configuration.nix
+# sudo ln "$HOME/.dotfiles/etc/nixos/packages.nix" /etc/nixos/packages.nix
 stow .
 sudo nixos-rebuild switch
 
 # rust/cargo
 rustup install nightly
 rustup default nightly
-curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-cargo binstall zoxide zellij nu -y
-export PATH="$PATH:$HOME/.cargo/bin"
 
-# bun
-curl -fsSL https://bun.sh/install | bash
-
-# node
-eval "$(fnm env)"
-fnm install 20
-fnm default 20
-fnm use 20
+# restart shell

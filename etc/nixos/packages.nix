@@ -14,19 +14,19 @@ in {
     bat
     unstable.biome
     unstable.bun
-    cargo-binstall
+    unstable.cargo
+    unstable.cargo-binstall
     cmake
     delta
-    git
-    gcc
-    gpp
-    fd
-    nodejs_21
     eslint_d
+    fd
     fx
     fzf
     glow
     gh
+    git
+    gcc
+    gpp
     go
     htop
     jq
@@ -35,6 +35,7 @@ in {
     man
     neofetch
     neovim-nightly
+    nodejs_21
     nodePackages.eslint
     nodePackages.neovim
     nodePackages.pnpm
@@ -46,11 +47,11 @@ in {
     php82Packages.composer
     pkg-config
     prettierd
-    python312Full
+    unstable.python312Full
     unstable.python312Packages.pynvim
     unstable.python312Packages.pip
     ripgrep
-    rustup
+    unstable.rustup
     shellcheck
     shfmt
     starship
@@ -65,6 +66,7 @@ in {
     tree-sitter
     unzip
     wget
+    xclip
     xh
     unstable.zellij
     zip
