@@ -1,3 +1,5 @@
+source ~/.config/nushell/dotenv.nu
+
 $env.PROMPT_INDICATOR = {|| "> " }
 $env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
@@ -30,6 +32,10 @@ def --env add_path [dir: string] {
 }
 
 let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
+
+if $nu.os-info.name == 'linux' and ('/etc/set-environment' | path exists) {
+    load-sh-env /etc/set-environment
+}
 
 if $nu.os-info.name in ['linux', 'macos'] {
     add_path $"($home)/.local/bin"

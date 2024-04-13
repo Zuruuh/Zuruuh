@@ -12,6 +12,12 @@ export alias docker-compose = docker compose
 export alias compose = docker compose
 export alias code = codium
 
+export def nix-shell [
+    ...args
+] {
+    ^nix-shell --command nu -p ...$args
+}
+
 export def bc [...command] {
     php bin/console ...$command
 }

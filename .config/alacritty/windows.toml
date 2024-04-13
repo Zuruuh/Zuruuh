@@ -6,14 +6,15 @@ import = ["~/.config/alacritty/base.toml"]
 
 [shell]
 program = "C:\\Windows\\system32\\wsl.exe"
-args = [
-  "--cd",
-  "/home/zuruh",
-  "-u",
-  "zuruh",
-  "--",
-  "/home/zuruh/.cargo/bin/zellij",
-]
+args = ["--cd", "/home/zuruh/", "--", "/run/current-system/sw/bin/zellij"]
+# args = [
+#   "--cd",
+#   "/home/zuruh",
+#   "-u",
+#   "zuruh",
+#   "--",
+#   "/home/zuruh/.cargo/bin/zellij",
+# ]
 
 [env]
 XDG_CONFIG_HOME = "/home/zuruh/.config"

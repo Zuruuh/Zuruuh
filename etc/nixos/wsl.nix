@@ -7,7 +7,10 @@
 
 { config, lib, pkgs, ... }:
 
-{ imports = [
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in {
+  imports = [
     # include NixOS-WSL modules
     <nixos-wsl/modules>
     ./packages.nix
@@ -26,7 +29,7 @@
 
   users.users.zuruh = {
     extraGroups = [ "docker" ];
-    # shell = "/home/zuruh/.cargo/bin/nu";
+    shell = unstable.nushell;
   };
 
 

@@ -1,4 +1,6 @@
-nix-shell -p git openssh neovim stow
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+sudo nix-channel --update
+nix-shell -p git openssh neovim stow gh
 ssh-keygen -t ed25519 -a 64 -f "$HOME/.ssh/github"
 ssh-keygen -t ed25519 -a 64 -f "$HOME/.ssh/git.staffmatch.it"
 ssh-keygen -t ed25519 -a 64 -f "$HOME/.ssh/vps"
