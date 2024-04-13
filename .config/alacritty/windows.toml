@@ -6,7 +6,14 @@ import = ["~/.config/alacritty/base.toml"]
 
 [shell]
 program = "C:\\Windows\\system32\\wsl.exe"
-args = ["--cd", "/home/zuruh/", "--", "/run/current-system/sw/bin/zellij"]
+args = [
+  "--distribution",
+  "NixOS",
+  "--cd",
+  "/home/zuruh/",
+  "--",
+  "/run/current-system/sw/bin/zellij",
+]
 # args = [
 #   "--cd",
 #   "/home/zuruh",
