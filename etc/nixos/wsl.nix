@@ -10,50 +10,7 @@
 { imports = [
     # include NixOS-WSL modules
     <nixos-wsl/modules>
-  ];
-
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
-  ];
-
-  environment.systemPackages = with pkgs; [
-    amber
-    bat
-    cmake
-    git
-    gcc
-    gpp
-    fd
-    fnm
-    fzf
-    glow
-    gh
-    go
-    htop
-    jq
-    just
-    lua
-    man
-    neofetch
-    neovim-nightly
-    openssh
-    php82
-    php82Packages.composer
-    python313Full
-    ripgrep
-    rustup
-    starship
-    stow
-    sudo
-    symfony-cli
-    tlrc
-    unzip
-    wget
-    xh
-    zip
-    zstd
+    ./packages.nix
   ];
 
   wsl = {

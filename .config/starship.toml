@@ -9,6 +9,9 @@ version_format = "v${major}.${minor}"
 [php]
 symbol = ' '
 
+[container]
+disabled = true
+
 [sudo]
 disabled = false
 

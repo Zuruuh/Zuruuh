@@ -1,11 +1,16 @@
-nix-shell -p git openssh
+nix-shell -p git openssh neovim stow
 ssh-keygen -t ed25519 -a 64 -f "$HOME/.ssh/github"
 ssh-keygen -t ed25519 -a 64 -f "$HOME/.ssh/git.staffmatch.it"
 ssh-keygen -t ed25519 -a 64 -f "$HOME/.ssh/vps"
-git clone git@github.com:Zuruuh/Zuruuh ~/.dotfiles
+git clone https://github.com/Zuruuh/Zuruuh ~/.dotfiles
+cd ~/.dotfiles
+# git switch nixos-2
+git remote set-url origin git@github.com:Zuruuh/Zuruuh
 # ...link dotfiles configuration.nix
-# temporary cp
-cp ~/.dotfiles/configuration.nix /etc/nixos/configuration.nix
+# sudo rm -rf /etc/nixos/configuration.nix
+# sudo ln "$HOME/.dotfiles/configuration.nix" /etc/nixos/configuration.nix
+stow .
+sudo nixos-rebuild switch
 
 # rust/cargo
 rustup install nightly

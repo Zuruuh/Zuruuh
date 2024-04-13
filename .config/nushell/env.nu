@@ -124,4 +124,4 @@ if not ($"($home)/.config/nushell/plugins/nu_scripts" | path exists) {
 }
 
 zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
-starship init nu | save -f ~/.config/nushell/plugins/starship.nuenv.nu
+starship init nu | save -f ~/.config/nushell/plugins/starship.nu

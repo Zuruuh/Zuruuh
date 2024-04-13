@@ -20,5 +20,11 @@
 /.config/containers/
 # scoop last update lockfile
 /.config/scoop/config.json
+
+# symlink whole .ssh dir
 /.ssh/*
 !/.ssh/config
+
+# symlink whole .cargo dir
+/.cargo/*
+!/.cargo/config.toml
