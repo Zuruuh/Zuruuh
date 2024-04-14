@@ -1,11 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ /*config, lib,*/ pkgs, ... }:
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+      url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
     }))
   ];
 
@@ -18,6 +18,7 @@ in {
     unstable.cargo-binstall
     cmake
     delta
+    du-dust
     eslint_d
     fd
     fx
@@ -54,6 +55,7 @@ in {
     unstable.rustup
     shellcheck
     shfmt
+    speedtest-cli
     starship
     stow
     stylua

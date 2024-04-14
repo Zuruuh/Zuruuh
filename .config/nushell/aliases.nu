@@ -1,4 +1,4 @@
-export alias dotfiles = nvim ~/dotfiles
+export alias dotfiles = echo 'use `config dotfiles`!'
 export alias gs = git switch
 export alias gitconfig = nvim ~/.config/git/config
 export alias gitignore = nvim ~/.config/git/ignore
@@ -16,6 +16,14 @@ export def nix-shell [
     ...args
 ] {
     ^nix-shell --command nu -p ...$args
+}
+
+export def "config dotfiles" [] {
+    nvim ~/.dotfiles
+}
+
+export def "config nvim" [] {
+    nvim ~/.dotfiles/.config/nvim/
 }
 
 export def bc [...command] {

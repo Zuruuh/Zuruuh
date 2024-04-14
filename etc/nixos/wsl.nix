@@ -5,7 +5,7 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{ /*config, lib, pkgs,*/ ... }:
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
@@ -30,6 +30,7 @@ in {
   users.users.zuruh = {
     extraGroups = [ "docker" ];
     shell = unstable.nushell;
+    hashedPasswordFile = "/passwd";
   };
 
 
