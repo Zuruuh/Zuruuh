@@ -1,3 +1,4 @@
+```sh
 sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
 sudo nix-channel --update
 nix-shell -p git openssh neovim stow gh
@@ -20,3 +21,4 @@ rustup install nightly
 rustup default nightly
 
 # restart shell
+```

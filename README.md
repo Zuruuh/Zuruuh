@@ -5,9 +5,10 @@
 <br />
 
 # Dev Stack
+
 <p>
   <img src="https://img.shields.io/static/v1?label=&message=Neovim&color=5D993C&logo=neovim&logoColor=white&style=flat-square" />
-  <img src="https://img.shields.io/static/v1?label=&message=Debian&color=A80030&logo=debian&logoColor=white&style=flat-square" />
+  <img src="https://img.shields.io/static/v1?label=&message=NixOS&color=5277C3&logo=nixos&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/static/v1?label=&message=Docker&color=2496ED&logo=docker&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/static/v1?label=&message=Nushell&color=3eaf7c&logo=gnubash&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/static/v1?label=&message=Zellij&color=A3BD8D&logo=tmux&logoColor=white&style=flat-square" />
