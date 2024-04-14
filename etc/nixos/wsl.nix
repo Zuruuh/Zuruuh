@@ -28,10 +28,14 @@ in {
   programs.nix-ld.enable = true;
 
   users.users.zuruh = {
+    isNormalUser = true;
     extraGroups = [ "docker" ];
     shell = unstable.nushell;
     hashedPasswordFile = "/passwd";
   };
+  users.users.root = {};
+  # todo: fix password not working ?
+  # security.sudo.wheelNeedsPassword = true;
 
 
   # This value determines the NixOS release from which the default settings for
