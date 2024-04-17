@@ -475,7 +475,7 @@ require('lazy').setup({
             },
           },
         },
-        phpactor = {},
+        -- phpactor = {},
         rust_analyzer = {},
         shellcheck = {},
         sqlls = {},
