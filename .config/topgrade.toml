@@ -15,7 +15,7 @@
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["containers", "gem", "ruby_gems", "yarn", "pnpm"]
+disable = ["containers", "gem", "ruby_gems", "yarn", "pnpm", "bun"]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
@@ -214,7 +214,6 @@ enable_winget = true
 [firmware]
 # Offer to update firmware; if false just check for and display available updates
 # upgrade = true
-
 
 [vagrant]
 # Vagrant directories

@@ -2,7 +2,21 @@
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in {
+  php82 = pkgs.php82.buildEnv {
+    extensions = ({ enabled, all }: enabled ++ (with all; [
+      apcu
+      amqp
+      redis
+      xsl
+    ]));
+    extraConfig = ''
+      apc.enabled=1
+      apc.enable_cli=1
+      error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+    '';
+  };
+in
+{
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
@@ -18,7 +32,9 @@ in {
     unstable.cargo-binstall
     cmake
     delta
+    unstable.deno
     du-dust
+    eget
     eslint_d
     fd
     fx
@@ -29,13 +45,17 @@ in {
     gcc
     gpp
     go
+    grpcurl
     htop
     jq
     just
     lua
+    gnumake
     man
+    mkpasswd
     neofetch
     neovim-nightly
+    nixpkgs-fmt
     nodejs_21
     nodePackages.eslint
     nodePackages.neovim
@@ -45,9 +65,11 @@ in {
     openssh
     openssl_3_1
     php82
+    php82.packages.composer
     php82Packages.composer
     pkg-config
     prettierd
+    protobuf
     unstable.python312Full
     unstable.python312Packages.pynvim
     unstable.python312Packages.pip
@@ -64,7 +86,7 @@ in {
     tailspin
     taplo
     tlrc
-    topgrade
+    unstable.topgrade
     tree-sitter
     unzip
     wget

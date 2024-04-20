@@ -1,7 +1,5 @@
 export alias dotfiles = echo 'use `config dotfiles`!'
 export alias gs = git switch
-export alias gitconfig = nvim ~/.config/git/config
-export alias gitignore = nvim ~/.config/git/ignore
 export alias gph = git push -u origin HEAD
 export alias gpp = gp
 export alias gsm = gcm
@@ -19,15 +17,19 @@ export def nix-shell [
 }
 
 export def "config dotfiles" [] {
-    nvim ~/.dotfiles
+    nvim ~/.dotfiles/
+}
+
+export def "config nix" [] {
+    nvim ~/dotfiles/etc/nixos/
 }
 
 export def "config nvim" [] {
     nvim ~/.dotfiles/.config/nvim/
 }
 
-export def bc [...command] {
-    php bin/console ...$command
+export def "config nushell" [] {
+    nvim ~/.dotfiles/.config/nushell/
 }
 
 export def --env mkcd [dir: string] {

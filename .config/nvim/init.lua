@@ -129,6 +129,12 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+vim.filetype.add {
+  extension = {
+    caddy = 'caddyfile',
+  },
+}
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -556,6 +562,7 @@ require('lazy').setup({
         typescript = { { 'biome', 'prettierd', 'prettier' } },
         javascriptreact = { { 'biome', 'prettierd', 'prettier' } },
         typescriptreact = { { 'biome', 'prettierd', 'prettier' } },
+        yaml = { { 'prettierd', 'prettier' } },
         astro = { { 'eslint', 'eslint_d', 'biome', 'prettierd', 'prettier' } },
         html = { { 'prettierd', 'prettier' } },
         css = { { 'prettierd', 'prettier' } },
@@ -565,6 +572,7 @@ require('lazy').setup({
         toml = { 'taplo' },
         php = { { 'phpcbf', 'php_cs_fixer' } },
         rust = { 'rustfmt' },
+        nix = { 'nixpkgs_fmt' },
         ['_'] = { 'trim_whitespace' },
       },
     },
@@ -798,6 +806,12 @@ require('lazy').setup({
   },
   {
     'isobit/vim-caddyfile',
+  },
+  {
+    'DariusCorvus/tree-sitter-surrealdb.nvim',
+    config = function()
+      require('tree-sitter-surrealdb').setup()
+    end,
   },
   {
     'saecki/crates.nvim',
