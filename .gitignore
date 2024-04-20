@@ -1,6 +1,4 @@
 /.config/nushell/history.*
-# should be a symlink to ./os/*/config.nu
-/.config/nushell/os/current.nu
 /.config/alacritty/alacritty.toml
 /.config/gh/hosts.yml
 /.config/ngrok/
