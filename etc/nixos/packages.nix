@@ -27,9 +27,11 @@ in
     amber
     bat
     unstable.biome
+    brotli
     unstable.bun
     unstable.cargo
     unstable.cargo-binstall
+    cargo-info
     cmake
     delta
     unstable.deno
@@ -44,16 +46,19 @@ in
     gh
     git
     gcc
+    gnumake
     gpp
     go
+    gradle
     grpcurl
+    gzip
     htop
     jq
     just
     kubectl
     kubernetes
     lua
-    gnumake
+    unstable.lychee
     man
     mdcat
     minikube
@@ -81,7 +86,7 @@ in
     unstable.rustup
     shellcheck
     shfmt
-    speedtest-cli
+    sqlx-cli
     starship
     stow
     stylua
@@ -90,6 +95,7 @@ in
     tailspin
     taplo
     tlrc
+    unstable.typos
     unstable.topgrade
     tree-sitter
     unzip
@@ -100,5 +106,6 @@ in
     zip
     unstable.zoxide
     zstd
+    zulu17
   ];
 }
