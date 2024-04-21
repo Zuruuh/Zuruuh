@@ -36,10 +36,11 @@ in
     du-dust
     eget
     eslint_d
+    fastfetch
     fd
+    unstable.frankenphp
     fx
     fzf
-    glow
     gh
     git
     gcc
@@ -49,11 +50,14 @@ in
     htop
     jq
     just
+    kubectl
+    kubernetes
     lua
     gnumake
     man
+    mdcat
+    minikube
     mkpasswd
-    neofetch
     neovim-nightly
     nixpkgs-fmt
     nodejs_21
