@@ -1,27 +1,27 @@
-/.config/nushell/history.*
-/.config/alacritty/alacritty.toml
-/.config/gh/hosts.yml
-/.config/ngrok/
-/.config/rclone/rclone.conf
-/.config/karabiner/automatic_backups
-/.config/asciinema
+/home/.config/nushell/history.*
+/home/.config/alacritty/alacritty.toml
+/home/.config/gh/hosts.yml
+/home/.config/ngrok/
+/home/.config/rclone/rclone.conf
+/home/.config/karabiner/automatic_backups
+/home/.config/asciinema
 # jgit is intellij IDE git integration
-/.config/jgit
+/home/.config/jgit
 # wtf yarn
-/.config/yarn
+/home/.config/yarn
 # sql tui
-/.config/lazysql
+/home/.config/lazysql
 # UV installation cache
-/.config/uv/uv-receipt.json
+/home/.config/uv/uv-receipt.json
 # podman machine lockfile
-/.config/containers/
+/home/.config/containers/
 # scoop last update lockfile
-/.config/scoop/config.json
+/home/.config/scoop/config.json
 
 # symlink whole .ssh dir
-/.ssh/*
-!/.ssh/config
+/home/.ssh/*
+!/home/.ssh/config
 
 # symlink whole .cargo dir
-/.cargo/*
-!/.cargo/config.toml
+/home/.cargo/*
+!/home/.cargo/config.toml

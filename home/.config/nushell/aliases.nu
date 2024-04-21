@@ -21,15 +21,15 @@ export def "config dotfiles" [] {
 }
 
 export def "config nix" [] {
-    nvim ~/dotfiles/etc/nixos/
+    nvim ~/dotfiles/root/etc/nixos/
 }
 
 export def "config nvim" [] {
-    nvim ~/.dotfiles/.config/nvim/
+    nvim ~/.dotfiles/home/.config/nvim/
 }
 
 export def "config nushell" [] {
-    nvim ~/.dotfiles/.config/nushell/
+    nvim ~/.dotfiles/home/.config/nushell/
 }
 
 export def --env mkcd [dir: string] {
