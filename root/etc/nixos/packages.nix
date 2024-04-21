@@ -99,6 +99,7 @@ in
     unstable.topgrade
     tree-sitter
     unzip
+    viu
     wget
     xclip
     xh
