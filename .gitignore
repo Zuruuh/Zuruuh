@@ -2,7 +2,6 @@
 /.config/alacritty/alacritty.toml
 /.config/gh/hosts.yml
 /.config/ngrok/
-/.config/neofetch/
 /.config/rclone/rclone.conf
 /.config/karabiner/automatic_backups
 /.config/asciinema
