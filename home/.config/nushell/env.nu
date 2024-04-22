@@ -23,7 +23,7 @@ $env.ENV_CONVERSIONS = {
 
 ## Windows compatibility
 ## windows path env var is named `Path` instead of regular `PATH` so we abstract it here
-def --env add_path [dir: string] {
+export def --env add_path [dir: string] {
     if ('PATH' in $env) {
         $env.PATH = ($env.PATH | prepend $dir)
     } else {

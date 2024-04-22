@@ -32,6 +32,18 @@ export def "config nushell" [] {
     nvim ~/.dotfiles/home/.config/nushell/
 }
 
+export def "venv create" [] {
+    if ('.venv' | path exists) {
+        error make { msg: 'Virtual environment already exists in this directory.' }
+    } else {
+        python -m venv .venv
+    }
+}
+
+export def --env "venv activate" [] {
+  add_path ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'bin')
+}
+
 export def --env mkcd [dir: string] {
     mkdir $dir
     cd $dir
