@@ -28,8 +28,16 @@ export def "config nvim" [] {
     nvim ~/.dotfiles/home/.config/nvim/
 }
 
-export def "config nushell" [] {
+export def "config nu" [] {
     nvim ~/.dotfiles/home/.config/nushell/
+}
+
+export def "config aliases" [] {
+    nvim ~/.dotfiles/home/.config/nushell/aliases.nu
+}
+
+export def "config starship" [] {
+    nvim ~/.dotfiles/home/.config/starship.toml
 }
 
 export def "venv create" [] {

@@ -82,6 +82,7 @@ $env_var\
 $crystal\
 $custom\
 $os\
+$shell\
 $sudo\
 $cmd_duration\
 $line_break\
@@ -90,7 +91,6 @@ $battery\
 $time\
 $status\
 $container\
-$shell\
 $character"""
 
 [aws]
@@ -106,6 +106,7 @@ symbol = ' '
 disabled = true
 
 [sudo]
+style = 'italic blue'
 disabled = false
 
 [os]
@@ -123,3 +124,15 @@ detect_files = [
 ]
 detect_extensions = ['docker', 'container', 'dockerfile', 'containerfile']
 detect_folders = ['docker']
+
+[shell]
+bash_indicator = 'using bash'
+fish_indicator = 'using fish'
+zsh_indicator = 'using zsh'
+powershell_indicator = 'using pwsh'
+pwsh_indicator = 'using pwsh'
+cmd_indicator = 'using cmd'
+# Make prompt less verbose with default shell
+nu_indicator = ''
+style = 'italic yellow'
+disabled = false
