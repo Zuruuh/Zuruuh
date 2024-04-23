@@ -15,10 +15,23 @@
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["containers", "gem", "ruby_gems", "yarn", "pnpm", "bun"]
+disable = [
+  "bun",
+  "bun_packages",
+  "composer",
+  "containers",
+  "gem",
+  "github_cli_extensions",
+  "node",
+  "pnpm",
+  "ruby_gems",
+  "rustup",
+  "yarn",
+  "wsl",
+]
 
 # Ignore failures for these steps
-# ignore_failures = ["powershell"]
+ignore_failures = ["firmware"]
 
 # List of remote machines with Topgrade installed on them
 # remote_topgrades = ["toothless", "pi", "parnas"]
@@ -156,12 +169,7 @@ disable = ["containers", "gem", "ruby_gems", "yarn", "pnpm", "bun"]
 # max_concurrency = 5
 
 # Git repositories that you want to pull and push
-repos = ["~/dotfiles/", "~/dotfiles/.config/nushell/plugins/nu_scripts"]
-
-# Repositories that you only want to pull
-# pull_only_repos = [
-#     "~/.config/something_else"
-# ]
+repos = ["~/.dotfiles/", "~/.dotfiles/.config/nushell/plugins/nu_scripts"]
 
 # Repositories that you only want to push
 # push_only_repos = [
@@ -194,21 +202,6 @@ arguments = "--rebase --autostash"
 # manager such as Scoop or Cargo
 self_rename = true
 enable_winget = true
-
-
-[npm]
-# Use sudo if the NPM directory isn't owned by the current user
-# use_sudo = true
-
-
-[yarn]
-# Run `yarn global upgrade` with `sudo`
-# use_sudo = true
-
-
-[vim]
-# For `vim-plug`, execute `PlugUpdate!` instead of `PlugUpdate`
-# force_plug_update = true
 
 
 [firmware]
