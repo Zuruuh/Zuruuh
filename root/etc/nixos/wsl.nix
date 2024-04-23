@@ -21,18 +21,14 @@ in
     defaultUser = "zuruh";
     wslConf = {
       interop.appendWindowsPath = false;
-      network.generateResolvConf = false;
     };
   };
 
   virtualisation.docker.enable = true;
-  programs.nix-ld.enable = true;
 
-  networking = {
-    nameservers = [ "192.168.1.254" "1.1.1.1" ];
-    resolvconf = {
-      enable = true;
-    };
+  programs = {
+    nix-ld.enable = true;
+    fish.enable = true;
   };
 
   users.users = {
@@ -46,7 +42,6 @@ in
     };
   };
 
-  programs.fish.enable = true;
 
   security.sudo.wheelNeedsPassword = true;
 

@@ -24,6 +24,10 @@ export def "config nix" [] {
     nvim ~/dotfiles/root/etc/nixos/
 }
 
+export def "config nix-packages" [] {
+    nvim ~/dotfiles/root/etc/nixos/packages.nix
+}
+
 export def "config nvim" [] {
     nvim ~/.dotfiles/home/.config/nvim/
 }
