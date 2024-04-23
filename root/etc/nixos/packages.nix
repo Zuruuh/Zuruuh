@@ -70,6 +70,7 @@ in
     nodePackages.neovim
     nodePackages.pnpm
     nodePackages.prettier
+    nodePackages.serve
     unstable.nushell
     openssh
     openssl_3_1
