@@ -52,6 +52,10 @@ export def --env "venv activate" [] {
   add_path ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'bin')
 }
 
+export def "git stash diff" [] {
+    git stash show -p
+}
+
 export def --env mkcd [dir: string] {
     mkdir $dir
     cd $dir
