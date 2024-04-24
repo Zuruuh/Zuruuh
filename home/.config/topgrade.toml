@@ -169,7 +169,7 @@ ignore_failures = ["firmware"]
 # max_concurrency = 5
 
 # Git repositories that you want to pull and push
-repos = ["~/.dotfiles/", "~/.dotfiles/.config/nushell/plugins/nu_scripts"]
+repos = ["~/.dotfiles/", "~/.dotfiles/home/.config/nushell/plugins/nu_scripts"]
 
 # Repositories that you only want to push
 # push_only_repos = [
