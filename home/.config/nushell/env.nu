@@ -59,6 +59,7 @@ if ($nu.os-info.name == 'windows') {
     # android
     $env.ANDROID_HOME = 'D:\\Android'
     $env.NDK_HOME = (ls $"($env.ANDROID_HOME)\\ndk" | get 0.name)
+    add_path 'D:\\Android\\platform-tools'
 }
 
 # Cargo
