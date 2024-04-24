@@ -52,17 +52,20 @@ in
     gradle
     grpcurl
     gzip
+    unstable.hexyl
     htop
     jq
     just
     kubectl
     kubernetes
+    libgcc
     lua
     unstable.lychee
     man
     mdcat
     minikube
     mkpasswd
+    nasm
     neovim-nightly
     nixpkgs-fmt
     nodejs_21
