@@ -75,6 +75,7 @@ in
     nodePackages.prettier
     nodePackages.serve
     unstable.nushell
+    onefetch
     openssh
     openssl_3_1
     php82
