@@ -39,6 +39,10 @@ export def "config starship" [] {
     nvim ~/.dotfiles/home/.config/starship.toml
 }
 
+export def "config alacritty" [] {
+    nvim ~/.dotfiles/home/.config/alacritty/
+}
+
 export def "venv create" [] {
     if ('.venv' | path exists) {
         error make { msg: 'Virtual environment already exists in this directory.' }
