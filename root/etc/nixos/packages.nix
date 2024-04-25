@@ -50,9 +50,7 @@ in
     gpp
     go
     gradle
-    grpcurl
     gzip
-    unstable.hexyl
     htop
     jq
     just
@@ -60,12 +58,10 @@ in
     kubernetes
     libgcc
     lua
-    unstable.lychee
     man
     mdcat
     minikube
     mkpasswd
-    nasm
     neovim-nightly
     nixpkgs-fmt
     nodejs_21
@@ -83,7 +79,6 @@ in
     php82Packages.composer
     pkg-config
     prettierd
-    protobuf
     unstable.python312Full
     unstable.python312Packages.pynvim
     unstable.python312Packages.pip
@@ -114,4 +109,11 @@ in
     zstd
     zulu17
   ];
+
+  environment.sessionVariables = {
+    XDG_CACHE_HOME = "$HOME/.cache";
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_STATE_HOME = "$HOME/.local/state";
+  };
 }

@@ -16,6 +16,8 @@ in
     ./packages.nix
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   wsl = {
     enable = true;
     defaultUser = "zuruh";
