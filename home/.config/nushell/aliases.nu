@@ -1,13 +1,8 @@
 export alias dotfiles = echo 'use `config dotfiles`!'
-export alias gs = git switch
-export alias gph = git push -u origin HEAD
-export alias gpp = gp
-export alias gsm = gcm
-export alias gpl = git pull
-export alias gsth = git stash
 export alias git_current_branch = git branch --show-current
 export alias docker-compose = docker compose
 export alias compose = docker compose
+export alias buildx = docker buildx
 export alias code = codium
 
 export def nix-shell [
