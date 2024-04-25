@@ -67,8 +67,8 @@ def "from dotenv" [] {
         $kv.0: ($kv |
             skip 1 |
             str join '=' |
-            str trim --char '"' |
-            str trim --char "'"
+            str trim --char (char single_quote) |
+            str trim --char (char double_quote)
         )
     }} |
     default {} |

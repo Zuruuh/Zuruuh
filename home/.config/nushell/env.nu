@@ -24,10 +24,10 @@ $env.ENV_CONVERSIONS = {
 ## Windows compatibility
 ## windows path env var is named `Path` instead of regular `PATH` so we abstract it here
 export def --env add_path [dir: string] {
-    if ('PATH' in $env) {
-        $env.PATH = ($env.PATH | prepend $dir)
-    } else {
+    if ($nu.os-info.name == 'windows') {
         $env.Path = ($env.Path | prepend $dir)
+    } else {
+        $env.PATH = ($env.PATH | prepend $dir)
     }
 }
 
@@ -39,7 +39,7 @@ if $nu.os-info.name == 'linux' and ('/etc/set-environment' | path exists) {
 
 if $nu.os-info.name in ['linux', 'macos'] {
     add_path $"($home)/.local/bin"
-    add_path $"($home)/.local/share/phpactor/bin"
+    add_path $"($env.XDG_DATA_HOME)/phpactor/bin"
 }
 
 if $nu.os-info.name == 'macos' {
@@ -50,11 +50,6 @@ if $nu.os-info.name == 'macos' {
 
 if ($nu.os-info.name == 'windows') {
     $env.CONTAINERS_REGISTRIES_CONF = $"($home)\\.config\\containers\\registries.conf"
-    add_path 'C:\\Program Files (x86)\\GnuWin32\\bin'
-    add_path 'D:\\Softwares\\php'
-    add_path 'D:\\Softwares\\php-dev'
-    add_path 'D:\\Softwares\\GnuWin32\\bin'
-    add_path 'D:\\bin'
 
     # android
     $env.ANDROID_HOME = 'D:\\Android'
@@ -68,11 +63,6 @@ add_path $"($home)/.cargo/bin"
 # nushell
 $env.SHELL = (which nu | get path.0)
 
-# Golang
-$env.GOPATH = $"($home)/.local/share/go"
-# add_path '/usr/local/go/bin'
-add_path $"($env.GOPATH)/bin"
-
 # PyEnv
 if ($"($home)/.pyenv" | path exists) {
     $env.PYENV_ROOT = $"($home)/.pyenv"
@@ -82,17 +72,16 @@ if ($"($home)/.pyenv" | path exists) {
 }
 
 # Bun
-$env.BUN_INSTALL = $"($home)/.bun"
-add_path $"($env.BUN_INSTALL)/bin"
+if ($"($home)/.bun" | path exists) {
+    $env.BUN_INSTALL = $"($home)/.bun"
+    add_path $"($env.BUN_INSTALL)/bin"
+}
 
 # PHP
-$env.COMPOSER_HOME = $"($home)/.local/share/composer"
+$env.COMPOSER_HOME = $"($env.XDG_DATA_HOME)/composer"
 $env.APP_ENV = dev
-add_path $"($home)/.local/share/composer/bin"
-add_path $"($home)/.local/share/composer/vendor/bin"
-
-# Neovim
-add_path $"($home)/.local/share/bob/nvim-bin"
+add_path $"($env.XDG_DATA_HOME)/composer/bin"
+add_path $"($env.XDG_DATA_HOME)/composer/vendor/bin"
 
 # Node
 if (which fnm | is-not-empty) {
@@ -100,11 +89,15 @@ if (which fnm | is-not-empty) {
     add_path $"($env.FNM_MULTISHELL_PATH)/bin"
     add_path $"($env.FNM_MULTISHELL_PATH)/"
 }
-add_path $"($home)/.yarn/bin"
 
-# Deno
-$env.DENO_INSTALL = $"($home)/.deno"
-add_path $"($env.DENO_INSTALL)/bin"
+if ($"($home)/.yarn/bin" | path exists) {
+    add_path $"($home)/.yarn/bin"
+}
+
+if ($"($home)/.deno" | path exists) {
+    $env.DENO_INSTALL = $"($home)/.deno"
+    add_path $"($env.DENO_INSTALL)/bin"
+}
 
 # Pulumi
 if ($"($home)/.pulumi" | path exists) {
