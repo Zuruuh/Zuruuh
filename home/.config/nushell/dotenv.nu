@@ -1,4 +1,8 @@
 export def --env load-sh-env [file: string] {
+    if (which sh | is-empty) {
+        return
+    }
+
     if not ($file | path exists) {
         error make {
             msg: 'Path does not exist',
@@ -36,6 +40,10 @@ export def --env load-sh-env [file: string] {
 }
 
 export def --env load-env-file [file: string] {
+    if (which sh | is-empty) {
+        return
+    }
+
     let base_env = do { sh -c 'env' } | complete | get stdout | from dotenv
     let parsed_env = cat .env |
         str trim |
