@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-04-25T16:15:57.272-00:00",
+	"CreationDate" : "2024-04-27T21:02:27.798-00:00",
 	"Sources" : 
 	[
 		{
@@ -26,6 +26,9 @@
 				},
 				{
 					"PackageIdentifier" : "Bruno.Bruno"
+				},
+				{
+					"PackageIdentifier" : "FTB.App"
 				},
 				{
 					"PackageIdentifier" : "OpenWhisperSystems.Signal"
@@ -115,9 +118,6 @@
 					"PackageIdentifier" : "Proton.ProtonVPN"
 				},
 				{
-					"PackageIdentifier" : "Rustlang.Rustup"
-				},
-				{
 					"PackageIdentifier" : "Ryujinx.Ryujinx"
 				},
 				{
@@ -182,6 +182,9 @@
 				},
 				{
 					"PackageIdentifier" : "charmbracelet.glow"
+				},
+				{
+					"PackageIdentifier" : "Element.Element"
 				},
 				{
 					"PackageIdentifier" : "equalsraf.win32yank"
@@ -286,6 +289,9 @@
 					"PackageIdentifier" : "Microsoft.PowerShell.Preview"
 				},
 				{
+					"PackageIdentifier" : "Modrinth.ModrinthApp"
+				},
+				{
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
 				},
 				{
@@ -326,9 +332,6 @@
 				},
 				{
 					"PackageIdentifier" : "StrawberryPerl.StrawberryPerl"
-				},
-				{
-					"PackageIdentifier" : "Modrinth.ModrinthApp"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"

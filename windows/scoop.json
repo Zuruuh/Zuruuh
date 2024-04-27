@@ -4,29 +4,39 @@
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main.git",
             "Updated": {
-                "value": "\/Date(1714048225000)\/",
+                "value": "\/Date(1714235273000)\/",
                 "DisplayHint": 2,
-                "DateTime": "Thursday, April 25, 2024 2:30:25 PM"
+                "DateTime": "Saturday, April 27, 2024 6:27:53 PM"
             },
             "Manifests": 1317
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": {
+                "value": "\/Date(1714235643000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, April 27, 2024 6:34:03 PM"
+            },
+            "Manifests": 2013
         },
         {
             "Name": "versions",
             "Source": "https://github.com/ScoopInstaller/Versions",
             "Updated": {
-                "value": "\/Date(1714048691000)\/",
+                "value": "\/Date(1714235461000)\/",
                 "DisplayHint": 2,
-                "DateTime": "Thursday, April 25, 2024 2:38:11 PM"
+                "DateTime": "Saturday, April 27, 2024 6:31:01 PM"
             },
-            "Manifests": 449
+            "Manifests": 451
         },
         {
             "Name": "nerd-fonts",
             "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
             "Updated": {
-                "value": "\/Date(1713878643000)\/",
+                "value": "\/Date(1714206108000)\/",
                 "DisplayHint": 2,
-                "DateTime": "Tuesday, April 23, 2024 3:24:03 PM"
+                "DateTime": "Saturday, April 27, 2024 10:21:48 AM"
             },
             "Manifests": 336
         },
@@ -34,9 +44,9 @@
             "Name": "nonportable",
             "Source": "https://github.com/ScoopInstaller/Nonportable",
             "Updated": {
-                "value": "\/Date(1714049345000)\/",
+                "value": "\/Date(1714136131000)\/",
                 "DisplayHint": 2,
-                "DateTime": "Thursday, April 25, 2024 2:49:05 PM"
+                "DateTime": "Friday, April 26, 2024 2:55:31 PM"
             },
             "Manifests": 127
         },
@@ -61,6 +71,20 @@
         },
         {
             "Info": "",
+            "Source": "extras",
+            "Name": "ani-cli",
+            "Version": "4.8",
+            "Updated": "\/Date(1714244485118)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "aria2",
+            "Version": "1.37.0-1",
+            "Updated": "\/Date(1714244508764)\/"
+        },
+        {
+            "Info": "",
             "Source": "main",
             "Name": "bat",
             "Version": "0.24.0",
@@ -77,8 +101,8 @@
             "Info": "",
             "Source": "versions",
             "Name": "bun-canary",
-            "Version": "1.1.4+df190815d",
-            "Updated": "\/Date(1714051542147)\/"
+            "Version": "1.1.6-canary.1+8280defc3",
+            "Updated": "\/Date(1714197707913)\/"
         },
         {
             "Info": "",
@@ -86,6 +110,13 @@
             "Name": "cacert",
             "Version": "2024-03-11",
             "Updated": "\/Date(1714052199652)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "cargo-binstall",
+            "Version": "1.6.4",
+            "Updated": "\/Date(1714198459940)\/"
         },
         {
             "Info": "",
@@ -126,8 +157,8 @@
             "Info": "",
             "Source": "main",
             "Name": "eza",
-            "Version": "0.18.11",
-            "Updated": "\/Date(1714050292422)\/"
+            "Version": "0.18.13",
+            "Updated": "\/Date(1714136676440)\/"
         },
         {
             "Info": "",
@@ -135,6 +166,13 @@
             "Name": "fd",
             "Version": "9.0.0",
             "Updated": "\/Date(1714050293284)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "ffmpeg",
+            "Version": "7.0",
+            "Updated": "\/Date(1714244534863)\/"
         },
         {
             "Info": "",
@@ -208,10 +246,17 @@
         },
         {
             "Info": "",
+            "Source": "extras",
+            "Name": "mpv",
+            "Version": "0.38.0",
+            "Updated": "\/Date(1714244517044)\/"
+        },
+        {
+            "Info": "",
             "Source": "versions",
             "Name": "neovim-nightly",
-            "Version": "0.10.0-2999",
-            "Updated": "\/Date(1714051409615)\/"
+            "Version": "0.10.0-3007",
+            "Updated": "\/Date(1714136685458)\/"
         },
         {
             "Info": "",
@@ -219,6 +264,13 @@
             "Name": "nodejs",
             "Version": "22.0.0",
             "Updated": "\/Date(1714051375160)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "nu",
+            "Version": "0.92.2",
+            "Updated": "\/Date(1714197875360)\/"
         },
         {
             "Info": "",
@@ -254,6 +306,13 @@
             "Name": "ripgrep",
             "Version": "14.1.0",
             "Updated": "\/Date(1714049952054)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "rustup",
+            "Version": "1.27.0",
+            "Updated": "\/Date(1714198383456)\/"
         },
         {
             "Info": "",
