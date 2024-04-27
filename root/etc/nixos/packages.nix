@@ -103,6 +103,7 @@ in
     wget
     xclip
     xh
+    yamlfix
     unstable.zellij
     zip
     unstable.zoxide
