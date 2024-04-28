@@ -1,0 +1,138 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+command_timeout = 500
+
+# https://starship.rs/config/#default-prompt-format
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$direnv\
+$env_var\
+$crystal\
+$custom\
+$os\
+$shell\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$container\
+$character"""
+
+[aws]
+disabled = true
+
+[nodejs]
+version_format = "v${major}.${minor}"
+
+[php]
+symbol = ' '
+
+[container]
+disabled = true
+
+[sudo]
+style = 'italic blue'
+disabled = false
+
+[os]
+disabled = false
+format = "on [($name )](cyan)"
+
+[docker_context]
+detect_files = [
+  'docker-compose.yaml',
+  'docker-compose.yml',
+  'compose.yaml',
+  'compose.yml',
+  'Dockerfile',
+  '.dockerignore',
+]
+detect_extensions = ['docker', 'container', 'dockerfile', 'containerfile']
+detect_folders = ['docker']
+
+[shell]
+bash_indicator = 'using bash'
+fish_indicator = 'using fish'
+zsh_indicator = 'using zsh'
+powershell_indicator = 'using pwsh'
+pwsh_indicator = 'using pwsh'
+cmd_indicator = 'using cmd'
+# Make prompt less verbose with default shell
+nu_indicator = ''
+style = 'italic yellow'
+disabled = false

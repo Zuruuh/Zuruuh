@@ -1,0 +1,409 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": {
+                "value": "\/Date(1714235273000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, April 27, 2024 6:27:53 PM"
+            },
+            "Manifests": 1317
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": {
+                "value": "\/Date(1714235643000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, April 27, 2024 6:34:03 PM"
+            },
+            "Manifests": 2013
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": {
+                "value": "\/Date(1714235461000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, April 27, 2024 6:31:01 PM"
+            },
+            "Manifests": 451
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+            "Updated": {
+                "value": "\/Date(1714206108000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, April 27, 2024 10:21:48 AM"
+            },
+            "Manifests": 336
+        },
+        {
+            "Name": "nonportable",
+            "Source": "https://github.com/ScoopInstaller/Nonportable",
+            "Updated": {
+                "value": "\/Date(1714136131000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Friday, April 26, 2024 2:55:31 PM"
+            },
+            "Manifests": 127
+        },
+        {
+            "Name": "java",
+            "Source": "https://github.com/ScoopInstaller/Java",
+            "Updated": {
+                "value": "\/Date(1713889078000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Tuesday, April 23, 2024 6:17:58 PM"
+            },
+            "Manifests": 273
+        }
+    ],
+    "apps": [
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "7zip",
+            "Version": "23.01",
+            "Updated": "\/Date(1714050157643)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "ani-cli",
+            "Version": "4.8",
+            "Updated": "\/Date(1714244485118)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "aria2",
+            "Version": "1.37.0-1",
+            "Updated": "\/Date(1714244508764)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "bat",
+            "Version": "0.24.0",
+            "Updated": "\/Date(1714050373407)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "biome",
+            "Version": "1.7.1",
+            "Updated": "\/Date(1714052128078)\/"
+        },
+        {
+            "Info": "",
+            "Source": "versions",
+            "Name": "bun-canary",
+            "Version": "1.1.6-canary.1+8280defc3",
+            "Updated": "\/Date(1714197707913)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "cacert",
+            "Version": "2024-03-11",
+            "Updated": "\/Date(1714052199652)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "cargo-binstall",
+            "Version": "1.6.4",
+            "Updated": "\/Date(1714198459940)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "composer",
+            "Version": "2.7.4",
+            "Updated": "\/Date(1713849862982)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "curl",
+            "Version": "8.7.1_7",
+            "Updated": "\/Date(1714052213776)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "delta",
+            "Version": "0.17.0",
+            "Updated": "\/Date(1714050400495)\/"
+        },
+        {
+            "Info": "",
+            "Source": "nonportable",
+            "Name": "devtoys-np",
+            "Version": "1.0.13.0",
+            "Updated": "\/Date(1714049834338)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "dust",
+            "Version": "1.0.0",
+            "Updated": "\/Date(1714050291615)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "eza",
+            "Version": "0.18.13",
+            "Updated": "\/Date(1714136676440)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "fd",
+            "Version": "9.0.0",
+            "Updated": "\/Date(1714050293284)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "ffmpeg",
+            "Version": "7.0",
+            "Updated": "\/Date(1714244534863)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "fzf",
+            "Version": "0.50.0",
+            "Updated": "\/Date(1713461115428)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "gcc",
+            "Version": "13.2.0",
+            "Updated": "\/Date(1714051234685)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "gh",
+            "Version": "2.48.0",
+            "Updated": "\/Date(1713461123316)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "gsudo",
+            "Version": "2.4.4",
+            "Updated": "\/Date(1714053796607)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "gzip",
+            "Version": "1.3.12",
+            "Updated": "\/Date(1714052224038)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "innounp",
+            "Version": "0.50",
+            "Updated": "\/Date(1714050158389)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "jq",
+            "Version": "1.7.1",
+            "Updated": "\/Date(1706542716405)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "just",
+            "Version": "1.25.2",
+            "Updated": "\/Date(1714050079965)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "less",
+            "Version": "643",
+            "Updated": "\/Date(1714050215022)\/"
+        },
+        {
+            "Info": "",
+            "Source": "nerd-fonts",
+            "Name": "Monaspace-NF",
+            "Version": "3.2.1",
+            "Updated": "\/Date(1714051702416)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "mpv",
+            "Version": "0.38.0",
+            "Updated": "\/Date(1714244517044)\/"
+        },
+        {
+            "Info": "",
+            "Source": "versions",
+            "Name": "neovim-nightly",
+            "Version": "0.10.0-3007",
+            "Updated": "\/Date(1714136685458)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "nodejs",
+            "Version": "22.0.0",
+            "Updated": "\/Date(1714051375160)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "nu",
+            "Version": "0.92.2",
+            "Updated": "\/Date(1714197875360)\/"
+        },
+        {
+            "Info": "",
+            "Source": "java",
+            "Name": "openjdk17",
+            "Version": "17.0.2-8",
+            "Updated": "\/Date(1707778760998)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "perl",
+            "Version": "5.38.2.2",
+            "Updated": "\/Date(1714053329333)\/"
+        },
+        {
+            "Info": "",
+            "Source": "versions",
+            "Name": "php82",
+            "Version": "8.2.18",
+            "Updated": "\/Date(1714051292114)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "pnpm",
+            "Version": "9.0.6",
+            "Updated": "\/Date(1714051386710)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "ripgrep",
+            "Version": "14.1.0",
+            "Updated": "\/Date(1714049952054)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "rustup",
+            "Version": "1.27.0",
+            "Updated": "\/Date(1714198383456)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "sed",
+            "Version": "4.9",
+            "Updated": "\/Date(1714053350615)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "starship",
+            "Version": "1.18.2",
+            "Updated": "\/Date(1714050081077)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "symfony-cli",
+            "Version": "5.8.16",
+            "Updated": "\/Date(1713952764583)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "tailspin",
+            "Version": "3.0.1",
+            "Updated": "\/Date(1714050215951)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "taplo",
+            "Version": "0.8.1",
+            "Updated": "\/Date(1714050217238)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "topgrade",
+            "Version": "14.0.1",
+            "Updated": "\/Date(1714050218399)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "unzip",
+            "Version": "6.00",
+            "Updated": "\/Date(1714053409579)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "wasmer",
+            "Version": "v4.2.8",
+            "Updated": "\/Date(1714050169616)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "wget",
+            "Version": "1.21.4",
+            "Updated": "\/Date(1714052200771)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "win32yank",
+            "Version": "0.1.1",
+            "Updated": "\/Date(1699353172040)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "xh",
+            "Version": "0.22.0",
+            "Updated": "\/Date(1714049926078)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "zip",
+            "Version": "3.0",
+            "Updated": "\/Date(1714053404815)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "zoxide",
+            "Version": "0.9.4",
+            "Updated": "\/Date(1714050081868)\/"
+        }
+    ]
+}
