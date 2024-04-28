@@ -51,6 +51,7 @@ in
     go
     gradle
     gzip
+    hadolint
     htop
     jq
     just

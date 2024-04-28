@@ -34,7 +34,7 @@ export def --env add_path [dir: string] {
 let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
 
 if $nu.os-info.name == 'windows' {
-    $env.XDG_CONFIG_HOME = $"($home)\\.config"
+    $env.XDG_CONFIG_HOME = $"($home)\\.dotfiles\\home\\.config"
     $env.XDG_DATA_HOME = $env.APPDATA
     $env.XDG_STATE_HOME = $env.LOCALAPPDATA
 }
