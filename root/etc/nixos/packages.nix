@@ -32,6 +32,7 @@ in
     unstable.cargo
     unstable.cargo-binstall
     cargo-info
+    clippy
     cmake
     delta
     unstable.deno
