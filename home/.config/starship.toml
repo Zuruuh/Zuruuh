@@ -105,13 +105,9 @@ symbol = ' '
 [container]
 disabled = true
 
-[sudo]
-style = 'italic blue'
-disabled = false
-
 [os]
 disabled = false
-format = "on [($name )](cyan)"
+format = "on [($name)](cyan)"
 
 [docker_context]
 detect_files = [
