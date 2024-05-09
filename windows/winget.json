@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-05-03T17:33:15.652-00:00",
+	"CreationDate" : "2024-05-09T14:43:54.655-00:00",
 	"Sources" : 
 	[
 		{
@@ -43,9 +43,6 @@
 					"PackageIdentifier" : "eloston.ungoogled-chromium"
 				},
 				{
-					"PackageIdentifier" : "DenoLand.Deno"
-				},
-				{
 					"PackageIdentifier" : "Discord.Discord"
 				},
 				{
@@ -64,13 +61,7 @@
 					"PackageIdentifier" : "Git.Git"
 				},
 				{
-					"PackageIdentifier" : "Google.Protobuf"
-				},
-				{
 					"PackageIdentifier" : "Google.PlayGames.Beta"
-				},
-				{
-					"PackageIdentifier" : "JernejSimoncic.Wget"
 				},
 				{
 					"PackageIdentifier" : "LibreWolf.LibreWolf"
@@ -175,25 +166,13 @@
 					"PackageIdentifier" : "Obsidian.Obsidian"
 				},
 				{
-					"PackageIdentifier" : "cURL.cURL"
+					"PackageIdentifier" : "HTTPie.HTTPie"
 				},
 				{
 					"PackageIdentifier" : "Overwolf.CurseForge"
 				},
 				{
-					"PackageIdentifier" : "charmbracelet.glow"
-				},
-				{
 					"PackageIdentifier" : "Element.Element"
-				},
-				{
-					"PackageIdentifier" : "equalsraf.win32yank"
-				},
-				{
-					"PackageIdentifier" : "ezwinports.make"
-				},
-				{
-					"PackageIdentifier" : "jftuga.less"
 				},
 				{
 					"PackageIdentifier" : "qBittorrent.qBittorrent"
@@ -202,16 +181,7 @@
 					"PackageIdentifier" : "SlackTechnologies.Slack"
 				},
 				{
-					"PackageIdentifier" : "zig.zig.nightly"
-				},
-				{
-					"PackageIdentifier" : "nepnep.neofetch-win"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
-				},
-				{
-					"PackageIdentifier" : "LGUG2Z.komorebi"
 				},
 				{
 					"PackageIdentifier" : "FACEITLTD.FACEITAC"
@@ -229,9 +199,6 @@
 					"PackageIdentifier" : "ShiningLight.OpenSSL"
 				},
 				{
-					"PackageIdentifier" : "7zip.7zip"
-				},
-				{
 					"PackageIdentifier" : "VSCodium.VSCodium"
 				},
 				{
@@ -239,15 +206,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
-				},
-				{
-					"PackageIdentifier" : "GoLang.Go"
-				},
-				{
-					"PackageIdentifier" : "Python.Launcher"
-				},
-				{
-					"PackageIdentifier" : "Kitware.CMake"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
@@ -268,9 +226,6 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
-					"PackageIdentifier" : "Python.Python.3.12"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
 				},
 				{
@@ -283,7 +238,7 @@
 					"PackageIdentifier" : "Modrinth.ModrinthApp"
 				},
 				{
-					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+					"PackageIdentifier" : "Apple.Bonjour"
 				},
 				{
 					"PackageIdentifier" : "GOG.Galaxy"
@@ -298,6 +253,9 @@
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
+					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
@@ -310,9 +268,6 @@
 					"PackageIdentifier" : "Mojang.MinecraftLauncher"
 				},
 				{
-					"PackageIdentifier" : "Python.Python.2"
-				},
-				{
 					"PackageIdentifier" : "dotPDN.PaintDotNet"
 				},
 				{
@@ -323,15 +278,6 @@
 				},
 				{
 					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
-				},
-				{
-					"PackageIdentifier" : "o2sh.onefetch"
-				},
-				{
-					"PackageIdentifier" : "hoppscotch.Hoppscotch"
-				},
-				{
-					"PackageIdentifier" : "StrawberryPerl.StrawberryPerl"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
@@ -347,9 +293,6 @@
 				},
 				{
 					"PackageIdentifier" : "CitraEmu.Citra"
-				},
-				{
-					"PackageIdentifier" : "MSYS2.MSYS2"
 				}
 			],
 			"SourceDetails" : 
@@ -376,5 +319,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.7.11132"
+	"WinGetVersion" : "1.7.11261"
 }
