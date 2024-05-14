@@ -6,6 +6,7 @@ let
     extensions = ({ enabled, all }: enabled ++ (with all; [
       apcu
       amqp
+      pcov
       redis
       xsl
     ]));
