@@ -24,7 +24,7 @@ export def "config nix-packages" [] {
 }
 
 export def "config nvim" [] {
-    nvim ~/.dotfiles/home/.config/nvim/
+    nvim ~/.dotfiles/home/.config/nvim/init.lua
 }
 
 export def "config nu" [] {
