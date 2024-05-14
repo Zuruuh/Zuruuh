@@ -66,7 +66,7 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-vim.o.shell = os.getenv('SHELL')
+-- vim.o.shell = os.getenv('SHELL')
 
 vim.g.loaded_perl_provider = 0
 
@@ -607,7 +607,14 @@ require('lazy').setup({
       --    you can use this plugin to help you. It even has snippets
       --    for various frameworks/libraries/etc. but you will have to
       --    set up the ones that are useful for you.
-      -- 'rafamadriz/friendly-snippets',
+      {
+        'rafamadriz/friendly-snippets',
+        config = function()
+          require('luasnip.loaders.from_vscode').lazy_load({
+            exclude = { 'php' },
+          })
+        end,
+      },
     },
     config = function()
       -- See `:help cmp`
@@ -673,52 +680,20 @@ require('lazy').setup({
     end,
   },
 
-  -- { -- You can easily change to a different colorscheme.
-  --   -- Change the name of the colorscheme plugin below, and then
-  --   -- change the command in the config to whatever the name of that colorscheme is
-  --   --
-  --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
-  --   --
-  --   -- 'folke/tokyonight.nvim',
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000, -- make sure to load this before all the other start plugins
-  --   init = function()
-  --     -- Load the colorscheme here.
-  --     -- Like many other themes, this one has different styles, and you could load
-  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  --     -- vim.cmd.colorscheme 'tokyonight-night'
-  --
-  --     require('onedark').setup({ style = 'cool' })
-  --     require('onedark').load()
-  --
-  --     -- You can configure highlights by doing something like
-  --     vim.cmd.hi('Comment gui=none')
-  --   end,
-  -- },
-  -- {
-  --   'f-person/auto-dark-mode.nvim',
-  --   dependencies = { 'Mofiqul/vscode.nvim' },
-  --   config = function()
-  --     local auto_dark_mode = require 'auto-dark-mode'
-  --     auto_dark_mode.setup {
-  --       update_interval = 1000,
-  --       set_dark_mode = function()
-  --         vim.o.background = 'dark'
-  --       end,
-  --       set_light_mode = function()
-  --         -- vim.o.background = "light"
-  --         vim.o.background = 'dark'
-  --       end,
-  --     }
-  --
-  --     require('vscode').setup {
-  --       italic_comments = true,
-  --     }
-  --
-  --     require('vscode').load()
-  --   end,
-  -- },
+  {
+    -- 'navarasu/onedark.nvim',
+    -- 'Mofiqul/vscode.nvim',
+    -- 'folke/tokyonight.nvim',
+    'ellisonleao/gruvbox.nvim',
+    priority = 1000,
+    init = function()
+      -- require('onedark').setup({ style = 'warmer' })
+      require('gruvbox').load()
 
+      -- You can configure highlights by doing something like
+      -- vim.cmd.hi('Comment gui=none')
+    end,
+  },
   -- Highlight todo, notes, etc in comments
   {
     'folke/todo-comments.nvim',
@@ -920,7 +895,7 @@ require('lazy').setup({
     'akinsho/bufferline.nvim',
     lazy = false,
     keys = {
-      { '<C-w>', '<Cmd>BufferLinePickClose<CR>' },
+      { '<leader>0', '<Cmd>BufferLinePickClose<CR>' },
       { '<leader>1', '<Cmd>BufferLineGoToBuffer 1<CR>' },
       { '<leader>2', '<Cmd>BufferLineGoToBuffer 2<CR>' },
       { '<leader>3', '<Cmd>BufferLineGoToBuffer 3<CR>' },
