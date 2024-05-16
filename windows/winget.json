@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-05-09T14:43:54.655-00:00",
+	"CreationDate" : "2024-05-16T23:00:04.020-00:00",
 	"Sources" : 
 	[
 		{
@@ -106,9 +106,6 @@
 					"PackageIdentifier" : "Parsec.Parsec"
 				},
 				{
-					"PackageIdentifier" : "Proton.ProtonDrive"
-				},
-				{
 					"PackageIdentifier" : "Proton.ProtonVPN"
 				},
 				{
@@ -134,9 +131,6 @@
 				},
 				{
 					"PackageIdentifier" : "Debian.Debian"
-				},
-				{
-					"PackageIdentifier" : "JetBrains.Toolbox"
 				},
 				{
 					"PackageIdentifier" : "GnuWin32.UnZip"
@@ -172,6 +166,9 @@
 					"PackageIdentifier" : "Overwolf.CurseForge"
 				},
 				{
+					"PackageIdentifier" : "beekeeper-studio.beekeeper-studio"
+				},
+				{
 					"PackageIdentifier" : "Element.Element"
 				},
 				{
@@ -199,6 +196,9 @@
 					"PackageIdentifier" : "ShiningLight.OpenSSL"
 				},
 				{
+					"PackageIdentifier" : "Proton.ProtonDrive"
+				},
+				{
 					"PackageIdentifier" : "VSCodium.VSCodium"
 				},
 				{
@@ -211,13 +211,13 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
@@ -248,9 +248,6 @@
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
@@ -286,6 +283,12 @@
 					"PackageIdentifier" : "Nvidia.PhysXLegacy"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
 				},
 				{
@@ -293,6 +296,9 @@
 				},
 				{
 					"PackageIdentifier" : "CitraEmu.Citra"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				}
 			],
 			"SourceDetails" : 
