@@ -1,6 +1,5 @@
 {
   "workbench.sideBar.location": "right",
-  "terminal.integrated.defaultProfile.windows": "nu",
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
@@ -14,14 +13,11 @@
   "terminal.integrated.useWslProfiles": false,
   "terminal.integrated.shellIntegration.enabled": false,
   "terminal.integrated.profiles.windows": {
-    "nu": {
-      "path": "C:\\Users\\zuruh\\.cargo\\bin\\nu.exe"
-    },
-    "pwsh": {
-      "path": "pwsh",
-      "icon": "terminal-powershell"
+    "Nushell": {
+      "path": "C:\\Users\\zuruh\\scoop\\shims\\nu.exe"
     }
   },
+  "terminal.integrated.defaultProfile.windows": "Nushell",
   "editor.fontFamily": "'MonaspiceNe Nerd Font', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 13,
