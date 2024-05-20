@@ -1,4 +1,42 @@
 {
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2024-05-20T18:28:11+02:00",
+            "Manifests": 1325
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2024-05-20T18:30:47+02:00",
+            "Manifests": 2022
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": "2024-05-20T18:36:30+02:00",
+            "Manifests": 461
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+            "Updated": "2024-05-19T09:15:43+02:00",
+            "Manifests": 336
+        },
+        {
+            "Name": "nonportable",
+            "Source": "https://github.com/ScoopInstaller/Nonportable",
+            "Updated": "2024-05-20T14:47:59+02:00",
+            "Manifests": 127
+        },
+        {
+            "Name": "java",
+            "Source": "https://github.com/ScoopInstaller/Java",
+            "Updated": "2024-05-20T06:18:49+02:00",
+            "Manifests": 273
+        }
+    ],
     "apps": [
         {
             "Updated": "2024-05-16T22:47:13.3486387+02:00",
@@ -22,9 +60,9 @@
             "Name": "biome"
         },
         {
-            "Updated": "2024-05-16T22:48:04.2384004+02:00",
+            "Updated": "2024-05-20T18:54:30.9045898+02:00",
             "Source": "versions",
-            "Version": "1.1.9-canary.1+d55ac0fa4",
+            "Version": "1.1.9-canary.1+ee13aabde",
             "Info": "",
             "Name": "bun-canary"
         },
@@ -36,9 +74,9 @@
             "Name": "cacert"
         },
         {
-            "Updated": "2024-05-12T17:02:17.5078552+02:00",
+            "Updated": "2024-05-20T02:15:51.1959051+02:00",
             "Source": "main",
-            "Version": "1.6.6",
+            "Version": "1.6.7",
             "Info": "",
             "Name": "cargo-binstall"
         },
@@ -85,9 +123,9 @@
             "Name": "delta"
         },
         {
-            "Updated": "2024-05-12T17:02:23.4634141+02:00",
+            "Updated": "2024-05-20T02:15:55.838086+02:00",
             "Source": "main",
-            "Version": "1.43.3",
+            "Version": "1.43.5",
             "Info": "",
             "Name": "deno"
         },
@@ -246,11 +284,11 @@
             "Name": "msys2"
         },
         {
-            "Updated": "2024-05-16T22:49:00.2319315+02:00",
-            "Source": "versions",
-            "Version": "0.10.0-3145",
+            "Updated": "2024-05-20T18:55:06.4061166+02:00",
+            "Source": "main",
+            "Version": "0.10.0",
             "Info": "",
-            "Name": "neovim-nightly"
+            "Name": "neovim"
         },
         {
             "Updated": "2024-05-14T17:25:28.0469023+02:00",
@@ -489,44 +527,6 @@
             "Version": "0.9.4",
             "Info": "",
             "Name": "zoxide"
-        }
-    ],
-    "buckets": [
-        {
-            "Name": "main",
-            "Source": "https://github.com/ScoopInstaller/Main.git",
-            "Updated": "2024-05-16T22:26:21+02:00",
-            "Manifests": 1325
-        },
-        {
-            "Name": "extras",
-            "Source": "https://github.com/ScoopInstaller/Extras",
-            "Updated": "2024-05-16T22:28:22+02:00",
-            "Manifests": 2021
-        },
-        {
-            "Name": "versions",
-            "Source": "https://github.com/ScoopInstaller/Versions",
-            "Updated": "2024-05-16T22:29:18+02:00",
-            "Manifests": 461
-        },
-        {
-            "Name": "nerd-fonts",
-            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
-            "Updated": "2024-05-13T00:16:23+02:00",
-            "Manifests": 336
-        },
-        {
-            "Name": "nonportable",
-            "Source": "https://github.com/ScoopInstaller/Nonportable",
-            "Updated": "2024-05-16T22:29:04+02:00",
-            "Manifests": 127
-        },
-        {
-            "Name": "java",
-            "Source": "https://github.com/ScoopInstaller/Java",
-            "Updated": "2024-05-16T22:15:29+02:00",
-            "Manifests": 273
         }
     ]
 }
