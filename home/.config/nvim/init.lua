@@ -69,6 +69,7 @@ vim.opt.scrolloff = 10
 -- vim.o.shell = os.getenv('SHELL')
 
 vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -611,7 +612,7 @@ require('lazy').setup({
         'rafamadriz/friendly-snippets',
         config = function()
           require('luasnip.loaders.from_vscode').lazy_load({
-            exclude = { 'php' },
+            exclude = { 'php', 'rust', 'global' },
           })
         end,
       },
