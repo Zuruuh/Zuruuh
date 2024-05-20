@@ -24,7 +24,6 @@ in
     unstable.biome
     brotli
     unstable.bun
-    unstable.cargo
     unstable.cargo-binstall
     cargo-info
     clippy
