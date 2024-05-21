@@ -92,6 +92,7 @@ in
     taplo
     tlrc
     unstable.typos
+    tokei
     unstable.topgrade
     tree-sitter
     unzip

@@ -14,4 +14,3 @@
   <img src="https://img.shields.io/static/v1?label=&message=Zellij&color=A3BD8D&logo=tmux&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/static/v1?label=&message=Alacritty&color=F46D01&logo=alacritty&logoColor=white&style=flat-square" />
 </p>
-<small>This is repo is also my dotfiles repo (if you want to take a look)</small>
