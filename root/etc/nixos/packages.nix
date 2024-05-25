@@ -40,6 +40,7 @@ in
     fzf
     gh
     git
+    git-lfs
     gcc
     gnumake
     gpp
