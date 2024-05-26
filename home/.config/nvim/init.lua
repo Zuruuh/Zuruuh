@@ -136,6 +136,25 @@ vim.filetype.add({
   },
 })
 
+vim.api.nvim_create_user_command('FormatDisable', function(args)
+  if args.bang then
+    -- FormatDisable! will disable formatting just for this buffer
+    vim.b.disable_autoformat = true
+  else
+    vim.g.disable_autoformat = true
+  end
+end, {
+  desc = 'Disable autoformat-on-save',
+  bang = true,
+})
+
+vim.api.nvim_create_user_command('FormatEnable', function()
+  vim.b.disable_autoformat = false
+  vim.g.disable_autoformat = false
+end, {
+  desc = 'Re-enable autoformat-on-save',
+})
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -525,10 +544,13 @@ require('lazy').setup({
     'stevearc/conform.nvim',
     opts = {
       notify_on_error = true,
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
+      format_on_save = function(bufnr)
+        -- Disable with a global or buffer-local variable
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+          return
+        end
+        return { timeout_ms = 500, lsp_fallback = true }
+      end,
       formatters = {
         phpcbf = function()
           return {
@@ -539,6 +561,7 @@ require('lazy').setup({
             }, 'phpcbf'),
           }
         end,
+
         php_cs_fixer = function()
           return {
             command = require('conform.util').find_executable({
@@ -548,6 +571,22 @@ require('lazy').setup({
           }
         end,
       },
+
+      biome = function()
+        return {
+          command = require('conform.util').find_executable({
+            'node_modules/.bin/biome',
+          }, 'biome'),
+        }
+      end,
+
+      prettier = function()
+        return {
+          command = require('conform.util').find_executable({
+            'node_modules/.bin/prettier',
+          }, 'prettier'),
+        }
+      end,
 
       eslint = function()
         return {
@@ -559,19 +598,20 @@ require('lazy').setup({
 
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { { 'biome', 'prettierd', 'prettier' } },
-        typescript = { { 'biome', 'prettierd', 'prettier' } },
-        javascriptreact = { { 'biome', 'prettierd', 'prettier' } },
-        typescriptreact = { { 'biome', 'prettierd', 'prettier' } },
-        yaml = { { 'prettierd', 'prettier' } },
-        astro = { { 'eslint', 'eslint_d', 'biome', 'prettierd', 'prettier' } },
-        html = { { 'prettierd', 'prettier' } },
-        css = { { 'prettierd', 'prettier' } },
-        json = { { 'biome', 'prettierd', 'prettier' } },
-        markdown = { { 'deno_fmt', 'prettierd', 'prettier' } },
+        javascript = { { 'prettier', 'biome' } },
+        typescript = { { 'prettier', 'biome' } },
+        javascriptreact = { { 'prettier', 'biome' } },
+        typescriptreact = { { 'prettier', 'biome' } },
+        svelte = { { 'prettier', 'biome' } },
+        yaml = { { 'prettier' } },
+        astro = { { 'prettier', 'biome' } },
+        html = { { 'prettier' } },
+        css = { { 'prettier' } },
+        json = { { 'prettier', 'biome' } },
+        markdown = { { 'prettier', 'deno_fmt' } },
         sh = { 'shfmt' },
         toml = { 'taplo' },
-        php = { { 'phpcbf', 'php_cs_fixer' } },
+        php = { { 'php_cs_fixer', 'phpcbf' } },
         rust = { 'rustfmt' },
         nix = { 'nixpkgs_fmt' },
         ['_'] = { 'trim_whitespace' },
@@ -608,14 +648,16 @@ require('lazy').setup({
       --    you can use this plugin to help you. It even has snippets
       --    for various frameworks/libraries/etc. but you will have to
       --    set up the ones that are useful for you.
-      {
-        'rafamadriz/friendly-snippets',
-        config = function()
-          require('luasnip.loaders.from_vscode').lazy_load({
-            exclude = { 'php', 'rust', 'javascript', 'global' },
-          })
-        end,
-      },
+
+      -- Disabled bcz it's a pain to configure correctly
+      -- {
+      --   'rafamadriz/friendly-snippets',
+      --   config = function()
+      --     require('luasnip.loaders.from_vscode').lazy_load({
+      --       exclude = { 'php', 'rust', 'javascript', 'global' },
+      --     })
+      --   end,
+      -- },
     },
     config = function()
       -- See `:help cmp`
