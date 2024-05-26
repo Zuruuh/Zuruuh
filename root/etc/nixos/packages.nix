@@ -32,7 +32,6 @@ in
     unstable.deno
     du-dust
     eget
-    eslint_d
     fastfetch
     fd
     unstable.frankenphp
@@ -62,10 +61,8 @@ in
     unstable.neovim
     nixpkgs-fmt
     nodejs_21
-    nodePackages.eslint
     nodePackages.neovim
     nodePackages.pnpm
-    nodePackages.prettier
     nodePackages.serve
     unstable.nushell
     onefetch
@@ -75,7 +72,6 @@ in
     php82.packages.composer
     php82Packages.composer
     pkg-config
-    prettierd
     unstable.python312Full
     unstable.python312Packages.pynvim
     unstable.python312Packages.pip
@@ -102,6 +98,7 @@ in
     xclip
     xh
     yamlfix
+    yazi
     unstable.zellij
     zip
     unstable.zoxide
