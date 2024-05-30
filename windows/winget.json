@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-05-20T19:08:43.927-00:00",
+	"CreationDate" : "2024-05-30T04:16:38.581-00:00",
 	"Sources" : 
 	[
 		{
@@ -181,7 +181,13 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
+				},
+				{
 					"PackageIdentifier" : "FACEITLTD.FACEITAC"
+				},
+				{
+					"PackageIdentifier" : "Mumble.Mumble.Client"
 				},
 				{
 					"PackageIdentifier" : "LGUG2Z.whkd"
@@ -211,28 +217,19 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
 				},
 				{
 					"PackageIdentifier" : "Alacritty.Alacritty"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.PowerShell.Preview"
 				},
 				{
 					"PackageIdentifier" : "Modrinth.ModrinthApp"
@@ -244,10 +241,13 @@
 					"PackageIdentifier" : "GOG.Galaxy"
 				},
 				{
-					"PackageIdentifier" : "Mumble.Mumble.Client"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
@@ -277,13 +277,13 @@
 					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.PowerShell.Preview"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.PhysXLegacy"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
@@ -298,7 +298,13 @@
 					"PackageIdentifier" : "CitraEmu.Citra"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				}
 			],
 			"SourceDetails" : 
