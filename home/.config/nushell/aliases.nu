@@ -56,7 +56,11 @@ export def "venv create" [] {
 }
 
 export def --env "venv activate" [] {
-  add_path ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'bin')
+  if $nu.os-info.name == 'windows' {
+    add_path ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'Scripts')
+  } else {
+    add_path ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'bin')
+  }
 }
 
 export def "git stash diff" [] {
