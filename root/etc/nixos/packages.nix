@@ -2,7 +2,7 @@
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  php82 = pkgs.php82.buildEnv {
+  php83 = pkgs.php83.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       apcu
       amqp
@@ -26,12 +26,10 @@ in
     unstable.bun
     unstable.cargo-binstall
     cargo-info
-    clippy
     cmake
     delta
     unstable.deno
     du-dust
-    eget
     fastfetch
     fd
     unstable.frankenphp
@@ -60,17 +58,20 @@ in
     mkpasswd
     unstable.neovim
     nixpkgs-fmt
-    nodejs_21
+    unstable.nodejs_22
     nodePackages.neovim
     nodePackages.pnpm
+    nodePackages.prettier
     nodePackages.serve
     unstable.nushell
     onefetch
     openssh
     openssl_3_1
-    php82
-    php82.packages.composer
-    php82Packages.composer
+    php83
+    php83.packages.composer
+    php83.packages.phpstan
+    php83.packages.php-cs-fixer
+    php83.packages.psalm
     pkg-config
     unstable.python312Full
     unstable.python312Packages.pynvim
@@ -97,7 +98,6 @@ in
     wget
     xclip
     xh
-    yamlfix
     yazi
     unstable.zellij
     zip
