@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-05-30T04:16:38.581-00:00",
+	"CreationDate" : "2024-06-06T12:03:07.801-00:00",
 	"Sources" : 
 	[
 		{
@@ -20,9 +20,6 @@
 				},
 				{
 					"PackageIdentifier" : "ModernFlyouts.ModernFlyouts"
-				},
-				{
-					"PackageIdentifier" : "th-ch.YouTubeMusic"
 				},
 				{
 					"PackageIdentifier" : "Bruno.Bruno"
@@ -181,9 +178,6 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
-				},
-				{
 					"PackageIdentifier" : "FACEITLTD.FACEITAC"
 				},
 				{
@@ -215,6 +209,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
@@ -286,9 +283,6 @@
 					"PackageIdentifier" : "Nvidia.PhysXLegacy"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
 				},
 				{
@@ -296,9 +290,6 @@
 				},
 				{
 					"PackageIdentifier" : "CitraEmu.Citra"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerToys"
