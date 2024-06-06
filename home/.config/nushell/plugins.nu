@@ -10,6 +10,7 @@ source ~/.config/nushell/plugins/nu_scripts/custom-completions/bat/bat-completio
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/composer/composer-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/curl/curl-completions.nu
+source ~/.config/nushell/plugins/nu_scripts/custom-completions/docker/docker-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/gh/gh-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/git/git-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/less/less-completions.nu
