@@ -24,7 +24,7 @@ in
     unstable.biome
     brotli
     unstable.bun
-    unstable.cargo-binstall
+    cargo-binstall
     cargo-info
     cmake
     delta
@@ -58,26 +58,25 @@ in
     mkpasswd
     unstable.neovim
     nixpkgs-fmt
-    unstable.nodejs_22
+    nodejs_22
     nodePackages.neovim
     nodePackages.pnpm
-    nodePackages.prettier
     nodePackages.serve
     unstable.nushell
     onefetch
     openssh
-    openssl_3_1
+    openssl_3_3
     php83
     php83.packages.composer
     php83.packages.phpstan
     php83.packages.php-cs-fixer
     php83.packages.psalm
     pkg-config
-    unstable.python312Full
-    unstable.python312Packages.pynvim
-    unstable.python312Packages.pip
+    python312Full
+    python312Packages.pynvim
+    python312Packages.pip
     ripgrep
-    unstable.rustup
+    rustup
     shellcheck
     shfmt
     sqlx-cli
@@ -91,7 +90,7 @@ in
     tlrc
     unstable.typos
     tokei
-    unstable.topgrade
+    topgrade
     tree-sitter
     unzip
     viu
@@ -101,7 +100,7 @@ in
     yazi
     unstable.zellij
     zip
-    unstable.zoxide
+    zoxide
     zstd
     zulu17
   ];
