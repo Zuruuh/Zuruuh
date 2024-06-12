@@ -55,7 +55,8 @@ vim.opt.splitbelow = true
 --  NOTE: See `:help 'list'` and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -584,15 +585,7 @@ require('lazy').setup({
         return {
           command = require('conform.util').find_executable({
             'node_modules/.bin/prettier',
-          }, 'prettier'),
-        }
-      end,
-
-      eslint = function()
-        return {
-          command = require('conform.util').find_executable({
-            'node_modules/.bin/eslint',
-          }, 'eslint'),
+          }, nil),
         }
       end,
 
