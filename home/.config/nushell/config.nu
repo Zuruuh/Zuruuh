@@ -163,7 +163,15 @@ $env.config = {
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
     edit_mode: vi # emacs, vi
-    shell_integration: false # enables terminal shell integration. Off by default, as some terminals have issues with this.
+    shell_integration: {
+      osc2: false
+      osc7: false
+      osc8: false
+      osc9_9: false
+      osc133: false
+      osc633: false
+      reset_application_mode: false
+    }
     render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 
     hooks: {
