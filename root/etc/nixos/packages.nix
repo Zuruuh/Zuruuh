@@ -93,6 +93,7 @@ in
     topgrade
     tree-sitter
     unzip
+    valkey
     viu
     wget
     xclip
