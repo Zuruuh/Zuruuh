@@ -291,25 +291,6 @@ $env.config = {
             event: { send: menuprevious }
         }
         {
-            name: next_page_menu
-            modifier: control
-            keycode: char_x
-            mode: emacs
-            event: { send: menupagenext }
-        }
-        {
-            name: undo_or_previous_page_menu
-            modifier: control
-            keycode: char_z
-            mode: emacs
-            event: {
-                until: [
-                    { send: menupageprevious }
-                    { edit: undo }
-                ]
-            }
-        }
-        {
             name: escape
             modifier: none
             keycode: escape
@@ -438,112 +419,6 @@ $env.config = {
             keycode: backspace
             mode: vi_normal
             event: {edit: moveleft}
-        }
-        {
-            name: newline_or_run_command
-            modifier: none
-            keycode: enter
-            mode: emacs
-            event: {send: enter}
-        }
-        {
-            name: move_left
-            modifier: control
-            keycode: char_b
-            mode: emacs
-            event: {
-                until: [
-                    {send: menuleft}
-                    {send: left}
-                ]
-            }
-        }
-        {
-            name: move_one_word_left
-            modifier: alt
-            keycode: left
-            mode: emacs
-            event: {edit: movewordleft}
-        }
-        {
-            name: move_one_word_right_or_take_history_hint
-            modifier: alt
-            keycode: right
-            mode: emacs
-            event: {
-                until: [
-                    {send: historyhintwordcomplete}
-                    {edit: movewordright}
-                ]
-            }
-        }
-        {
-            name: move_one_word_left
-            modifier: alt
-            keycode: char_b
-            mode: emacs
-            event: {edit: movewordleft}
-        }
-        {
-            name: move_one_word_right_or_take_history_hint
-            modifier: alt
-            keycode: char_f
-            mode: emacs
-            event: {
-                until: [
-                    {send: historyhintwordcomplete}
-                    {edit: movewordright}
-                ]
-            }
-        }
-        {
-            name: delete_one_word_forward
-            modifier: alt
-            keycode: delete
-            mode: emacs
-            event: {edit: deleteword}
-        }
-        {
-            name: delete_one_word_backward
-            modifier: alt
-            keycode: backspace
-            mode: emacs
-            event: {edit: backspaceword}
-        }
-        {
-            name: delete_one_word_backward
-            modifier: alt
-            keycode: char_m
-            mode: emacs
-            event: {edit: backspaceword}
-        }
-        {
-            name: cut_word_to_right
-            modifier: alt
-            keycode: char_d
-            mode: emacs
-            event: {edit: cutwordright}
-        }
-        {
-            name: upper_case_word
-            modifier: alt
-            keycode: char_u
-            mode: emacs
-            event: {edit: uppercaseword}
-        }
-        {
-            name: lower_case_word
-            modifier: alt
-            keycode: char_l
-            mode: emacs
-            event: {edit: lowercaseword}
-        }
-        {
-            name: capitalize_char
-            modifier: alt
-            keycode: char_c
-            mode: emacs
-            event: {edit: capitalizechar}
         }
     ]
 }
