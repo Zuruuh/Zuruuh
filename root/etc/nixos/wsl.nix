@@ -31,6 +31,11 @@ in
   programs = {
     nix-ld.enable = true;
     fish.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+      pinentryPackage = pkgs.pinentry-curses;
+    };
   };
 
   users.users = {
@@ -49,6 +54,7 @@ in
     XDG_CONFIG_HOME = "$HOME/.dotfiles/home/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
+    EDITOR = "${pkgs.neovim}/bin/nvim";
   };
 
   security.sudo.wheelNeedsPassword = true;
