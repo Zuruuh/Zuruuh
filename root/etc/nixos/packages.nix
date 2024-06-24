@@ -16,6 +16,9 @@ let
       error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
     '';
   };
+  nodePackages = pkgs.nodePackages.override {
+    nodejs = pkgs.nodejs_22;
+  };
 in
 {
   environment.systemPackages = with pkgs; [
@@ -23,12 +26,14 @@ in
     bat
     unstable.biome
     brotli
+    btop
     unstable.bun
     cargo-binstall
     cargo-info
     cmake
     delta
     unstable.deno
+    unstable.docker_26
     du-dust
     fastfetch
     fd
@@ -40,12 +45,12 @@ in
     git-lfs
     gcc
     gnumake
+    gnupg
     gpp
     go
     gradle
     gzip
     hadolint
-    htop
     jq
     just
     kubectl
@@ -59,7 +64,6 @@ in
     unstable.neovim
     nixpkgs-fmt
     nodejs_22
-    nodePackages.neovim
     nodePackages.pnpm
     nodePackages.serve
     unstable.nushell
