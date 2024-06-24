@@ -1,4 +1,5 @@
 use ~/.config/nushell/aliases.nu *
+use ~/.config/nushell/completions.nu *
 
 source ~/.config/nushell/plugins/nu_scripts/aliases/git/git-aliases.nu
 source ~/.config/nushell/plugins/nu_scripts/aliases/eza/eza-aliases.nu
