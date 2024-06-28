@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-06-06T12:03:07.801-00:00",
+	"CreationDate" : "2024-06-28T06:55:10.403-00:00",
 	"Sources" : 
 	[
 		{
@@ -37,10 +37,22 @@
 					"PackageIdentifier" : "Codeusa.BorderlessGaming"
 				},
 				{
+					"PackageIdentifier" : "Cemu.Cemu"
+				},
+				{
 					"PackageIdentifier" : "eloston.ungoogled-chromium"
 				},
 				{
+					"PackageIdentifier" : "JetBrains.DataGrip"
+				},
+				{
 					"PackageIdentifier" : "Discord.Discord"
+				},
+				{
+					"PackageIdentifier" : "DuckDB.cli"
+				},
+				{
+					"PackageIdentifier" : "Electrum.Electrum"
 				},
 				{
 					"PackageIdentifier" : "FACEITLTD.FACEITClient"
@@ -169,10 +181,16 @@
 					"PackageIdentifier" : "Element.Element"
 				},
 				{
+					"PackageIdentifier" : "Proton.ProtonMail"
+				},
+				{
 					"PackageIdentifier" : "qBittorrent.qBittorrent"
 				},
 				{
 					"PackageIdentifier" : "SlackTechnologies.Slack"
+				},
+				{
+					"PackageIdentifier" : "Proton.ProtonDrive"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
@@ -194,9 +212,6 @@
 				},
 				{
 					"PackageIdentifier" : "ShiningLight.OpenSSL"
-				},
-				{
-					"PackageIdentifier" : "Proton.ProtonDrive"
 				},
 				{
 					"PackageIdentifier" : "VSCodium.VSCodium"
@@ -247,9 +262,6 @@
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
-					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
@@ -274,6 +286,9 @@
 					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
 				},
 				{
+					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.PowerShell.Preview"
 				},
 				{
@@ -292,10 +307,10 @@
 					"PackageIdentifier" : "CitraEmu.Citra"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
+					"PackageIdentifier" : "Microsoft.PowerToys"
 				}
 			],
 			"SourceDetails" : 
