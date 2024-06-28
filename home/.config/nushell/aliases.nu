@@ -11,6 +11,10 @@ export def nix-shell [
     ^nix-shell --command nu -p ...$args
 }
 
+export def "wsl ip" [] {
+    ip route show | rg -i default  | split column ' ' | get 0.column3
+}
+
 export def "config dotfiles" [] {
     nvim ~/.dotfiles/
 }
