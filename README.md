@@ -14,3 +14,5 @@
   <img src="https://img.shields.io/static/v1?label=&message=Zellij&color=A3BD8D&logo=tmux&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/static/v1?label=&message=Alacritty&color=F46D01&logo=alacritty&logoColor=white&style=flat-square" />
 </p>
+
+![Dev stack screenshot](./media/dev_stack.png)
