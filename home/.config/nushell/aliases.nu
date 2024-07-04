@@ -106,7 +106,3 @@ export def switch [] {
         git switch $branch
     }
 }
-
-export def "wsl ip" [] {
-    ip route show | rg -i default  | split column ' ' | get 0.column3
-}
