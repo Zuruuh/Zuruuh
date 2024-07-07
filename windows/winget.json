@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-07-04T08:35:01.597-00:00",
+	"CreationDate" : "2024-07-07T11:30:32.762-00:00",
 	"Sources" : 
 	[
 		{
@@ -49,10 +49,16 @@
 					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
+					"PackageIdentifier" : "BlenderFoundation.Blender"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
 					"PackageIdentifier" : "ShiningLight.OpenSSL"
+				},
+				{
+					"PackageIdentifier" : "Inkscape.Inkscape"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
@@ -166,6 +172,9 @@
 					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+				},
+				{
 					"PackageIdentifier" : "GOG.Galaxy"
 				},
 				{
@@ -173,9 +182,6 @@
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
