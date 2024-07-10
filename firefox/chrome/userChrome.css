@@ -1,6 +1,7 @@
 toolbox#navigator-toolbox {
     flex-direction: row-reverse;
     width: 100%;
+    flex-wrap: wrap;
 
     & #nav-bar {
         flex: 1;
@@ -15,10 +16,14 @@ toolbox#navigator-toolbox {
 
         & #TabsToolbar {
             width: fit-content;
-        }
 
-        &>*:not(:last-child) {
-            display: none;
+            &>*:not(:last-child) {
+                display: none;
+            }
         }
+    }
+
+    & #PersonalToolbar {
+        flex-basis: 100vw;
     }
 }
