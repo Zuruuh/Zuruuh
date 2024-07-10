@@ -5,6 +5,7 @@ toolbox#navigator-toolbox {
 
     & #nav-bar {
         flex: 1;
+        padding-top: 4px;
     }
 
     & #titlebar {
@@ -26,4 +27,8 @@ toolbox#navigator-toolbox {
     & #PersonalToolbar {
         flex-basis: 100vw;
     }
+}
+
+tab.tabbrowser-tab[pending="true"] {
+    filter: brightness(50%);
 }
