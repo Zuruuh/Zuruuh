@@ -1,0 +1,24 @@
+toolbox#navigator-toolbox {
+    flex-direction: row-reverse;
+    width: 100%;
+
+    & #nav-bar {
+        flex: 1;
+    }
+
+    & #titlebar {
+        width: fit-content;
+
+        & #toolbar-menubar {
+            display: none;
+        }
+
+        & #TabsToolbar {
+            width: fit-content;
+        }
+
+        &>*:not(:last-child) {
+            display: none;
+        }
+    }
+}
