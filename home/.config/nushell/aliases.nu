@@ -106,3 +106,7 @@ export def switch [] {
         git switch $branch
     }
 }
+
+export def l [...args] {
+    eza --long --all --icons --git ...$args
+}

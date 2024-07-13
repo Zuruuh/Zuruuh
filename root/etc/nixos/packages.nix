@@ -34,7 +34,9 @@ in
     delta
     unstable.deno
     unstable.docker_26
+    dotter
     du-dust
+    eza
     fastfetch
     fd
     unstable.frankenphp
