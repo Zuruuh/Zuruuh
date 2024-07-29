@@ -51,11 +51,35 @@ export def "config ssh" [] {
     nvim ~/.dotfiles/home/.ssh/config
 }
 
-export def "venv create" [] {
+export def "venv create" [python_path: string = "" ] {
     if ('.venv' | path exists) {
-        error make { msg: 'Virtual environment already exists in this directory.' }
+        return (
+            error make {
+                msg: 'Virtual environment already exists in this directory.'
+            }
+        )
+    }
+
+    let python = if ($python_path | str length) == 0 {
+        which python | get 0.path
     } else {
-        python -m venv .venv
+        $python_path
+    }
+
+    do { ^$python '-m' 'venv' $"(pwd)/.venv" } | complete
+
+    return
+}
+
+export def copy [] {
+    if $nu.os-info.name == "windows" {
+        echo $in | clip.exe
+    } else if $nu.os-info.name == "linux" {
+        echo $in | xclip -sel clip
+    } else {
+        return (error make {
+            msg: 'Unsupported os'
+        })
     }
 }
 
