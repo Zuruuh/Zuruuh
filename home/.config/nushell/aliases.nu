@@ -71,16 +71,12 @@ export def "venv create" [python_path: string = "" ] {
     return
 }
 
+export def paste [] {
+    cat (do { cb show } | complete | get stderr | str trim --char '"')
+}
+
 export def copy [] {
-    if $nu.os-info.name == "windows" {
-        echo $in | clip.exe
-    } else if $nu.os-info.name == "linux" {
-        echo $in | xclip -sel clip
-    } else {
-        return (error make {
-            msg: 'Unsupported os'
-        })
-    }
+    cb copy $in
 }
 
 export def --env "venv activate" [] {
