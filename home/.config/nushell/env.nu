@@ -24,11 +24,7 @@ $env.ENV_CONVERSIONS = {
 ## Windows compatibility
 ## windows path env var is named `Path` instead of regular `PATH` so we abstract it here
 export def --env add_path [dir: string] {
-    if ($nu.os-info.name == 'windows') {
-        $env.Path = ($env.Path | prepend $dir)
-    } else {
-        $env.PATH = ($env.PATH | prepend $dir)
-    }
+    $env.PATH = ($env.PATH | prepend $dir)
 }
 
 let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
@@ -85,7 +81,7 @@ if ($"($home)/.bun" | path exists) {
 
 # PHP
 $env.COMPOSER_HOME = $"($env.XDG_DATA_HOME)/composer"
-$env.APP_ENV = dev
+$env.APP_ENV = 'dev'
 add_path $"($env.XDG_DATA_HOME)/composer/bin"
 add_path $"($env.XDG_DATA_HOME)/composer/vendor/bin"
 

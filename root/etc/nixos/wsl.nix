@@ -38,10 +38,6 @@ in
     };
   };
 
-  # Run GUI applications on windows host
-  services.xserver.enable = true;
-  hardware.opengl.enable = true;
-
   users.users = {
     zuruh = {
       isNormalUser = true;

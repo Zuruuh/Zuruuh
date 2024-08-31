@@ -15,6 +15,10 @@ export def "wsl ip" [] {
     ip route show | rg -i default  | split column ' ' | get 0.column3
 }
 
+export def "wsl open" [path: string] {
+    /mnt/c/Windows/explorer.exe ("\\\\wsl.localhost\\NixOS" + ((pwd) | path join $path | str replace -a '/' '\'))
+}
+
 export def "config dotfiles" [] {
     nvim ~/.dotfiles/
 }
@@ -129,4 +133,8 @@ export def switch [] {
 
 export def l [...args] {
     eza --long --all --icons --git ...$args
+}
+
+export def leetcode [] {
+    nvim leetcode.nvim
 }

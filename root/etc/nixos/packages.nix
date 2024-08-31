@@ -28,13 +28,15 @@ in
     brotli
     btop
     unstable.bun
+    cargo-audit
     cargo-binstall
+    cargo-expand
     cargo-info
+    cargo-tarpaulin
+    clipboard-jh
     cmake
     delta
     unstable.deno
-    unstable.docker_26
-    dotter
     du-dust
     eza
     fastfetch
@@ -50,9 +52,7 @@ in
     gnupg
     gpp
     go
-    gradle
     gzip
-    hadolint
     jq
     just
     kubectl

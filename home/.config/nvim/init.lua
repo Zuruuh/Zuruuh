@@ -950,6 +950,32 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'kawre/leetcode.nvim',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim', -- required by telescope
+      'MunifTanjim/nui.nvim',
+    },
+    opts = {
+      lang = 'rust',
+      cn = {
+        enabled = false,
+      },
+      storage = {
+        home = vim.fn.stdpath('data') .. '/leetcode',
+        cache = vim.fn.stdpath('cache') .. '/leetcode',
+      },
+    },
+  },
+  {
+    'OXY2DEV/markview.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
+  },
 }, {
   rocks = {
     enabled = false,
