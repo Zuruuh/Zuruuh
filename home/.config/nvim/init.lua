@@ -508,6 +508,7 @@ require('lazy').setup({
         shellcheck = {},
         sqlls = {},
         tsserver = {},
+        -- ts_ls = {},
         yamlls = {},
       }
 
@@ -528,6 +529,11 @@ require('lazy').setup({
       require('mason-lspconfig').setup({
         handlers = {
           function(server_name)
+            -- https://github.com/neovim/nvim-lspconfig/pull/3232
+            if server_name == 'tsserver' then
+              server_name = 'ts_ls'
+            end
+
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
@@ -819,12 +825,12 @@ require('lazy').setup({
   {
     'isobit/vim-caddyfile',
   },
-  {
-    'DariusCorvus/tree-sitter-surrealdb.nvim',
-    config = function()
-      require('tree-sitter-surrealdb').setup()
-    end,
-  },
+  -- {
+  --   'DariusCorvus/tree-sitter-surrealdb.nvim',
+  --   config = function()
+  --     require('tree-sitter-surrealdb').setup()
+  --   end,
+  -- },
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
@@ -855,7 +861,7 @@ require('lazy').setup({
         function()
           os.execute([[
     command git rev-parse --git-dir &> /dev/null || return
-    for branch in dev develop development; do
+    for branch in dev devel develop development; do
         if command git show-ref -q --verify refs/heads/$branch; then
             git switch $branch
             break
@@ -879,7 +885,7 @@ require('lazy').setup({
       { '<leader>u', vim.cmd.UndotreeToggle },
     },
     config = function()
-      vim.opt.undodir = home .. '/.vim/undodir'
+      vim.opt.undodir = home .. '/.local/share/nvim/undodir'
     end,
   },
   {
@@ -966,14 +972,6 @@ require('lazy').setup({
         home = vim.fn.stdpath('data') .. '/leetcode',
         cache = vim.fn.stdpath('cache') .. '/leetcode',
       },
-    },
-  },
-  {
-    'OXY2DEV/markview.nvim',
-    lazy = false,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-tree/nvim-web-devicons',
     },
   },
 }, {
