@@ -4,6 +4,7 @@ export alias docker-compose = docker compose
 export alias compose = docker compose
 export alias buildx = docker buildx
 export alias code = codium
+export alias nxd = nix develop --command $env.SHELL
 
 export def nix-shell [
     ...args
