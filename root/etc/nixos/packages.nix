@@ -31,6 +31,7 @@ in
     cargo-audit
     cargo-binstall
     cargo-expand
+    cargo-generate
     cargo-info
     cargo-tarpaulin
     clipboard-jh
