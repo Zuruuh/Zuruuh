@@ -36,6 +36,11 @@ in
       enableSSHSupport = true;
       pinentryPackage = pkgs.pinentry-curses;
     };
+    direnv = {
+      enable = true;
+      silent = true;
+      nix-direnv.enable = true;
+    };
   };
 
   users.users = {

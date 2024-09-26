@@ -1,5 +1,3 @@
-source ~/.config/nushell/dotenv.nu
-
 let dark_theme = {
     # color for nushell primitives
     separator: white
@@ -174,25 +172,27 @@ $env.config = {
     render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 
     hooks: {
-        pre_prompt: [{ null }] # run before the prompt is shown
+        pre_prompt: [{ ||
+            if (which direnv | is-empty) {
+                return
+            }
+
+            direnv export json | from json | default {} | load-env
+        }] # run before the prompt is shown
         pre_execution: [{ null }] # run before the repl input is run
         env_change: {
             PWD: [{|before, after|
                 if ('FNM_DIR' in $env) and ([.nvmrc .node-version] | path exists | any { |it| $it }) {
                     fnm use
                 }
-
-                if ('.env' | path exists) {
-                    load-env-file $"($env.PWD)/.env"
-                }
-
-                if ('.env.local' | path exists) {
-                    load-env-file $"($env.PWD)/.env.local"
-                }
             }]
         }
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
         command_not_found: { null } # return an error message when a command is not found
+    }
+    display_errors: {
+        exit_code: false
+        termination_signal: true
     }
 
     menus: [
