@@ -504,7 +504,7 @@ require('lazy').setup({
           },
         },
         -- phpactor = {},
-        rust_analyzer = {},
+        -- rust_analyzer = {},
         shellcheck = {},
         sqlls = {},
         ts_ls = {},
@@ -538,7 +538,23 @@ require('lazy').setup({
         },
       })
 
-      require('lspconfig').nushell.setup({})
+      local lspconfig = require('lspconfig')
+      lspconfig.nushell.setup({})
+      lspconfig.rust_analyzer.setup({
+        on_attach = function(_, bufnr)
+          -- vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+        end,
+        capabilities = capabilities,
+        settings = {
+          ['rust-analyzer'] = {
+            cargo = { buildScripts = { enable = true } },
+            procMacro = { enable = true },
+            files = {
+              excludeDirs = { '.direnv' },
+            },
+          },
+        },
+      })
     end,
   },
 
