@@ -5,18 +5,12 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ /*config, lib, */ pkgs, ... }:
-
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in
-{
+{ ... }: {
   imports = [
     <nixos-wsl/modules>
+    ./default.nix
     ./packages.nix
   ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   wsl = {
     enable = true;
@@ -25,44 +19,6 @@ in
       interop.appendWindowsPath = false;
     };
   };
-
-  virtualisation.docker.enable = true;
-
-  programs = {
-    nix-ld.enable = true;
-    fish.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-      pinentryPackage = pkgs.pinentry-curses;
-    };
-    direnv = {
-      enable = true;
-      silent = true;
-      nix-direnv.enable = true;
-    };
-  };
-
-  users.users = {
-    zuruh = {
-      isNormalUser = true;
-      extraGroups = [ "docker" ];
-      shell = unstable.nushell;
-    };
-    root = {
-      shell = pkgs.fish;
-    };
-  };
-
-  environment.sessionVariables = {
-    XDG_CACHE_HOME = "$HOME/.cache";
-    XDG_CONFIG_HOME = "$HOME/.dotfiles/home/.config";
-    XDG_DATA_HOME = "$HOME/.local/share";
-    XDG_STATE_HOME = "$HOME/.local/state";
-    EDITOR = "${pkgs.neovim}/bin/nvim";
-  };
-
-  security.sudo.wheelNeedsPassword = true;
 
   # do not touch =D
   system.stateVersion = "23.11";

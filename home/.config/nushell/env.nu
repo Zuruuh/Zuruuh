@@ -106,14 +106,18 @@ $env.DISABLE_OPENCOLLECTIVE = 1
 
 # random stuff
 $env.COLORTERM = 'truecolor'
-$env.EDITOR = (which nvim | get path.0)
-$env.PAGER = (
-    if (which tspin | is-empty) {
-        (which less | get path.0)
-    } else {
-        (which tspin | get path.0)
-    }
-)
+# $env.EDITOR = (which nvim | get path.0)
+
+if not ('PAGER' in $env) {
+    $env.PAGER = (
+        if (which tspin | is-empty) {
+            (which less | get path.0)
+        } else {
+            (which tspin | get path.0)
+        }
+    )
+}
+
 $env.AWS_DEFAULT_REGION = 'eu-west-3'
 $env.STARSHIP_LOG = 'error'
 $env.TERM = 'xterm-256color'
