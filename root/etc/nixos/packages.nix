@@ -22,6 +22,9 @@ let
   };
 
   packages = {
+    yaml = with pkgs; [
+      yaml-language-server
+    ];
     rust = with pkgs; [
       cargo-audit
       cargo-binstall
