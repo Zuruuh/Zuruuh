@@ -22,7 +22,6 @@ use std *
 let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
 
 if $nu.os-info.name == 'windows' {
-    # $env.XDG_CONFIG_HOME = $"($home)/.config"
     $env.XDG_DATA_HOME = $env.APPDATA
     $env.XDG_STATE_HOME = $env.LOCALAPPDATA
 }
@@ -33,7 +32,6 @@ if $nu.os-info.name == 'linux' and ('/etc/set-environment' | path exists) {
 
 if $nu.os-info.name in ['linux', 'macos'] {
     path add $"($home)/.local/bin"
-    path add $"($env.XDG_DATA_HOME)/phpactor/bin"
 }
 
 if $nu.os-info.name == 'macos' {
@@ -54,17 +52,6 @@ if ($nu.os-info.name == 'windows') {
 # Cargo
 path add $"($home)/.cargo/bin"
 
-# nushell
-$env.SHELL = (which nu | get path.0)
-
-# PyEnv
-if ($"($home)/.pyenv" | path exists) {
-    $env.PYENV_ROOT = $"($home)/.pyenv"
-    path add $"($env.PYENV_ROOT)/bin"
-    path add $"($env.PYENV_ROOT)/versions/(pyenv version-name)/bin"
-    # alias pip = python -m pip
-}
-
 # Bun
 if ($"($home)/.bun" | path exists) {
     $env.BUN_INSTALL = $"($home)/.bun"
@@ -74,29 +61,6 @@ if ($"($home)/.bun" | path exists) {
 # PHP
 $env.COMPOSER_HOME = $"($env.XDG_DATA_HOME)/composer"
 $env.APP_ENV = 'dev'
-path add $"($env.XDG_DATA_HOME)/composer/bin"
-path add $"($env.XDG_DATA_HOME)/composer/vendor/bin"
-
-# Node
-if (which fnm | is-not-empty) {
-    ^fnm env --json | from json | load-env
-    path add $"($env.FNM_MULTISHELL_PATH)/bin"
-    path add $"($env.FNM_MULTISHELL_PATH)/"
-}
-
-if ($"($home)/.yarn/bin" | path exists) {
-    path add $"($home)/.yarn/bin"
-}
-
-if ($"($home)/.deno" | path exists) {
-    $env.DENO_INSTALL = $"($home)/.deno"
-    path add $"($env.DENO_INSTALL)/bin"
-}
-
-# Pulumi
-if ($"($home)/.pulumi" | path exists) {
-    path add $"($home)/.pulumi/bin"
-}
 
 # telemetry and ads
 $env.DO_NOT_TRACK = 1
@@ -106,7 +70,12 @@ $env.DISABLE_OPENCOLLECTIVE = 1
 
 # random stuff
 $env.COLORTERM = 'truecolor'
-# $env.EDITOR = (which nvim | get path.0)
+
+if not ('EDITOR' in $env) {
+    $env.EDITOR = (which nvim | get path.0)
+}
+
+$env.VISUAL = $env.EDITOR
 
 if not ('PAGER' in $env) {
     $env.PAGER = (
