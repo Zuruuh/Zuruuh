@@ -134,6 +134,10 @@ vim.opt.rtp:prepend(lazypath)
 vim.filetype.add({
   extension = {
     caddy = 'caddyfile',
+    pattern = {
+      ['openapi.*%.ya?ml'] = 'yaml.openapi',
+      ['openapi.*%.json'] = 'json.openapi',
+    },
   },
 })
 
@@ -402,6 +406,7 @@ require('lazy').setup({
         yamlls = {},
         nil_ls = {},
         nushell = {},
+        vacuum = {},
       }
 
       -- require('mason').setup()

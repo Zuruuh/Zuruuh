@@ -24,6 +24,7 @@ let
   packages = {
     yaml = with pkgs; [
       yaml-language-server
+      unstable.vacuum-go
     ];
     rust = with pkgs; [
       cargo-audit
