@@ -20,6 +20,10 @@ export def "wsl open" [path: string] {
     /mnt/c/Windows/explorer.exe ("\\\\wsl.localhost\\NixOS" + ((pwd) | path join $path | str replace -a '/' '\'))
 }
 
+export def config [] {
+    config dotfiles
+}
+
 export def "config dotfiles" [] {
     nvim ~/.dotfiles/
 }
@@ -54,6 +58,10 @@ export def "config alacritty" [] {
 
 export def "config ssh" [] {
     nvim ~/.dotfiles/home/.ssh/config
+}
+
+export def "config zellij" [] {
+    nvim ~/.dotfiles/home/.config/zellij/config.kdl
 }
 
 export def "venv create" [python_path: string = "" ] {

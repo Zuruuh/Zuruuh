@@ -67,7 +67,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- vim.o.shell = os.getenv('SHELL')
+if vim.fn.has('unix') then
+  vim.o.shell = vim.fn.trim(vim.fn.system({ 'bash', '-c', 'which bash' }))
+end
 
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
@@ -161,7 +163,12 @@ end, {
 })
 
 require('lazy').setup({
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  { -- Detect tabstop and shiftwidth automatically
+    'tpope/vim-sleuth',
+    keys = {
+      { '<leader>sl', vim.cmd.Sleuth, silent = true, desc = '[Sl]euth, detect tabstop and shiftwidth' },
+    },
+  },
 
   { 'numToStr/Comment.nvim', opts = {} },
 
@@ -191,6 +198,9 @@ require('lazy').setup({
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
+        { '<leader>p', group = '[P]roject' },
+        { '<leader>h', group = '[H]arpoon' },
+        { '<leader>g', group = '[G]it' },
       })
     end,
   },
@@ -278,17 +288,12 @@ require('lazy').setup({
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for neovim
-      -- 'williamboman/mason.nvim',
-      -- 'williamboman/mason-lspconfig.nvim',
-      -- 'WhoIsSethDaniel/mason-tool-installer.nvim',
-
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
-      { 'folke/neodev.nvim', opts = {} },
+      { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
     },
     config = function()
       --  This function gets run when an LSP attaches to a particular buffer.
@@ -298,12 +303,6 @@ require('lazy').setup({
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          -- NOTE: Remember that lua is a real programming language, and as such it is possible
-          -- to define small helper and utility functions so you don't have to repeat yourself
-          -- many times.
-          --
-          -- In this case, we create a function that lets us more easily define mappings specific
-          -- for LSP related items. It sets the mode, buffer and description for us each time.
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
@@ -409,22 +408,6 @@ require('lazy').setup({
         vacuum = {},
       }
 
-      -- require('mason').setup()
-      -- require('mason-tool-installer').setup({})
-      -- require('mason-lspconfig').setup({
-      --   handlers = {
-      --     function(server_name)
-      --       local server = servers[server_name] or {}
-      --       servers[server_name] = nil
-      --       -- This handles overriding only values explicitly passed
-      --       -- by the server configuration above. Useful when disabling
-      --       -- certain features of an LSP (for example, turning off formatting for tsserver)
-      --       server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-      --       require('lspconfig')[server_name].setup(server)
-      --     end,
-      --   },
-      -- })
-
       local lspconfig = require('lspconfig')
       for server_name, settings in pairs(servers) do
         if settings ~= nil then
@@ -442,6 +425,18 @@ require('lazy').setup({
 
   { -- Autoformat
     'stevearc/conform.nvim',
+    event = { 'BufWritePre' },
+    cmd = 'ConformInfo',
+    keys = {
+      {
+        '<leader>f',
+        function()
+          require('conform').format({ async = true, lsp_format = 'fallback' })
+        end,
+        mode = '',
+        desc = '[F]ormat buffer',
+      },
+    },
     opts = {
       notify_on_error = true,
       format_on_save = function(bufnr)
@@ -616,18 +611,25 @@ require('lazy').setup({
     end,
   },
 
-  {
-    -- 'navarasu/onedark.nvim',
-    'Mofiqul/vscode.nvim',
-    -- 'folke/tokyonight.nvim',
-    -- 'ellisonleao/gruvbox.nvim',
-    priority = 1000,
-    init = function()
-      -- require('onedark').setup({ style = 'warmer' })
-      -- require('gruvbox').load()
-      require('vscode').load()
-    end,
+  { -- Persistent theme selector, run with `:Themery`
+    'zaldih/themery.nvim',
+    opts = {
+      themes = { 'onedark', 'vscode', 'tokyonight', 'gruvbox' },
+      livePreview = true,
+    },
   },
+  { 'navarasu/onedark.nvim', lazy = true },
+  { 'Mofiqul/vscode.nvim', lazy = true },
+  { 'folke/tokyonight.nvim', lazy = true },
+  { 'ellisonleao/gruvbox.nvim', lazy = true },
+
+  {
+    'f-person/auto-dark-mode.nvim',
+    opts = {
+      update_interval = 5000,
+    },
+  },
+
   -- Highlight todo, notes, etc in comments
   {
     'folke/todo-comments.nvim',
@@ -654,15 +656,9 @@ require('lazy').setup({
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
       local statusline = require('mini.statusline')
-      -- set use_icons to true if you have a Nerd Font
       statusline.setup({ use_icons = vim.g.have_nerd_font })
 
-      -- You can configure sections in the statusline by overriding their
-      -- default behavior. For example, here we set the section for
       -- cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
@@ -716,12 +712,6 @@ require('lazy').setup({
   {
     'isobit/vim-caddyfile',
   },
-  -- {
-  --   'DariusCorvus/tree-sitter-surrealdb.nvim',
-  --   config = function()
-  --     require('tree-sitter-surrealdb').setup()
-  --   end,
-  -- },
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
@@ -739,30 +729,13 @@ require('lazy').setup({
     'tpope/vim-fugitive',
     cmd = 'Git',
     keys = {
-      { '<leader>gs', vim.cmd.Git },
-      { '<leader>gss', vim.cmd.Git },
-      { '<leader>gf', '<CMD>diffget //2<CR>' },
-      { '<leader>gh', '<CMD>diffget //3<CR>' },
-      { '<leader>gs-', '<CMD>Git switch -<CR>', silent = true },
-      { '<leader>gpl', '<CMD>Git pull<CR>', silent = true },
-      { '<leader>gpp', '<CMD>Git push<CR>', silent = true },
-      { '<leader>gph', '<CMD>Git push -u origin HEAD<CR>', silent = true },
-      { '<leader>ggfl', '<CMD>Git push --force-with-lease<CR>', silent = true },
-      {
-        '<leader>gsd',
-        function()
-          os.execute([[
-    command git rev-parse --git-dir &> /dev/null || return
-    for branch in dev devel develop development; do
-        if command git show-ref -q --verify refs/heads/$branch; then
-            git switch $branch
-            break
-        fi;
-    done;
-        ]])
-        end,
-        silent = true,
-      },
+      { '<leader>gs', vim.cmd.Git, desc = 'Git [S]tatus UI' },
+      { '<leader>gf', '<CMD>diffget //2<CR>', desc = 'Accept changes from left buffer' },
+      { '<leader>gh', '<CMD>diffget //3<CR>', desc = 'Accept changes from right buffer' },
+      { '<leader>gpl', '<CMD>Git pull<CR>', silent = true, desc = 'Git [P]u[l]l' },
+      { '<leader>gpp', '<CMD>Git push<CR>', silent = true, desc = 'Git [P]ush' },
+      { '<leader>gph', '<CMD>Git push -u origin HEAD<CR>', silent = true, desc = 'Git [P]ush [H]EAD' },
+      { '<leader>ggfl', '<CMD>Git push --force-with-lease<CR>', silent = true, desc = 'Git push --force-with-lease' },
     },
   },
   {
@@ -774,10 +747,10 @@ require('lazy').setup({
     'mbbill/undotree',
     lazy = false,
     keys = {
-      { '<leader>u', vim.cmd.UndotreeToggle },
+      { '<leader>u', vim.cmd.UndotreeToggle, desc = 'Open [U]ndotree' },
     },
     config = function()
-      vim.opt.undodir = home .. '/.local/share/nvim/undodir'
+      vim.opt.undodir = vim.fn.stdpath('data') .. '/undodir'
     end,
   },
   {
@@ -806,48 +779,6 @@ require('lazy').setup({
       },
     },
   },
-  -- {
-  --   'nvim-neo-tree/neo-tree.nvim',
-  --   lazy = false,
-  --   keys = {
-  --     { '<leader>pv', vim.cmd.Neotree },
-  --   },
-  --   dependencies = {
-  --     'nvim-lua/plenary.nvim',
-  --     'nvim-tree/nvim-web-devicons',
-  --     'MunifTanjim/nui.nvim',
-  --   },
-  --   opts = {
-  --     window = { position = 'right' },
-  --     filesystem = {
-  --       filtered_items = {
-  --         visible = true,
-  --       },
-  --     },
-  --   },
-  -- }
-  {
-    'akinsho/bufferline.nvim',
-    lazy = false,
-    keys = {
-      { '<leader>0', '<Cmd>BufferLinePickClose<CR>' },
-      { '<leader>1', '<Cmd>BufferLineGoToBuffer 1<CR>' },
-      { '<leader>2', '<Cmd>BufferLineGoToBuffer 2<CR>' },
-      { '<leader>3', '<Cmd>BufferLineGoToBuffer 3<CR>' },
-      { '<leader>4', '<Cmd>BufferLineGoToBuffer 4<CR>' },
-      { '<leader>5', '<Cmd>BufferLineGoToBuffer 5<CR>' },
-      { '<leader>6', '<Cmd>BufferLineGoToBuffer 6<CR>' },
-      { '<leader>7', '<Cmd>BufferLineGoToBuffer 7<CR>' },
-      { '<leader>8', '<Cmd>BufferLineGoToBuffer 8<CR>' },
-      { '<leader>9', '<Cmd>BufferLineGoToBuffer 9<CR>' },
-    },
-    opts = {
-      options = {
-        separator_style = 'slant',
-        numbers = 'ordinal',
-      },
-    },
-  },
   {
     'kawre/leetcode.nvim',
     dependencies = {
@@ -866,26 +797,103 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    lazy = true,
+    opts = {},
+    keys = function()
+      local harpoon = require('harpoon')
+      local telescope_config = require('telescope.config').values
+      local function toggle_telescope(harpoon_files)
+        local file_paths = {}
+        for _, item in ipairs(harpoon_files.items) do
+          table.insert(file_paths, item.value)
+        end
+
+        require('telescope.pickers')
+          .new({}, {
+            prompt_title = 'Harpoon',
+            finder = require('telescope.finders').new_table({
+              results = file_paths,
+            }),
+            previewer = telescope_config.file_previewer({}),
+            sorter = telescope_config.generic_sorter({}),
+          })
+          :find()
+      end
+
+      return {
+        {
+          '<leader>hl',
+          function()
+            toggle_telescope(harpoon:list())
+          end,
+          desc = 'Open harpoon window',
+        },
+        {
+          '<leader>ha',
+          function()
+            harpoon:list():add()
+          end,
+          desc = 'Pin to harpoon',
+        },
+        {
+          '<leader>hu',
+          function()
+            harpoon:list():remove()
+          end,
+          desc = 'Unpin to harpoon',
+        },
+        {
+          '<leader>h1',
+          function()
+            harpoon:list():select(1)
+          end,
+          desc = 'Select harpoon buffer @1',
+        },
+        {
+          '<leader>h2',
+          function()
+            harpoon:list():select(2)
+          end,
+          desc = 'Select harpoon buffer @2',
+        },
+        {
+          '<leader>h3',
+          function()
+            harpoon:list():select(3)
+          end,
+          desc = 'Select harpoon buffer @3',
+        },
+        {
+          '<leader>h4',
+          function()
+            harpoon:list():select(4)
+          end,
+          desc = 'Select harpoon buffer @4',
+        },
+        {
+          '<leader>[',
+          function()
+            harpoon:list():prev()
+          end,
+          desc = 'Select previous buffer',
+        },
+        {
+          '<leader>]',
+          function()
+            harpoon:list():next()
+          end,
+          desc = 'Select next buffer',
+        },
+      }
+    end,
+  },
 }, {
   rocks = {
     enabled = false,
-  },
-  ui = {
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
   },
 })
 

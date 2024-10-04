@@ -10,3 +10,4 @@
 /py-env
 /.venv
 /.direnv
+/.session.xh.json

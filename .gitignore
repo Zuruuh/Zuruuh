@@ -5,6 +5,7 @@
 /home/.config/rclone/rclone.conf
 /home/.config/karabiner/automatic_backups
 /home/.config/asciinema
+/home/.config/xh/sessions/
 # jgit is intellij IDE git integration
 /home/.config/jgit
 # wtf yarn

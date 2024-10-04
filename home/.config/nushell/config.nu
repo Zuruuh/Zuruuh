@@ -181,11 +181,14 @@ $env.config = {
         }] # run before the prompt is shown
         pre_execution: [{ null }] # run before the repl input is run
         env_change: {
-            PWD: [{|before, after|
-                if ('FNM_DIR' in $env) and ([.nvmrc .node-version] | path exists | any { |it| $it }) {
-                    fnm use
+            PWD: [
+                {
+                    condition: {||
+                        'FNM_DIR' in $env and ([.nvmrc .node-version] | path exists | any { |it| $it })
+                    }
+                    code: {fnm use}
                 }
-            }]
+            ]
         }
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
         command_not_found: { null } # return an error message when a command is not found
