@@ -67,8 +67,14 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-if vim.fn.has('unix') then
+if vim.fn.has('unix') == 1 then
   vim.o.shell = vim.fn.trim(vim.fn.system({ 'bash', '-c', 'which bash' }))
+elseif vim.fn.has('win32') == 1 then
+  local shell = os.getenv('PWSH')
+
+  if shell ~= nil then
+    vim.o.shell = vim.fn.trim(shell)
+  end
 end
 
 vim.g.loaded_perl_provider = 0
