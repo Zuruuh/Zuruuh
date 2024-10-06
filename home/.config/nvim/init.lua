@@ -798,98 +798,74 @@ require('lazy').setup({
     },
   },
   {
-    'ThePrimeagen/harpoon',
-    branch = 'harpoon2',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    lazy = true,
-    opts = {},
-    keys = function()
-      local harpoon = require('harpoon')
-      local telescope_config = require('telescope.config').values
-      local function toggle_telescope(harpoon_files)
-        local file_paths = {}
-        for _, item in ipairs(harpoon_files.items) do
-          table.insert(file_paths, item.value)
-        end
-
-        require('telescope.pickers')
-          .new({}, {
-            prompt_title = 'Harpoon',
-            finder = require('telescope.finders').new_table({
-              results = file_paths,
-            }),
-            previewer = telescope_config.file_previewer({}),
-            sorter = telescope_config.generic_sorter({}),
-          })
-          :find()
-      end
-
-      return {
-        {
-          '<leader>hl',
-          function()
-            toggle_telescope(harpoon:list())
-          end,
-          desc = 'Open harpoon window',
-        },
-        {
-          '<leader>ha',
-          function()
-            harpoon:list():add()
-          end,
-          desc = 'Pin to harpoon',
-        },
-        {
-          '<leader>hu',
-          function()
-            harpoon:list():remove()
-          end,
-          desc = 'Unpin to harpoon',
-        },
-        {
-          '<leader>h1',
-          function()
-            harpoon:list():select(1)
-          end,
-          desc = 'Select harpoon buffer @1',
-        },
-        {
-          '<leader>h2',
-          function()
-            harpoon:list():select(2)
-          end,
-          desc = 'Select harpoon buffer @2',
-        },
-        {
-          '<leader>h3',
-          function()
-            harpoon:list():select(3)
-          end,
-          desc = 'Select harpoon buffer @3',
-        },
-        {
-          '<leader>h4',
-          function()
-            harpoon:list():select(4)
-          end,
-          desc = 'Select harpoon buffer @4',
-        },
-        {
-          '<leader>[',
-          function()
-            harpoon:list():prev()
-          end,
-          desc = 'Select previous buffer',
-        },
-        {
-          '<leader>]',
-          function()
-            harpoon:list():next()
-          end,
-          desc = 'Select next buffer',
-        },
-      }
-    end,
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    lazy = false,
+    opts = {
+      options = {
+        separator_style = 'slant',
+        numbers = 'ordinal',
+        diagnostics = 'nvim_lsp',
+      },
+    },
+    keys = {
+      { '<leader>0', vim.cmd.bdelete },
+      {
+        '<leader>1',
+        function()
+          vim.cmd('BufferLineGoToBuffer 1')
+        end,
+      },
+      {
+        '<leader>2',
+        function()
+          vim.cmd('BufferLineGoToBuffer 2')
+        end,
+      },
+      {
+        '<leader>3',
+        function()
+          vim.cmd('BufferLineGoToBuffer 3')
+        end,
+      },
+      {
+        '<leader>4',
+        function()
+          vim.cmd('BufferLineGoToBuffer 4')
+        end,
+      },
+      {
+        '<leader>5',
+        function()
+          vim.cmd('BufferLineGoToBuffer 5')
+        end,
+      },
+      {
+        '<leader>6',
+        function()
+          vim.cmd('BufferLineGoToBuffer 6')
+        end,
+      },
+      {
+        '<leader>7',
+        function()
+          vim.cmd('BufferLineGoToBuffer 7')
+        end,
+      },
+      {
+        '<leader>8',
+        function()
+          vim.cmd('BufferLineGoToBuffer 8')
+        end,
+      },
+      {
+        '<leader>9',
+        function()
+          vim.cmd('BufferLineGoToBuffer 9')
+        end,
+      },
+    },
   },
 }, {
   rocks = {
