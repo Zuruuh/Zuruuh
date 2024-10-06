@@ -58,6 +58,9 @@ if ($"($home)/.bun" | path exists) {
     path add $"($env.BUN_INSTALL)/bin"
 }
 
+# Python
+$env.VIRTUAL_ENV_DISABLE_PROMPT = true
+
 # PHP
 $env.COMPOSER_HOME = $"($env.XDG_DATA_HOME)/composer"
 $env.APP_ENV = 'dev'

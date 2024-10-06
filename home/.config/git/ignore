@@ -1,13 +1,8 @@
-/.vscode
-/.idea
-/.ignored
+/.vscode/
+/.idea/
 /.ignored/
-/.ignored/*
 /.git
-/.phpactor.json
-/.env.local
-/.env.*.local
-/py-env
+/**/.phpactor.json
 /.venv
 /.direnv
 /.session.xh.json
