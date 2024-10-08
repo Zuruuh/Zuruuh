@@ -29,11 +29,11 @@ export def "config dotfiles" [] {
 }
 
 export def "config nix" [] {
-    nvim ~/dotfiles/root/etc/nixos/
+    nvim ~/dotfiles/nixos/
 }
 
 export def "config nix-packages" [] {
-    nvim ~/dotfiles/root/etc/nixos/packages.nix
+    nvim ~/dotfiles/nixos/packages.nix
 }
 
 export def "config nvim" [] {

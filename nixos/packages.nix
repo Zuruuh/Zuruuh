@@ -1,6 +1,5 @@
-{ lib, pkgs, unstable, ... }:
-
 # -- vim: sw=2
+{ lib, pkgs, ... }:
 let
   php83 = pkgs.php83.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [

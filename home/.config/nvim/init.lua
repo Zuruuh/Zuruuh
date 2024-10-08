@@ -171,6 +171,7 @@ end, {
 require('lazy').setup({
   { -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
+    lazy = false,
     keys = {
       { '<leader>sl', vim.cmd.Sleuth, silent = true, desc = '[Sl]euth, detect tabstop and shiftwidth' },
     },
@@ -384,6 +385,7 @@ require('lazy').setup({
       local servers = {
         astro = {},
         bashls = {},
+        clangd = {},
         cssls = {},
         docker_compose_language_service = {},
         dockerls = {},

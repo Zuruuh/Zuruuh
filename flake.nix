@@ -12,27 +12,35 @@
     };
   };
 
-  outputs = { self, nixos, nixos-wsl, nixos-unstable }: {
-    nixosConfigurations = {
-      # sudo nixos-rebuild switch --flake ~/.dotfiles/#wsl
-      wsl = nixos.lib.nixosSystem rec {
-        system = "x86_64-linux";
+  outputs = { self, nixos, nixos-wsl, nixos-unstable }:
+    let
+      unstable-overlay = final: prev: {
+        unstable = nixos-unstable.legacyPackages.${prev.system};
+      };
+    in
+    {
+      nixosConfigurations = {
+        # sudo nixos-rebuild switch --flake ~/.dotfiles/#wsl
+        wsl = nixos.lib.nixosSystem rec {
+          system = "x86_64-linux";
 
-        modules =
-          let
-            args = rec {
-              pkgs = import nixos { inherit system; };
-              unstable = import nixos-unstable { inherit system; };
-              lib = pkgs.lib;
-            };
-          in
-          [
-            nixos-wsl.nixosModules.default
-            (import ./nixos/default.nix args)
-            (import ./nixos/wsl.nix args)
-            (import ./nixos/packages.nix args)
-          ];
+          modules =
+            let
+              args = rec {
+                pkgs = import nixos {
+                  inherit system;
+                  overlays = [ unstable-overlay ];
+                };
+                lib = pkgs.lib;
+              };
+            in
+            [
+              nixos-wsl.nixosModules.default
+              (import ./nixos/default.nix args)
+              (import ./nixos/wsl.nix args)
+              (import ./nixos/packages.nix args)
+            ];
+        };
       };
     };
-  };
 }

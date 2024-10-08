@@ -1,4 +1,4 @@
-{ unstable, pkgs, ... }: {
+{ pkgs, ... }: {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   virtualisation.docker.enable = true;
@@ -21,7 +21,7 @@
     zuruh = {
       isNormalUser = true;
       extraGroups = [ "docker" ];
-      shell = unstable.nushell;
+      shell = pkgs.unstable.nushell;
     };
     root = { };
   };
@@ -31,7 +31,7 @@
     XDG_CONFIG_HOME = "$HOME/.dotfiles/home/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
-    EDITOR = "${unstable.neovim}/bin/nvim";
+    EDITOR = "${pkgs.unstable.neovim}/bin/nvim";
     PAGER = "${pkgs.tailspin}/bin/tspin";
   };
 
