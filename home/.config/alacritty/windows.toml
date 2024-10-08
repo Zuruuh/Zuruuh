@@ -14,20 +14,9 @@ args = [
   "--",
   "/run/current-system/sw/bin/zellij",
 ]
-# args = [
-#   "--cd",
-#   "/home/zuruh",
-#   "-u",
-#   "zuruh",
-#   "--",
-#   "/home/zuruh/.cargo/bin/zellij",
-# ]
-
-[env]
-XDG_CONFIG_HOME = "/home/zuruh/.config"
 
 [font]
-size = 12
+size = 14
 
 [font.normal]
 family = "MonaspiceNe Nerd Font"

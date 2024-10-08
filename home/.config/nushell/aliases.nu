@@ -94,9 +94,9 @@ export def copy [] {
 
 export def --env "venv activate" [] {
   if $nu.os-info.name == 'windows' {
-    add_path ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'Scripts')
+    path add ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'Scripts')
   } else {
-    add_path ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'bin')
+    path add ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'bin')
   }
 }
 
