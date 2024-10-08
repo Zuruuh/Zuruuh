@@ -80,7 +80,7 @@ ignore_failures = ["firmware"]
 # this will be ignored if the binary is built without self update support
 #
 # available also via setting the environment variable TOPGRADE_NO_SELF_UPGRADE)
-# no_self_update = true
+no_self_update = true
 
 # Extra tracing filter directives
 # These are prepended to the `--log-filter` argument
@@ -200,7 +200,7 @@ arguments = "--rebase --autostash"
 # Causes Topgrade to rename itself during the run to allow package managers
 # to upgrade it. Use this only if you installed Topgrade by using a package
 # manager such as Scoop or Cargo
-self_rename = true
+self_rename = false
 enable_winget = true
 
 
