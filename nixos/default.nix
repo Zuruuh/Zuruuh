@@ -1,9 +1,4 @@
-{ pkgs, ... }:
-
-let
-  unstable = import <nixos-unstable> { };
-in
-{
+{ unstable, pkgs, ... }: {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   virtualisation.docker.enable = true;

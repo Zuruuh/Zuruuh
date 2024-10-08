@@ -1,9 +1,7 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, unstable, ... }:
 
 # -- vim: sw=2
 let
-  unstable = import <nixos-unstable> { };
-
   php83 = pkgs.php83.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       apcu
