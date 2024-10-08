@@ -4,6 +4,7 @@ use ~/.config/nushell/completions.nu *
 source ~/.config/nushell/plugins/nu_scripts/aliases/git/git-aliases.nu
 source ~/.config/nushell/plugins/nu_scripts/aliases/eza/eza-aliases.nu
 source ~/.config/nushell/plugins/zoxide.nu
+source ~/.config/nushell/plugins/atuin.nu
 use ~/.config/nushell/plugins/starship.nu
 
 ## Load nu_scripts completions
@@ -22,8 +23,6 @@ source ~/.config/nushell/plugins/nu_scripts/custom-completions/nix/nix-completio
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/rg/rg-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/rustup/rustup-completions.nu
-source ~/.config/nushell/plugins/nu_scripts/custom-completions/scoop/scoop-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/tar/tar-completions.nu
-source ~/.config/nushell/plugins/nu_scripts/custom-completions/winget/winget-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 source ~/.config/nushell/plugins/nu_scripts/custom-completions/zellij/zellij-completions.nu

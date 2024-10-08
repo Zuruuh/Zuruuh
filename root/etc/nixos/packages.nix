@@ -1,5 +1,6 @@
 { lib, pkgs, ... }:
 
+# -- vim: sw=2
 let
   unstable = import <nixos-unstable> { };
 
@@ -166,12 +167,14 @@ let
       zoxide
       unstable.nushell
       starship
+      atuin
     ];
     dev = with pkgs; [
       unstable.neovim
       tree-sitter
       unstable.zellij
       just
+      wslu
     ];
     xml = with pkgs; [
       lemminx
