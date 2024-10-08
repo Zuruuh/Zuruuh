@@ -25,6 +25,7 @@ if $nu.os-info.name == 'windows' {
     $env.XDG_DATA_HOME = $env.APPDATA
     $env.XDG_STATE_HOME = $env.LOCALAPPDATA
     $env.PWSH = (which powershell | get path.0)
+    path add 'D:\Bin'
 }
 
 if $nu.os-info.name == 'linux' and ('/etc/set-environment' | path exists) {
