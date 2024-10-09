@@ -16,9 +16,10 @@ in
     };
   };
 
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     (createWindowsBashAlias "reg")
     (createWindowsBashAlias "findstr")
+    wslu
   ];
 
   # do not touch =D

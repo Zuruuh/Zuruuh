@@ -171,7 +171,6 @@ let
       tree-sitter
       unstable.zellij
       just
-      wslu
     ];
     xml = with pkgs; [
       lemminx
