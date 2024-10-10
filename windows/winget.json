@@ -1,22 +1,28 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-07-07T11:30:32.762-00:00",
+	"CreationDate" : "2024-10-10T11:59:40.492-00:00",
 	"Sources" : 
 	[
 		{
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "Mozilla.Firefox.DeveloperEdition"
+					"PackageIdentifier" : "Upscayl.Upscayl"
 				},
 				{
-					"PackageIdentifier" : "FxSoundLLC.FxSound"
+					"PackageIdentifier" : "Mozilla.Firefox.DeveloperEdition"
 				},
 				{
 					"PackageIdentifier" : "Git.Git"
 				},
 				{
-					"PackageIdentifier" : "Google.PlayGames.Beta"
+					"PackageIdentifier" : "Hex-Rays.IDA.Free"
+				},
+				{
+					"PackageIdentifier" : "KDE.Krita"
+				},
+				{
+					"PackageIdentifier" : "Medibang.MediBangPaintPro"
 				},
 				{
 					"PackageIdentifier" : "Mozilla.Firefox"
@@ -34,10 +40,13 @@
 					"PackageIdentifier" : "SteelSeries.GG"
 				},
 				{
-					"PackageIdentifier" : "VideoLAN.VLC"
+					"PackageIdentifier" : "Unity.Unity.2022"
 				},
 				{
-					"PackageIdentifier" : "RARLab.WinRAR"
+					"PackageIdentifier" : "Unity.UnityHub"
+				},
+				{
+					"PackageIdentifier" : "VideoLAN.VLC"
 				},
 				{
 					"PackageIdentifier" : "FACEITLTD.FACEITAC"
@@ -49,16 +58,16 @@
 					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
-					"PackageIdentifier" : "BlenderFoundation.Blender"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
-					"PackageIdentifier" : "ShiningLight.OpenSSL"
+					"PackageIdentifier" : "Inkscape.Inkscape"
 				},
 				{
-					"PackageIdentifier" : "Inkscape.Inkscape"
+					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+				},
+				{
+					"PackageIdentifier" : "BlenderFoundation.Blender"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
@@ -79,6 +88,9 @@
 					"PackageIdentifier" : "Apple.Bonjour"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.PowerShell.Preview"
+				},
+				{
 					"PackageIdentifier" : "dotPDN.PaintDotNet"
 				},
 				{
@@ -88,10 +100,7 @@
 					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
-					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.PowerShell.Preview"
+					"PackageIdentifier" : "FxSoundLLC.FxSound"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
@@ -139,6 +148,9 @@
 					"PackageIdentifier" : "WiresharkFoundation.Wireshark"
 				},
 				{
+					"PackageIdentifier" : "ZeroTier.ZeroTierOne"
+				},
+				{
 					"PackageIdentifier" : "GnuWin32.Zip"
 				},
 				{
@@ -151,19 +163,19 @@
 					"PackageIdentifier" : "Crunchyroll.MasterofGarden"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
+				},
+				{
 					"PackageIdentifier" : "Skillbrains.Lightshot"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
@@ -172,13 +184,10 @@
 					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
 					"PackageIdentifier" : "GOG.Galaxy"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
@@ -229,6 +238,12 @@
 					"PackageIdentifier" : "osk.tetr"
 				},
 				{
+					"PackageIdentifier" : "Amazon.Kindle"
+				},
+				{
+					"PackageIdentifier" : "Brave.Brave"
+				},
+				{
 					"PackageIdentifier" : "Cemu.Cemu"
 				},
 				{
@@ -253,9 +268,6 @@
 					"PackageIdentifier" : "GodotEngine.GodotEngine.Mono"
 				},
 				{
-					"PackageIdentifier" : "Ryujinx.Ryujinx"
-				},
-				{
 					"PackageIdentifier" : "Spotify.Spotify"
 				},
 				{
@@ -266,6 +278,9 @@
 				},
 				{
 					"PackageIdentifier" : "ebkr.r2modman"
+				},
+				{
+					"PackageIdentifier" : "Balena.Etcher"
 				},
 				{
 					"PackageIdentifier" : "Obsidian.Obsidian"
@@ -280,9 +295,6 @@
 					"PackageIdentifier" : "beekeeper-studio.beekeeper-studio"
 				},
 				{
-					"PackageIdentifier" : "Element.Element"
-				},
-				{
 					"PackageIdentifier" : "Proton.ProtonMail"
 				},
 				{
@@ -293,6 +305,9 @@
 				},
 				{
 					"PackageIdentifier" : "Proton.ProtonDrive"
+				},
+				{
+					"PackageIdentifier" : "KhronosGroup.VulkanSDK"
 				},
 				{
 					"PackageIdentifier" : "CitraEmu.Citra"
@@ -349,5 +364,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.8.1791"
+	"WinGetVersion" : "1.8.1911"
 }
