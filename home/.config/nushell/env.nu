@@ -1,23 +1,13 @@
 source ~/.config/nushell/dotenv.nu
+use std *
 
 $env.PROMPT_INDICATOR = {|| "> " }
 $env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
-
-let path_from_string = {|s| $s | split row (char esep) | path expand --no-symlink}
-let path_to_string =  {|v| $v | path expand --no-symlink | str join (char esep)}
-
-$env.ENV_CONVERSIONS = {
-    "PATH": {
-        from_string: $path_from_string
-        to_string: $path_to_string
-    }
-}
+$env.ENV_CONVERSIONS = {}
 
 #================================== CONFIG =========================================#
-
-use std *
 
 let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
 

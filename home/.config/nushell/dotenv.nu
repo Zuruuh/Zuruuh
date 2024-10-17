@@ -1,5 +1,7 @@
 export def --env load-sh-env [file: string] {
     if (which sh | is-empty) {
+        print $"Tried to load file ($file) but no SH executor was found?"
+
         return
     }
 
@@ -13,72 +15,38 @@ export def --env load-sh-env [file: string] {
         }
     }
 
-    let base_env = do { sh -c 'env' } | complete  | get stdout | from dotenv
+    let base_env = do { sh -c 'env -0' } | complete  | get stdout | from dotenv
 
-    do { sh -c $"source ($file) && env" } |
+    do { sh -c $"source ($file) && env -0" } |
         complete |
         get stdout |
         from dotenv |
-        items {|key, value| {
-            $key: (
-                if $key in $env.ENV_CONVERSIONS {
-                    do ($env.ENV_CONVERSIONS | get $key | get from_string) $value
-                } else {
-                    $value
-                }
-            )
-        }} |
-        reduce --fold {} {|it, acc| $acc | merge $it} |
         transpose key value |
-        filter {|kv|
-            ($kv.key | is-not-empty) and (
-                not ($kv.key in $base_env)
-                or (($base_env | get $kv.key) != $kv.value)
-            )
-        } | reduce --fold {} {|it, acc| $acc | merge {$it.key: $it.value}} |
-        load-env
-}
+        each {|kv|
+            let value = if $kv.key in $env.ENV_CONVERSIONS {
+                do ($env.ENV_CONVERSIONS | get $kv.key | get from_string) $kv.value
+            } else {
+                $kv.value
+            }
 
-export def --env load-env-file [file: string] {
-    if (which sh | is-empty) {
-        return
-    }
+            {key: $kv.key, value: $value}
+        } | filter {|kv|
+            if ($kv.key | is-empty) {
+                return false
+            }
 
-    let base_env = do { sh -c 'env' } | complete | get stdout | from dotenv
-    let parsed_env = cat .env |
-        str trim |
-        split row (char newline) |
-        each {|str| $str | str trim} |
-        filter {|str| $str !~ '^#' and ($str | is-not-empty)} |
-        each {|str| $"export ($str)"} |
-        str join (char newline)
-
-    let with_env = do { sh -c $"($parsed_env) && env" } | complete | get stdout | from dotenv
-
-    $with_env |
-        transpose key value |
-        filter {|kv|
-            ($kv.key | is-not-empty) and (
-                not ($kv.key in $base_env)
-                or (($base_env | get $kv.key) != $kv.value)
-            )
-        } | reduce --fold {} {|it, acc| $acc | merge {$it.key: $it.value}} |
+            (not ($kv.key in $base_env)) or (($base_env | get $kv.key) != $kv.value)
+        } |
+        reduce --fold {} {|it, acc| $acc | merge {$it.key: $it.value}} |
         load-env
 }
 
 def "from dotenv" [] {
-    lines |
+    split row (char null_byte) |
     str trim |
-    each {split column '='} |
-    each {values | flatten} |
-    each {|kv| {
-        $kv.0: ($kv |
-            skip 1 |
-            str join '=' |
-            str trim --char (char single_quote) |
-            str trim --char (char double_quote)
-        )
-    }} |
+    filter {is-not-empty} |
+    parse '{key}={value}' |
     default {} |
-    reduce --fold {} {|it, acc| $acc | merge $it}
+    transpose -r |
+    get 0
 }
