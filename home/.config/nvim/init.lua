@@ -485,28 +485,26 @@ require('lazy').setup({
 
       prettier = function()
         return {
-          command = require('conform.util').find_executable({
-            'node_modules/.bin/prettier',
-          }, nil),
+          command = require('conform.util').from_node_modules('prettier'),
         }
       end,
 
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { { 'prettier', 'biome' } },
-        typescript = { { 'prettier', 'biome' } },
-        javascriptreact = { { 'prettier', 'biome' } },
-        typescriptreact = { { 'prettier', 'biome' } },
-        svelte = { { 'prettier', 'biome' } },
-        yaml = { { 'prettier' } },
-        astro = { { 'prettier', 'biome' } },
-        html = { { 'prettier' } },
-        css = { { 'prettier' } },
-        json = { { 'prettier', 'biome' } },
-        markdown = { { 'prettier', 'deno_fmt' } },
+        javascript = { 'prettier', 'biome', stop_after_first = true },
+        typescript = { 'prettier', 'biome', stop_after_first = true },
+        javascriptreact = { 'prettier', 'biome', stop_after_first = true },
+        typescriptreact = { 'prettier', 'biome', stop_after_first = true },
+        svelte = { 'prettier', 'biome', stop_after_first = true },
+        yaml = { 'prettier' },
+        astro = { 'prettier', 'biome', stop_after_first = true },
+        html = { 'prettier' },
+        css = { 'prettier' },
+        json = { 'prettier', 'biome', stop_after_first = true },
+        markdown = { 'prettier', 'deno_fmt', stop_after_first = true },
         sh = { 'shfmt' },
         toml = { 'taplo' },
-        php = { { 'php_cs_fixer', 'phpcbf' } },
+        php = { 'php_cs_fixer', 'phpcbf', stop_after_first = true },
         rust = { 'rustfmt' },
         nix = { 'nixpkgs_fmt' },
         ['_'] = { 'trim_whitespace' },
