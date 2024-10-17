@@ -15,16 +15,17 @@ let
       error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
     '';
   };
+  nodejs = pkgs.nodejs_22;
   nodePackages = pkgs.nodePackages.override {
-    nodejs = pkgs.nodejs_22;
+    inherit nodejs;
   };
 
-  packages = {
-    yaml = with pkgs; [
+  packages = with pkgs; {
+    yaml = [
       yaml-language-server
       unstable.vacuum-go
     ];
-    rust = with pkgs; [
+    rust = [
       cargo-audit
       cargo-binstall
       cargo-expand
@@ -33,10 +34,10 @@ let
       cargo-tarpaulin
       rustup
     ];
-    javascript = with pkgs; [
+    javascript = [
       unstable.bun
       unstable.deno
-      nodejs_22
+      nodejs
       nodePackages.pnpm
       nodePackages.serve
       unstable.biome
@@ -45,25 +46,25 @@ let
       unstable.astro-language-server
       vscode-langservers-extracted
     ];
-    docker = with pkgs; [
+    docker = [
       minikube
       kubectl
       kubernetes
       docker-compose-language-service
       dockerfile-language-server-nodejs
     ];
-    git = with pkgs; [
+    git = [
       gh
       git
       git-lfs
       delta
       gnupg
     ];
-    nix = with pkgs; [
+    nix = [
       nil
       nixpkgs-fmt
     ];
-    c = with pkgs; [
+    c = [
       gcc
       cmake
       gnumake
@@ -72,7 +73,7 @@ let
       pkg-config
       unstable.llvmPackages_19.clang-tools
     ];
-    php = with pkgs; [
+    php = [
       unstable.frankenphp
       unstable.phpactor
       php83
@@ -82,51 +83,51 @@ let
       php83.packages.psalm
       symfony-cli
     ];
-    python = with pkgs; [
+    python = [
       python312Full
       python312Packages.pynvim
       python312Packages.pip
     ];
-    java = with pkgs; [
+    java = [
       zulu17
     ];
-    go = with pkgs; [
+    go = [
       go
     ];
-    bash = with pkgs ;[
+    bash = [
       shellcheck
       shfmt
       unstable.bash-language-server
     ];
-    lua = with pkgs; [
+    lua = [
       taplo
       lua
       stylua
       lua-language-server
     ];
-    http = with pkgs; [
+    http = [
       curl
       wget
       xh
     ];
-    json = with pkgs; [
+    json = [
       fx
       jq
     ];
-    compression = with pkgs; [
+    compression = [
       gzip
       zstd
       brotli
       unzip
       zip
     ];
-    search = with pkgs; [
+    search = [
       amber
       fd
       fzf
       ripgrep
     ];
-    pretty = with pkgs; [
+    pretty = [
       bat
       mdcat
       tailspin
@@ -134,20 +135,20 @@ let
       onefetch
       fastfetch
     ];
-    monitoring = with pkgs; [
+    monitoring = [
       btop
       du-dust
     ];
-    clipboard = with pkgs; [
+    clipboard = [
       clipboard-jh
       xclip
     ];
-    database = with pkgs; [
+    database = [
       sqlx-cli
       valkey
       sqls
     ];
-    tools = with pkgs; [
+    tools = [
       unstable.typos
       mkpasswd
       man
@@ -160,19 +161,19 @@ let
       viu
       yazi
     ];
-    shell = with pkgs;[
+    shell = [
       zoxide
       unstable.nushell
       starship
       atuin
     ];
-    dev = with pkgs; [
+    dev = [
       unstable.neovim
       tree-sitter
       unstable.zellij
       just
     ];
-    xml = with pkgs; [
+    xml = [
       lemminx
     ];
   };

@@ -32,7 +32,7 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
     EDITOR = "${pkgs.unstable.neovim}/bin/nvim";
-    PAGER = "${pkgs.tailspin}/bin/tspin";
+    PAGER = "${pkgs.less}/bin/less";
   };
 
   security.sudo.wheelNeedsPassword = true;
