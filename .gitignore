@@ -26,3 +26,5 @@
 # symlink whole .cargo dir
 /home/.cargo/*
 !/home/.cargo/config.toml
+
+/home/.config/spicetify

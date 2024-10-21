@@ -18,8 +18,12 @@ if $nu.os-info.name == 'windows' {
     path add 'D:\Bin'
 }
 
-if $nu.os-info.name == 'linux' and ('/etc/set-environment' | path exists) {
-    load-sh-env /etc/set-environment
+if $nu.os-info.name == 'linux' and ('/run/current-system/etc/set-environment' | path exists) {
+    load-sh-env /run/current-system/etc/set-environment
+}
+
+if $nu.os-info.name == 'macos' and ('/run/current-system/etc/bashrc' | path exists) {
+    load-sh-env /run/current-system/etc/bashrc
 }
 
 if $nu.os-info.name in ['linux', 'macos'] {

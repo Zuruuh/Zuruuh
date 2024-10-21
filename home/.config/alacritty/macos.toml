@@ -2,11 +2,8 @@ import = ["~/.config/alacritty/base.toml"]
 
 # working_directory = "~/dev" # doesn't work sadly
 
-[env]
-XDG_CONFIG_HOME = "/Users/YZiadi/.config"
-
 [shell]
-program = "/usr/local/bin/zellij"
+program = "/run/current-system/sw/bin/zellij"
 
 [font]
 size = 18

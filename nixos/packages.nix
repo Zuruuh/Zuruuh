@@ -1,6 +1,7 @@
 # -- vim: sw=2
 { lib, pkgs, ... }:
 let
+  forLinux = packages: (if pkgs.stdenv.isDarwin then [ ] else packages);
   php83 = pkgs.php83.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       apcu
@@ -9,10 +10,11 @@ let
       redis
       xsl
     ]));
-    extraConfig = ''
+    extraConfig = /*toml*/ ''
       apc.enabled=1
       apc.enable_cli=1
       error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+      memory_limit = 512M
     '';
   };
   nodejs = pkgs.nodejs_22;
@@ -47,12 +49,9 @@ let
       vscode-langservers-extracted
     ];
     docker = [
-      minikube
-      kubectl
-      kubernetes
       docker-compose-language-service
       dockerfile-language-server-nodejs
-    ];
+    ] ++ forLinux [ pkgs.kubernetes pkgs.kubectl pkgs.minikube ];
     git = [
       gh
       git
@@ -69,10 +68,9 @@ let
       cmake
       gnumake
       gpp
-      libgcc
       pkg-config
       unstable.llvmPackages_19.clang-tools
-    ];
+    ] ++ forLinux [ pkgs.libgcc ];
     php = [
       unstable.frankenphp
       unstable.phpactor
@@ -153,14 +151,13 @@ let
       mkpasswd
       man
       openssh
-      sudo
       stow
       tlrc
       tokei
       topgrade
       viu
       yazi
-    ];
+    ] ++ forLinux [ pkgs.sudo ];
     shell = [
       zoxide
       unstable.nushell
