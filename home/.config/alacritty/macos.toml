@@ -11,12 +11,53 @@ size = 18
 [font.normal]
 family = "MonaspiceNe Nerd Font Mono"
 
+# https://stackoverflow.com/a/75030219
 [[keyboard.bindings]]
 key = "C"
 mods = "Command"
 chars = "\u0003"
 
 [[keyboard.bindings]]
-key = "V"
-mods = "Shift | Control"
-action = "Paste"
+key = "P"
+mods = "Command"
+chars = "\u0010"
+
+[[keyboard.bindings]]
+key = "D"
+mods = "Command"
+chars = "\u0004"
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Command"
+chars = "\u0008"
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Command"
+chars = "\u000C"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Command"
+chars = "\u000E"
+
+[[keyboard.bindings]]
+key = "R"
+mods = "Command"
+chars = "\u0012"
+
+[[keyboard.bindings]]
+key = "S"
+mods = "Command"
+chars = "\u0013"
+
+[[keyboard.bindings]]
+key = "T"
+mods = "Command"
+chars = "\u0014"
+
+# [[keyboard.bindings]]
+# key = "V"
+# mods = "Shift | Control"
+# action = "Paste"
