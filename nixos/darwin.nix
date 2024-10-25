@@ -1,5 +1,6 @@
 { pkgs, outputs, ... }:
 let
+  platform = "aarch64-darwin";
   username = "YZiadi";
   shell = pkgs.writeShellScript "nu" ''
     XDG_CONFIG_HOME=${(import ./env.nix {inherit pkgs;}).XDG_CONFIG_HOME} exec ${pkgs.unstable.nushell}/bin/nu "$@";
@@ -8,7 +9,11 @@ in
 {
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs = {
+    hostPlatform = platform;
+
+    config.allowUnfree = true;
+  };
 
   environment = {
     shells = [ shell ];
@@ -17,6 +22,8 @@ in
       alacritty
       karabiner-elements
       alt-tab-macos
+      telegram-desktop
+      slack
     ];
     variables = (import ./env.nix { inherit pkgs; });
   };
@@ -57,12 +64,13 @@ in
         persistent-apps = [
           "${pkgs.alacritty}/Applications/Alacritty.app"
           "/Applications/Zen Browser.app"
-          "/Applications/Slack.app"
+          "${pkgs.slack}/Applications/Slack.app"
           "/Applications/Spotify.app"
           "/Applications/Discord.app"
           "/Applications/OrbStack.app"
           "/Applications/Proton Mail.app"
           "/Applications/Bitwarden.app"
+          "/Applications/DataGrip.app"
         ];
       };
 
@@ -76,6 +84,8 @@ in
 
       NSGlobalDomain = {
         KeyRepeat = 2;
+        InitialKeyRepeat = 15;
+        AppleKeyboardUIMode = 3;
       };
     };
   };
@@ -98,6 +108,7 @@ in
       "orbstack"
       "bitwarden"
       "rectangle"
+      "datagrip"
     ];
   };
 }

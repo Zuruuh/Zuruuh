@@ -8,6 +8,7 @@
       url = "github:nix-community/NixOS-WSL?ref=2405.5.4";
       inputs.nixpkgs.follows = "nixos";
     };
+
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixos";
@@ -19,9 +20,10 @@
         nix-darwin.follows = "nix-darwin";
       };
     };
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = { self, nixos, nixos-wsl, nixos-unstable, nix-darwin, nix-homebrew }:
+  outputs = { self, nixos, nixos-wsl, nixos-unstable, nix-darwin, nix-homebrew, mac-app-util }:
     let
       unstable-overlay = final: prev: {
         unstable = import nixos-unstable {
@@ -59,6 +61,7 @@
           pkgs = import nixos {
             inherit system;
             overlays = [ unstable-overlay ];
+            config.allowUnfree = true;
           };
           args = {
             inherit pkgs;
@@ -70,6 +73,7 @@
           "STM-MBTech25" = nix-darwin.lib.darwinSystem {
             modules = [
               nix-homebrew.darwinModules.nix-homebrew
+              mac-app-util.darwinModules.default
               (import ./nixos/packages.nix args)
               (import ./nixos/darwin.nix args)
             ];
