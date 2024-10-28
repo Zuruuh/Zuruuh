@@ -19,11 +19,11 @@ in
     shells = [ shell ];
     loginShell = "${shell}/bin/nu";
     systemPackages = with pkgs; [
-      alacritty
-      karabiner-elements
       alt-tab-macos
       telegram-desktop
-      rectangle
+      sketchybar
+      yabai
+      unstable.skhd
     ];
     variables = (import ./env.nix { inherit pkgs; });
   };
@@ -48,6 +48,32 @@ in
     nix-direnv.enable = true;
   };
 
+  launchd.user.agents.skhd = {
+    environment = {
+      SHELL = "${pkgs.bash}/bin/bash";
+    };
+    path = [
+      pkgs.bash
+      pkgs.unstable.skhd
+      pkgs.jq
+      pkgs.yabai
+    ];
+    serviceConfig = {
+      RunAtLoad = true;
+      KeepAlive = {
+        SuccessfulExit = false;
+        Crashed = true;
+      };
+      StandardOutPath = "/tmp/skhd_${username}.out.log";
+      StandardErrorPath = "/tmp/skhd_${username}.err.log";
+      ProcessType = "Interactive";
+      Nice = -20;
+    };
+    script = ''
+      ${pkgs.unstable.skhd}/bin/skhd -V
+    '';
+  };
+
   system = {
     configurationRevision = outputs.rev or outputs.dirtyRev or null;
     stateVersion = 5;
@@ -60,9 +86,10 @@ in
         mineffect = "scale";
         minimize-to-application = true;
         show-recents = false;
+        showhidden = false;
         tilesize = 48;
         persistent-apps = [
-          "${pkgs.alacritty}/Applications/Alacritty.app"
+          "/Applications/Alacritty.app"
           "/Applications/Zen Browser.app"
           "/Applications/Slack.app"
           "/Applications/Spotify.app"
@@ -104,6 +131,14 @@ in
 
     brews = [
       "spicetify-cli"
+      {
+        name = "FelixKratz/formulae/svim";
+        start_service = true;
+      }
+      {
+        name = "FelixKratz/formulae/borders";
+        start_service = true;
+      }
     ];
 
     casks = [
@@ -111,6 +146,7 @@ in
       "bitwarden"
       "datagrip"
       "slack"
+      "alacritty"
     ];
   };
 }

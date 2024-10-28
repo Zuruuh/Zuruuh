@@ -64,6 +64,11 @@ export def "config zellij" [] {
     nvim ~/.dotfiles/home/.config/zellij/config.kdl
 }
 
+export def "config skhd" [] {
+    nvim ~/.dotfiles/home/.config/skhd/skhdrc
+    skhd -r
+}
+
 export def "venv create" [python_path: string = "" ] {
     if ('.venv' | path exists) {
         return (

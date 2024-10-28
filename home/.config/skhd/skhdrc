@@ -1,0 +1,60 @@
+# Yabai tabs
+lalt - 1 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[1] ]] && yabai -m space --focus $SPACES[1]
+lalt - 2 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[2] ]] && yabai -m space --focus $SPACES[2]
+lalt - 3 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[3] ]] && yabai -m space --focus $SPACES[3]
+lalt - 4 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[4] ]] && yabai -m space --focus $SPACES[4]
+
+# Mapping ctrl+[motion] to alt+[motion]
+ctrl - delete : skhd -k "alt - delete" ctrl - backspace : skhd -k "alt - backspace"
+ctrl - left : skhd -k "alt - left"
+ctrl - right : skhd -k "alt - right"
+ctrl + shift - left : skhd -k "alt + shift - left"
+ctrl + shift - right : skhd -k "alt + shift - right"
+
+# Mapping Ctrl+[action] to Cmd+[action]
+ctrl - a : skhd -k "cmd - a"  # select all
+ctrl - z : skhd -k "cmd - z"  # undo
+ctrl + shift - z : skhd -k "cmd + shift - z"  # redo
+
+# Copy/paste/cut commands
+# Set default ctrl+c behavior in alacritty
+ctrl - c [
+    "alacritty" ~
+    * : skhd -k "cmd - c";
+]
+ctrl - v : skhd -k "cmd - v" # paste
+ctrl - x : skhd -k "cmd - x" # cut
+
+# Disable cmd+tab (from simple_modifications)
+cmd - tab : :
+cmd - h : skhd -k "ctrl - h"
+
+# Browser
+ctrl - d [
+    "alacritty" ~
+    * : skhd -k "cmd - d";
+]
+ctrl - f [
+    "alacritty" ~
+    * : skhd -k "cmd - f";
+]
+ctrl - l [
+    "alacritty" ~
+    * : skhd -k "cmd - l";
+]
+ctrl - w [
+    "alacritty" ~
+    * : skhd -k "cmd - w";
+]
+ctrl - s [
+    "alacritty" ~
+    * : skhd -k "cmd - s";
+]
+ctrl - t [
+    "alacritty" ~
+    * : skhd -k "cmd - t";
+]
+ctrl + shift - t [
+    "alacritty" ~
+    * : skhd -k "cmd + shift - t";
+]
