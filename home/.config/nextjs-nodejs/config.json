@@ -1,9 +1,8 @@
 {
-	"telemetry": {
-		"notifiedAt": "1718934675973",
-		"anonymousId": "",
-		"salt": "",
-		"enabled": false
-	}
+    "telemetry": {
+        "notifiedAt": "1718934675973",
+        "anonymousId": "",
+        "salt": "",
+        "enabled": false
+    }
 }
-

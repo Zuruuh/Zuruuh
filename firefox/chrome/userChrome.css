@@ -23,7 +23,7 @@ toolbox#navigator-toolbox {
         & #TabsToolbar {
             width: fit-content;
 
-            &>*:not(:last-child) {
+            & > *:not(:last-child) {
                 display: none;
             }
         }
