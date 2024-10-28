@@ -23,7 +23,7 @@ in
       karabiner-elements
       alt-tab-macos
       telegram-desktop
-      slack
+      rectangle
     ];
     variables = (import ./env.nix { inherit pkgs; });
   };
@@ -64,7 +64,7 @@ in
         persistent-apps = [
           "${pkgs.alacritty}/Applications/Alacritty.app"
           "/Applications/Zen Browser.app"
-          "${pkgs.slack}/Applications/Slack.app"
+          "/Applications/Slack.app"
           "/Applications/Spotify.app"
           "/Applications/Discord.app"
           "/Applications/OrbStack.app"
@@ -100,6 +100,8 @@ in
   homebrew = {
     enable = true;
 
+    global.autoUpdate = false;
+
     brews = [
       "spicetify-cli"
     ];
@@ -107,8 +109,8 @@ in
     casks = [
       "orbstack"
       "bitwarden"
-      "rectangle"
       "datagrip"
+      "slack"
     ];
   };
 }
