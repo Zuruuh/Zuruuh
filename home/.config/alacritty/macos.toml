@@ -1,8 +1,9 @@
+[general]
 import = ["~/.config/alacritty/base.toml"]
 
 # working_directory = "~/dev" # doesn't work sadly
 
-[shell]
+[terminal.shell]
 program = "/run/current-system/sw/bin/zellij"
 
 [font]
