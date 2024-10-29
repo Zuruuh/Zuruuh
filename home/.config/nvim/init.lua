@@ -620,7 +620,7 @@ require('lazy').setup({
   { -- Persistent theme selector, run with `:Themery`
     'zaldih/themery.nvim',
     opts = {
-      themes = { 'onedark', 'vscode', 'tokyonight', 'gruvbox' },
+      themes = { 'onedark', 'vscode', 'tokyonight', 'gruvbox', 'catppuccin-latte' },
       livePreview = true,
     },
   },
@@ -628,6 +628,8 @@ require('lazy').setup({
   { 'Mofiqul/vscode.nvim', lazy = true },
   { 'folke/tokyonight.nvim', lazy = true },
   { 'ellisonleao/gruvbox.nvim', lazy = true },
+  { 'ellisonleao/gruvbox.nvim', lazy = true },
+  { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
 
   {
     'f-person/auto-dark-mode.nvim',
@@ -741,7 +743,12 @@ require('lazy').setup({
       { '<leader>gpl', '<CMD>Git pull<CR>', silent = true, desc = 'Git [P]u[l]l' },
       { '<leader>gpp', '<CMD>Git push<CR>', silent = true, desc = 'Git [P]ush' },
       { '<leader>gph', '<CMD>Git push -u origin HEAD<CR>', silent = true, desc = 'Git [P]ush [H]EAD' },
-      { '<leader>ggfl', '<CMD>Git push --force-with-lease<CR>', silent = true, desc = 'Git push --force-with-lease' },
+      {
+        '<leader>ggfl',
+        '<CMD>Git push --force-with-lease<CR>',
+        silent = true,
+        desc = 'Git push --force-with-lease',
+      },
     },
   },
   {

@@ -21,9 +21,13 @@
       };
     };
     mac-app-util.url = "github:hraban/mac-app-util";
+    sbar-lua = {
+      url = "git+file:///Users/YZiadi/dev/SbarLua";
+      inputs.nixpkgs.follows = "nixos";
+    };
   };
 
-  outputs = { self, nixos, nixos-wsl, nixos-unstable, nix-darwin, nix-homebrew, mac-app-util }:
+  outputs = { self, nixos, nixos-wsl, nixos-unstable, nix-darwin, nix-homebrew, mac-app-util, sbar-lua }:
     let
       unstable-overlay = final: prev: {
         unstable = import nixos-unstable {
@@ -63,19 +67,19 @@
             overlays = [ unstable-overlay ];
             config.allowUnfree = true;
           };
-          args = {
-            inherit pkgs;
-            lib = pkgs.lib;
-            outputs = self;
-          };
         in
         {
           "STM-MBTech25" = nix-darwin.lib.darwinSystem {
+            specialArgs = {
+              inherit pkgs sbar-lua system;
+              lib = pkgs.lib;
+              outputs = self;
+            };
             modules = [
               nix-homebrew.darwinModules.nix-homebrew
               mac-app-util.darwinModules.default
-              (import ./nixos/packages.nix args)
-              (import ./nixos/darwin.nix args)
+              ./nixos/packages.nix
+              ./nixos/darwin.nix
             ];
           };
         };

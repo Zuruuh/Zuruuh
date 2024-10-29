@@ -1,4 +1,4 @@
-{ pkgs, outputs, ... }:
+{ pkgs, system, lib, outputs, config, ... }:
 let
   platform = "aarch64-darwin";
   username = "YZiadi";
@@ -15,17 +15,23 @@ in
     config.allowUnfree = true;
   };
 
+
   environment = {
     shells = [ shell ];
     loginShell = "${shell}/bin/nu";
     systemPackages = with pkgs; [
       alt-tab-macos
       telegram-desktop
-      sketchybar
       yabai
       unstable.skhd
+      # sbar-lua.packages.${system}.default
     ];
-    variables = (import ./env.nix { inherit pkgs; });
+    variables = lib.mkMerge [
+      (import ./env.nix { inherit pkgs; })
+      # {
+      #   LUA_PATH = "${sbar-lua.packages.${system}.default}/share/lua";
+      # }
+    ];
   };
 
   fonts.packages = with pkgs; [
@@ -48,31 +54,45 @@ in
     nix-direnv.enable = true;
   };
 
-  launchd.user.agents.skhd = {
-    environment = {
-      SHELL = "${pkgs.bash}/bin/bash";
-    };
-    path = [
-      pkgs.bash
-      pkgs.unstable.skhd
-      pkgs.jq
-      pkgs.yabai
-    ];
-    serviceConfig = {
-      RunAtLoad = true;
-      KeepAlive = {
-        SuccessfulExit = false;
-        Crashed = true;
+  launchd.user.agents =
+    let
+      makeKoekeishiyaProgram = { name, package, extraPackages }: {
+        environment = {
+          SHELL = "${pkgs.bash}/bin/bash";
+        };
+        path = config.environment.systemPackages ++ [
+          pkgs.bash
+          package
+        ] ++ extraPackages;
+        serviceConfig = {
+          RunAtLoad = true;
+          KeepAlive = {
+            SuccessfulExit = false;
+            Crashed = true;
+          };
+          StandardOutPath = "/tmp/${name}_${username}.out.log";
+          StandardErrorPath = "/tmp/${name}_${username}.err.log";
+          ProcessType = "Interactive";
+          Nice = -20;
+        };
+        script = ''
+          ${package}/bin/${name} -V
+        '';
       };
-      StandardOutPath = "/tmp/skhd_${username}.out.log";
-      StandardErrorPath = "/tmp/skhd_${username}.err.log";
-      ProcessType = "Interactive";
-      Nice = -20;
+
+    in
+    {
+      yabai = makeKoekeishiyaProgram {
+        name = "yabai";
+        package = pkgs.yabai;
+        extraPackages = [ ];
+      };
+      skhd = makeKoekeishiyaProgram {
+        name = "skhd";
+        package = pkgs.unstable.skhd;
+        extraPackages = [ pkgs.jq ];
+      };
     };
-    script = ''
-      ${pkgs.unstable.skhd}/bin/skhd -V
-    '';
-  };
 
   system = {
     configurationRevision = outputs.rev or outputs.dirtyRev or null;
@@ -131,14 +151,20 @@ in
 
     brews = [
       "spicetify-cli"
-      {
-        name = "FelixKratz/formulae/svim";
-        start_service = true;
-      }
+      # {
+      #   name = "FelixKratz/formulae/svim";
+      #   start_service = true;
+      # }
       {
         name = "FelixKratz/formulae/borders";
         start_service = true;
       }
+      {
+        name = "FelixKratz/formulae/sketchybar";
+        start_service = true;
+      }
+      "switchaudio-osx"
+      "nowplaying-cli"
     ];
 
     casks = [
@@ -147,6 +173,9 @@ in
       "datagrip"
       "slack"
       "alacritty"
+      "sf-symbols"
+      "font-sf-mono"
+      "font-sf-pro"
     ];
   };
 }

@@ -146,11 +146,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1729382845,
-        "narHash": "sha256-REiWck1zIOnZIgGmmOWfwvkQw1f4UrBsxxOSKVSAG4w=",
+        "lastModified": 1730184279,
+        "narHash": "sha256-6OB+WWR6gnaWiqSS28aMJypKeK7Pjc2Wm6L0MtOrTuA=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "a001f44cfc47164839eb61c6b1e7f4288813f7e8",
+        "rev": "b379bd4d872d159e5189053ce9a4adf86d56db4b",
         "type": "github"
       },
       "original": {
@@ -202,11 +202,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1728241625,
-        "narHash": "sha256-yumd4fBc/hi8a9QgA9IT8vlQuLZ2oqhkJXHPKxH/tRw=",
+        "lastModified": 1729880355,
+        "narHash": "sha256-RP+OQ6koQQLX5nw0NmcDrzvGL8HDLnyXt/jHhL1jwjM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c31898adf5a8ed202ce5bea9f347b1c6871f32d1",
+        "rev": "18536bf04cd71abd345f9579158841376fdd0c5a",
         "type": "github"
       },
       "original": {
@@ -262,7 +262,27 @@
         "nix-homebrew": "nix-homebrew",
         "nixos": "nixos",
         "nixos-unstable": "nixos-unstable",
-        "nixos-wsl": "nixos-wsl"
+        "nixos-wsl": "nixos-wsl",
+        "sbar-lua": "sbar-lua"
+      }
+    },
+    "sbar-lua": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos"
+        ]
+      },
+      "locked": {
+        "dirtyRev": "437bd2031da38ccda75827cb7548e7baa4aa9978-dirty",
+        "dirtyShortRev": "437bd20-dirty",
+        "lastModified": 1723484726,
+        "narHash": "sha256-eE3y7Hlfcw4VA9X76Uo45I0K/0jYFRiQ/5P+86xdYVM=",
+        "type": "git",
+        "url": "file:///Users/YZiadi/dev/SbarLua"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///Users/YZiadi/dev/SbarLua"
       }
     },
     "systems": {
