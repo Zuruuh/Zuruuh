@@ -93,8 +93,12 @@ export def paste [] {
     cat (do { cb show } | complete | get stderr | str trim --char '"')
 }
 
-export def copy [] {
-    cb copy $in
+export def copy [path?: string] {
+    if ($in | is-not-empty) {
+        cb copy $in
+    } else if ($path | is-not-empty) {
+        cb copy (cat $path)
+    }
 }
 
 export def --env "venv activate" [] {
