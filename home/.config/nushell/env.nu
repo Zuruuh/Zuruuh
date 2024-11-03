@@ -91,10 +91,14 @@ $env.STARSHIP_LOG = 'error'
 $env.TERM = 'xterm-256color'
 
 #================================ PLUGINS ========================================#
-if not ($"($home)/.config/nushell/plugins/nu_scripts" | path exists) {
-    git clone 'https://github.com/nushell/nu_scripts' ~/.config/nushell/plugins/nu_scripts
+if ($"($home)/.config/nushell/plugins/nu_scripts" | path exists) {
+    rm -rf $"($home)/.config/nushell/plugins/nu_scripts"
 }
 
 zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
 starship init nu | save -f ~/.config/nushell/plugins/starship.nu
 atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu
+
+$env.CARAPACE_BRIDGES = 'zsh,bash' # optional
+$env.CARAPACE_ENV = 0
+carapace _carapace nushell | save -f ~/.config/nushell/plugins/carapace.nu
