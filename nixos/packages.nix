@@ -90,7 +90,8 @@ let
       zulu17
     ];
     go = [
-      go
+      unstable.go
+      unstable.gopls
     ];
     bash = [
       shellcheck
@@ -163,6 +164,7 @@ let
       unstable.nushell
       starship
       atuin
+      carapace
     ];
     dev = [
       unstable.neovim

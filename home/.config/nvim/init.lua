@@ -414,6 +414,7 @@ require('lazy').setup({
         nil_ls = {},
         nushell = {},
         vacuum = {},
+        gopls = {},
       }
 
       local lspconfig = require('lspconfig')
@@ -886,6 +887,18 @@ require('lazy').setup({
       },
     },
   },
+  -- Disabled until alacritty stops breaking on links
+  -- or switching to another terminal
+  -- {
+  --   'OXY2DEV/markview.nvim',
+  --   lazy = false, -- Recommended
+  --   -- ft = "markdown" -- If you decide to lazy-load anyway
+  --
+  --   dependencies = {
+  --     'nvim-treesitter/nvim-treesitter',
+  --     'nvim-tree/nvim-web-devicons',
+  --   },
+  -- },
 }, {
   rocks = {
     enabled = false,
