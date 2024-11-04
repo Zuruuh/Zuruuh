@@ -3,6 +3,8 @@
 let
   forLinux = packages: (if pkgs.stdenv.isDarwin then [ ] else packages);
   php83 = pkgs.php83.buildEnv {
+    fpmSupport = false;
+    cgiSupport = false;
     extensions = ({ enabled, all }: enabled ++ (with all; [
       apcu
       amqp

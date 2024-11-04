@@ -79,7 +79,10 @@ in
         environment = {
           SHELL = "${pkgs.bash}/bin/bash";
         };
-        path = config.environment.systemPackages ++ [ pkgs.bash package ] ++ extraPackages;
+        path = config.environment.systemPackages
+          ++ [ pkgs.bash package ]
+          ++ extraPackages
+          ++ [ "/opt/homebrew/bin/" ];
         serviceConfig = {
           RunAtLoad = true;
           KeepAlive = {
