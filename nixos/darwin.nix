@@ -191,6 +191,7 @@ in
       }
       "switchaudio-osx"
       "nowplaying-cli"
+      "blueutil"
     ];
 
     casks = [
@@ -204,6 +205,7 @@ in
       "font-sf-pro"
       "parsec"
       "wkhtmltopdf"
+      "postman"
     ];
   };
 }
