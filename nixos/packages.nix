@@ -100,7 +100,6 @@ let
     ];
     lua = [
       taplo
-      lua
       stylua
       lua-language-server
     ];

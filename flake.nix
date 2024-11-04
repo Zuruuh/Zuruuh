@@ -22,8 +22,8 @@
     };
     mac-app-util.url = "github:hraban/mac-app-util";
     sbar-lua = {
-      url = "git+file:///Users/YZiadi/dev/SbarLua";
-      inputs.nixpkgs.follows = "nixos";
+      url = "github:FelixKratz/SbarLua?ref=437bd2031da38ccda75827cb7548e7baa4aa9978";
+      flake = false;
     };
   };
 

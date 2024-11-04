@@ -1,10 +1,35 @@
-{ pkgs, system, lib, outputs, config, ... }:
+inputs@{ pkgs, lib, outputs, config, ... }:
 let
   platform = "aarch64-darwin";
   username = "YZiadi";
   shell = pkgs.writeShellScript "nu" ''
     XDG_CONFIG_HOME=${(import ./env.nix {inherit pkgs;}).XDG_CONFIG_HOME} exec ${pkgs.unstable.nushell}/bin/nu "$@";
   '';
+  lua-src = pkgs.lua5_4_compat;
+  sbar-lua = pkgs.stdenv.mkDerivation {
+    pname = "sbarlua";
+    version = "437bd2031da38ccda75827cb7548e7baa4aa9979";
+    buildInputs = with pkgs; [ gnumake readline gcc lua-src makeWrapper ];
+    src = inputs.sbar-lua;
+    buildPhase = ''
+      build_dir="$(pwd)/build"
+      mkdir -p $build_dir
+      ${pkgs.gnumake}/bin/make INSTALL_DIR="$build_dir" install
+    '';
+
+    installPhase =
+      let lua-lib-path = "${lua-src}/lib/lua/5.4";
+      in /*bash*/ ''
+        mkdir -p $out/share/lua
+        cp -r build/* $out/share/lua
+        mkdir -p $out/bin
+        makeWrapper \
+          ${lua-src}/bin/lua \
+          $out/bin/sbar-lua \
+          --set LUA_CPATH "${lua-lib-path}/?.so;${lua-lib-path}/loadall.so;$out/share/lua/sketchybar.so;./?.so;;" \
+          --set LUA_PATH "${lua-lib-path}/?.lua;${lua-lib-path}/loadall.lua;$out/share/lua/sketchybar.lua;./?.lua;;"
+      '';
+  };
 in
 {
   services.nix-daemon.enable = true;
@@ -24,14 +49,8 @@ in
       telegram-desktop
       yabai
       unstable.skhd
-      # sbar-lua.packages.${system}.default
-    ];
-    variables = lib.mkMerge [
-      (import ./env.nix { inherit pkgs; })
-      # {
-      #   LUA_PATH = "${sbar-lua.packages.${system}.default}/share/lua";
-      # }
-    ];
+    ] ++ [ lua-src sbar-lua ];
+    variables = (import ./env.nix { inherit pkgs; });
   };
 
   fonts.packages = with pkgs; [
@@ -56,14 +75,11 @@ in
 
   launchd.user.agents =
     let
-      makeKoekeishiyaProgram = { name, package, extraPackages }: {
+      makeProgram = { name, package, extraPackages ? [ ], script }: {
         environment = {
           SHELL = "${pkgs.bash}/bin/bash";
         };
-        path = config.environment.systemPackages ++ [
-          pkgs.bash
-          package
-        ] ++ extraPackages;
+        path = config.environment.systemPackages ++ [ pkgs.bash package ] ++ extraPackages;
         serviceConfig = {
           RunAtLoad = true;
           KeepAlive = {
@@ -73,24 +89,39 @@ in
           StandardOutPath = "/tmp/${name}_${username}.out.log";
           StandardErrorPath = "/tmp/${name}_${username}.err.log";
           ProcessType = "Interactive";
-          Nice = -20;
         };
-        script = ''
-          ${package}/bin/${name} -V
-        '';
+        inherit script;
       };
-
+      makeKoekeishiyaProgram = { name, package, extraPackages ? [ ] }: lib.mkMerge [
+        (makeProgram {
+          inherit name package extraPackages;
+          script = ''
+            ${package}/bin/${name} -V
+          '';
+        })
+        {
+          serviceConfig = {
+            Nice = -20;
+          };
+        }
+      ];
     in
     {
       yabai = makeKoekeishiyaProgram {
         name = "yabai";
         package = pkgs.yabai;
-        extraPackages = [ ];
       };
       skhd = makeKoekeishiyaProgram {
         name = "skhd";
         package = pkgs.unstable.skhd;
         extraPackages = [ pkgs.jq ];
+      };
+      sketchybar = makeProgram {
+        name = "sketchybar";
+        package = pkgs.sketchybar;
+        script = /*bash*/ ''
+          ${pkgs.sketchybar}/bin/sketchybar
+        '';
       };
     };
 
@@ -146,15 +177,10 @@ in
 
   homebrew = {
     enable = true;
-
     global.autoUpdate = false;
 
     brews = [
       "spicetify-cli"
-      # {
-      #   name = "FelixKratz/formulae/svim";
-      #   start_service = true;
-      # }
       {
         name = "FelixKratz/formulae/borders";
         start_service = true;
@@ -176,6 +202,8 @@ in
       "sf-symbols"
       "font-sf-mono"
       "font-sf-pro"
+      "parsec"
+      "wkhtmltopdf"
     ];
   };
 }
