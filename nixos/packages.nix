@@ -74,7 +74,6 @@ let
       unstable.llvmPackages_19.clang-tools
     ] ++ forLinux [ pkgs.libgcc ];
     php = [
-      unstable.frankenphp
       unstable.phpactor
       php83
       php83.packages.composer
@@ -172,6 +171,7 @@ let
       tree-sitter
       unstable.zellij
       just
+      ngrok
     ];
     xml = [
       lemminx

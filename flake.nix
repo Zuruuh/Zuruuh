@@ -47,6 +47,7 @@
                 pkgs = import nixos {
                   inherit system;
                   overlays = [ unstable-overlay ];
+                  config.allowUnfree = true;
                 };
                 lib = pkgs.lib;
               };
