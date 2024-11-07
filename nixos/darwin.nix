@@ -198,6 +198,7 @@ in
       "wkhtmltopdf"
       "postman"
       "nikitabobko/tap/aerospace"
+      "flameshot"
     ];
   };
 }
