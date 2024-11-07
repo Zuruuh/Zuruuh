@@ -47,7 +47,6 @@ in
     systemPackages = with pkgs; [
       alt-tab-macos
       telegram-desktop
-      yabai
       unstable.skhd
     ] ++ [ lua-src sbar-lua ];
     variables = (import ./env.nix { inherit pkgs; });
@@ -95,30 +94,20 @@ in
         };
         inherit script;
       };
-      makeKoekeishiyaProgram = { name, package, extraPackages ? [ ] }: lib.mkMerge [
-        (makeProgram {
-          inherit name package extraPackages;
-          script = ''
-            ${package}/bin/${name} -V
-          '';
-        })
-        {
-          serviceConfig = {
-            Nice = -20;
-          };
-        }
-      ];
     in
     {
-      yabai = makeKoekeishiyaProgram {
-        name = "yabai";
-        package = pkgs.yabai;
-      };
-      skhd = makeKoekeishiyaProgram {
-        name = "skhd";
-        package = pkgs.unstable.skhd;
-        extraPackages = [ pkgs.jq ];
-      };
+      skhd = lib.mkMerge [
+        (makeProgram {
+          name = "skhd";
+          package = pkgs.unstable.skhd;
+          extraPackages = [ pkgs.jq ];
+
+          script = ''
+            ${pkgs.unstable.skhd}/bin/skhd -V
+          '';
+        })
+        { serviceConfig.Nice = -20; }
+      ];
       sketchybar = makeProgram {
         name = "sketchybar";
         package = pkgs.sketchybar;
@@ -190,7 +179,7 @@ in
       }
       {
         name = "FelixKratz/formulae/sketchybar";
-        start_service = true;
+        start_service = false;
       }
       "switchaudio-osx"
       "nowplaying-cli"
@@ -209,6 +198,7 @@ in
       "parsec"
       "wkhtmltopdf"
       "postman"
+      "nikitabobko/tap/aerospace"
     ];
   };
 }
