@@ -476,33 +476,34 @@ require('lazy').setup({
         end,
       },
 
-      biome = function()
-        return {
-          command = require('conform.util').find_executable({
-            'node_modules/.bin/biome',
-          }, 'biome'),
-        }
-      end,
-
       prettier = function()
         return {
           command = require('conform.util').from_node_modules('prettier'),
         }
       end,
 
+      biome = function()
+        return {
+          command = require('conform.util').find_executable({
+            'node_modules/.bin/biome',
+            'node_modules/.bin/prettier',
+          }, 'biome'),
+        }
+      end,
+
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { 'prettier', 'biome', stop_after_first = true },
-        typescript = { 'prettier', 'biome', stop_after_first = true },
-        javascriptreact = { 'prettier', 'biome', stop_after_first = true },
-        typescriptreact = { 'prettier', 'biome', stop_after_first = true },
-        svelte = { 'prettier', 'biome', stop_after_first = true },
+        javascript = { 'biome', stop_after_first = true },
+        typescript = { 'biome', stop_after_first = true },
+        javascriptreact = { 'biome', stop_after_first = true },
+        typescriptreact = { 'biome', stop_after_first = true },
+        svelte = { 'biome', stop_after_first = true },
         yaml = { 'prettier' },
-        astro = { 'prettier', 'biome', stop_after_first = true },
+        astro = { 'biome', stop_after_first = true },
         html = { 'prettier' },
-        css = { 'prettier' },
-        json = { 'prettier', 'biome', stop_after_first = true },
-        markdown = { 'prettier', 'deno_fmt', stop_after_first = true },
+        css = { 'biome' },
+        json = { 'biome', stop_after_first = true },
+        markdown = { 'deno_fmt', stop_after_first = true },
         sh = { 'shfmt' },
         toml = { 'taplo' },
         php = { 'php_cs_fixer', 'phpcbf', stop_after_first = true },
