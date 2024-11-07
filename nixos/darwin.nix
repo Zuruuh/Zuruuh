@@ -45,7 +45,6 @@ in
     shells = [ shell ];
     loginShell = "${shell}/bin/nu";
     systemPackages = with pkgs; [
-      alt-tab-macos
       telegram-desktop
       unstable.skhd
     ] ++ [ lua-src sbar-lua ];
