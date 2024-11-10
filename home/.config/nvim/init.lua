@@ -298,9 +298,16 @@ require('lazy').setup({
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
 
-      -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
+      -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
+      {
+        'williamboman/mason.nvim',
+        cond = function()
+          return vim.fn.has('win32') == 1
+        end,
+        opts = {},
+      },
     },
     config = function()
       --  This function gets run when an LSP attaches to a particular buffer.
@@ -431,7 +438,6 @@ require('lazy').setup({
       end
     end,
   },
-
   { -- Autoformat
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
@@ -887,11 +893,6 @@ require('lazy').setup({
         end,
       },
     },
-  },
-  {
-    'm4xshen/hardtime.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-    opts = {},
   },
   -- Disabled until alacritty stops breaking on links
   -- or switching to another terminal
