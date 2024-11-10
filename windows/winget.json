@@ -1,363 +1,380 @@
 {
-    "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-    "CreationDate": "2024-10-10T11:59:40.492-00:00",
-    "Sources": [
-        {
-            "Packages": [
-                {
-                    "PackageIdentifier": "Upscayl.Upscayl"
-                },
-                {
-                    "PackageIdentifier": "Mozilla.Firefox.DeveloperEdition"
-                },
-                {
-                    "PackageIdentifier": "Git.Git"
-                },
-                {
-                    "PackageIdentifier": "Hex-Rays.IDA.Free"
-                },
-                {
-                    "PackageIdentifier": "KDE.Krita"
-                },
-                {
-                    "PackageIdentifier": "Medibang.MediBangPaintPro"
-                },
-                {
-                    "PackageIdentifier": "Mozilla.Firefox"
-                },
-                {
-                    "PackageIdentifier": "Meta.Oculus"
-                },
-                {
-                    "PackageIdentifier": "Proton.ProtonVPN"
-                },
-                {
-                    "PackageIdentifier": "Meltytech.Shotcut"
-                },
-                {
-                    "PackageIdentifier": "SteelSeries.GG"
-                },
-                {
-                    "PackageIdentifier": "Unity.Unity.2022"
-                },
-                {
-                    "PackageIdentifier": "Unity.UnityHub"
-                },
-                {
-                    "PackageIdentifier": "VideoLAN.VLC"
-                },
-                {
-                    "PackageIdentifier": "FACEITLTD.FACEITAC"
-                },
-                {
-                    "PackageIdentifier": "Mumble.Mumble.Client"
-                },
-                {
-                    "PackageIdentifier": "LGUG2Z.whkd"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2010.x64"
-                },
-                {
-                    "PackageIdentifier": "Inkscape.Inkscape"
-                },
-                {
-                    "PackageIdentifier": "TheDocumentFoundation.LibreOffice"
-                },
-                {
-                    "PackageIdentifier": "BlenderFoundation.Blender"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.CLRTypesSQLServer.2019"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2008.x64"
-                },
-                {
-                    "PackageIdentifier": "Elgato.4KCaptureUtility"
-                },
-                {
-                    "PackageIdentifier": "Alacritty.Alacritty"
-                },
-                {
-                    "PackageIdentifier": "Modrinth.ModrinthApp"
-                },
-                {
-                    "PackageIdentifier": "Apple.Bonjour"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.PowerShell.Preview"
-                },
-                {
-                    "PackageIdentifier": "dotPDN.PaintDotNet"
-                },
-                {
-                    "PackageIdentifier": "Nvidia.GeForceExperience"
-                },
-                {
-                    "PackageIdentifier": "Nvidia.PhysX"
-                },
-                {
-                    "PackageIdentifier": "FxSoundLLC.FxSound"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VisualStudio.2022.Community"
-                },
-                {
-                    "PackageIdentifier": "Codeusa.BorderlessGaming"
-                },
-                {
-                    "PackageIdentifier": "JetBrains.DataGrip"
-                },
-                {
-                    "PackageIdentifier": "LibreWolf.LibreWolf"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.Edge"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.EdgeWebView2Runtime"
-                },
-                {
-                    "PackageIdentifier": "Insecure.Nmap"
-                },
-                {
-                    "PackageIdentifier": "OBSProject.OBSStudio"
-                },
-                {
-                    "PackageIdentifier": "Parsec.Parsec"
-                },
-                {
-                    "PackageIdentifier": "JetBrains.RustRover.EAP"
-                },
-                {
-                    "PackageIdentifier": "Elgato.GameCapture.HD60S"
-                },
-                {
-                    "PackageIdentifier": "Valve.Steam"
-                },
-                {
-                    "PackageIdentifier": "GnuWin32.UnZip"
-                },
-                {
-                    "PackageIdentifier": "Ubisoft.Connect"
-                },
-                {
-                    "PackageIdentifier": "WiresharkFoundation.Wireshark"
-                },
-                {
-                    "PackageIdentifier": "ZeroTier.ZeroTierOne"
-                },
-                {
-                    "PackageIdentifier": "GnuWin32.Zip"
-                },
-                {
-                    "PackageIdentifier": "qBittorrent.qBittorrent"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2013.x64"
-                },
-                {
-                    "PackageIdentifier": "Crunchyroll.MasterofGarden"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.PowerToys"
-                },
-                {
-                    "PackageIdentifier": "Skillbrains.Lightshot"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2012.x86"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DotNet.SDK.8"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2015+.x86"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2015+.x64"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.WindowsSDK.10.0.20348"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.6"
-                },
-                {
-                    "PackageIdentifier": "GOG.Galaxy"
-                },
-                {
-                    "PackageIdentifier": "ElectronicArts.EADesktop"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2008.x86"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2013.x86"
-                },
-                {
-                    "PackageIdentifier": "Mojang.MinecraftLauncher"
-                },
-                {
-                    "PackageIdentifier": "EpicGames.EpicGamesLauncher"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2010.x86"
-                },
-                {
-                    "PackageIdentifier": "Nvidia.PhysXLegacy"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2012.x64"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.WindowsSDK.10.0.22000"
-                },
-                {
-                    "PackageIdentifier": "Blitz.Blitz"
-                },
-                {
-                    "PackageIdentifier": "Bitwarden.Bitwarden"
-                },
-                {
-                    "PackageIdentifier": "HeroicGamesLauncher.HeroicGamesLauncher"
-                },
-                {
-                    "PackageIdentifier": "Bruno.Bruno"
-                },
-                {
-                    "PackageIdentifier": "FTB.App"
-                },
-                {
-                    "PackageIdentifier": "OpenWhisperSystems.Signal"
-                },
-                {
-                    "PackageIdentifier": "osk.tetr"
-                },
-                {
-                    "PackageIdentifier": "Amazon.Kindle"
-                },
-                {
-                    "PackageIdentifier": "Brave.Brave"
-                },
-                {
-                    "PackageIdentifier": "Cemu.Cemu"
-                },
-                {
-                    "PackageIdentifier": "eloston.ungoogled-chromium"
-                },
-                {
-                    "PackageIdentifier": "Discord.Discord"
-                },
-                {
-                    "PackageIdentifier": "DuckDB.cli"
-                },
-                {
-                    "PackageIdentifier": "Electrum.Electrum"
-                },
-                {
-                    "PackageIdentifier": "FACEITLTD.FACEITClient"
-                },
-                {
-                    "PackageIdentifier": "Figma.FigmaAgent"
-                },
-                {
-                    "PackageIdentifier": "GodotEngine.GodotEngine.Mono"
-                },
-                {
-                    "PackageIdentifier": "Spotify.Spotify"
-                },
-                {
-                    "PackageIdentifier": "TeamSpeakSystems.TeamSpeakClient"
-                },
-                {
-                    "PackageIdentifier": "SamHocevar.WinCompose"
-                },
-                {
-                    "PackageIdentifier": "ebkr.r2modman"
-                },
-                {
-                    "PackageIdentifier": "Balena.Etcher"
-                },
-                {
-                    "PackageIdentifier": "Obsidian.Obsidian"
-                },
-                {
-                    "PackageIdentifier": "HTTPie.HTTPie"
-                },
-                {
-                    "PackageIdentifier": "Overwolf.CurseForge"
-                },
-                {
-                    "PackageIdentifier": "beekeeper-studio.beekeeper-studio"
-                },
-                {
-                    "PackageIdentifier": "Proton.ProtonMail"
-                },
-                {
-                    "PackageIdentifier": "SlackTechnologies.Slack"
-                },
-                {
-                    "PackageIdentifier": "VSCodium.VSCodium"
-                },
-                {
-                    "PackageIdentifier": "Proton.ProtonDrive"
-                },
-                {
-                    "PackageIdentifier": "KhronosGroup.VulkanSDK"
-                },
-                {
-                    "PackageIdentifier": "CitraEmu.Citra"
-                },
-                {
-                    "PackageIdentifier": "ModernFlyouts.ModernFlyouts"
-                },
-                {
-                    "PackageIdentifier": "DuckDuckGo.DesktopBrowser"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.AppInstaller"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.UI.Xaml.2.7"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.UI.Xaml.2.8"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCLibs.Desktop.14"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DevHome"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.WindowsTerminal.Preview"
-                },
-                {
-                    "PackageIdentifier": "Debian.Debian"
-                }
-            ],
-            "SourceDetails": {
-                "Argument": "https://cdn.winget.microsoft.com/cache",
-                "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
-                "Name": "winget",
-                "Type": "Microsoft.PreIndexed.Package"
-            }
-        },
-        {
-            "Packages": [
-                {
-                    "PackageIdentifier": "XP8JK4HZBVF435"
-                }
-            ],
-            "SourceDetails": {
-                "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-                "Identifier": "StoreEdgeFD",
-                "Name": "msstore",
-                "Type": "Microsoft.Rest"
-            }
-        }
-    ],
-    "WinGetVersion": "1.8.1911"
+	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate" : "2024-11-10T15:49:13.911-00:00",
+	"Sources" : 
+	[
+		{
+			"Packages" : 
+			[
+				{
+					"PackageIdentifier" : "Upscayl.Upscayl"
+				},
+				{
+					"PackageIdentifier" : "Mozilla.Firefox.DeveloperEdition"
+				},
+				{
+					"PackageIdentifier" : "Git.Git"
+				},
+				{
+					"PackageIdentifier" : "Hex-Rays.IDA.Free"
+				},
+				{
+					"PackageIdentifier" : "KDE.Krita"
+				},
+				{
+					"PackageIdentifier" : "Medibang.MediBangPaintPro"
+				},
+				{
+					"PackageIdentifier" : "Mozilla.Firefox"
+				},
+				{
+					"PackageIdentifier" : "Meta.Oculus"
+				},
+				{
+					"PackageIdentifier" : "Parsec.ParsecVDD"
+				},
+				{
+					"PackageIdentifier" : "Proton.ProtonVPN"
+				},
+				{
+					"PackageIdentifier" : "Meltytech.Shotcut"
+				},
+				{
+					"PackageIdentifier" : "SteelSeries.GG"
+				},
+				{
+					"PackageIdentifier" : "Unity.Unity.2022"
+				},
+				{
+					"PackageIdentifier" : "Unity.UnityHub"
+				},
+				{
+					"PackageIdentifier" : "VideoLAN.VLC"
+				},
+				{
+					"PackageIdentifier" : "Elgato.4KCaptureUtility"
+				},
+				{
+					"PackageIdentifier" : "FACEITLTD.FACEITAC"
+				},
+				{
+					"PackageIdentifier" : "Mumble.Mumble.Client"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
+				},
+				{
+					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+				},
+				{
+					"PackageIdentifier" : "BlenderFoundation.Blender"
+				},
+				{
+					"PackageIdentifier" : "DuongDieuPhap.ImageGlass"
+				},
+				{
+					"PackageIdentifier" : "Inkscape.Inkscape"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
+				},
+				{
+					"PackageIdentifier" : "Modrinth.ModrinthApp"
+				},
+				{
+					"PackageIdentifier" : "Apple.Bonjour"
+				},
+				{
+					"PackageIdentifier" : "glzr-io.zebar"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell.Preview"
+				},
+				{
+					"PackageIdentifier" : "LGUG2Z.whkd"
+				},
+				{
+					"PackageIdentifier" : "dotPDN.PaintDotNet"
+				},
+				{
+					"PackageIdentifier" : "Nvidia.GeForceExperience"
+				},
+				{
+					"PackageIdentifier" : "Nvidia.PhysX"
+				},
+				{
+					"PackageIdentifier" : "Alacritty.Alacritty"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
+				},
+				{
+					"PackageIdentifier" : "Codeusa.BorderlessGaming"
+				},
+				{
+					"PackageIdentifier" : "JetBrains.DataGrip"
+				},
+				{
+					"PackageIdentifier" : "LibreWolf.LibreWolf"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.Edge"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.EdgeWebView2Runtime"
+				},
+				{
+					"PackageIdentifier" : "Insecure.Nmap"
+				},
+				{
+					"PackageIdentifier" : "OBSProject.OBSStudio"
+				},
+				{
+					"PackageIdentifier" : "Parsec.Parsec"
+				},
+				{
+					"PackageIdentifier" : "JetBrains.RustRover.EAP"
+				},
+				{
+					"PackageIdentifier" : "Elgato.GameCapture.HD60S"
+				},
+				{
+					"PackageIdentifier" : "Valve.Steam"
+				},
+				{
+					"PackageIdentifier" : "GnuWin32.UnZip"
+				},
+				{
+					"PackageIdentifier" : "Ubisoft.Connect"
+				},
+				{
+					"PackageIdentifier" : "WiresharkFoundation.Wireshark"
+				},
+				{
+					"PackageIdentifier" : "ZeroTier.ZeroTierOne"
+				},
+				{
+					"PackageIdentifier" : "GnuWin32.Zip"
+				},
+				{
+					"PackageIdentifier" : "qBittorrent.qBittorrent"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
+				},
+				{
+					"PackageIdentifier" : "Crunchyroll.MasterofGarden"
+				},
+				{
+					"PackageIdentifier" : "Skillbrains.Lightshot"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+				},
+				{
+					"PackageIdentifier" : "GOG.Galaxy"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
+					"PackageIdentifier" : "ElectronicArts.EADesktop"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
+				},
+				{
+					"PackageIdentifier" : "Mojang.MinecraftLauncher"
+				},
+				{
+					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
+				},
+				{
+					"PackageIdentifier" : "Nvidia.PhysXLegacy"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
+				},
+				{
+					"PackageIdentifier" : "Blitz.Blitz"
+				},
+				{
+					"PackageIdentifier" : "Bitwarden.Bitwarden"
+				},
+				{
+					"PackageIdentifier" : "HeroicGamesLauncher.HeroicGamesLauncher"
+				},
+				{
+					"PackageIdentifier" : "Bruno.Bruno"
+				},
+				{
+					"PackageIdentifier" : "FTB.App"
+				},
+				{
+					"PackageIdentifier" : "OpenWhisperSystems.Signal"
+				},
+				{
+					"PackageIdentifier" : "osk.tetr"
+				},
+				{
+					"PackageIdentifier" : "Amazon.Kindle"
+				},
+				{
+					"PackageIdentifier" : "Brave.Brave"
+				},
+				{
+					"PackageIdentifier" : "Cemu.Cemu"
+				},
+				{
+					"PackageIdentifier" : "eloston.ungoogled-chromium"
+				},
+				{
+					"PackageIdentifier" : "Discord.Discord"
+				},
+				{
+					"PackageIdentifier" : "DuckDB.cli"
+				},
+				{
+					"PackageIdentifier" : "Electrum.Electrum"
+				},
+				{
+					"PackageIdentifier" : "FACEITLTD.FACEITClient"
+				},
+				{
+					"PackageIdentifier" : "Figma.FigmaAgent"
+				},
+				{
+					"PackageIdentifier" : "GodotEngine.GodotEngine.Mono"
+				},
+				{
+					"PackageIdentifier" : "Postman.Postman"
+				},
+				{
+					"PackageIdentifier" : "Spotify.Spotify"
+				},
+				{
+					"PackageIdentifier" : "TeamSpeakSystems.TeamSpeakClient"
+				},
+				{
+					"PackageIdentifier" : "SamHocevar.WinCompose"
+				},
+				{
+					"PackageIdentifier" : "ebkr.r2modman"
+				},
+				{
+					"PackageIdentifier" : "Balena.Etcher"
+				},
+				{
+					"PackageIdentifier" : "Obsidian.Obsidian"
+				},
+				{
+					"PackageIdentifier" : "HTTPie.HTTPie"
+				},
+				{
+					"PackageIdentifier" : "Overwolf.CurseForge"
+				},
+				{
+					"PackageIdentifier" : "beekeeper-studio.beekeeper-studio"
+				},
+				{
+					"PackageIdentifier" : "Proton.ProtonMail"
+				},
+				{
+					"PackageIdentifier" : "SlackTechnologies.Slack"
+				},
+				{
+					"PackageIdentifier" : "VSCodium.VSCodium"
+				},
+				{
+					"PackageIdentifier" : "Proton.ProtonDrive"
+				},
+				{
+					"PackageIdentifier" : "KhronosGroup.VulkanSDK"
+				},
+				{
+					"PackageIdentifier" : "CitraEmu.Citra"
+				},
+				{
+					"PackageIdentifier" : "ModernFlyouts.ModernFlyouts"
+				},
+				{
+					"PackageIdentifier" : "DuckDuckGo.DesktopBrowser"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.AppInstaller"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.UI.Xaml.2.7"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.UI.Xaml.2.8"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCLibs.Desktop.14"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DevHome"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsTerminal.Preview"
+				},
+				{
+					"PackageIdentifier" : "Debian.Debian"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://cdn.winget.microsoft.com/cache",
+				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name" : "winget",
+				"Type" : "Microsoft.PreIndexed.Package"
+			}
+		},
+		{
+			"Packages" : 
+			[
+				{
+					"PackageIdentifier" : "XP8JK4HZBVF435"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+				"Identifier" : "StoreEdgeFD",
+				"Name" : "msstore",
+				"Type" : "Microsoft.Rest"
+			}
+		}
+	],
+	"WinGetVersion" : "1.9.25180"
 }
