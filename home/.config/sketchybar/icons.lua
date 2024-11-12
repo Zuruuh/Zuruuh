@@ -9,6 +9,7 @@ local icons = {
     cpu = '􀫥',
     clipboard = '􀉄',
     bluetooth = '􁔂',
+    bus = '􀝉',
 
     switch = {
       on = '􁏮',

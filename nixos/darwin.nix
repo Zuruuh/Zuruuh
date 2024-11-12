@@ -30,6 +30,7 @@ let
           --set LUA_PATH "${lua-lib-path}/?.lua;${lua-lib-path}/loadall.lua;$out/share/lua/sketchybar.lua;./?.lua;;"
       '';
   };
+  env = (import ./env.nix { inherit pkgs; });
 in
 {
   services.nix-daemon.enable = true;
@@ -48,7 +49,7 @@ in
       telegram-desktop
       unstable.skhd
     ] ++ [ lua-src sbar-lua ];
-    variables = (import ./env.nix { inherit pkgs; });
+    variables = env;
   };
 
   fonts.packages = with pkgs; [
@@ -73,26 +74,35 @@ in
 
   launchd.user.agents =
     let
-      makeProgram = { name, package, extraPackages ? [ ], script }: {
-        environment = {
-          SHELL = "${pkgs.bash}/bin/bash";
-        };
-        path = config.environment.systemPackages
-          ++ [ pkgs.bash package ]
-          ++ extraPackages
-          ++ [ "/opt/homebrew/bin/" ];
-        serviceConfig = {
-          RunAtLoad = true;
-          KeepAlive = {
-            SuccessfulExit = false;
-            Crashed = true;
+      makeProgram =
+        { name
+        , package
+        , extraPackages ? [ ]
+        , script
+        , environment ? { }
+        }: {
+          environment = lib.mkMerge [
+            {
+              SHELL = "${pkgs.bash}/bin/bash";
+            }
+            environment
+          ];
+          path = config.environment.systemPackages
+            ++ [ pkgs.bash package ]
+            ++ extraPackages
+            ++ [ "/opt/homebrew/bin" "/usr/bin" "/usr/sbin" "/bin" ];
+          serviceConfig = {
+            RunAtLoad = true;
+            KeepAlive = {
+              SuccessfulExit = false;
+              Crashed = true;
+            };
+            StandardOutPath = "/tmp/${name}_${username}.out.log";
+            StandardErrorPath = "/tmp/${name}_${username}.err.log";
+            ProcessType = "Interactive";
           };
-          StandardOutPath = "/tmp/${name}_${username}.out.log";
-          StandardErrorPath = "/tmp/${name}_${username}.err.log";
-          ProcessType = "Interactive";
+          inherit script;
         };
-        inherit script;
-      };
     in
     {
       skhd = lib.mkMerge [
@@ -113,6 +123,9 @@ in
         script = /*bash*/ ''
           ${pkgs.sketchybar}/bin/sketchybar
         '';
+        environment = {
+          API_KEY_FILE = "${env.XDG_DATA_HOME}/idf-mobilites-api-key.txt";
+        };
       };
     };
 
@@ -199,6 +212,7 @@ in
       "postman"
       "nikitabobko/tap/aerospace"
       "flameshot"
+      "pika"
     ];
   };
 }
