@@ -628,7 +628,15 @@ require('lazy').setup({
   { -- Persistent theme selector, run with `:Themery`
     'zaldih/themery.nvim',
     opts = {
-      themes = { 'onedark', 'vscode', 'tokyonight', 'gruvbox', 'catppuccin-latte' },
+      themes = {
+        'onedark',
+        'vscode',
+        'tokyonight',
+        'gruvbox',
+        'catppuccin-latte',
+        'nord',
+        'oxocarbon',
+      },
       livePreview = true,
     },
   },
@@ -638,6 +646,8 @@ require('lazy').setup({
   { 'ellisonleao/gruvbox.nvim', lazy = true },
   { 'ellisonleao/gruvbox.nvim', lazy = true },
   { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
+  { 'shaunsingh/nord.nvim', lazy = true },
+  { 'nyoom-engineering/oxocarbon.nvim', lazy = true },
 
   {
     'f-person/auto-dark-mode.nvim',
