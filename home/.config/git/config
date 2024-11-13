@@ -16,13 +16,13 @@
 
 [delta]
     navigate = true
-    light = false
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
+    dark = true
 
 [diff]
-    colorMoved = false
+    colorMoved = true
 
 [init]
     defaultBranch = main

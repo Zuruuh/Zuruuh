@@ -58,7 +58,7 @@ let
       gh
       git
       git-lfs
-      delta
+      unstable.delta
       gnupg
     ];
     nix = [
