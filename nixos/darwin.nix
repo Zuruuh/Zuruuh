@@ -44,7 +44,6 @@ in
 
   environment = {
     shells = [ shell ];
-    loginShell = "${shell}/bin/nu";
     systemPackages = with pkgs; [
       telegram-desktop
       unstable.skhd

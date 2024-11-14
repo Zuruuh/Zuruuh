@@ -2,19 +2,19 @@
   description = "My NixOS system flake";
 
   inputs = {
-    nixos.url = "github:nixos/nixpkgs?ref=24.05";
-    nixos-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixos.url = "github:nixos/nixpkgs/24.05";
+    nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL?ref=2405.5.4";
+      url = "github:nix-community/NixOS-WSL/2405.5.4";
       inputs.nixpkgs.follows = "nixos";
     };
 
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:LnL7/nix-darwin/b379bd4d872d159e5189053ce9a4adf86d56db4b";
       inputs.nixpkgs.follows = "nixos";
     };
     nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
+      url = "github:zhaofengli/nix-homebrew/2ed1e70db2448bd997b7b0c52f7bef42ac7a51a7";
       inputs = {
         nixpkgs.follows = "nixos";
         nix-darwin.follows = "nix-darwin";
@@ -22,7 +22,7 @@
     };
     mac-app-util.url = "github:hraban/mac-app-util";
     sbar-lua = {
-      url = "github:FelixKratz/SbarLua?ref=437bd2031da38ccda75827cb7548e7baa4aa9978";
+      url = "github:FelixKratz/SbarLua/437bd2031da38ccda75827cb7548e7baa4aa9978";
       flake = false;
     };
   };
