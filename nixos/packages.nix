@@ -49,6 +49,7 @@ let
       unstable.svelte-language-server
       unstable.astro-language-server
       vscode-langservers-extracted
+      unstable.wrangler
     ];
     docker = [
       docker-compose-language-service
