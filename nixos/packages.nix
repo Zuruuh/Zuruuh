@@ -156,7 +156,6 @@ let
       stow
       tlrc
       tokei
-      topgrade
       viu
       yazi
     ] ++ forLinux [ pkgs.sudo ];
