@@ -152,6 +152,7 @@ in
           "/Applications/Proton Mail.app"
           "/Applications/Bitwarden.app"
           "/Applications/DataGrip.app"
+          "/Applications/Postman.app"
         ];
       };
 
