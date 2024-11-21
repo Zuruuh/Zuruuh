@@ -214,6 +214,7 @@ in
       "nikitabobko/tap/aerospace"
       "flameshot"
       "pika"
+      "eloston-chromium"
     ];
   };
 }
