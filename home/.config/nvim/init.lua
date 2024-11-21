@@ -179,7 +179,12 @@ require('lazy').setup({
     'tpope/vim-sleuth',
     lazy = false,
     keys = {
-      { '<leader>sl', vim.cmd.Sleuth, silent = true, desc = '[Sl]euth, detect tabstop and shiftwidth' },
+      {
+        '<leader>sl',
+        vim.cmd.Sleuth,
+        silent = true,
+        desc = '[Sl]euth, detect tabstop and shiftwidth',
+      },
     },
   },
 
@@ -763,17 +768,17 @@ require('lazy').setup({
     'tpope/vim-fugitive',
     cmd = 'Git',
     keys = {
-      { '<leader>gs', vim.cmd.Git, desc = 'Git [S]tatus UI' },
+      { '<leader>gs', vim.cmd.Git, desc = '[G]it [S]tatus UI' },
       { '<leader>gf', '<CMD>diffget //2<CR>', desc = 'Accept changes from left buffer' },
       { '<leader>gh', '<CMD>diffget //3<CR>', desc = 'Accept changes from right buffer' },
-      { '<leader>gpl', '<CMD>Git pull<CR>', silent = true, desc = 'Git [P]u[l]l' },
-      { '<leader>gpp', '<CMD>Git push<CR>', silent = true, desc = 'Git [P]ush' },
-      { '<leader>gph', '<CMD>Git push -u origin HEAD<CR>', silent = true, desc = 'Git [P]ush [H]EAD' },
+      { '<leader>gpl', '<CMD>Git pull<CR>', silent = true, desc = '[G]it [P]u[l]l' },
+      { '<leader>gpp', '<CMD>Git push<CR>', silent = true, desc = '[G]it [P]ush' },
+      { '<leader>gph', '<CMD>Git push -u origin HEAD<CR>', silent = true, desc = '[G]it [P]ush to origin/[H]EAD' },
       {
         '<leader>ggfl',
         '<CMD>Git push --force-with-lease<CR>',
         silent = true,
-        desc = 'Git push --force-with-lease',
+        desc = '[G]it [P]ush --[f]orce-with-[l]ease',
       },
     },
   },
