@@ -67,6 +67,7 @@ end
 for bus_id, bus_data in pairs(buses) do
   local bus = sbar.add('item', {
     drawing = false,
+    updating = true,
     icon = {
       string = icons.bus,
       color = colors.white,
@@ -98,7 +99,12 @@ for bus_id, bus_data in pairs(buses) do
 
   bus:subscribe({ 'forced', 'routine' }, function()
     local hour = tonumber(os.date('%H'))
-    if hour < 15 or hour > 20 then
+    if hour <= 15 or hour >= 20 then
+      bus:set({
+        drawing = false,
+        updating = true,
+      })
+
       return
     end
 
