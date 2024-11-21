@@ -805,7 +805,7 @@ require('lazy').setup({
       {
         '<leader>pv',
         vim.cmd.NvimTreeOpen,
-        'Open file explorer',
+        desc = 'Open [P]roject [V]iew (File explorer)',
       },
     },
     opts = {
