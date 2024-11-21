@@ -854,60 +854,69 @@ require('lazy').setup({
       },
     },
     keys = {
-      { '<leader>0', vim.cmd.bdelete },
+      { '<leader>0', vim.cmd.bdelete, desc = 'Delete current buffer' },
       {
         '<leader>1',
         function()
           vim.cmd('BufferLineGoToBuffer 1')
         end,
+        desc = 'Go to buffer [1]',
       },
       {
         '<leader>2',
         function()
           vim.cmd('BufferLineGoToBuffer 2')
         end,
+        desc = 'Go to buffer [2]',
       },
       {
         '<leader>3',
         function()
           vim.cmd('BufferLineGoToBuffer 3')
         end,
+        desc = 'Go to buffer [3]',
       },
       {
         '<leader>4',
         function()
           vim.cmd('BufferLineGoToBuffer 4')
         end,
+        desc = 'Go to buffer [4]',
       },
       {
         '<leader>5',
         function()
           vim.cmd('BufferLineGoToBuffer 5')
         end,
+        desc = 'Go to buffer [5]',
       },
       {
         '<leader>6',
         function()
           vim.cmd('BufferLineGoToBuffer 6')
         end,
+        desc = 'Go to buffer [6]',
       },
       {
         '<leader>7',
         function()
           vim.cmd('BufferLineGoToBuffer 7')
         end,
+        desc = 'Go to buffer [7]',
       },
       {
         '<leader>8',
         function()
           vim.cmd('BufferLineGoToBuffer 8')
         end,
+        desc = 'Go to buffer [8]',
       },
       {
         '<leader>9',
         function()
           vim.cmd('BufferLineGoToBuffer 9')
         end,
+        desc = 'Go to buffer [9]',
       },
     },
   },
