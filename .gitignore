@@ -28,3 +28,5 @@
 !/home/.cargo/config.toml
 
 /home/.config/spicetify
+
+/home/.config/carapace/bridge
