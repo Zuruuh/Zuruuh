@@ -109,6 +109,7 @@ let
       curl
       wget
       xh
+      unstable.bruno-cli
     ];
     json = [
       fx
