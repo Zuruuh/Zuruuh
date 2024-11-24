@@ -98,6 +98,7 @@ disabled = true
 
 [nodejs]
 version_format = "v${major}.${minor}"
+symbol = " "
 
 [php]
 symbol = ' '
@@ -139,3 +140,6 @@ format = '$allowed 📁 [direnv]($style) '
 style = 'bold orange'
 allowed_msg = 'with'
 not_allowed_msg = 'without'
+
+[nix_shell]
+symbol = "󱄅 "
