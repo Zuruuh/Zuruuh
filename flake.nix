@@ -10,7 +10,7 @@
     };
 
     nix-darwin = {
-      url = "github:LnL7/nix-darwin/b379bd4d872d159e5189053ce9a4adf86d56db4b";
+      url = "github:LnL7/nix-darwin/3c52583b99666a349a6219dc1f0dd07d75c82d6a";
       inputs.nixpkgs.follows = "nixos";
     };
     nix-homebrew = {

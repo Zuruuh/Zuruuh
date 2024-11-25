@@ -47,6 +47,7 @@ in
     systemPackages = with pkgs; [
       telegram-desktop
       unstable.skhd
+      unstable.bruno
     ] ++ [ lua-src sbar-lua ];
     variables = env;
   };
@@ -162,6 +163,8 @@ in
         ShowPathbar = true;
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
+        _FXShowPosixPathInTitle = true;
+        NewWindowTarget = "Computer";
       };
 
       NSGlobalDomain = {
@@ -215,6 +218,7 @@ in
       "flameshot"
       "pika"
       "eloston-chromium"
+      "obs"
     ];
   };
 }
