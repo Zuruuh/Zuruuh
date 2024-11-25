@@ -97,7 +97,7 @@ export def paste [] {
 
 export def copy [path?: string] {
     if ($in | is-not-empty) {
-        cb copy "$in"
+        $"($in)" | cb copy
     } else if ($path | is-not-empty) {
         cb copy (cat $path)
     }
