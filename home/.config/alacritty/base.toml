@@ -6,3 +6,7 @@ dynamic_title = false
 
 [font.normal]
 style = "Regular"
+
+[font.offset]
+y = 5
+x = 0
