@@ -108,7 +108,7 @@ disabled = true
 
 [os]
 disabled = false
-format = "on [($name)](cyan)"
+format = "on [($name)](cyan) "
 
 [docker_context]
 detect_files = [
@@ -140,6 +140,3 @@ format = '$allowed 📁 [direnv]($style) '
 style = 'bold orange'
 allowed_msg = 'with'
 not_allowed_msg = 'without'
-
-[nix_shell]
-symbol = "󱄅 "
