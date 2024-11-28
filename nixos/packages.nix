@@ -2,11 +2,9 @@
 { lib, pkgs, ... }:
 let
   forLinux = packages: (if pkgs.stdenv.isDarwin then [ ] else packages);
-  php83 = pkgs.php83.buildEnv {
-    fpmSupport = false;
-    cgiSupport = false;
+  php84 = pkgs.next.php84.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
-      apcu
+      # apcu
       amqp
       pcov
       redis
@@ -27,7 +25,7 @@ let
   packages = with pkgs; {
     yaml = [
       yaml-language-server
-      unstable.vacuum-go
+      next.vacuum-go
     ];
     rust = [
       cargo-audit
@@ -40,7 +38,7 @@ let
     ];
     javascript = [
       unstable.bun
-      unstable.deno
+      next.deno
       nodejs
       nodePackages.pnpm
       nodePackages.serve
@@ -59,7 +57,7 @@ let
       gh
       git
       git-lfs
-      unstable.delta
+      next.delta
       gnupg
     ];
     nix = [
@@ -76,11 +74,9 @@ let
     ] ++ forLinux [ pkgs.libgcc ];
     php = [
       unstable.phpactor
-      php83
-      php83.packages.composer
-      php83.packages.phpstan
-      php83.packages.php-cs-fixer
-      php83.packages.psalm
+      php84
+      php84.packages.composer
+      php84.packages.php-cs-fixer
       symfony-cli
     ];
     python = [
@@ -92,13 +88,13 @@ let
       zulu17
     ];
     go = [
-      unstable.go
-      unstable.gopls
+      next.go
+      next.gopls
     ];
     bash = [
       shellcheck
       shfmt
-      unstable.bash-language-server
+      next.bash-language-server
     ];
     lua = [
       taplo
@@ -109,7 +105,7 @@ let
       curl
       wget
       xh
-      unstable.bruno-cli
+      next.bruno-cli
     ];
     json = [
       fx
@@ -150,7 +146,7 @@ let
       sqls
     ];
     tools = [
-      unstable.typos
+      next.typos
       mkpasswd
       man
       openssh
