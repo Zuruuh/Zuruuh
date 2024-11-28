@@ -3,7 +3,9 @@
 
   inputs = {
     nixos.url = "github:nixos/nixpkgs/24.05";
+    nixos-next.url = "github:nixos/nixpkgs/24.11-beta";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/2405.5.4";
       inputs.nixpkgs.follows = "nixos";
@@ -27,13 +29,21 @@
     };
   };
 
-  outputs = { self, nixos, nixos-wsl, nixos-unstable, nix-darwin, nix-homebrew, mac-app-util, sbar-lua }:
+  outputs = { self, nixos, nixos-next, nixos-unstable, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua }:
     let
       unstable-overlay = final: prev: {
         unstable = import nixos-unstable {
           system = prev.system;
         };
       };
+
+      next-overlay = final: prev: {
+        next = import nixos-next {
+          system = prev.system;
+        };
+      };
+
+      overlays = [ unstable-overlay next-overlay ];
     in
     {
       nixosConfigurations = {
@@ -45,8 +55,7 @@
             let
               args = rec {
                 pkgs = import nixos {
-                  inherit system;
-                  overlays = [ unstable-overlay ];
+                  inherit system overlays;
                   config.allowUnfree = true;
                 };
                 lib = pkgs.lib;
@@ -64,8 +73,7 @@
         let
           system = "aarch64-darwin";
           pkgs = import nixos {
-            inherit system;
-            overlays = [ unstable-overlay ];
+            inherit system overlays;
             config.allowUnfree = true;
           };
         in
