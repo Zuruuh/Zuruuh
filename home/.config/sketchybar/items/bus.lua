@@ -66,7 +66,7 @@ end
 
 for bus_id, bus_data in pairs(buses) do
   local bus = sbar.add('item', {
-    drawing = false,
+    drawing = true,
     updating = true,
     icon = {
       string = icons.bus,
@@ -87,7 +87,7 @@ for bus_id, bus_data in pairs(buses) do
       },
     },
     position = 'right',
-    update_freq = 90,
+    update_freq = 300,
     padding_left = 1,
     padding_right = 1,
     background = {
@@ -98,15 +98,15 @@ for bus_id, bus_data in pairs(buses) do
   })
 
   bus:subscribe({ 'forced', 'routine' }, function()
-    local hour = tonumber(os.date('%H'))
-    if hour <= 15 or hour >= 20 then
-      bus:set({
-        drawing = false,
-        updating = true,
-      })
+    -- local hour = tonumber(os.date('%H'))
+    -- if hour <= 15 or hour >= 20 then
+    --   bus:set({
+    --     drawing = true,
+    --     updating = true,
+    --   })
 
-      return
-    end
+    --   return
+    -- end
 
     local command = create_command(bus_data.monitoring, bus_data.line)
     if command == nil then
