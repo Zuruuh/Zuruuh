@@ -219,6 +219,8 @@ in
       "pika"
       "eloston-chromium"
       "obs"
+      "whatsapp"
+      "cloudflare-warp"
     ];
   };
 }

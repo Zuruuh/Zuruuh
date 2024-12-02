@@ -22,7 +22,12 @@
         nix-darwin.follows = "nix-darwin";
       };
     };
-    mac-app-util.url = "github:hraban/mac-app-util";
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs = {
+        nixpkgs.follows = "nixos";
+      };
+    };
     sbar-lua = {
       url = "github:FelixKratz/SbarLua/437bd2031da38ccda75827cb7548e7baa4aa9978";
       flake = false;
