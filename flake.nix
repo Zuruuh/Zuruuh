@@ -2,12 +2,11 @@
   description = "My NixOS system flake";
 
   inputs = {
-    nixos.url = "github:nixos/nixpkgs/24.05";
-    nixos-next.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixos.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/2405.5.4";
+      url = "github:nix-community/NixOS-WSL/a6b9cf0b7805e2c50829020a73e7bde683fd36dd";
       inputs.nixpkgs.follows = "nixos";
     };
 
@@ -23,10 +22,8 @@
       };
     };
     mac-app-util = {
-      url = "github:hraban/mac-app-util";
-      inputs = {
-        nixpkgs.follows = "nixos";
-      };
+      url = "github:hraban/mac-app-util/548672d0cb661ce11d08ee8bde92b87d2a75c872";
+      inputs.nixpkgs.follows = "nixos";
     };
     sbar-lua = {
       url = "github:FelixKratz/SbarLua/437bd2031da38ccda75827cb7548e7baa4aa9978";
@@ -34,13 +31,9 @@
     };
   };
 
-  outputs = { self, nixos, nixos-next, nixos-unstable, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua }:
+  outputs = { self, nixos, nixos-unstable, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua }:
     let
       root-overlay = final: prev: {
-        next = import nixos-next {
-          system = prev.system;
-        };
-
         unstable = import nixos-unstable {
           system = prev.system;
         };

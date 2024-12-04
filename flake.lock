@@ -142,6 +142,7 @@
       "original": {
         "owner": "hraban",
         "repo": "mac-app-util",
+        "rev": "548672d0cb661ce11d08ee8bde92b87d2a75c872",
         "type": "github"
       }
     },
@@ -194,22 +195,6 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1717179513,
-        "narHash": "sha256-vboIEwIQojofItm2xGCdZCzW96U85l9nDW3ifMuAIdM=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "63dacb46bf939521bdc93981b4cbb7ecb58427a0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixos-next": {
-      "locked": {
         "lastModified": 1733261153,
         "narHash": "sha256-eq51hyiaIwtWo19fPEeE0Zr2s83DYMKJoukNLgGGpek=",
         "owner": "nixos",
@@ -249,17 +234,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1720391164,
-        "narHash": "sha256-RrJsSelbJ/SCrnCH0yLEvgVSKVoG7b45Qhf/6fOiQ8I=",
+        "lastModified": 1731682434,
+        "narHash": "sha256-HnZFPB7akVIy0KuPq/tEkiB+Brt1qi0DUIDzR8z25qI=",
         "owner": "nix-community",
         "repo": "NixOS-WSL",
-        "rev": "05098ab6e48684c573d7033bd583b1eea2f5f851",
+        "rev": "a6b9cf0b7805e2c50829020a73e7bde683fd36dd",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "2405.5.4",
         "repo": "NixOS-WSL",
+        "rev": "a6b9cf0b7805e2c50829020a73e7bde683fd36dd",
         "type": "github"
       }
     },
@@ -269,7 +254,6 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixos": "nixos",
-        "nixos-next": "nixos-next",
         "nixos-unstable": "nixos-unstable",
         "nixos-wsl": "nixos-wsl",
         "sbar-lua": "sbar-lua"

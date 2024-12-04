@@ -2,7 +2,7 @@
 { lib, pkgs, ... }:
 let
   forLinux = packages: (if pkgs.stdenv.isDarwin then [ ] else packages);
-  php84 = pkgs.next.php84.buildEnv {
+  php84 = pkgs.php84.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       # apcu
       amqp
@@ -25,7 +25,7 @@ let
   packages = with pkgs; {
     yaml = [
       yaml-language-server
-      next.vacuum-go
+      vacuum-go
     ];
     rust = [
       cargo-audit
@@ -38,7 +38,7 @@ let
     ];
     javascript = [
       unstable.bun
-      next.deno
+      deno
       nodejs
       nodePackages.pnpm
       nodePackages.serve
@@ -57,7 +57,7 @@ let
       gh
       git
       git-lfs
-      next.delta
+      delta
       gnupg
     ];
     nix = [
@@ -73,7 +73,7 @@ let
       unstable.llvmPackages_19.clang-tools
     ] ++ forLinux [ pkgs.libgcc ];
     php = [
-      next.phpactor
+      unstable.phpactor
       php84
       php84.packages.composer
       php84.packages.php-cs-fixer
@@ -88,13 +88,13 @@ let
       zulu17
     ];
     go = [
-      next.go
-      next.gopls
+      go
+      gopls
     ];
     bash = [
       shellcheck
       shfmt
-      next.bash-language-server
+      bash-language-server
     ];
     lua = [
       taplo
@@ -105,7 +105,7 @@ let
       curl
       wget
       xh
-      next.bruno-cli
+      bruno-cli
     ];
     json = [
       fx
@@ -146,7 +146,7 @@ let
       sqls
     ];
     tools = [
-      next.typos
+      typos
       mkpasswd
       man
       openssh
