@@ -435,6 +435,8 @@ require('lazy').setup({
         nushell = {},
         vacuum = {},
         gopls = {},
+        lemminx = {},
+        terraformls = {},
       }
 
       local lspconfig = require('lspconfig')
@@ -528,6 +530,7 @@ require('lazy').setup({
         php = { 'php_cs_fixer', 'phpcbf', stop_after_first = true },
         rust = { 'rustfmt' },
         nix = { 'nixpkgs_fmt' },
+        terraform = { 'tofu_fmt' },
         ['_'] = { 'trim_whitespace' },
       },
     },

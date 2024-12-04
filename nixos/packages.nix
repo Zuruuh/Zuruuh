@@ -73,7 +73,7 @@ let
       unstable.llvmPackages_19.clang-tools
     ] ++ forLinux [ pkgs.libgcc ];
     php = [
-      unstable.phpactor
+      next.phpactor
       php84
       php84.packages.composer
       php84.packages.php-cs-fixer
@@ -172,6 +172,10 @@ let
     ];
     xml = [
       lemminx
+    ];
+    terraform = [
+      opentofu
+      terraform-ls
     ];
   };
 in
