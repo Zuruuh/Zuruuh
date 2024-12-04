@@ -3,7 +3,7 @@
 
   inputs = {
     nixos.url = "github:nixos/nixpkgs/24.05";
-    nixos-next.url = "github:nixos/nixpkgs/24.11-beta";
+    nixos-next.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-wsl = {
@@ -36,19 +36,17 @@
 
   outputs = { self, nixos, nixos-next, nixos-unstable, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua }:
     let
-      unstable-overlay = final: prev: {
+      root-overlay = final: prev: {
+        next = import nixos-next {
+          system = prev.system;
+        };
+
         unstable = import nixos-unstable {
           system = prev.system;
         };
       };
 
-      next-overlay = final: prev: {
-        next = import nixos-next {
-          system = prev.system;
-        };
-      };
-
-      overlays = [ unstable-overlay next-overlay ];
+      overlays = [ root-overlay ];
     in
     {
       nixosConfigurations = {
