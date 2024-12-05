@@ -144,5 +144,5 @@ allowed_msg = 'with'
 not_allowed_msg = 'without'
 
 [bun]
-symbol = "🍞"
+symbol = "🍞 "
 version_format = "v${minor}.${patch}"
