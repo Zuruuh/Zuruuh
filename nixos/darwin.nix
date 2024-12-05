@@ -46,7 +46,7 @@ in
     shells = [ shell ];
     systemPackages = with pkgs; [
       telegram-desktop
-      unstable.skhd
+      skhd
       unstable.bruno
     ] ++ [ lua-src sbar-lua ];
     variables = env;
@@ -108,11 +108,11 @@ in
       skhd = lib.mkMerge [
         (makeProgram {
           name = "skhd";
-          package = pkgs.unstable.skhd;
+          package = pkgs.skhd;
           extraPackages = [ pkgs.jq ];
 
           script = ''
-            ${pkgs.unstable.skhd}/bin/skhd -V
+            ${pkgs.skhd}/bin/skhd -V
           '';
         })
         { serviceConfig.Nice = -20; }
@@ -199,7 +199,6 @@ in
       "switchaudio-osx"
       "nowplaying-cli"
       "blueutil"
-      "libiconv"
     ];
 
     casks = [
@@ -220,7 +219,6 @@ in
       "eloston-chromium"
       "obs"
       "whatsapp"
-      "cloudflare-warp"
     ];
   };
 }
