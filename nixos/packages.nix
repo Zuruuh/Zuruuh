@@ -52,7 +52,8 @@ let
     docker = [
       docker-compose-language-service
       dockerfile-language-server-nodejs
-    ] ++ forLinux [ pkgs.kubernetes pkgs.kubectl pkgs.minikube ];
+      dive
+    ] ++ forLinux (with pkgs; [ kubernetes kubectl minikube ]);
     git = [
       gh
       git
