@@ -46,6 +46,7 @@ $gradle\
 $lua\
 $nim\
 $nodejs\
+$bun \
 $ocaml\
 $opa\
 $perl\
@@ -99,6 +100,7 @@ disabled = true
 [nodejs]
 version_format = "v${major}.${minor}"
 symbol = " "
+detect_files = ['package.json', '.node-version', '!bunfig.toml', '!bun.lockb']
 
 [php]
 symbol = ' '
@@ -140,3 +142,7 @@ format = '$allowed 📁 [direnv]($style) '
 style = 'bold orange'
 allowed_msg = 'with'
 not_allowed_msg = 'without'
+
+[bun]
+symbol = "🍞"
+version_format = "v${minor}.${patch}"
