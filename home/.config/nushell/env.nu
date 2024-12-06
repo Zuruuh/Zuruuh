@@ -27,7 +27,7 @@ if $nu.os-info.name == 'macos' and ('/run/current-system/etc/bashrc' | path exis
 }
 
 if $nu.os-info.name in ['linux', 'macos'] {
-    path add $"($home)/.local/bin"
+    path add --append $"($home)/.local/bin"
 }
 
 if $nu.os-info.name == 'macos' {
