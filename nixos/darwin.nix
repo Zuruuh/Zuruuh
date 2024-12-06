@@ -219,6 +219,7 @@ in
       "eloston-chromium"
       "obs"
       "whatsapp"
+      "proxyman"
     ];
   };
 }
