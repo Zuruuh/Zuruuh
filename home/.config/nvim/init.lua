@@ -790,13 +790,6 @@ require('lazy').setup({
     ft = 'just',
   },
   {
-    'LhKipp/nvim-nu',
-    opts = {
-      use_lsp_features = false,
-    },
-    build = ':TSInstall nu',
-  },
-  {
     'mbbill/undotree',
     lazy = false,
     keys = {
