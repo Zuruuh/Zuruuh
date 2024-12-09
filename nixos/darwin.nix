@@ -220,6 +220,7 @@ in
       "obs"
       "whatsapp"
       "proxyman"
+      "obsidian"
     ];
   };
 }
