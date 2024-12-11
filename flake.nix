@@ -6,7 +6,7 @@
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/a6b9cf0b7805e2c50829020a73e7bde683fd36dd";
+      url = "github:nix-community/NixOS-WSL/f130def404d6c69920ba1c61cb94bdaa9d6fc8f1";
       inputs.nixpkgs.follows = "nixos";
     };
 
