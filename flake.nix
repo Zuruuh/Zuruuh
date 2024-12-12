@@ -11,11 +11,11 @@
     };
 
     nix-darwin = {
-      url = "github:LnL7/nix-darwin/3c52583b99666a349a6219dc1f0dd07d75c82d6a";
+      url = "github:LnL7/nix-darwin/a35b08d09efda83625bef267eb24347b446c80b8";
       inputs.nixpkgs.follows = "nixos";
     };
     nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew/2ed1e70db2448bd997b7b0c52f7bef42ac7a51a7";
+      url = "github:zhaofengli/nix-homebrew/ac3945ee614f69ab89c6935b3f0567028de5f012";
       inputs = {
         nixpkgs.follows = "nixos";
         nix-darwin.follows = "nix-darwin";
