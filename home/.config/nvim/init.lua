@@ -15,15 +15,15 @@
 ========                                                     ========
 ===================================================================]]
 
+-- Windows support
 local home = os.getenv('HOME')
 if home == nil then
   home = 'C:' .. os.getenv('HOMEPATH')
 end
 
+-- Config
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
-vim.g.have_nerd_font = true
 
 -- NOTE: See `:help vim.opt`
 vim.opt.number = true
@@ -31,7 +31,6 @@ vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.swapfile = false
--- vim.opt.clipboard = 'unnamedplus' -- sync os and nvim clipboard
 
 vim.opt.breakindent = true
 
@@ -174,6 +173,7 @@ end, {
   desc = 'Re-enable autoformat-on-save',
 })
 
+-- Plugins
 require('lazy').setup({
   { -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
@@ -223,7 +223,7 @@ require('lazy').setup({
     end,
   },
 
-  { -- Fuzzy Finder (files, lsp, etc)
+  {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
     branch = '0.1.x',
@@ -232,20 +232,15 @@ require('lazy').setup({
       { -- If encountering errors, see telescope-fzf-native README for install instructions
         'nvim-telescope/telescope-fzf-native.nvim',
 
-        -- `build` is used to run some command when the plugin is installed/updated.
-        -- This is only run then, not every time Neovim starts up.
         build = 'make',
 
-        -- `cond` is a condition used to determine whether this plugin should be
-        -- installed and loaded.
         cond = function()
           return vim.fn.executable('make') == 1
         end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
-      -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons' },
     },
     config = function()
       local themes = require('telescope.themes')
@@ -706,20 +701,17 @@ require('lazy').setup({
       require('mini.surround').setup()
 
       local statusline = require('mini.statusline')
-      statusline.setup({ use_icons = vim.g.have_nerd_font })
+      statusline.setup({ use_icons = true })
 
       -- cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
       end
-
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
 
-  { -- Highlight, edit, and navigate code
+  {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
 
@@ -728,15 +720,11 @@ require('lazy').setup({
       'windwp/nvim-ts-autotag',
     },
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
-      -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
     },
     config = function(_, opts)
-      -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup(opts)
       require('treesitter-context').setup({
@@ -749,13 +737,6 @@ require('lazy').setup({
           enable = true,
         },
       })
-
-      -- There are additional nvim-treesitter modules that you can use to interact
-      -- with nvim-treesitter. You should go explore a few and see what interests you:
-      --
-      --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-      --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-      --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
   {
@@ -926,6 +907,32 @@ require('lazy').setup({
           vim.cmd('BufferLineGoToBuffer 9')
         end,
         desc = 'Go to buffer [9]',
+      },
+    },
+  },
+  {
+    'folke/snacks.nvim',
+    opts = {
+      bigfile = {},
+      dashboard = {},
+      gitbrowse = {
+        url_patterns = {
+          ['git.staffmatch.it'] = {
+            branch = '/-/tree/{branch}',
+            file = '/-/blob/{branch}/{file}#L{line_start}-L{line_end}',
+            commit = '/-/commit/{commit}',
+          },
+        },
+      },
+    },
+    keys = {
+      {
+        '<leader>go',
+        function()
+          Snacks.gitbrowse.open()
+        end,
+        silent = true,
+        desc = '[G]it [o]pen, open file in git remote web UI',
       },
     },
   },
