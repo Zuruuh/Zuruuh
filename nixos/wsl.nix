@@ -52,6 +52,5 @@ in
 
   security.sudo.wheelNeedsPassword = true;
 
-  # do not touch =D
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
 }
