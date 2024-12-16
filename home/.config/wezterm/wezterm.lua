@@ -13,14 +13,29 @@ config.font = wezterm.font({
   family = 'MonaspiceNe Nerd Font',
   harfbuzz_features = { 'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga' },
 })
-config.font_size = 14.0
 
-config.default_prog = {
-  '/run/current-system/sw/bin/zellij',
-}
-config.default_domain = 'WSL:NixOS'
 config.enable_tab_bar = false
 config.line_height = 1.5
+
+local home = os.getenv('HOME')
+
+if home == nil then
+  -- Windows
+  config.default_prog = {
+    'C:\\Windows\\system32\\wsl.exe',
+    '--distribution',
+    'Nixos',
+    '--cd',
+    '/home/zuruh',
+    '--',
+    '/run/current-system/sw/bin/zellij',
+  }
+  config.font_size = 14.0
+elseif home:find('^/Users/') then
+  -- Darwin
+  config.default_prog = { '/run/current-system/sw/bin/zellij' }
+  config.font_size = 18.0
+end
 
 config.keys = {
   { key = 'v', mods = 'CTRL', action = act.PasteFrom('Clipboard') },
