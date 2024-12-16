@@ -118,7 +118,7 @@ for bus_id, bus_data in pairs(buses) do
       return
     end
 
-    sbar.exec(string.format('nu -c "%s"', command), function(result, exit_code)
+    sbar.exec(string.format('nu --no-config-file -c "%s"', command), function(result, exit_code)
       if exit_code ~= 0 then
         print('Api not working ?')
       end
