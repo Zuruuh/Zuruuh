@@ -936,6 +936,7 @@ require('lazy').setup({
   },
   {
     'folke/snacks.nvim',
+    lazy = false,
     opts = {
       bigfile = {},
       dashboard = {},
