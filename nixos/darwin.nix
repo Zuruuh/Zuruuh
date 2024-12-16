@@ -144,7 +144,7 @@ in
         showhidden = false;
         tilesize = 48;
         persistent-apps = [
-          "/Applications/Alacritty.app"
+          "/Applications/WezTerm.app"
           "/Applications/Zen Browser.app"
           "/Applications/Slack.app"
           "/Applications/Spotify.app"
@@ -206,8 +206,7 @@ in
       "bitwarden"
       "datagrip"
       "slack"
-      "alacritty"
-      "wezterm"
+      "wezterm@nightly"
       "sf-symbols"
       "font-sf-mono"
       "font-sf-pro"

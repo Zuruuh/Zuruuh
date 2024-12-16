@@ -11,9 +11,9 @@ ctrl - z : skhd -k "cmd - z"  # undo
 ctrl + shift - z : skhd -k "cmd + shift - z"  # redo
 
 # Copy/paste/cut commands
-# Set default ctrl+c behavior in alacritty
+# Set default ctrl+c behavior in wezterm
 ctrl - c [
-    "alacritty" ~
+    "wezterm" ~
     * : skhd -k "cmd - c";
 ]
 ctrl - v : skhd -k "cmd - v" # paste
@@ -25,30 +25,30 @@ cmd - h : skhd -k "ctrl - h"
 
 # Browser
 ctrl - d [
-    "alacritty" ~
+    "wezterm" ~
     * : skhd -k "cmd - d";
 ]
 ctrl - f [
-    "alacritty" ~
+    "wezterm" ~
     * : skhd -k "cmd - f";
 ]
 ctrl - l [
-    "alacritty" ~
+    "wezterm" ~
     * : skhd -k "cmd - l";
 ]
 ctrl - w [
-    "alacritty" ~
+    "wezterm" ~
     * : skhd -k "cmd - w";
 ]
 ctrl - s [
-    "alacritty" ~
+    "wezterm" ~
     * : skhd -k "cmd - s";
 ]
 ctrl - t [
-    "alacritty" ~
+    "wezterm" ~
     * : skhd -k "cmd - t";
 ]
 ctrl + shift - t [
-    "alacritty" ~
+    "wezterm" ~
     * : skhd -k "cmd + shift - t";
 ]
