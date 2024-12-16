@@ -17,6 +17,13 @@ config.font = wezterm.font({
 config.enable_tab_bar = false
 config.line_height = 1.5
 
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+
 local home = os.getenv('HOME')
 
 if home == nil then
