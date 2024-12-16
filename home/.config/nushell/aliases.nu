@@ -158,3 +158,18 @@ export def l [...args] {
 export def leetcode [] {
     nvim leetcode.nvim
 }
+
+# Setup proxyman's http proxy by loading the https?_proxy env vars
+export def --env "proxyman-cli use" [] {
+    ['http'] |
+    each {|protocol| [($protocol), ($"($protocol)s")]} |
+    flatten |
+    each {|protocol|
+        let proxy = $"($protocol)_proxy";
+        [($proxy) ($proxy | str upcase)]
+    } |
+    flatten |
+    each {|var| [$var 'http://localhost:9090']} |
+    into record |
+    load-env
+}
