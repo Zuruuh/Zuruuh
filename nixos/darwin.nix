@@ -207,6 +207,7 @@ in
       "datagrip"
       "slack"
       "alacritty"
+      "wezterm"
       "sf-symbols"
       "font-sf-mono"
       "font-sf-pro"
