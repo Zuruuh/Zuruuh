@@ -58,6 +58,10 @@ export def "config alacritty" [] {
     nvim ~/.dotfiles/home/.config/alacritty/
 }
 
+export def "config wezterm" [] {
+    nvim ~/.dotfiles/home/.config/wezterm/wezterm.lua
+}
+
 export def "config ssh" [] {
     nvim ~/.dotfiles/home/.ssh/config
 }
@@ -72,6 +76,7 @@ export def "config skhd" [] {
 }
 
 export def "venv create" [python_path: string = "" ] {
+    echo "(Remember to use uv instead if possible 😀)"
     if ('.venv' | path exists) {
         return (
             error make {
