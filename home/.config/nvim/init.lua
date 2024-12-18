@@ -135,8 +135,6 @@ vim.keymap.set('n', '<leader>yp', function()
   vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, { desc = 'Copy relative file path from project root' })
 
--- [[ Install `lazy.nvim` plugin manager ]]
---    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -962,16 +960,19 @@ require('lazy').setup({
       },
     },
   },
-  -- Disabled until alacritty stops breaking on links
-  -- or switching to another terminal
   {
     'OXY2DEV/markview.nvim',
-    lazy = false, -- Recommended
-    -- ft = "markdown" -- If you decide to lazy-load anyway
+    lazy = false,
 
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       'nvim-tree/nvim-web-devicons',
+    },
+    {
+      'dariuscorvus/tree-sitter-surrealdb.nvim',
+      dependencies = { 'nvim-treesitter/nvim-treesitter' },
+      opts = {},
+      event = { 'BufRead *.surql' },
     },
   },
 }, {
