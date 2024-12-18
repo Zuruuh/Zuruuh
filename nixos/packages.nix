@@ -63,6 +63,7 @@ let
     nix = [
       nil
       nixpkgs-fmt
+      nh
     ];
     c = [
       gcc
@@ -152,7 +153,6 @@ let
       openssh
       stow
       tlrc
-      tokei
       viu
       yazi
     ] ++ forLinux [ pkgs.sudo ];
