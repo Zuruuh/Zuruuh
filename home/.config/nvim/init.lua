@@ -135,6 +135,12 @@ vim.keymap.set('n', '<leader>yp', function()
   vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, { desc = 'Copy relative file path from project root' })
 
+vim.keymap.set('n', '<leader>yP', function()
+  local path = vim.fn.expand('%')
+  vim.fn.setreg('"', path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, { desc = 'Copy relative file path from project root' })
+
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
