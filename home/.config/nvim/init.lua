@@ -138,7 +138,7 @@ end, { desc = 'Copy relative file path from project root' })
 vim.keymap.set('n', '<leader>yP', function()
   local path = vim.fn.expand('%')
   vim.fn.setreg('"', path)
-  vim.notify('Copied "' .. path .. '" to the clipboard!')
+  vim.notify('Pushed "' .. path .. '" to register!')
 end, { desc = 'Copy relative file path from project root' })
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
