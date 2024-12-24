@@ -181,7 +181,7 @@ end, {
 require('lazy').setup({
   { -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
-    lazy = false,
+    event = 'VimEnter',
     keys = {
       {
         '<leader>sl',
@@ -192,10 +192,11 @@ require('lazy').setup({
     },
   },
 
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim', event = 'VimEnter', opts = {} },
 
   {
     'lewis6991/gitsigns.nvim',
+    event = 'VimEnter',
     opts = {
       signs = {
         add = { text = '+' },
@@ -705,6 +706,7 @@ require('lazy').setup({
 
   {
     'f-person/auto-dark-mode.nvim',
+    event = 'VeryLazy',
     opts = {
       update_interval = 5000,
     },
@@ -720,6 +722,7 @@ require('lazy').setup({
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
+    event = 'VeryLazy',
     config = function()
       -- Better Around/Inside textobjects
       --
@@ -777,6 +780,7 @@ require('lazy').setup({
   },
   {
     'isobit/vim-caddyfile',
+    event = 'VeryLazy',
   },
   {
     'saecki/crates.nvim',
@@ -851,6 +855,7 @@ require('lazy').setup({
   },
   {
     'kawre/leetcode.nvim',
+    event = 'VeryLazy',
     dependencies = {
       'nvim-telescope/telescope.nvim',
       'nvim-lua/plenary.nvim', -- required by telescope
@@ -871,7 +876,7 @@ require('lazy').setup({
     'akinsho/bufferline.nvim',
     version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
-    lazy = false,
+    event = 'VeryLazy',
     opts = {
       options = {
         separator_style = 'slant',
@@ -976,7 +981,7 @@ require('lazy').setup({
   },
   {
     'OXY2DEV/markview.nvim',
-    lazy = false,
+    event = 'VeryLazy',
 
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
