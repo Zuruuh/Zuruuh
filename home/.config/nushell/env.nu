@@ -14,8 +14,12 @@ let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
 if $nu.os-info.name == 'windows' {
     $env.XDG_DATA_HOME = $env.APPDATA
     $env.XDG_STATE_HOME = $env.LOCALAPPDATA
-    $env.PWSH = (which powershell | get path.0)
+    $env.PWSH = (which pwsh | get path.0)
     path add 'D:\Bin'
+    # android
+    $env.ANDROID_HOME = 'D:\\Android'
+    $env.NDK_HOME = (ls $"($env.ANDROID_HOME)\\ndk" | get 0.name)
+    path add 'D:\\Android\\platform-tools'
 }
 
 if $nu.os-info.name == 'linux' and ('/run/current-system/etc/set-environment' | path exists) {
@@ -34,15 +38,6 @@ if $nu.os-info.name == 'macos' {
     path add '/opt/homebrew/bin'
     path add '/opt/homebrew/sbin'
     path add $"($home)/.orbstack/bin"
-}
-
-if ($nu.os-info.name == 'windows') {
-    $env.CONTAINERS_REGISTRIES_CONF = $"($home)\\.config\\containers\\registries.conf"
-
-    # android
-    $env.ANDROID_HOME = 'D:\\Android'
-    $env.NDK_HOME = (ls $"($env.ANDROID_HOME)\\ndk" | get 0.name)
-    path add 'D:\\Android\\platform-tools'
 }
 
 # Cargo
@@ -77,11 +72,12 @@ if not ('EDITOR' in $env) {
 $env.VISUAL = $env.EDITOR
 
 if not ('PAGER' in $env) {
+    let tspin = which tspin;
     $env.PAGER = (
-        if (which tspin | is-empty) {
+        if ($tspin | is-empty) {
             (which less | get path.0)
         } else {
-            (which tspin | get path.0)
+            ($tspin | get path.0)
         }
     )
 }
@@ -91,14 +87,14 @@ $env.STARSHIP_LOG = 'error'
 $env.TERM = 'xterm-256color'
 
 #================================ PLUGINS ========================================#
-if ($"($home)/.config/nushell/plugins/nu_scripts" | path exists) {
-    rm -rf $"($home)/.config/nushell/plugins/nu_scripts"
-}
-
-zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
-starship init nu | save -f ~/.config/nushell/plugins/starship.nu
-atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu
-
 $env.CARAPACE_BRIDGES = 'zsh,bash' # optional
 $env.CARAPACE_ENV = 0
-carapace _carapace nushell | save -f ~/.config/nushell/plugins/carapace.nu
+
+if $nu.os-info.name != 'windows' {
+    # These operations are painfully slow on windows (+250ms)
+    # So it's better if it's done manually and periodically
+    zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
+    starship init nu | save -f ~/.config/nushell/plugins/starship.nu
+    atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu
+    carapace _carapace nushell | save -f ~/.config/nushell/plugins/carapace.nu
+}
