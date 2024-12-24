@@ -74,6 +74,8 @@ elseif vim.fn.has('win32') == 1 then
   if shell ~= nil then
     vim.o.shell = vim.fn.trim(shell)
   end
+
+  vim.opt.shellslash = true
 end
 
 vim.g.loaded_perl_provider = 0
@@ -254,7 +256,7 @@ require('lazy').setup({
         pickers = {
           find_files = {
             hidden = true,
-            find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
+            find_command = { 'rg', '--files', '--path-separator', '/', '--iglob', '!.git', '--hidden' },
           },
           grep_string = {
             additional_args = { '--hidden' },
