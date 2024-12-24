@@ -33,7 +33,9 @@ let
       cargo-expand
       cargo-generate
       cargo-info
+      unstable.cargo-outdated
       cargo-tarpaulin
+      cargo-udeps
       rustup
     ];
     javascript = [
