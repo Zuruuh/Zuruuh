@@ -1,0 +1,75 @@
+[window]
+startup_mode = "Maximized"
+dynamic_title = false
+
+[font]
+size = 14
+
+[font.normal]
+style = "Regular"
+family = "MonaspiceAr Nerd Font"
+
+[font.offset]
+y = 5
+x = 0
+
+## wip native zellij on windows
+[general]
+working_directory = "D:\\dev"
+
+[terminal.shell]
+# program = "D:\\dev\\zellij\\target\\release\\zellij.exe"
+program = "C:\\Users\\zuruh\\scoop\\apps\\rustup\\current\\.cargo\\bin\\nu.exe"
+
+[[keyboard.bindings]]
+key = "v"
+mods = "Control"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "Play"
+action = "None"
+
+[[keyboard.bindings]]
+key = "Pause"
+action = "None"
+
+[[keyboard.bindings]]
+key = "Play"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaPlay"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaPause"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaPlayPause"
+action = "None"
+
+[[keyboard.bindings]]
+key = "AudioVolumeDown"
+action = "None"
+
+[[keyboard.bindings]]
+key = "AudioVolumeUp"
+action = "None"
+
+[[keyboard.bindings]]
+key = "AudioVolumeMute"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaTrackNext"
+action = "None"
+
+[[keyboard.bindings]]
+key = "MediaTrackPrevious"
+action = "None"
+
+[[keyboard.bindings]]
+key = "ScrollLock"
+action = "None"
