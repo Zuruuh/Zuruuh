@@ -89,8 +89,12 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '[d', function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', function()
+  vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -144,7 +148,7 @@ vim.keymap.set('n', '<leader>yP', function()
 end, { desc = 'Copy relative file path from project root' })
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   vim.fn.system({ 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath })
 end ---@diagnostic disable-next-line: undefined-field
@@ -516,24 +520,31 @@ require('lazy').setup({
         return {
           command = require('conform.util').find_executable({
             'node_modules/.bin/biome',
-            'node_modules/.bin/prettier',
           }, 'biome'),
+        }
+      end,
+
+      biome_or_prettier = function()
+        return {
+          command = require('conform.util').find_executable({
+            'node_modules/.bin/biome',
+          }, 'prettier'),
         }
       end,
 
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { 'biome', stop_after_first = true },
-        typescript = { 'biome', stop_after_first = true },
-        javascriptreact = { 'biome', stop_after_first = true },
-        typescriptreact = { 'biome', stop_after_first = true },
-        svelte = { 'biome', stop_after_first = true },
+        javascript = { 'biome' },
+        typescript = { 'biome' },
+        javascriptreact = { 'biome' },
+        typescriptreact = { 'biome' },
+        svelte = { 'biome' },
         yaml = { 'prettier' },
-        astro = { 'biome', stop_after_first = true },
+        astro = { 'biome' },
         html = { 'prettier' },
         css = { 'biome' },
-        json = { 'biome', stop_after_first = true },
-        markdown = { 'deno_fmt', stop_after_first = true },
+        json = { 'biome_or_prettier' },
+        markdown = { 'deno_fmt' },
         sh = { 'shfmt' },
         toml = { 'taplo' },
         php = { 'php_cs_fixer', 'phpcbf', stop_after_first = true },

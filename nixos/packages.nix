@@ -84,7 +84,6 @@ let
     ];
     python = [
       python312Full
-      python312Packages.pynvim
       python312Packages.pip
     ];
     java = [
@@ -167,7 +166,7 @@ let
       carapace
     ];
     dev = [
-      unstable.neovim
+      (pkgs.wrapNeovim neovim { })
       tree-sitter
       unstable.zellij
       just

@@ -4,6 +4,7 @@
   inputs = {
     nixos.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay/7f5ed8f34dbb092799ac490d1235be0513646dba";
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/f130def404d6c69920ba1c61cb94bdaa9d6fc8f1";
@@ -31,7 +32,7 @@
     };
   };
 
-  outputs = { self, nixos, nixos-unstable, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua }:
+  outputs = { self, nixos, nixos-unstable, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua }:
     let
       root-overlay = final: prev: {
         unstable = import nixos-unstable {
@@ -39,7 +40,7 @@
         };
       };
 
-      overlays = [ root-overlay ];
+      overlays = [ root-overlay neovim-nightly-overlay.overlays.default ];
     in
     {
       nixosConfigurations = {
