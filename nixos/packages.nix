@@ -98,6 +98,7 @@ let
       shellcheck
       shfmt
       bash-language-server
+      bashInteractive
     ];
     lua = [
       taplo
