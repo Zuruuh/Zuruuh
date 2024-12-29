@@ -7,6 +7,7 @@ export alias code = codium
 export alias nxd = nix develop --command $env.SHELL
 export alias xh = ^xh --session=$"($env.XDG_STATE_HOME)/xh_sessions/($env.PWD).session.json"
 export alias xhs = ^xhs --session=$"($env.XDG_STATE_HOME)/xh_sessions/($env.PWD).session.json"
+export alias "atuin uuid" = uuidgen
 
 export def nix-shell [
     ...args
