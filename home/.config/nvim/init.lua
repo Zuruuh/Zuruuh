@@ -183,7 +183,7 @@ end, {
 require('lazy').setup({
   { -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
-    event = 'VimEnter',
+    lazy = false,
     keys = {
       {
         '<leader>sl',
