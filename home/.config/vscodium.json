@@ -25,16 +25,39 @@
     "terminal.integrated.fontSize": 12,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
+    "explorer.excludeGitIgnore": true,
     "editor.defaultFormatter": "biomejs.biome",
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
     },
+    "search.useIgnoreFiles": true,
     "editor.formatOnSave": true,
     "git.autofetch": true,
-    "diffEditor.ignoreTrimWhitespace": false,
     "window.zoomLevel": 1,
     "git.confirmSync": false,
     "vim.handleKeys": {
-        "<C-p>": false
-    }
+        "<C-p>": false,
+        "<C-w>": false
+    },
+    "chat.commandCenter.enabled": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "search.useGlobalIgnoreFiles": true,
+    "search.useParentIgnoreFiles": true,
+    "terminal.integrated.ignoreProcessNames": [
+        "starship",
+        "oh-my-posh",
+        "bash",
+        "zsh",
+        "nu"
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "editor.renderWhitespace": "trailing",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "emmet.excludeLanguages": [
+        "markdown",
+        "typescriptreact",
+        "javascriptreact"
+    ]
 }
