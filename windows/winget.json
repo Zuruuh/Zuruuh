@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-12-22T18:36:07.713-00:00",
+	"CreationDate" : "2025-01-01T23:28:02.665-00:00",
 	"Sources" : 
 	[
 		{
@@ -26,6 +26,9 @@
 				},
 				{
 					"PackageIdentifier" : "Medibang.MediBangPaintPro"
+				},
+				{
+					"PackageIdentifier" : "Modrinth.ModrinthApp"
 				},
 				{
 					"PackageIdentifier" : "Mozilla.Firefox"
@@ -82,13 +85,10 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
-					"PackageIdentifier" : "Modrinth.ModrinthApp"
-				},
-				{
 					"PackageIdentifier" : "Apple.Bonjour"
 				},
 				{
-					"PackageIdentifier" : "LGUG2Z.whkd"
+					"PackageIdentifier" : "Nvidia.CUDA"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.PhysX"
@@ -101,6 +101,9 @@
 				},
 				{
 					"PackageIdentifier" : "dotPDN.PaintDotNet"
+				},
+				{
+					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
