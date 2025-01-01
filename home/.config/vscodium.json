@@ -18,7 +18,7 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "Nushell",
-    "editor.fontFamily": "'MonaspiceNe Nerd Font', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'MonaspiceAr Nerd Font', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
     "terminal.integrated.fontFamily": "'MonaspiceNe Nerd Font', Consolas, 'Courier New', monospace",
@@ -59,5 +59,7 @@
         "markdown",
         "typescriptreact",
         "javascriptreact"
-    ]
+    ],
+    "workbench.tree.indent": 20,
+    "editor.lineHeight": 1.75
 }
