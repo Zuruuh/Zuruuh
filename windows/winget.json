@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-01-01T23:28:02.665-00:00",
+	"CreationDate" : "2025-01-05T04:20:31.000-00:00",
 	"Sources" : 
 	[
 		{
@@ -275,6 +275,9 @@
 				},
 				{
 					"PackageIdentifier" : "GodotEngine.GodotEngine.Mono"
+				},
+				{
+					"PackageIdentifier" : "MedalB.V.Medal"
 				},
 				{
 					"PackageIdentifier" : "Postman.Postman"
