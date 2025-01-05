@@ -8,7 +8,7 @@
     },
     "window.menuBarVisibility": "compact",
     "files.eol": "\n",
-    "workbench.iconTheme": "bearded-icons",
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
     "redhat.telemetry.enabled": false,
     "terminal.integrated.useWslProfiles": false,
     "terminal.integrated.shellIntegration.enabled": false,
@@ -61,5 +61,6 @@
         "javascriptreact"
     ],
     "workbench.tree.indent": 20,
-    "editor.lineHeight": 1.75
+    "editor.lineHeight": 1.75,
+    "workbench.productIconTheme": "material-product-icons"
 }
