@@ -201,7 +201,12 @@ require('lazy').setup({
   {
     'numToStr/Comment.nvim',
     dependencies = {
-      { 'JoosepAlviste/nvim-ts-context-commentstring', opts = {} },
+      {
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        opts = {
+          enable_autocmd = false,
+        },
+      },
     },
     event = 'VimEnter',
     config = function()
