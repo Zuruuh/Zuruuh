@@ -198,7 +198,18 @@ require('lazy').setup({
     },
   },
 
-  { 'numToStr/Comment.nvim', event = 'VimEnter', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    dependencies = {
+      { 'JoosepAlviste/nvim-ts-context-commentstring', opts = {} },
+    },
+    event = 'VimEnter',
+    config = function()
+      require('Comment').setup({
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      })
+    end,
+  },
 
   {
     'lewis6991/gitsigns.nvim',
