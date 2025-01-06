@@ -63,6 +63,10 @@ export def "config wezterm" [] {
     nvim ~/.dotfiles/home/.config/wezterm/wezterm.lua
 }
 
+export def "config ghostty" [] {
+    nvim ~/.dotfiles/home/.config/ghostty/config
+}
+
 export def "config ssh" [] {
     nvim ~/.dotfiles/home/.ssh/config
 }
