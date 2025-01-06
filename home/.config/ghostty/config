@@ -1,0 +1,7 @@
+initial-command = /run/current-system/sw/bin/zellij
+font-family = MonaspiceAr Nerd Font
+
+keybind = super+d=unbind
+keybind = super+t=unbind
+keybind = alt+left=unbind
+keybind = alt+right=unbind
