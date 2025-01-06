@@ -4,11 +4,15 @@
   inputs = {
     nixos.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay/7f5ed8f34dbb092799ac490d1235be0513646dba";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay/08f20528c23962643e6e522e7a207d5441699d36";
+    flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/f130def404d6c69920ba1c61cb94bdaa9d6fc8f1";
-      inputs.nixpkgs.follows = "nixos";
+      inputs = {
+        nixpkgs.follows = "nixos";
+        flake-utils.follows = "flake-utils";
+      };
     };
 
     nix-darwin = {
@@ -20,24 +24,36 @@
       inputs = {
         nixpkgs.follows = "nixos";
         nix-darwin.follows = "nix-darwin";
+        flake-utils.follows = "flake-utils";
       };
     };
     mac-app-util = {
       url = "github:hraban/mac-app-util/548672d0cb661ce11d08ee8bde92b87d2a75c872";
-      inputs.nixpkgs.follows = "nixos";
+      inputs = {
+        nixpkgs.follows = "nixos";
+        flake-utils.follows = "flake-utils";
+      };
     };
     sbar-lua = {
       url = "github:FelixKratz/SbarLua/437bd2031da38ccda75827cb7548e7baa4aa9978";
       flake = false;
     };
+    uuidgen7 = {
+      url = "github:Zuruuh/uuidgen/d0cb84f4ff4b9748047d28ba136029066fba2a10";
+      inputs = {
+        nixpkgs.follows = "nixos";
+        flake-utils.follows = "flake-utils";
+      };
+    };
   };
 
-  outputs = { self, nixos, nixos-unstable, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua }:
+  outputs = inputs@{ self, nixos, nixos-unstable, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua, ... }:
     let
       root-overlay = final: prev: {
         unstable = import nixos-unstable {
           system = prev.system;
         };
+        uuidgen7 = inputs.uuidgen7.outputs.packages.${prev.system}.default;
       };
 
       overlays = [ root-overlay neovim-nightly-overlay.overlays.default ];
