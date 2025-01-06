@@ -44,7 +44,7 @@ let
       nodejs
       nodePackages.pnpm
       nodePackages.serve
-      unstable.biome
+      # unstable.biome
       unstable.typescript-language-server
       unstable.svelte-language-server
       unstable.astro-language-server
