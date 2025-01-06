@@ -163,6 +163,7 @@ let
       unstable.nushell
       starship
       atuin
+      uuidgen7
       carapace
     ];
     dev = [
