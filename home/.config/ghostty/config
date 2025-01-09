@@ -2,6 +2,8 @@ command = /run/current-system/sw/bin/zellij
 font-family = MonaspiceAr Nerd Font
 font-size = 18
 cursor-invert-fg-bg = true
+quit-after-last-window-closed = true
+confirm-close-surface = false
 
 keybind = super+d=unbind
 keybind = super+t=unbind
