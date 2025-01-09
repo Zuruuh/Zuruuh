@@ -53,9 +53,7 @@ in
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [ "Monaspace" ];
-    })
+    unstable.nerd-fonts.monaspace
   ];
 
   users = {
