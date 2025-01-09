@@ -4,7 +4,7 @@
   inputs = {
     nixos.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay/08f20528c23962643e6e522e7a207d5441699d36";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay/177f38b4172b316a48f9ec5b41907b0ad7e0909f";
     flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
 
     nixos-wsl = {
@@ -16,15 +16,14 @@
     };
 
     nix-darwin = {
-      url = "github:LnL7/nix-darwin/a35b08d09efda83625bef267eb24347b446c80b8";
+      url = "github:LnL7/nix-darwin/57733bd1dc81900e13438e5b4439239f1b29db0e";
       inputs.nixpkgs.follows = "nixos";
     };
     nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew/ac3945ee614f69ab89c6935b3f0567028de5f012";
+      url = "github:zhaofengli/nix-homebrew/a6d99cc7436fc18c097b3536d9c45c0548c694c8";
       inputs = {
         nixpkgs.follows = "nixos";
         nix-darwin.follows = "nix-darwin";
-        flake-utils.follows = "flake-utils";
       };
     };
     mac-app-util = {
@@ -94,7 +93,7 @@
           "STM-MBTech25" = nix-darwin.lib.darwinSystem {
             specialArgs = {
               inherit pkgs sbar-lua system;
-              lib = pkgs.lib;
+              inherit (pkgs) lib;
               outputs = self;
             };
             modules = [
