@@ -196,6 +196,7 @@ in
       "switchaudio-osx"
       "nowplaying-cli"
       "blueutil"
+      "icu4c@76"
     ];
 
     casks = [
