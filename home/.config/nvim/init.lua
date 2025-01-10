@@ -546,10 +546,10 @@ require('lazy').setup({
         typescript = { 'biome' },
         javascriptreact = { 'biome' },
         typescriptreact = { 'biome' },
-        svelte = { 'biome' },
-        yaml = { 'prettier' },
-        astro = { 'biome' },
-        html = { 'prettier' },
+        svelte = { 'prettier' },
+        yaml = { 'prettier', lsp_format = 'fallback' },
+        astro = { 'prettier' },
+        html = { 'prettier', lsp_format = 'fallback' },
         css = { 'biome' },
         json = { 'biome', lsp_format = 'fallback' },
         markdown = { 'deno_fmt' },
@@ -768,6 +768,8 @@ require('lazy').setup({
       statusline.section_location = function()
         return '%2l:%-2v'
       end
+
+      require('mini.pairs').setup({})
     end,
   },
 
