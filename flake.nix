@@ -14,9 +14,16 @@
     flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
 
     # Neovim
+    neovim-src = {
+      url = "github:neovim/neovim/67192760409be55b9522dfa34d3c24aa22883a0d";
+      flake = false;
+    };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay/177f38b4172b316a48f9ec5b41907b0ad7e0909f";
-      inputs.flake-compat.follows = "flake-compat";
+      url = "github:nix-community/neovim-nightly-overlay/88beb655f76e476a3e1745d9aacc496d5c8ab1da";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        neovim-src.follows = "neovim-src";
+      };
     };
 
     # WSL
