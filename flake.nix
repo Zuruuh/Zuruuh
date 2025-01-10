@@ -2,19 +2,33 @@
   description = "My NixOS system flake";
 
   inputs = {
+    # Packages
     nixos.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay/177f38b4172b316a48f9ec5b41907b0ad7e0909f";
+
+    # Helpers
+    flake-compat = {
+      url = "github:edolstra/flake-compat/ff81ac966bb2cae68946d5ed5fc4994f96d0ffec";
+      flake = false;
+    };
     flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
 
+    # Neovim
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay/177f38b4172b316a48f9ec5b41907b0ad7e0909f";
+      inputs.flake-compat.follows = "flake-compat";
+    };
+
+    # WSL
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/f130def404d6c69920ba1c61cb94bdaa9d6fc8f1";
+      url = "github:nix-community/NixOS-WSL/63c3b4ed1712a3a0621002cd59bfdc80875ecbb0";
       inputs = {
         nixpkgs.follows = "nixos";
-        flake-utils.follows = "flake-utils";
+        flake-compat.follows = "flake-compat";
       };
     };
 
+    # MacOS
     nix-darwin = {
       url = "github:LnL7/nix-darwin/57733bd1dc81900e13438e5b4439239f1b29db0e";
       inputs.nixpkgs.follows = "nixos";
@@ -31,6 +45,7 @@
       inputs = {
         nixpkgs.follows = "nixos";
         flake-utils.follows = "flake-utils";
+        flake-compat.follows = "flake-compat";
       };
     };
     sbar-lua = {
