@@ -66,6 +66,10 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.opt.foldlevel = 99
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
 if vim.fn.has('unix') == 1 then
   vim.o.shell = vim.fn.trim(vim.fn.system({ 'bash', '-c', 'which bash' }))
 elseif vim.fn.has('win32') == 1 then
