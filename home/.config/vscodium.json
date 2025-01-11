@@ -62,5 +62,8 @@
     ],
     "workbench.tree.indent": 20,
     "editor.lineHeight": 1.75,
-    "workbench.productIconTheme": "material-product-icons"
+    "workbench.productIconTheme": "material-product-icons",
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    }
 }
