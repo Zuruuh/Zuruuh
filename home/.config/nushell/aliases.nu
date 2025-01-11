@@ -125,6 +125,10 @@ export def "git stash diff" [] {
     git stash show -p
 }
 
+export def --wrapped "git checkout" [...args] {
+    echo "Use `git restore` or `git switch` instead"
+}
+
 export def --env mkcd [dir: string] {
     mkdir $dir
     cd $dir
