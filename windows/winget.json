@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-01-05T04:20:31.000-00:00",
+	"CreationDate" : "2025-01-11T20:23:19.913-00:00",
 	"Sources" : 
 	[
 		{
@@ -58,16 +58,7 @@
 					"PackageIdentifier" : "VideoLAN.VLC"
 				},
 				{
-					"PackageIdentifier" : "glzr-io.zebar"
-				},
-				{
 					"PackageIdentifier" : "Elgato.4KCaptureUtility"
-				},
-				{
-					"PackageIdentifier" : "FACEITLTD.FACEITAC"
-				},
-				{
-					"PackageIdentifier" : "Mumble.Mumble.Client"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
@@ -83,6 +74,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
+				},
+				{
+					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
 					"PackageIdentifier" : "Apple.Bonjour"
@@ -101,9 +95,6 @@
 				},
 				{
 					"PackageIdentifier" : "dotPDN.PaintDotNet"
-				},
-				{
-					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
@@ -238,16 +229,7 @@
 					"PackageIdentifier" : "Bruno.Bruno"
 				},
 				{
-					"PackageIdentifier" : "FTB.App"
-				},
-				{
 					"PackageIdentifier" : "OpenWhisperSystems.Signal"
-				},
-				{
-					"PackageIdentifier" : "osk.tetr"
-				},
-				{
-					"PackageIdentifier" : "Amazon.Kindle"
 				},
 				{
 					"PackageIdentifier" : "Brave.Brave"
@@ -268,16 +250,10 @@
 					"PackageIdentifier" : "Electrum.Electrum"
 				},
 				{
-					"PackageIdentifier" : "FACEITLTD.FACEITClient"
-				},
-				{
 					"PackageIdentifier" : "Figma.FigmaAgent"
 				},
 				{
 					"PackageIdentifier" : "GodotEngine.GodotEngine.Mono"
-				},
-				{
-					"PackageIdentifier" : "MedalB.V.Medal"
 				},
 				{
 					"PackageIdentifier" : "Postman.Postman"
@@ -301,13 +277,7 @@
 					"PackageIdentifier" : "Obsidian.Obsidian"
 				},
 				{
-					"PackageIdentifier" : "HTTPie.HTTPie"
-				},
-				{
 					"PackageIdentifier" : "Overwolf.CurseForge"
-				},
-				{
-					"PackageIdentifier" : "beekeeper-studio.beekeeper-studio"
 				},
 				{
 					"PackageIdentifier" : "Proton.ProtonMail"
