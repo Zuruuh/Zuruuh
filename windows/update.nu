@@ -1,4 +1,5 @@
+#!/usr/bin/env nu
+
 scoop update --all
 winget update --all
-nu windows/export.nu
-
+nu ~/.dotfiles/windows/export.nu

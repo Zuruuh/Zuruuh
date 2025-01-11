@@ -1,0 +1,19 @@
+[
+  "ardonplay.vscode-jetbrains-icon-theme",
+  "biomejs.biome",
+  "christian-kohler.path-intellisense",
+  "eamodio.gitlens",
+  "github.vscode-github-actions",
+  "gruntfuggly.todo-tree",
+  "hashicorp.terraform",
+  "jnoortheen.nix-ide",
+  "pkief.material-product-icons",
+  "redhat.vscode-xml",
+  "rust-lang.rust-analyzer",
+  "surrealdb.surrealql",
+  "tamasfe.even-better-toml",
+  "thenuprojectcontributors.vscode-nushell-lang",
+  "timonwong.shellcheck",
+  "vscodevim.vim",
+  "yoavbls.pretty-ts-errors"
+]
