@@ -69,6 +69,7 @@ vim.opt.scrolloff = 10
 vim.opt.foldlevel = 99
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.wo.foldtext = 'v:lua.vim.treesitter.foldtext()'
 
 if vim.fn.has('unix') == 1 then
   vim.o.shell = vim.fn.trim(vim.fn.system({ 'bash', '-c', 'which bash' }))
