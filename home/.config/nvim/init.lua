@@ -427,7 +427,6 @@ require('lazy').setup({
       -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
-      'mikavilpas/blink-ripgrep.nvim',
     },
 
     opts = {
@@ -454,18 +453,12 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev', 'ripgrep' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
         providers = {
           lazydev = {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
             score_offset = 100,
-          },
-
-          ripgrep = {
-            module = 'blink-ripgrep',
-            name = 'Ripgrep',
-            opts = {},
           },
         },
       },
