@@ -200,25 +200,22 @@ in
     ];
 
     casks = [
-      "orbstack"
-      "bitwarden"
       "datagrip"
-      "slack"
       "ghostty"
-      "sf-symbols"
+      "eloston-chromium"
       "font-sf-mono"
       "font-sf-pro"
-      "parsec"
-      "wkhtmltopdf"
-      "postman"
       "nikitabobko/tap/aerospace"
-      "flameshot"
-      "pika"
-      "eloston-chromium"
       "obs"
-      "whatsapp"
-      "proxyman"
       "obsidian"
+      "orbstack"
+      "parsec"
+      "postman"
+      "proxyman"
+      "sf-symbols"
+      "shottr"
+      "slack"
+      "wkhtmltopdf"
     ];
   };
 }
