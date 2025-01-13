@@ -430,6 +430,7 @@ require('lazy').setup({
     },
 
     opts = {
+      signature = { enabled = true },
       keymap = {
         preset = 'super-tab',
         ['<Enter>'] = { 'accept', 'fallback' },
