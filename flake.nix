@@ -37,7 +37,7 @@
 
     # MacOS
     nix-darwin = {
-      url = "github:LnL7/nix-darwin/57733bd1dc81900e13438e5b4439239f1b29db0e";
+      url = "github:LnL7/nix-darwin/6ace2f2d12bdf74235d5cbf9fbd34a71c9716685";
       inputs.nixpkgs.follows = "nixos";
     };
     nix-homebrew = {
