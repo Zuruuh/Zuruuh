@@ -180,6 +180,10 @@ let
       opentofu
       terraform-ls
     ];
+    zig = [
+      zig
+      zls
+    ];
   };
 in
 {
