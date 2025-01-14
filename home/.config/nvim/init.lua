@@ -732,7 +732,12 @@ require('lazy').setup({
       { '<leader>gh', '<CMD>diffget //3<CR>', desc = 'Accept changes from right buffer' },
       { '<leader>gpl', '<CMD>Git pull<CR>', silent = true, desc = '[G]it [P]u[l]l' },
       { '<leader>gpp', '<CMD>Git push<CR>', silent = true, desc = '[G]it [P]ush' },
-      { '<leader>gph', '<CMD>Git push -u origin HEAD<CR>', silent = true, desc = '[G]it [P]ush to origin/[H]EAD' },
+      {
+        '<leader>gph',
+        '<CMD>Git push -u origin HEAD<CR>',
+        silent = true,
+        desc = '[G]it [P]ush to origin/[H]EAD',
+      },
       {
         '<leader>ggfl',
         '<CMD>Git push --force-with-lease<CR>',
