@@ -516,6 +516,7 @@ require('lazy').setup({
         gopls = {},
         lemminx = {},
         terraformls = {},
+        zls = {},
       },
     },
     config = function(_, opts)
