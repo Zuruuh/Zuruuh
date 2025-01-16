@@ -153,6 +153,7 @@ let
       mkpasswd
       man
       openssh
+      unstable.sequoia-sq
       stow
       tlrc
       viu
