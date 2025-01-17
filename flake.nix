@@ -15,11 +15,11 @@
 
     # Neovim
     neovim-src = {
-      url = "github:neovim/neovim/a3ef29d570dd892a1bcbfa80bb242d4aac89a06e";
+      url = "github:neovim/neovim/5dd60e01ace2621f2307eebeb92e9e7351210d3a";
       flake = false;
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay/9e2c41b7c12adc3ca17b1b50589f5234bcc0bbac";
+      url = "github:nix-community/neovim-nightly-overlay/7d67e712dff97cca8e6eff015af8fbddab332062";
       inputs = {
         flake-compat.follows = "flake-compat";
         neovim-src.follows = "neovim-src";
@@ -37,7 +37,7 @@
 
     # MacOS
     nix-darwin = {
-      url = "github:LnL7/nix-darwin/6ace2f2d12bdf74235d5cbf9fbd34a71c9716685";
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixos";
     };
     nix-homebrew = {
@@ -59,6 +59,8 @@
       url = "github:FelixKratz/SbarLua/437bd2031da38ccda75827cb7548e7baa4aa9978";
       flake = false;
     };
+
+    # Atuin
     uuidgen7 = {
       url = "github:Zuruuh/uuidgen/d0cb84f4ff4b9748047d28ba136029066fba2a10";
       inputs = {
