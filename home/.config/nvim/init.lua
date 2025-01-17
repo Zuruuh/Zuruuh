@@ -963,6 +963,11 @@ require('lazy').setup({
       event = { 'BufRead *.surql' },
     },
   },
+  {
+    'Bekaboo/dropbar.nvim',
+    -- optional, but required for fuzzy finder support
+    opts = {},
+  },
 }, {
   rocks = {
     enabled = false,
