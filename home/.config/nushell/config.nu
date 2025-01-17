@@ -11,7 +11,7 @@ $env.config.completions = {
     case_sensitive: false
     quick: true
     partial: true
-    algorithm: "prefix"
+    algorithm: "fuzzy"
     use_ls_colors: true
 }
 
