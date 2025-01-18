@@ -517,6 +517,7 @@ require('lazy').setup({
         lemminx = {},
         terraformls = {},
         zls = {},
+        taplo = {},
       },
     },
     config = function(_, opts)
