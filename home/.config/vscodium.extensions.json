@@ -2,7 +2,6 @@
     "ardonplay.vscode-jetbrains-icon-theme",
     "biomejs.biome",
     "christian-kohler.path-intellisense",
-    "eamodio.gitlens",
     "github.vscode-github-actions",
     "gruntfuggly.todo-tree",
     "hashicorp.terraform",
@@ -15,5 +14,6 @@
     "thenuprojectcontributors.vscode-nushell-lang",
     "timonwong.shellcheck",
     "vscodevim.vim",
+    "waderyan.gitblame",
     "yoavbls.pretty-ts-errors"
 ]
