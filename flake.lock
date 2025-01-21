@@ -32,6 +32,28 @@
         "type": "github"
       }
     },
+    "fenix": {
+      "inputs": {
+        "nixpkgs": [
+          "mago",
+          "nixpkgs"
+        ],
+        "rust-analyzer-src": "rust-analyzer-src"
+      },
+      "locked": {
+        "lastModified": 1737354756,
+        "narHash": "sha256-CCXoqOoXRJGsgRkyrCJOx+m+ukZ1i5dVRP/g8o4MbW8=",
+        "owner": "nix-community",
+        "repo": "fenix",
+        "rev": "5edc630f5b1cae39beea96b392d0ec699e1e9d31",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "fenix",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -222,6 +244,31 @@
         "type": "github"
       }
     },
+    "mago": {
+      "inputs": {
+        "fenix": "fenix",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixos"
+        ]
+      },
+      "locked": {
+        "lastModified": 1737412416,
+        "narHash": "sha256-fzSWfRSaXHOGKsdnT2tGjh0re1jxAwKDNZBfpgvblek=",
+        "owner": "Zuruuh",
+        "repo": "mago",
+        "rev": "75abd98eaea51b03d4dd813b9bacd5f431272ab3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Zuruuh",
+        "ref": "initialize-nix-flake",
+        "repo": "mago",
+        "type": "github"
+      }
+    },
     "neovim-nightly-overlay": {
       "inputs": {
         "flake-compat": [
@@ -391,6 +438,7 @@
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "mac-app-util": "mac-app-util",
+        "mago": "mago",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "neovim-src": "neovim-src",
         "nix-darwin": "nix-darwin",
@@ -400,6 +448,23 @@
         "nixos-wsl": "nixos-wsl",
         "sbar-lua": "sbar-lua",
         "uuidgen7": "uuidgen7"
+      }
+    },
+    "rust-analyzer-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737215993,
+        "narHash": "sha256-W8xioeq+h9dzGvtXPlQAn2nXtgNDN6C8uA1/9F2JP5I=",
+        "owner": "rust-lang",
+        "repo": "rust-analyzer",
+        "rev": "248bd511aee2c1c1cb2d5314649521d6d93b854a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rust-lang",
+        "ref": "nightly",
+        "repo": "rust-analyzer",
+        "type": "github"
       }
     },
     "sbar-lua": {
