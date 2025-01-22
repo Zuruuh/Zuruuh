@@ -1,6 +1,7 @@
 [user]
     name = Zuruuh
     email = zuruh.dev@proton.me
+    signingkey = 4C8921C0E8A4F68A78CE3EC6AFB2FC6B8FFFBCFB
 
 [core]
     editor = nvim
@@ -29,3 +30,12 @@
 
 [safe]
     directory = /mnt/d/dev
+
+[commit]
+    gpgsign = true
+
+[tag]
+    gpgsign = true
+
+[gpg]
+    program = /run/current-system/sw/bin/gpg
