@@ -21,6 +21,7 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay/7d67e712dff97cca8e6eff015af8fbddab332062";
       inputs = {
+        nixpkgs.follows = "nixos";
         flake-compat.follows = "flake-compat";
         neovim-src.follows = "neovim-src";
       };
@@ -102,6 +103,7 @@
                   inherit system overlays;
                   config.allowUnfree = true;
                 };
+                nvim-wrapped = (pkgs.wrapNeovim pkgs.neovim { });
                 lib = pkgs.lib;
               };
             in
@@ -126,6 +128,7 @@
             specialArgs = {
               inherit pkgs sbar-lua system;
               inherit (pkgs) lib;
+              nvim-wrapped = (pkgs.wrapNeovim pkgs.neovim { });
               outputs = self;
             };
             modules = [

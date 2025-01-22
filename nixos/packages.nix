@@ -1,5 +1,5 @@
 # -- vim: sw=2
-{ lib, pkgs, ... }:
+{ lib, pkgs, nvim-wrapped, ... }:
 let
   forLinux = packages: (if pkgs.stdenv.isDarwin then [ ] else packages);
   php83 = pkgs.php83.buildEnv {
@@ -169,7 +169,7 @@ let
       carapace
     ];
     dev = [
-      (pkgs.wrapNeovim neovim { })
+      nvim-wrapped
       tree-sitter
       unstable.zellij
       just
