@@ -39,3 +39,6 @@
 
 [gpg]
     program = /run/current-system/sw/bin/gpg
+
+[alias]
+    cp = cherry-pick
