@@ -21,6 +21,7 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay/7d67e712dff97cca8e6eff015af8fbddab332062";
       inputs = {
+        nixpkgs.follows = "nixos";
         flake-compat.follows = "flake-compat";
         neovim-src.follows = "neovim-src";
       };
