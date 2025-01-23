@@ -280,9 +280,7 @@
         "neovim-src": [
           "neovim-src"
         ],
-        "nixpkgs": [
-          "nixos"
-        ],
+        "nixpkgs": "nixpkgs",
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
@@ -416,6 +414,22 @@
         "owner": "nix-community",
         "repo": "NixOS-WSL",
         "rev": "63c3b4ed1712a3a0621002cd59bfdc80875ecbb0",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1736943799,
+        "narHash": "sha256-BYsp8PA1j691FupfrLVOQzm4CaYaKtkh4U+KuGMnBWw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ae2fb9f1fb5fcf17fb59f25c2a881c170c501d6f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },

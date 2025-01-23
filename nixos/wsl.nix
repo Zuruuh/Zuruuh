@@ -1,4 +1,4 @@
-args@{ pkgs, ... }:
+{ pkgs, ... }:
 let
   createWindowsBashAlias = name: (pkgs.writeShellApplication {
     name = "${name}.exe";
@@ -21,7 +21,7 @@ in
     (createWindowsBashAlias "findstr")
     wslu
   ];
-  environment.sessionVariables = (import ./env.nix args);
+  environment.sessionVariables = (import ./env.nix { inherit pkgs; });
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   virtualisation.docker.enable = true;
@@ -48,6 +48,7 @@ in
     };
     root = { };
   };
+
 
   security.sudo.wheelNeedsPassword = true;
 

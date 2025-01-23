@@ -30,7 +30,7 @@ let
           --set LUA_PATH "${lua-lib-path}/?.lua;${lua-lib-path}/loadall.lua;$out/share/lua/sketchybar.lua;./?.lua;;"
       '';
   };
-  env = (import ./env.nix inputs);
+  env = (import ./env.nix { inherit pkgs; });
 in
 {
   services.nix-daemon.enable = true;
