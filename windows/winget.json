@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-01-11T20:23:19.913-00:00",
+	"CreationDate" : "2025-01-24T21:21:16.339-00:00",
 	"Sources" : 
 	[
 		{
@@ -58,6 +58,9 @@
 					"PackageIdentifier" : "VideoLAN.VLC"
 				},
 				{
+					"PackageIdentifier" : "Zen-Team.Zen-Browser"
+				},
+				{
 					"PackageIdentifier" : "Elgato.4KCaptureUtility"
 				},
 				{
@@ -76,10 +79,10 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
-					"PackageIdentifier" : "LGUG2Z.whkd"
+					"PackageIdentifier" : "Apple.Bonjour"
 				},
 				{
-					"PackageIdentifier" : "Apple.Bonjour"
+					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.CUDA"
@@ -91,13 +94,13 @@
 					"PackageIdentifier" : "wez.wezterm"
 				},
 				{
-					"PackageIdentifier" : "Alacritty.Alacritty"
-				},
-				{
 					"PackageIdentifier" : "dotPDN.PaintDotNet"
 				},
 				{
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+				},
+				{
+					"PackageIdentifier" : "Alacritty.Alacritty"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
@@ -169,10 +172,10 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
 					"PackageIdentifier" : "GOG.Galaxy"
@@ -202,7 +205,7 @@
 					"PackageIdentifier" : "Nvidia.PhysXLegacy"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
@@ -296,9 +299,6 @@
 				},
 				{
 					"PackageIdentifier" : "CitraEmu.Citra"
-				},
-				{
-					"PackageIdentifier" : "ModernFlyouts.ModernFlyouts"
 				},
 				{
 					"PackageIdentifier" : "DuckDuckGo.DesktopBrowser"
