@@ -1,0 +1,3 @@
+# vim: ft=gitconfig
+[gpg]
+    program = "C:\\Users\\zuruh\\scoop\\apps\\gpg\\current\\bin\\gpg.exe"

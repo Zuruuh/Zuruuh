@@ -37,8 +37,11 @@
 [tag]
     gpgsign = true
 
-; [gpg]
-    ; program = /run/current-system/sw/bin/gpg
+[includeIf "gitdir:~/"]
+    path = ~/.config/git/linux.gitconfig
+
+[includeIf "gitdir:C:/"]
+    path = C:/Users/zuruh/dotfiles/home/.config/git/windows.gitconfig
 
 [alias]
     cp = cherry-pick
