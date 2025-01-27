@@ -92,6 +92,7 @@ vim.g.loaded_ruby_provider = 0
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.diagnostic.config({ virtual_lines = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', function()

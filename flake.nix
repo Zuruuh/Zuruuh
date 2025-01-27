@@ -15,11 +15,11 @@
 
     # Neovim
     neovim-src = {
-      url = "github:neovim/neovim/5dd60e01ace2621f2307eebeb92e9e7351210d3a";
+      url = "github:neovim/neovim/b288fa8d62c3f129d333d3ea6abc3234039cad37";
       flake = false;
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay/7d67e712dff97cca8e6eff015af8fbddab332062";
+      url = "github:nix-community/neovim-nightly-overlay/af9d81d77c8b81856a2d56048c8cb48e98bb929e";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-compat.follows = "flake-compat";
