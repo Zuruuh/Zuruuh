@@ -70,7 +70,7 @@
       };
     };
     mago = {
-      url = "github:Zuruuh/mago/initialize-nix-flake";
+      url = "github:Zuruuh/mago/4ead095d34a64eac23093094a94a30c8dc9ffff3";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-utils.follows = "flake-utils";
