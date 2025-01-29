@@ -32,28 +32,6 @@
         "type": "github"
       }
     },
-    "fenix": {
-      "inputs": {
-        "nixpkgs": [
-          "mago",
-          "nixpkgs"
-        ],
-        "rust-analyzer-src": "rust-analyzer-src"
-      },
-      "locked": {
-        "lastModified": 1737354756,
-        "narHash": "sha256-CCXoqOoXRJGsgRkyrCJOx+m+ukZ1i5dVRP/g8o4MbW8=",
-        "owner": "nix-community",
-        "repo": "fenix",
-        "rev": "5edc630f5b1cae39beea96b392d0ec699e1e9d31",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "fenix",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -158,11 +136,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1737043064,
-        "narHash": "sha256-I/OuxGwXwRi5gnFPsyCvVR+IfFstA+QXEpHu1hvsgD8=",
+        "lastModified": 1737465171,
+        "narHash": "sha256-R10v2hoJRLq8jcL4syVFag7nIGE7m13qO48wRIukWNg=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "94ee657f6032d913fe0ef49adaa743804635b0bb",
+        "rev": "9364dc02281ce2d37a1f55b6e51f7c0f65a75f17",
         "type": "github"
       },
       "original": {
@@ -241,31 +219,6 @@
         "owner": "hraban",
         "repo": "mac-app-util",
         "rev": "548672d0cb661ce11d08ee8bde92b87d2a75c872",
-        "type": "github"
-      }
-    },
-    "mago": {
-      "inputs": {
-        "fenix": "fenix",
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixos"
-        ]
-      },
-      "locked": {
-        "lastModified": 1737705767,
-        "narHash": "sha256-D0cJLIyk0gDNtmMOElLOFJ/40cyZQ01dM5Co4tYgQUk=",
-        "owner": "Zuruuh",
-        "repo": "mago",
-        "rev": "4ead095d34a64eac23093094a94a30c8dc9ffff3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Zuruuh",
-        "repo": "mago",
-        "rev": "4ead095d34a64eac23093094a94a30c8dc9ffff3",
         "type": "github"
       }
     },
@@ -424,7 +377,6 @@
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "mac-app-util": "mac-app-util",
-        "mago": "mago",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "neovim-src": "neovim-src",
         "nix-darwin": "nix-darwin",
@@ -434,23 +386,6 @@
         "nixos-wsl": "nixos-wsl",
         "sbar-lua": "sbar-lua",
         "uuidgen7": "uuidgen7"
-      }
-    },
-    "rust-analyzer-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1737215993,
-        "narHash": "sha256-W8xioeq+h9dzGvtXPlQAn2nXtgNDN6C8uA1/9F2JP5I=",
-        "owner": "rust-lang",
-        "repo": "rust-analyzer",
-        "rev": "248bd511aee2c1c1cb2d5314649521d6d93b854a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rust-lang",
-        "ref": "nightly",
-        "repo": "rust-analyzer",
-        "type": "github"
       }
     },
     "sbar-lua": {
@@ -508,11 +443,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1737054102,
-        "narHash": "sha256-saLiCRQ5RtdTnznT/fja7GxcYRAzeY3k8S+IF/2s/2A=",
+        "lastModified": 1737483750,
+        "narHash": "sha256-5An1wq5U8sNycOBBg3nsDDgpwBmR9liOpDGlhliA6Xo=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "97871d416166803134ba64597a1006f3f670fbde",
+        "rev": "f2cc121df15418d028a59c9737d38e3a90fbaf8f",
         "type": "github"
       },
       "original": {

@@ -69,13 +69,6 @@
         flake-utils.follows = "flake-utils";
       };
     };
-    mago = {
-      url = "github:Zuruuh/mago/4ead095d34a64eac23093094a94a30c8dc9ffff3";
-      inputs = {
-        nixpkgs.follows = "nixos";
-        flake-utils.follows = "flake-utils";
-      };
-    };
   };
 
   outputs = inputs@{ self, nixos, nixos-unstable, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua, ... }:
@@ -85,7 +78,6 @@
           system = prev.system;
         };
         uuidgen7 = inputs.uuidgen7.outputs.packages.${prev.system}.default;
-        mago = inputs.mago.outputs.packages.${prev.system}.default;
       };
 
       overlays = [ root-overlay neovim-nightly-overlay.overlays.default ];

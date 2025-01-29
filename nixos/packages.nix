@@ -81,7 +81,6 @@ let
       php83.packages.composer
       php83.packages.php-cs-fixer
       symfony-cli
-      mago
     ];
     python = [
       python312Full
