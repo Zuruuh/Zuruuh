@@ -85,6 +85,7 @@ let
     python = [
       python312Full
       python312Packages.pip
+      uv
     ];
     java = [
       zulu17
