@@ -121,8 +121,12 @@ export def --env "venv activate" [] {
   }
 }
 
-export def "git stash diff" [] {
-    git stash show -p
+export def "git stash diff" [--stash(-s): int] {
+    if $stash == null {
+        git stash show -p
+    } else {
+        git stash show -p $stash
+    }
 }
 
 export def --wrapped "git checkout" [...args] {
