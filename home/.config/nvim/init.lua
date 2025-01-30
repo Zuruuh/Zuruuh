@@ -373,29 +373,20 @@ require('lazy').setup({
           }
         end,
 
-        php_cs_fixer = function()
+        prettier = function()
+          return {
+            command = require('conform.util').from_node_modules('prettier'),
+          }
+        end,
+
+        biome = function()
           return {
             command = require('conform.util').find_executable({
-              'bin/php-cs-fixer',
-              'vendor/bin/php-cs-fixer',
-            }, 'php-cs-fixer'),
+              'node_modules/.bin/biome',
+            }, 'biome'),
           }
         end,
       },
-
-      prettier = function()
-        return {
-          command = require('conform.util').from_node_modules('prettier'),
-        }
-      end,
-
-      biome = function()
-        return {
-          command = require('conform.util').find_executable({
-            'node_modules/.bin/biome',
-          }, 'biome'),
-        }
-      end,
 
       formatters_by_ft = {
         lua = { 'stylua' },
