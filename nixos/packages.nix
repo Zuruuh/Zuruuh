@@ -51,7 +51,6 @@ let
       vscode-langservers-extracted
     ];
     docker = [
-      docker-compose-language-service
       dockerfile-language-server-nodejs
       dive
     ] ++ forLinux (with pkgs; [ kubernetes kubectl minikube ]);

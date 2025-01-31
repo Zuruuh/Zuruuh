@@ -471,6 +471,10 @@ require('lazy').setup({
         end,
         opts = {},
       },
+      {
+        'b0o/schemastore.nvim',
+        ft = 'json',
+      },
     },
     opts = {
       servers = {
@@ -478,10 +482,18 @@ require('lazy').setup({
         bashls = {},
         clangd = {},
         cssls = {},
-        docker_compose_language_service = {},
         dockerls = {},
         html = {},
-        jsonls = {},
+        jsonls = function()
+          return {
+            settings = {
+              json = {
+                schemas = require('schemastore').json.schemas(),
+                validate = { enable = true },
+              },
+            },
+          }
+        end,
         lua_ls = {
           Lua = {
             completion = {
@@ -501,7 +513,19 @@ require('lazy').setup({
         },
         sqlls = {},
         ts_ls = {},
-        yamlls = {},
+        yamlls = function()
+          return {
+            settings = {
+              yaml = {
+                schemaStore = {
+                  enable = true,
+                  url = 'https://www.schemastore.org/api/json/catalog.json',
+                },
+                schemas = require('schemastore').yaml.schemas(),
+              },
+            },
+          }
+        end,
         nil_ls = {},
         nushell = {},
         vacuum = {},
@@ -517,7 +541,11 @@ require('lazy').setup({
       local blink = require('blink.cmp')
 
       for server, config in pairs(opts.servers) do
+        if type(config) == 'function' then
+          config = config()
+        end
         config.capabilities = blink.get_lsp_capabilities(config.capabilities)
+
         lspconfig[server].setup(config)
       end
 
