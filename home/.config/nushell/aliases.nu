@@ -155,7 +155,7 @@ export def --env dev [] {
 }
 
 export def switch [] {
-    let branch = git branch |
+    let branch = git branch --sort=-committerdate |
         str trim |
         split row (char newline) |
         filter {|branch| $branch !~ '^\* '} |
