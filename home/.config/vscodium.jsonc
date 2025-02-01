@@ -36,8 +36,9 @@
     "search.useIgnoreFiles": true,
     "editor.formatOnSave": true,
     "git.autofetch": true,
-    "window.zoomLevel": 1,
     "git.confirmSync": false,
+    "git.enableCommitSigning": true,
+    "window.zoomLevel": 1,
     "vim.handleKeys": {
         "<C-p>": false,
         "<C-w>": false
