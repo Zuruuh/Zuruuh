@@ -189,6 +189,34 @@ end, {
   desc = 'Re-enable autoformat-on-save',
 })
 
+local ns = vim.api.nvim_create_namespace('evenoddlines')
+
+vim.api.nvim_set_decoration_provider(ns, {
+  on_win = function() end,
+  on_line = function(_, _, buf, row)
+    if vim.api.nvim_buf_get_name(buf):match('NvimTree') == nil then
+      return
+    end
+
+    local nvim_tree_normal_hl = vim.api.nvim_get_hl(0, { name = 'NvimTreeNormal' })
+    if nvim_tree_normal_hl == nil or nvim_tree_normal_hl.bg == nil then
+      return
+    end
+
+    -- + 5 on all 3 RGB channels
+    vim.api.nvim_set_hl(0, 'NvimTreeNormalOdd', { bg = nvim_tree_normal_hl.bg - 591878 })
+
+    if row % 2 == 0 then
+      vim.api.nvim_buf_set_extmark(buf, ns, row, 0, {
+        end_row = row + 1,
+        hl_group = 'NvimTreeNormalOdd',
+        hl_eol = true,
+        ephemeral = true,
+      })
+    end
+  end,
+})
+
 -- Plugins
 require('lazy').setup({
   { -- Detect tabstop and shiftwidth automatically
