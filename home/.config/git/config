@@ -43,5 +43,8 @@
 [includeIf "gitdir:C:/"]
     path = C:/Users/zuruh/dotfiles/home/.config/git/windows.gitconfig
 
+[includeIf "gitdir:D:/"]
+    path = C:/Users/zuruh/dotfiles/home/.config/git/windows.gitconfig
+
 [alias]
     cp = cherry-pick
