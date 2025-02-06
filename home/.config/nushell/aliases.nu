@@ -1,10 +1,8 @@
-export alias dotfiles = echo 'use `config dotfiles`!'
-export alias git_current_branch = git branch --show-current
+export alias dotfiles = print 'use `config dotfiles`!'
 export alias docker-compose = docker compose
 export alias compose = docker compose
 export alias buildx = docker buildx
 export alias code = codium
-export alias nxd = nix develop --command $env.SHELL
 export alias xh = ^xh --session=$"($env.XDG_STATE_HOME)/xh_sessions/($env.PWD).session.json"
 export alias xhs = ^xhs --session=$"($env.XDG_STATE_HOME)/xh_sessions/($env.PWD).session.json"
 export alias "atuin uuid" = uuidgen7 -t
@@ -101,6 +99,14 @@ export def "venv create" [python_path: string = "" ] {
     return
 }
 
+export def --env "venv activate" [] {
+  if $nu.os-info.name == 'windows' {
+    path add ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'Scripts')
+  } else {
+    path add ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'bin')
+  }
+}
+
 export def paste [] {
     cat (do { cb show } | complete | get stderr | str trim --char '"')
 }
@@ -113,13 +119,6 @@ export def copy [path?: string] {
     }
 }
 
-export def --env "venv activate" [] {
-  if $nu.os-info.name == 'windows' {
-    path add ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'Scripts')
-  } else {
-    path add ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'bin')
-  }
-}
 
 export def "git stash diff" [--stash(-s): int] {
     if $stash == null {
@@ -130,7 +129,7 @@ export def "git stash diff" [--stash(-s): int] {
 }
 
 export def --wrapped "git checkout" [...args] {
-    echo "Use `git restore` or `git switch` instead"
+    print "Use `git restore` or `git switch` instead"
 }
 
 export def --env mkcd [dir: string] {
@@ -169,13 +168,7 @@ export def switch [] {
     }
 }
 
-export def l [...args] {
-    eza --long --all --icons --git ...$args
-}
-
-export def leetcode [] {
-    nvim leetcode.nvim
-}
+def ":q" [] { "bruh" }
 
 # Setup proxyman's http proxy by loading the https?_proxy env vars
 export def --env "proxyman-cli use" [] {
