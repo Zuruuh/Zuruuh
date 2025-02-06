@@ -900,25 +900,6 @@ require('lazy').setup({
     },
   },
   {
-    'kawre/leetcode.nvim',
-    event = 'VeryLazy',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim', -- required by telescope
-      'MunifTanjim/nui.nvim',
-    },
-    opts = {
-      lang = 'rust',
-      cn = {
-        enabled = false,
-      },
-      storage = {
-        home = vim.fn.stdpath('data') .. '/leetcode',
-        cache = vim.fn.stdpath('cache') .. '/leetcode',
-      },
-    },
-  },
-  {
     'akinsho/bufferline.nvim',
     version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
