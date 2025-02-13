@@ -56,10 +56,6 @@
         flake-compat.follows = "flake-compat";
       };
     };
-    sbar-lua = {
-      url = "github:FelixKratz/SbarLua/437bd2031da38ccda75827cb7548e7baa4aa9978";
-      flake = false;
-    };
 
     # Atuin
     uuidgen7 = {
@@ -71,7 +67,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixos, nixos-unstable, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, sbar-lua, ... }:
+  outputs = inputs@{ self, nixos, nixos-unstable, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, ... }:
     let
       root-overlay = final: prev: {
         unstable = import nixos-unstable {
@@ -117,7 +113,7 @@
         {
           "STM-MBTech25" = nix-darwin.lib.darwinSystem {
             specialArgs = {
-              inherit pkgs sbar-lua system;
+              inherit pkgs system;
               inherit (pkgs) lib;
               outputs = self;
             };

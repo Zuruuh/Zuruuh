@@ -1,35 +1,10 @@
-inputs@{ pkgs, lib, outputs, config, ... }:
+{ pkgs, lib, outputs, config, ... }:
 let
   platform = "aarch64-darwin";
   username = "YZiadi";
   shell = pkgs.writeShellScript "nu" ''
     XDG_CONFIG_HOME=${(import ./env.nix {inherit pkgs;}).XDG_CONFIG_HOME} exec ${pkgs.unstable.nushell}/bin/nu "$@";
   '';
-  lua-src = pkgs.lua5_4_compat;
-  sbar-lua = pkgs.stdenv.mkDerivation {
-    pname = "sbarlua";
-    version = "437bd2031da38ccda75827cb7548e7baa4aa9979";
-    buildInputs = with pkgs; [ gnumake readline gcc lua-src makeWrapper ];
-    src = inputs.sbar-lua;
-    buildPhase = ''
-      build_dir="$(pwd)/build"
-      mkdir -p $build_dir
-      ${pkgs.gnumake}/bin/make INSTALL_DIR="$build_dir" install
-    '';
-
-    installPhase =
-      let lua-lib-path = "${lua-src}/lib/lua/5.4";
-      in /*bash*/ ''
-        mkdir -p $out/share/lua
-        cp -r build/* $out/share/lua
-        mkdir -p $out/bin
-        makeWrapper \
-          ${lua-src}/bin/lua \
-          $out/bin/sbar-lua \
-          --set LUA_CPATH "${lua-lib-path}/?.so;${lua-lib-path}/loadall.so;$out/share/lua/sketchybar.so;./?.so;;" \
-          --set LUA_PATH "${lua-lib-path}/?.lua;${lua-lib-path}/loadall.lua;$out/share/lua/sketchybar.lua;./?.lua;;"
-      '';
-  };
   env = (import ./env.nix { inherit pkgs; });
 in
 {
@@ -48,7 +23,7 @@ in
       telegram-desktop
       skhd
       unstable.bruno
-    ] ++ [ lua-src sbar-lua ];
+    ];
     variables = env;
   };
 
@@ -115,16 +90,6 @@ in
         })
         { serviceConfig.Nice = -20; }
       ];
-      sketchybar = makeProgram {
-        name = "sketchybar";
-        package = pkgs.sketchybar;
-        script = /*bash*/ ''
-          ${pkgs.sketchybar}/bin/sketchybar
-        '';
-        environment = {
-          API_KEY_FILE = "${env.XDG_DATA_HOME}/idf-mobilites-api-key.txt";
-        };
-      };
     };
 
   system = {
@@ -187,10 +152,6 @@ in
       {
         name = "FelixKratz/formulae/borders";
         start_service = true;
-      }
-      {
-        name = "FelixKratz/formulae/sketchybar";
-        start_service = false;
       }
       "switchaudio-osx"
       "nowplaying-cli"
