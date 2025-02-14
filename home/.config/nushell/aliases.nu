@@ -78,6 +78,11 @@ export def "config skhd" [] {
     skhd -r
 }
 
+export def "config aerospace" [] {
+    nvim ~/.dotfiles/home/.config/aerospace/aerospace.toml
+    aerospace reload-config
+}
+
 export def "venv create" [python_path: string = "" ] {
     echo "(Remember to use uv instead if possible 😀)"
     if ('.venv' | path exists) {
