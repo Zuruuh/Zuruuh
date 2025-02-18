@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-01-27T23:06:03.946-00:00",
+	"CreationDate" : "2025-02-18T12:41:59.139-00:00",
 	"Sources" : 
 	[
 		{
@@ -67,6 +67,9 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
+					"PackageIdentifier" : "LGUG2Z.whkd"
+				},
+				{
 					"PackageIdentifier" : "BlenderFoundation.Blender"
 				},
 				{
@@ -82,7 +85,7 @@
 					"PackageIdentifier" : "Apple.Bonjour"
 				},
 				{
-					"PackageIdentifier" : "LGUG2Z.whkd"
+					"PackageIdentifier" : "Alacritty.Alacritty"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.CUDA"
@@ -94,13 +97,13 @@
 					"PackageIdentifier" : "wez.wezterm"
 				},
 				{
-					"PackageIdentifier" : "dotPDN.PaintDotNet"
-				},
-				{
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
 				},
 				{
-					"PackageIdentifier" : "Alacritty.Alacritty"
+					"PackageIdentifier" : "dotPDN.PaintDotNet"
+				},
+				{
+					"PackageIdentifier" : "TeamSpeakSystems.TeamSpeakClient.Beta.6"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
@@ -133,9 +136,6 @@
 					"PackageIdentifier" : "Parsec.Parsec"
 				},
 				{
-					"PackageIdentifier" : "JetBrains.RustRover.EAP"
-				},
-				{
 					"PackageIdentifier" : "Elgato.GameCapture.HD60S"
 				},
 				{
@@ -151,9 +151,6 @@
 					"PackageIdentifier" : "WiresharkFoundation.Wireshark"
 				},
 				{
-					"PackageIdentifier" : "ZeroTier.ZeroTierOne"
-				},
-				{
 					"PackageIdentifier" : "GnuWin32.Zip"
 				},
 				{
@@ -166,7 +163,7 @@
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
+					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier" : "Crunchyroll.MasterofGarden"
@@ -178,16 +175,16 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
 				},
 				{
 					"PackageIdentifier" : "GOG.Galaxy"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
@@ -211,34 +208,28 @@
 					"PackageIdentifier" : "Nvidia.PhysXLegacy"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
 				},
 				{
-					"PackageIdentifier" : "Bitwarden.Bitwarden"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
-					"PackageIdentifier" : "Proxyman.Proxyman"
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
+				},
+				{
+					"PackageIdentifier" : "Bitwarden.Bitwarden"
 				},
 				{
 					"PackageIdentifier" : "HeroicGamesLauncher.HeroicGamesLauncher"
 				},
 				{
 					"PackageIdentifier" : "Bruno.Bruno"
-				},
-				{
-					"PackageIdentifier" : "OpenWhisperSystems.Signal"
 				},
 				{
 					"PackageIdentifier" : "Brave.Brave"
@@ -268,6 +259,9 @@
 					"PackageIdentifier" : "Postman.Postman"
 				},
 				{
+					"PackageIdentifier" : "JetBrains.RustRover.EAP"
+				},
+				{
 					"PackageIdentifier" : "Spotify.Spotify"
 				},
 				{
@@ -295,10 +289,10 @@
 					"PackageIdentifier" : "SlackTechnologies.Slack"
 				},
 				{
-					"PackageIdentifier" : "VSCodium.VSCodium"
+					"PackageIdentifier" : "Proton.ProtonDrive"
 				},
 				{
-					"PackageIdentifier" : "Proton.ProtonDrive"
+					"PackageIdentifier" : "VSCodium.VSCodium"
 				},
 				{
 					"PackageIdentifier" : "KhronosGroup.VulkanSDK"
