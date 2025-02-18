@@ -6,7 +6,6 @@
     "workbench.editorAssociations": {
         "*.xml": "default"
     },
-    "window.menuBarVisibility": "compact",
     "files.eol": "\n",
     "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
     "redhat.telemetry.enabled": false,
@@ -69,5 +68,25 @@
     "workbench.productIconTheme": "material-product-icons",
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
-    }
+    },
+    "window.menuBarVisibility": "compact",
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    // prioritize ArkType's "type" for autoimports
+    "typescript.preferences.autoImportSpecifierExcludeRegexes": [
+        "^(node:)?os$"
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.showDefinitionPreviewHover"
+                }
+            ]
+        }
+    ]
 }
