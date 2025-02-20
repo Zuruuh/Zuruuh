@@ -22,33 +22,3 @@ ctrl - x : skhd -k "cmd - x" # cut
 # Disable cmd+tab (from simple_modifications)
 cmd - tab : :
 cmd - h : skhd -k "ctrl - h"
-
-# Browser
-ctrl - d [
-    "ghostty" ~
-    * : skhd -k "cmd - d";
-]
-ctrl - f [
-    "ghostty" ~
-    * : skhd -k "cmd - f";
-]
-ctrl - l [
-    "ghostty" ~
-    * : skhd -k "cmd - l";
-]
-ctrl - w [
-    "ghostty" ~
-    * : skhd -k "cmd - w";
-]
-ctrl - s [
-    "ghostty" ~
-    * : skhd -k "cmd - s";
-]
-ctrl - t [
-    "ghostty" ~
-    * : skhd -k "cmd - t";
-]
-ctrl + shift - t [
-    "ghostty" ~
-    * : skhd -k "cmd + shift - t";
-]
