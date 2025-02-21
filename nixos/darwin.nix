@@ -176,6 +176,7 @@ in
       "shottr"
       "slack"
       "wkhtmltopdf"
+      "libreoffice"
     ];
   };
 }
