@@ -292,7 +292,6 @@ require('lazy').setup({
   {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for install instructions
@@ -304,14 +303,17 @@ require('lazy').setup({
           return vim.fn.executable('make') == 1
         end,
       },
-      { 'nvim-telescope/telescope-ui-select.nvim' },
 
-      { 'nvim-tree/nvim-web-devicons' },
+      'nvim-telescope/telescope-ui-select.nvim',
+      'nvim-tree/nvim-web-devicons',
+      'jvgrootveld/telescope-zoxide',
     },
+
     config = function()
       local themes = require('telescope.themes')
+      local telescope = require('telescope')
 
-      require('telescope').setup({
+      telescope.setup({
         pickers = {
           find_files = {
             hidden = true,
@@ -328,12 +330,23 @@ require('lazy').setup({
           ['ui-select'] = {
             themes.get_dropdown(),
           },
+          zoxide = {
+            prompt_title = '[ Change project ]',
+            mappings = {
+              default = {
+                action = function(selection)
+                  vim.cmd.edit(selection.path)
+                end,
+              },
+            },
+          },
         },
       })
 
       -- Enable telescope extensions, if they are installed
-      pcall(require('telescope').load_extension, 'fzf')
-      pcall(require('telescope').load_extension, 'ui-select')
+      pcall(telescope.load_extension, 'fzf')
+      pcall(telescope.load_extension, 'ui-select')
+      pcall(telescope.load_extension, 'zoxide')
 
       local responsive_picker = function(picker, opts)
         local theme_opts = vim.tbl_deep_extend('force', {
@@ -347,17 +360,18 @@ require('lazy').setup({
         end
       end
 
-      local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>sh', responsive_picker(builtin.help_tags), { desc = '[S]earch [H]elp' })
-      vim.keymap.set('n', '<leader>sk', responsive_picker(builtin.keymaps), { desc = '[S]earch [K]eymaps' })
-      vim.keymap.set('n', '<leader>sf', responsive_picker(builtin.find_files), { desc = '[S]earch [F]iles' })
-      vim.keymap.set('n', '<leader>ss', responsive_picker(builtin.builtin), { desc = '[S]earch [S]elect Telescope' })
-      vim.keymap.set('n', '<leader>sw', responsive_picker(builtin.grep_string), { desc = '[S]earch current [W]ord' })
-      vim.keymap.set('n', '<leader>sg', responsive_picker(builtin.live_grep), { desc = '[S]earch by [G]rep' })
-      vim.keymap.set('n', '<leader>sd', responsive_picker(builtin.diagnostics), { desc = '[S]earch [D]iagnostics' })
-      vim.keymap.set('n', '<leader>s.', responsive_picker(builtin.oldfiles), { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', responsive_picker(builtin.buffers), { desc = '[ ] Find existing buffers' })
-      vim.keymap.set('n', '<leader>sr', responsive_picker(builtin.lsp_references), { desc = '[S]earch LSP [R]eferences' })
+      local builtins = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>sh', responsive_picker(builtins.help_tags), { desc = '[S]earch [H]elp' })
+      vim.keymap.set('n', '<leader>sk', responsive_picker(builtins.keymaps), { desc = '[S]earch [K]eymaps' })
+      vim.keymap.set('n', '<leader>sf', responsive_picker(builtins.find_files), { desc = '[S]earch [F]iles' })
+      vim.keymap.set('n', '<leader>ss', responsive_picker(builtins.builtin), { desc = '[S]earch [S]elect Telescope' })
+      vim.keymap.set('n', '<leader>sw', responsive_picker(builtins.grep_string), { desc = '[S]earch current [W]ord' })
+      vim.keymap.set('n', '<leader>sg', responsive_picker(builtins.live_grep), { desc = '[S]earch by [G]rep' })
+      vim.keymap.set('n', '<leader>sd', responsive_picker(builtins.diagnostics), { desc = '[S]earch [D]iagnostics' })
+      vim.keymap.set('n', '<leader>s.', responsive_picker(builtins.oldfiles), { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader><leader>', responsive_picker(builtins.buffers), { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>sr', responsive_picker(builtins.lsp_references), { desc = '[S]earch LSP [R]eferences' })
+      vim.keymap.set('n', '<leader>cd', telescope.extensions.zoxide.list, { desc = '[C]hange [D]irectory' })
 
       -- Slightly advanced example of overriding default behavior and theme
 
@@ -366,8 +380,8 @@ require('lazy').setup({
       vim.keymap.set(
         'n',
         '<leader>s/',
-        responsive_picker(builtin.live_grep, { grep_open_files = true, prompt_title = 'Live Grep in Open Files' }),
-        { desc = '[S]earch [/] in OPen Files' }
+        responsive_picker(builtins.live_grep, { grep_open_files = true, prompt_title = 'Live Grep in Open Files' }),
+        { desc = '[S]earch [/] in Open Files' }
       )
     end,
   },
@@ -737,7 +751,7 @@ require('lazy').setup({
       -- Better Around/Inside textobjects
       --
       -- Examples:
-      --  - va)  - [V]isually select [A]round [)]paren
+      --  - va)  - [V]isuall/y select [A]round [)]paren
       --  - yinq - [Y]ank [I]nside [N]ext [']quote
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup({ n_lines = 500 })
@@ -784,6 +798,7 @@ require('lazy').setup({
             })
           end,
         },
+        set_vim_settings = true,
       })
 
       -- cursor location to LINE:COLUMN
