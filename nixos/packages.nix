@@ -17,7 +17,7 @@ let
       memory_limit = 512M
     '';
   };
-  nodejs = pkgs.nodejs_23;
+  nodejs = pkgs.unstable.nodejs_23;
   nodePackages = pkgs.nodePackages.override {
     inherit nodejs;
   };
