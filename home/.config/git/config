@@ -48,3 +48,6 @@
 
 [alias]
     cp = cherry-pick
+
+[branch]
+    sort = -committerdate
