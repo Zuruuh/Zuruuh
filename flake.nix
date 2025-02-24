@@ -67,11 +67,11 @@
     };
   };
 
-  outputs = inputs@{ self, nixos, nixos-unstable, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, ... }:
+  outputs = inputs@{ self, nixos, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, ... }:
     let
       root-overlay = final: prev: {
-        unstable = import nixos-unstable {
-          system = prev.system;
+        unstable = import inputs.nixos-unstable {
+          inherit (prev) system;
         };
         uuidgen7 = inputs.uuidgen7.outputs.packages.${prev.system}.default;
       };
