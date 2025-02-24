@@ -371,6 +371,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>s.', responsive_picker(builtins.oldfiles), { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', responsive_picker(builtins.buffers), { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>sr', responsive_picker(builtins.lsp_references), { desc = '[S]earch LSP [R]eferences' })
+      vim.keymap.set('n', '<leader>sb', responsive_picker(builtins.git_branches), { desc = '[S]earch Git [B]ranches' })
       vim.keymap.set('n', '<leader>cd', telescope.extensions.zoxide.list, { desc = '[C]hange [D]irectory' })
 
       -- Slightly advanced example of overriding default behavior and theme
