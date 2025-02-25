@@ -462,7 +462,7 @@ require('lazy').setup({
 
   {
     'saghen/blink.cmp',
-    commit = '75741d8c8208ed6b94b8e1c60758bb3d7208fa94',
+    commit = '18b352d12b35bca148427b607098df14b75a218f',
     build = 'nix run .#build-plugin',
     dependencies = {
       -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
