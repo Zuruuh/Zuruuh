@@ -1,31 +1,22 @@
 /home/.config/nushell/history.*
 /home/.config/gh/hosts.yml
 /home/.config/ngrok/
-/home/.config/rclone/rclone.conf
-/home/.config/karabiner/automatic_backups
 /home/.config/asciinema
 /home/.config/xh/sessions/
 # jgit is intellij IDE git integration
 /home/.config/jgit
 # wtf yarn
 /home/.config/yarn
-# sql tui
-/home/.config/lazysql
 # UV installation cache
 /home/.config/uv/uv-receipt.json
-# podman machine lockfile
-/home/.config/containers/
 # scoop last update lockfile
 /home/.config/scoop/config.json
-
+# wrangler spams logfiles here
+/home/.config/.wrangler/
 # symlink whole .ssh dir
 /home/.ssh/*
 !/home/.ssh/config
-
 # symlink whole .cargo dir
 /home/.cargo/*
 !/home/.cargo/config.toml
-
 /home/.config/spicetify
-
-/home/.config/carapace/bridge
