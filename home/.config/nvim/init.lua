@@ -1053,6 +1053,34 @@ require('lazy').setup({
     -- optional, but required for fuzzy finder support
     opts = {},
   },
+  {
+    'xzbdmw/clasp.nvim',
+    opts = {
+      pairs = {
+        ['{'] = '}',
+        ['"'] = '"',
+        ["'"] = "'",
+        ['('] = ')',
+        ['['] = ']',
+        ['<'] = '>',
+        ['`'] = '`',
+      },
+      keep_insert_mode = true,
+    },
+    keys = function()
+      local clasp = require('clasp')
+
+      return {
+        {
+          '<c-l>',
+          function()
+            clasp.wrap('next')
+          end,
+          mode = { 'n', 'i' },
+        },
+      }
+    end,
+  },
 }, {
   rocks = {
     enabled = false,
