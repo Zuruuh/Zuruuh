@@ -145,7 +145,7 @@ let
     ];
     database = [
       sqlx-cli
-      valkey
+      # valkey
       sqls
     ];
     tools = [
@@ -160,7 +160,7 @@ let
       yazi
     ] ++ forLinux [ pkgs.sudo ];
     shell = [
-      zoxide
+      unstable.zoxide
       unstable.nushell
       starship
       atuin

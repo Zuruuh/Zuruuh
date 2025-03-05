@@ -4,7 +4,7 @@
   inputs = {
     # Packages
     nixos.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # Helpers
     flake-compat = {
@@ -70,7 +70,7 @@
   outputs = inputs@{ self, nixos, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, ... }:
     let
       root-overlay = final: prev: {
-        unstable = import inputs.nixos-unstable {
+        unstable = import inputs.nixpkgs-unstable {
           inherit (prev) system;
         };
         uuidgen7 = inputs.uuidgen7.outputs.packages.${prev.system}.default;
