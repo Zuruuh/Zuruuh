@@ -177,6 +177,7 @@ in
       "slack"
       "wkhtmltopdf"
       "libreoffice"
+      "proton-pass"
     ];
   };
 }
