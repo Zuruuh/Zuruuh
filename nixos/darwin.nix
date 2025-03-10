@@ -153,9 +153,6 @@ in
         name = "FelixKratz/formulae/borders";
         start_service = true;
       }
-      "switchaudio-osx"
-      "nowplaying-cli"
-      "blueutil"
       "icu4c@76"
     ];
 
@@ -172,12 +169,13 @@ in
       "parsec"
       "postman"
       "proxyman"
-      "sf-symbols"
       "shottr"
       "slack"
       "wkhtmltopdf"
       "libreoffice"
       "proton-pass"
+      "proton-drive"
+      "protonvpn"
     ];
   };
 }
