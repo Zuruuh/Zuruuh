@@ -83,22 +83,20 @@
         # sudo nixos-rebuild switch --flake ~/.dotfiles/#wsl
         wsl = nixos.lib.nixosSystem rec {
           system = "x86_64-linux";
+          specialArgs = rec {
+            outputs = self;
+            pkgs = import nixos {
+              inherit system overlays;
+              config.allowUnfree = true;
+            };
+            inherit (pkgs) lib;
+          };
 
-          modules =
-            let
-              args = rec {
-                pkgs = import nixos {
-                  inherit system overlays;
-                  config.allowUnfree = true;
-                };
-                lib = pkgs.lib;
-              };
-            in
-            [
-              nixos-wsl.nixosModules.default
-              (import ./nixos/wsl.nix args)
-              (import ./nixos/packages.nix args)
-            ];
+          modules = [
+            nixos-wsl.nixosModules.default
+            ./nixos/wsl.nix
+            ./nixos/packages.nix
+          ];
         };
       };
 

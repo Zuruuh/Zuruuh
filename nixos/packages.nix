@@ -166,7 +166,6 @@ let
       starship
       atuin
       uuidgen7
-      carapace
     ];
     dev = [
       (pkgs.wrapNeovim neovim { })

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   createWindowsBashAlias = name: (pkgs.writeShellApplication {
     name = "${name}.exe";
@@ -16,12 +16,20 @@ in
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    (createWindowsBashAlias "reg")
-    (createWindowsBashAlias "findstr")
-    wslu
-  ];
-  environment.sessionVariables = (import ./env.nix { inherit pkgs; });
+  environment = {
+    systemPackages = with pkgs; [
+      (createWindowsBashAlias "reg")
+      (createWindowsBashAlias "findstr")
+      wslu
+    ];
+    sessionVariables = (import ./env.nix { inherit pkgs; });
+    etc."current-system-packages".text =
+      let
+        packages = builtins.map (p: "${p.name}") config.environment.systemPackages;
+        sortedUnique = builtins.sort builtins.lessThan (pkgs.lib.lists.unique packages);
+      in
+      builtins.concatStringsSep "\n" sortedUnique;
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   virtualisation.docker.enable = true;
@@ -48,7 +56,6 @@ in
     };
     root = { };
   };
-
 
   security.sudo.wheelNeedsPassword = true;
 
