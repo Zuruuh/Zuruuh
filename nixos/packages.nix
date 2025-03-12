@@ -145,7 +145,8 @@ let
     ];
     database = [
       sqlx-cli
-      valkey
+      # Valkey build breaks for now, see https://hydra.nixos.org/build/291419199
+      # valkey
       sqls
     ];
     tools = [
