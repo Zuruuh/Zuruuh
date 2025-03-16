@@ -173,6 +173,7 @@ let
       unstable.zellij
       just
       ngrok
+      harper
     ];
     xml = [
       lemminx
