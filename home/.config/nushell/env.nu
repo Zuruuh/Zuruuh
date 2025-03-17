@@ -96,5 +96,4 @@ if $nu.os-info.name != 'windows' {
     zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
     starship init nu | save -f ~/.config/nushell/plugins/starship.nu
     atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu
-    carapace _carapace nushell | save -f ~/.config/nushell/plugins/carapace.nu
 }
