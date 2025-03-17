@@ -84,6 +84,10 @@ export def "config aerospace" [] {
     aerospace reload-config
 }
 
+export def "config git" [] {
+    nvim ~/.dotfiles/home/.config/git/
+}
+
 export def "venv create" [python_path: string = "" ] {
     echo "(Remember to use uv instead if possible 😀)"
     if ('.venv' | path exists) {
