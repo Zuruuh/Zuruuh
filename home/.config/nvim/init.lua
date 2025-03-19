@@ -401,63 +401,82 @@ require('lazy').setup({
         desc = '[F]ormat buffer',
       },
     },
-    opts = {
-      notify_on_error = true,
-      format_on_save = function(bufnr)
-        -- Disable with a global or buffer-local variable
-        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-          return
-        end
-        return { timeout_ms = 500, lsp_fallback = true }
-      end,
-      formatters = {
-        phpcbf = function()
-          return {
-            async = true,
-            command = require('conform.util').find_executable({
-              'vendor/bin/phpcbf',
-              'bin/phpcbf',
-            }, 'phpcbf'),
-          }
+    opts = function()
+      local conform = require('conform.util')
+
+      return {
+        notify_on_error = true,
+        format_on_save = function(bufnr)
+          -- Disable with a global or buffer-local variable
+          if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+            return
+          end
+          return { timeout_ms = 500, lsp_fallback = true }
         end,
 
-        prettier = function()
-          return {
-            command = require('conform.util').from_node_modules('prettier'),
-          }
-        end,
+        formatters = {
+          phpcbf = function()
+            return {
+              async = true,
+              command = conform.find_executable({
+                'vendor/bin/phpcbf',
+                'bin/phpcbf',
+              }, 'phpcbf'),
+            }
+          end,
 
-        biome = function()
-          return {
-            command = require('conform.util').find_executable({
-              'node_modules/.bin/biome',
-            }, 'biome'),
-          }
-        end,
-      },
+          prettier = function()
+            return {
+              command = conform.from_node_modules('prettier'),
+            }
+          end,
 
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        javascript = { 'biome' },
-        typescript = { 'biome' },
-        javascriptreact = { 'biome' },
-        typescriptreact = { 'biome' },
-        svelte = { 'prettier' },
-        yaml = { 'prettier', lsp_format = 'fallback' },
-        astro = { 'prettier' },
-        html = { 'prettier', lsp_format = 'fallback' },
-        css = { 'biome' },
-        json = { 'biome', lsp_format = 'fallback' },
-        markdown = { 'deno_fmt' },
-        sh = { 'shfmt' },
-        toml = { 'taplo' },
-        php = { 'php_cs_fixer', 'phpcbf', stop_after_first = true },
-        rust = { 'rustfmt' },
-        nix = { 'nixpkgs_fmt' },
-        terraform = { 'tofu_fmt' },
-        ['_'] = { 'trim_whitespace' },
-      },
-    },
+          biome = function()
+            return {
+              command = conform.find_executable({
+                'node_modules/.bin/biome',
+              }, 'biome'),
+            }
+          end,
+
+          mago = function()
+            return {
+              inherit = false,
+              command = conform.find_executable({
+                'vendor/bin/mago',
+                'bin/mago',
+              }, ' mago'),
+              args = { 'fmt', '--stdin-input' },
+              stdin = true,
+              cwd = conform.root_file({ 'mago.toml', 'composer.json' }),
+              require_cwd = true,
+            }
+          end,
+        },
+
+        formatters_by_ft = {
+          lua = { 'stylua' },
+          javascript = { 'biome' },
+          typescript = { 'biome' },
+          javascriptreact = { 'biome' },
+          typescriptreact = { 'biome' },
+          svelte = { 'prettier' },
+          yaml = { 'prettier', lsp_format = 'fallback' },
+          astro = { 'prettier' },
+          html = { 'prettier', lsp_format = 'fallback' },
+          css = { 'biome' },
+          json = { 'biome', lsp_format = 'fallback' },
+          markdown = { 'deno_fmt' },
+          sh = { 'shfmt' },
+          toml = { 'taplo' },
+          php = { 'mago', 'php_cs_fixer', 'phpcbf', stop_after_first = true },
+          rust = { 'rustfmt' },
+          nix = { 'nixpkgs_fmt' },
+          terraform = { 'tofu_fmt' },
+          ['_'] = { 'trim_whitespace' },
+        },
+      }
+    end,
   },
 
   {
@@ -574,7 +593,8 @@ require('lazy').setup({
             },
           }
         end,
-        nil_ls = {},
+        -- nil_ls = {},
+        nixd = {},
         nushell = {},
         vacuum = {},
         gopls = {},

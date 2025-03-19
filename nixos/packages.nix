@@ -63,6 +63,7 @@ let
     ];
     nix = [
       nil
+      nixd
       nixpkgs-fmt
       nh
     ];
