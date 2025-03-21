@@ -74,16 +74,6 @@ export def "config zellij" [] {
     nvim ~/.dotfiles/home/.config/zellij/config.kdl
 }
 
-export def "config skhd" [] {
-    nvim ~/.dotfiles/home/.config/skhd/skhdrc
-    skhd -r
-}
-
-export def "config aerospace" [] {
-    nvim ~/.dotfiles/home/.config/aerospace/aerospace.toml
-    aerospace reload-config
-}
-
 export def "config git" [] {
     nvim ~/.dotfiles/home/.config/git/
 }
