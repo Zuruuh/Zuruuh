@@ -112,17 +112,17 @@ disabled = true
 disabled = false
 format = "on [($name)](cyan) "
 
-[docker_context]
-detect_files = [
-  'docker-compose.yaml',
-  'docker-compose.yml',
-  'compose.yaml',
-  'compose.yml',
-  'Dockerfile',
-  '.dockerignore',
-]
-detect_extensions = ['docker', 'container', 'dockerfile', 'containerfile']
-detect_folders = ['docker']
+# [docker_context]
+# detect_files = [
+#   'docker-compose.yaml',
+#   'docker-compose.yml',
+#   'compose.yaml',
+#   'compose.yml',
+#   'Dockerfile',
+#   '.dockerignore',
+# ]
+# detect_extensions = ['docker', 'container', 'dockerfile', 'containerfile']
+# detect_folders = ['docker']
 
 [shell]
 bash_indicator = 'using bash'
