@@ -136,6 +136,9 @@ nu_indicator = '$'
 style = 'italic yellow'
 disabled = false
 
+[nix_shell]
+symbol = "⛄️ "
+
 [direnv]
 disabled = false
 format = '$allowed 📁 [direnv]($style) '
