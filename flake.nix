@@ -56,15 +56,6 @@
         flake-compat.follows = "flake-compat";
       };
     };
-
-    # Atuin
-    uuidgen7 = {
-      url = "github:Zuruuh/uuidgen/d0cb84f4ff4b9748047d28ba136029066fba2a10";
-      inputs = {
-        nixpkgs.follows = "nixos";
-        flake-utils.follows = "flake-utils";
-      };
-    };
   };
 
   outputs = inputs@{ self, nixos, neovim-nightly-overlay, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, ... }:
@@ -73,7 +64,6 @@
         unstable = import inputs.nixpkgs-unstable {
           inherit (prev) system;
         };
-        uuidgen7 = inputs.uuidgen7.outputs.packages.${prev.system}.default;
       };
 
       overlays = [ root-overlay neovim-nightly-overlay.overlays.default ];

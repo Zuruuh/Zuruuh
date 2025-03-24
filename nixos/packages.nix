@@ -166,7 +166,6 @@ let
       unstable.nushell
       starship
       atuin
-      uuidgen7
     ];
     dev = [
       (pkgs.wrapNeovim neovim { })
