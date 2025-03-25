@@ -24,7 +24,7 @@
     "terminal.integrated.fontSize": 12,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "explorer.excludeGitIgnore": true,
+    "explorer.excludeGitIgnore": false,
     "editor.defaultFormatter": "biomejs.biome",
     "editor.codeActionsOnSave": {
         // "source.organizeImports.biome": "explicit"
