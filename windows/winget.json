@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-02-18T12:41:59.139-00:00",
+	"CreationDate" : "2025-03-26T21:20:08.814-00:00",
 	"Sources" : 
 	[
 		{
@@ -11,9 +11,6 @@
 				},
 				{
 					"PackageIdentifier" : "Docker.DockerDesktop"
-				},
-				{
-					"PackageIdentifier" : "Mozilla.Firefox.DeveloperEdition"
 				},
 				{
 					"PackageIdentifier" : "Git.Git"
@@ -31,10 +28,10 @@
 					"PackageIdentifier" : "Modrinth.ModrinthApp"
 				},
 				{
-					"PackageIdentifier" : "Mozilla.Firefox"
+					"PackageIdentifier" : "Meta.Oculus"
 				},
 				{
-					"PackageIdentifier" : "Meta.Oculus"
+					"PackageIdentifier" : "PPSSPPTeam.PPSSPP"
 				},
 				{
 					"PackageIdentifier" : "Parsec.ParsecVDD"
@@ -61,7 +58,7 @@
 					"PackageIdentifier" : "Zen-Team.Zen-Browser"
 				},
 				{
-					"PackageIdentifier" : "Elgato.4KCaptureUtility"
+					"PackageIdentifier" : "DimitriVanHeesch.Doxygen"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
@@ -88,6 +85,9 @@
 					"PackageIdentifier" : "Alacritty.Alacritty"
 				},
 				{
+					"PackageIdentifier" : "dotPDN.PaintDotNet"
+				},
+				{
 					"PackageIdentifier" : "Nvidia.CUDA"
 				},
 				{
@@ -100,16 +100,16 @@
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
 				},
 				{
-					"PackageIdentifier" : "dotPDN.PaintDotNet"
-				},
-				{
 					"PackageIdentifier" : "TeamSpeakSystems.TeamSpeakClient.Beta.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
+					"PackageIdentifier" : "Microsoft.WSL"
 				},
 				{
-					"PackageIdentifier" : "Codeusa.BorderlessGaming"
+					"PackageIdentifier" : "Elgato.4KCaptureUtility"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
 				},
 				{
 					"PackageIdentifier" : "JetBrains.DataGrip"
@@ -119,9 +119,6 @@
 				},
 				{
 					"PackageIdentifier" : "GnuPG.Gpg4win"
-				},
-				{
-					"PackageIdentifier" : "LibreWolf.LibreWolf"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.Edge"
@@ -148,9 +145,6 @@
 					"PackageIdentifier" : "Ubisoft.Connect"
 				},
 				{
-					"PackageIdentifier" : "WiresharkFoundation.Wireshark"
-				},
-				{
 					"PackageIdentifier" : "GnuWin32.Zip"
 				},
 				{
@@ -163,7 +157,7 @@
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "Crunchyroll.MasterofGarden"
@@ -175,19 +169,19 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
 				},
 				{
 					"PackageIdentifier" : "GOG.Galaxy"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
+					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
@@ -197,9 +191,6 @@
 				},
 				{
 					"PackageIdentifier" : "Mojang.MinecraftLauncher"
-				},
-				{
-					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
@@ -214,7 +205,7 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
@@ -223,7 +214,7 @@
 					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
 				},
 				{
-					"PackageIdentifier" : "Bitwarden.Bitwarden"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
 					"PackageIdentifier" : "HeroicGamesLauncher.HeroicGamesLauncher"
@@ -259,6 +250,9 @@
 					"PackageIdentifier" : "Postman.Postman"
 				},
 				{
+					"PackageIdentifier" : "Proton.ProtonPass"
+				},
+				{
 					"PackageIdentifier" : "JetBrains.RustRover.EAP"
 				},
 				{
@@ -289,13 +283,13 @@
 					"PackageIdentifier" : "SlackTechnologies.Slack"
 				},
 				{
-					"PackageIdentifier" : "Proton.ProtonDrive"
-				},
-				{
 					"PackageIdentifier" : "VSCodium.VSCodium"
 				},
 				{
 					"PackageIdentifier" : "KhronosGroup.VulkanSDK"
+				},
+				{
+					"PackageIdentifier" : "Proton.ProtonDrive"
 				},
 				{
 					"PackageIdentifier" : "CitraEmu.Citra"
@@ -320,12 +314,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WindowsTerminal.Preview"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.WSL"
-				},
-				{
-					"PackageIdentifier" : "Debian.Debian"
 				}
 			],
 			"SourceDetails" : 
@@ -352,5 +340,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.9.25200"
+	"WinGetVersion" : "1.10.340"
 }
