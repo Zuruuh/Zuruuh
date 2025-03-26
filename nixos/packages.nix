@@ -60,6 +60,7 @@ let
       git-lfs
       delta
       gnupg
+      jujutsu
     ];
     nix = [
       nil
