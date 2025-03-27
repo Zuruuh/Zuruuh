@@ -87,13 +87,12 @@ $env.STARSHIP_LOG = 'error'
 $env.TERM = 'xterm-256color'
 
 #================================ PLUGINS ========================================#
-$env.CARAPACE_BRIDGES = 'zsh,bash' # optional
-$env.CARAPACE_ENV = 0
-
 if $nu.os-info.name != 'windows' {
     # These operations are painfully slow on windows (+250ms)
     # So it's better if it's done manually and periodically
-    zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu
-    starship init nu | save -f ~/.config/nushell/plugins/starship.nu
-    atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu
+    let _ = [
+        { || zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu }
+        { || starship init nu | save -f ~/.config/nushell/plugins/starship.nu }
+        { || atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu }
+    ] | par-each {|callback| do $callback}
 }
