@@ -168,7 +168,8 @@ let
       atuin
     ];
     dev = [
-      (pkgs.wrapNeovim neovim { })
+      # (pkgs.wrapNeovim neovim { })
+      master.neovim
       tree-sitter
       unstable.zellij
       just
