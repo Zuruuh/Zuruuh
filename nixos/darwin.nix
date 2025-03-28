@@ -2,10 +2,10 @@
 let
   platform = "aarch64-darwin";
   username = "YZiadi";
-  shell = pkgs.writeShellScript "nu" ''
-    XDG_CONFIG_HOME=${(import ./env.nix {inherit pkgs;}).XDG_CONFIG_HOME} exec ${pkgs.unstable.nushell}/bin/nu "$@";
-  '';
   env = (import ./env.nix { inherit pkgs; });
+  shell = pkgs.writeShellScript "nu" ''
+    XDG_CONFIG_HOME=${env.XDG_CONFIG_HOME} exec ${pkgs.unstable.nushell}/bin/nu "$@";
+  '';
 in
 {
   services = {

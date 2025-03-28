@@ -15,11 +15,11 @@
 
     # Neovim
     neovim-src = {
-      url = "github:neovim/neovim/b288fa8d62c3f129d333d3ea6abc3234039cad37";
+      url = "github:neovim/neovim/18fa61049a9e19a3e8cbac73d963ac1dac251b39";
       flake = false;
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay/af9d81d77c8b81856a2d56048c8cb48e98bb929e";
+      url = "github:nix-community/neovim-nightly-overlay/81b3c44666b9e31920a6dd1de9bc8aa31f5c9b29";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-compat.follows = "flake-compat";
@@ -29,7 +29,7 @@
 
     # WSL
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/63c3b4ed1712a3a0621002cd59bfdc80875ecbb0";
+      url = "github:nix-community/NixOS-WSL";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-compat.follows = "flake-compat";
@@ -38,18 +38,18 @@
 
     # MacOS
     nix-darwin = {
-      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixos";
     };
     nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew/a6d99cc7436fc18c097b3536d9c45c0548c694c8";
+      url = "github:zhaofengli/nix-homebrew/04b0536479d2d2e8d71dc8c8ee97c2b61f0c9987";
       inputs = {
         nixpkgs.follows = "nixos";
         nix-darwin.follows = "nix-darwin";
       };
     };
     mac-app-util = {
-      url = "github:hraban/mac-app-util/548672d0cb661ce11d08ee8bde92b87d2a75c872";
+      url = "github:hraban/mac-app-util/341ede93f290df7957047682482c298e47291b4d";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-utils.follows = "flake-utils";
