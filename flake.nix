@@ -5,7 +5,7 @@
     # Packages
     nixos.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     # Helpers
     flake-compat = {
@@ -65,9 +65,9 @@
         unstable = import inputs.nixpkgs-unstable {
           inherit (prev) system;
         };
-        master = import inputs.nixpkgs-master {
-          inherit (prev) system;
-        };
+        # master = import inputs.nixpkgs-master {
+        #   inherit (prev) system;
+        # };
       };
 
       overlays = [

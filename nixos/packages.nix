@@ -169,7 +169,7 @@ let
     ];
     dev = [
       # (pkgs.wrapNeovim neovim { })
-      master.neovim
+      unstable.neovim
       tree-sitter
       unstable.zellij
       just
