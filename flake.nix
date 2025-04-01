@@ -9,10 +9,10 @@
 
     # Helpers
     flake-compat = {
-      url = "github:edolstra/flake-compat/ff81ac966bb2cae68946d5ed5fc4994f96d0ffec";
+      url = "github:edolstra/flake-compat";
       flake = false;
     };
-    flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
+    flake-utils.url = "github:numtide/flake-utils";
 
     # Neovim
     # neovim-src = {
@@ -30,7 +30,7 @@
 
     # WSL
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
+      url = "github:nix-community/NixOS-WSL/394c77f61ac76399290bfc2ef9d47b1fba31b215";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-compat.follows = "flake-compat";
