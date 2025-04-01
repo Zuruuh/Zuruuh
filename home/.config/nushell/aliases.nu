@@ -8,10 +8,12 @@ export alias xhs = ^xhs --session=$"($env.XDG_STATE_HOME)/xh_sessions/($env.PWD)
 export alias "atuin uuid" = random uuid --version 7
 export alias cat = bat
 
-export def nix-shell [
-    ...args
-] {
-    ^nix-shell --command nu -p ...$args
+export def nix-shell --wrapped [...args] {
+    $"Use (ansi purple)nix shell nixpkgs#($args | get 0 -i | default '...')(ansi reset) instead!"
+}
+
+export def --wrapped nix-collect-garbage [...args] {
+    $"Use (ansi purple)nix store gc -v(ansi reset) instead!"
 }
 
 export def "wsl ip" [] {
@@ -22,13 +24,10 @@ export def "wsl open" [path: string] {
     /mnt/c/Windows/explorer.exe ("\\\\wsl.localhost\\NixOS" + ((pwd) | path join $path | str replace -a '/' '\'))
 }
 
-export def config [] {
-    config dotfiles
-}
-
 export def "config dotfiles" [] {
     nvim ~/.dotfiles/
 }
+export alias config = config dotfiles
 
 export def "config nix" [] {
     nvim ~/.dotfiles/nixos/
