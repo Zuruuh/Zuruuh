@@ -112,7 +112,8 @@ disabled = true
 disabled = false
 format = "on [($name)](cyan) "
 
-# [docker_context]
+[docker_context]
+disabled = true
 # detect_files = [
 #   'docker-compose.yaml',
 #   'docker-compose.yml',
