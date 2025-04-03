@@ -88,9 +88,18 @@ $env.TERM = 'xterm-256color'
 if $nu.os-info.name != 'windows' {
     # These operations are painfully slow on windows (+250ms)
     # So it's better if it's done manually and periodically
-    let _ = [
-        { || zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu }
-        { || starship init nu | save -f ~/.config/nushell/plugins/starship.nu }
-        { || atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu }
-    ] | par-each {|callback| do $callback}
+    let now = date now | format date '%Y-%m-%d';
+    let should_refresh_plugins = try {
+        let plugins_refreshed_at = open -r ~/.config/nushell/plugins/plugins_refreshed_at.txt
+        $plugins_refreshed_at != $now
+    } catch { true }
+
+    if $should_refresh_plugins {
+        let _ = [
+            { || $now | save -f ~/.config/nushell/plugins/plugins_refreshed_at.txt }
+            { || zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu }
+            { || starship init nu | save -f ~/.config/nushell/plugins/starship.nu }
+            { || atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu }
+        ] | par-each {|callback| do $callback}
+    }
 }

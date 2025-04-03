@@ -15,6 +15,20 @@ $env.config.completions = {
     use_ls_colors: true
 }
 
+if $nu.os-info.family == 'unix' {
+    $env.config.completions.external = {
+        enable: true
+        completer: {|spans|
+            fish --command $'complete "--do-complete=($spans | str join " ")"'
+            | from tsv --flexible --noheaders --no-infer
+            | rename value description
+            | update value {
+                if ($in | path exists) {$'"($in | str replace "\"" "\\\"" )"'} else {$in}
+            }
+        }
+    }
+}
+
 $env.config.cursor_shape = {
     emacs: line
     vi_insert: block
@@ -36,11 +50,9 @@ $env.config.shell_integration = {
 
 $env.config.render_right_prompt_on_last_line = false
 $env.config.hooks.pre_prompt = [{ ||
-    if (which direnv | is-empty) {
-        return
+    try {
+        direnv export json | from json | default {} | load-env
     }
-
-    direnv export json | from json | default {} | load-env
 }]
 
 $env.config.menus = [

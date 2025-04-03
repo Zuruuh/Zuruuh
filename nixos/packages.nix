@@ -165,6 +165,7 @@ let
     shell = [
       unstable.zoxide
       unstable.nushell
+      fish # For nushell completions
       starship
       atuin
     ];
