@@ -7,8 +7,6 @@ $env.PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 $env.ENV_CONVERSIONS = {}
 
-#================================== CONFIG =========================================#
-
 let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
 
 if $nu.os-info.name == 'windows' {
