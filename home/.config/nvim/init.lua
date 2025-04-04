@@ -1045,7 +1045,22 @@ require('lazy').setup({
             { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
           },
 
-          header = vim.fn.system({ 'nu', '-n', '-c', 'open ~/.dotfiles/home/.config/nvim/asciis.jsonl | from json --objects | shuffle | first | get data' }),
+          header = vim.fn.system({
+            'nu',
+            '-n',
+            '-c',
+            [[
+              try {
+                open ~/.dotfiles/home/.config/nvim/asciis.jsonl |
+                from json --objects |
+                shuffle |
+                first |
+                $"($in.data)(char newline)- ($in.title) -"
+              } catch {
+                'No asciis found :c'
+              }
+            ]],
+          }),
         },
       },
       gitbrowse = {
