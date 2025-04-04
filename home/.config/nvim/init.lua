@@ -1025,7 +1025,29 @@ require('lazy').setup({
     priority = 1000,
     opts = {
       bigfile = {},
-      dashboard = {},
+      dashboard = {
+        sections = {
+          { section = 'header' },
+          {
+            pane = 2,
+            { section = 'keys', gap = 1, padding = 1 },
+            { section = 'startup' },
+          },
+        },
+        preset = {
+          keys = {
+            { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = ' ', key = 'g', desc = 'Find Text', action = ":lua Snacks.dashboard.pick('live_grep')" },
+            { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            -- { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+            { icon = '󰒲 ', key = 'L', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
+            { icon = '󱊣', key = 'c', desc = 'Healthcheck', action = ':checkhealth' },
+            { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
+          },
+
+          header = vim.fn.system({ 'nu', '-n', '-c', 'open ~/.dotfiles/home/.config/nvim/asciis.jsonl | from json --objects | shuffle | first | get data' }),
+        },
+      },
       gitbrowse = {
         url_patterns = {
           ['git.staffmatch.it'] = {

@@ -21,3 +21,5 @@
 !/home/.cargo/config.toml
 /home/.config/spicetify
 /home/.config/Cypress/
+/home/.config/qBittorrent
+/home/.config/nvim/asciis.jsonl
