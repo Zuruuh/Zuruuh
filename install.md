@@ -1,7 +1,6 @@
 ```sh
-nix-shell -p git openssh neovim stow gh
+nix shell nixpkgs#git nixpkgs#openssh nixpkgs#stow
 ssh-keygen -t ed25519 -a 64 -f "$HOME/.ssh/github.com"
-ssh-keygen -t ed25519 -a 64 -f "$HOME/.ssh/vps"
 git clone https://github.com/Zuruuh/Zuruuh ~/.dotfiles
 cd ~/.dotfiles
 git remote set-url origin git@github.com:Zuruuh/Zuruuh
