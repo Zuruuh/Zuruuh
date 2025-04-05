@@ -22,15 +22,7 @@ export def --env load-sh-env [file: string] {
         get stdout |
         from dotenv |
         transpose key value |
-        each {|kv|
-            let value = if $kv.key in $env.ENV_CONVERSIONS {
-                do ($env.ENV_CONVERSIONS | get $kv.key | get from_string) $kv.value
-            } else {
-                $kv.value
-            }
-
-            {key: $kv.key, value: $value}
-        } | filter {|kv|
+        filter {|kv|
             if ($kv.key | is-empty) {
                 return false
             }
