@@ -1,5 +1,3 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
 command_timeout = 500
 
 # https://starship.rs/config/#default-prompt-format
@@ -94,36 +92,21 @@ $status\
 $container\
 $character"""
 
-[aws]
-disabled = true
+aws.disabled = true
+container.disabled = true
+docker_context.disabled = true
+php.symbol = ' '
+nix_shell.symbol = "⛄️ "
+git_status.format = "([\\[$all_status$ahead_behind\\]]($style))"
 
 [nodejs]
 version_format = "v${major}.${minor}"
 symbol = " "
 detect_files = ['package.json', '.node-version', '!bunfig.toml', '!bun.lockb']
 
-[php]
-symbol = ' '
-
-[container]
-disabled = true
-
 [os]
 disabled = false
 format = "on [($name)](cyan) "
-
-[docker_context]
-disabled = true
-# detect_files = [
-#   'docker-compose.yaml',
-#   'docker-compose.yml',
-#   'compose.yaml',
-#   'compose.yml',
-#   'Dockerfile',
-#   '.dockerignore',
-# ]
-# detect_extensions = ['docker', 'container', 'dockerfile', 'containerfile']
-# detect_folders = ['docker']
 
 [shell]
 bash_indicator = 'using bash'
@@ -133,12 +116,9 @@ powershell_indicator = 'using pwsh'
 pwsh_indicator = 'using pwsh'
 cmd_indicator = 'using cmd'
 # Make prompt less verbose with default shell
-nu_indicator = '$'
+nu_indicator = "$"
 style = 'italic yellow'
 disabled = false
-
-[nix_shell]
-symbol = "⛄️ "
 
 [direnv]
 disabled = false
