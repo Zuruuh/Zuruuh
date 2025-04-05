@@ -10,8 +10,9 @@
   <img src="https://img.shields.io/static/v1?label=&message=Neovim&color=5D993C&logo=neovim&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/static/v1?label=&message=NixOS&color=5277C3&logo=nixos&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/static/v1?label=&message=Docker&color=2496ED&logo=docker&logoColor=white&style=flat-square" />
-  <img src="https://img.shields.io/static/v1?label=&message=Nushell&color=3eaf7c&logo=gnubash&logoColor=white&style=flat-square" />
+  <img src="https://img.shields.io/static/v1?label=&message=Nushell&color=3eaf7c&logo=nushell&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/static/v1?label=&message=Zellij&color=A3BD8D&logo=tmux&logoColor=white&style=flat-square" />
+  <img src="https://img.shields.io/static/v1?label=&message=Ghostty&color=0920a3&logo=gnubash&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/static/v1?label=&message=WezTerm&color=4E49EE&logo=wezterm&logoColor=white&style=flat-square" />
 </p>
 
