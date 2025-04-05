@@ -61,6 +61,7 @@ let
       delta
       gnupg
       jujutsu
+      lazyjj
     ];
     nix = [
       nil
