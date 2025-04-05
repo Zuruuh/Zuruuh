@@ -472,7 +472,6 @@ require('lazy').setup({
 
   {
     'saghen/blink.cmp',
-    commit = 'cb9ac14b5506d899c00f5cacebb1da25f1eeb22f',
     build = vim.fn.has('win32') == 1 and 'cargo build --release' or 'nix run .#build-plugin',
     dependencies = {
       -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -487,6 +486,10 @@ require('lazy').setup({
         ['<Enter>'] = { 'accept', 'fallback' },
         ['<C-Space>'] = { 'show', 'fallback' },
         ['<C-e>'] = { 'show', 'fallback' },
+      },
+
+      fuzzy = {
+        implementation = vim.fn.has('win32') == 1 and 'lua' or 'prefer_rust_with_warning',
       },
 
       appearance = {
