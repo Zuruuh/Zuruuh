@@ -291,10 +291,14 @@ in
     };
   };
 
-  programs.direnv = {
-    enable = true;
-    silent = true;
-    nix-direnv.enable = true;
+  programs = {
+    direnv = {
+      enable = true;
+      silent = true;
+      nix-direnv.enable = true;
+    };
+
+    command-not-found.enable = false;
   };
 
   system = {
