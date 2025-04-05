@@ -99,6 +99,10 @@ php.symbol = ' '
 nix_shell.symbol = "⛄️ "
 git_status.format = "([\\[$all_status$ahead_behind\\]]($style))"
 
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
 [nodejs]
 version_format = "v${major}.${minor}"
 symbol = " "
