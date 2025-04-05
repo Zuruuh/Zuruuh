@@ -79,14 +79,15 @@
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": [
-                "K"
-            ],
+            "before": ["K"],
             "commands": [
                 {
                     "command": "editor.action.showDefinitionPreviewHover"
                 }
             ]
         }
-    ]
+    ],
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    }
 }
