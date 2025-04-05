@@ -203,14 +203,6 @@ vim.api.nvim_set_decoration_provider(ns, {
       return
     end
 
-    local nvim_tree_normal_hl = vim.api.nvim_get_hl(0, { name = 'NvimTreeNormal' })
-    if nvim_tree_normal_hl == nil or nvim_tree_normal_hl.bg == nil then
-      return
-    end
-
-    -- + 5 on all 3 RGB channels
-    vim.api.nvim_set_hl(0, 'NvimTreeNormalOdd', { bg = nvim_tree_normal_hl.bg - 591878 })
-
     if row % 2 == 0 then
       vim.api.nvim_buf_set_extmark(buf, ns, row, 0, {
         end_row = row + 1,
@@ -248,10 +240,10 @@ require('lazy').setup({
       },
     },
     event = 'VimEnter',
-    config = function()
-      require('Comment').setup({
+    opts = function()
+      return {
         pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-      })
+      }
     end,
   },
 
@@ -283,7 +275,6 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>p', group = '[P]roject' },
-        { '<leader>h', group = '[H]arpoon' },
         { '<leader>g', group = '[G]it' },
       })
     end,
@@ -939,6 +930,17 @@ require('lazy').setup({
         relativenumber = true,
       },
     },
+    config = function(_, opts)
+      require('nvim-tree').setup(opts)
+
+      local nvim_tree_normal_hl = vim.api.nvim_get_hl(0, { name = 'NvimTreeNormal' })
+      if nvim_tree_normal_hl == nil or nvim_tree_normal_hl.bg == nil then
+        return
+      end
+
+      -- + 5 on all 3 RGB channels
+      vim.api.nvim_set_hl(0, 'NvimTreeNormalOdd', { bg = nvim_tree_normal_hl.bg - 591878 })
+    end,
   },
   {
     'akinsho/bufferline.nvim',
