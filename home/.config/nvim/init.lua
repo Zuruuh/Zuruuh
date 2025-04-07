@@ -440,7 +440,7 @@ require('lazy').setup({
               }, ' mago'),
               args = { 'fmt', '--stdin-input' },
               stdin = true,
-              cwd = conform.root_file({ 'mago.toml', 'composer.json' }),
+              cwd = conform.root_file({ 'mago.toml' }),
               require_cwd = true,
             }
           end,
