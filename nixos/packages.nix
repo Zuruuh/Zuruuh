@@ -60,8 +60,7 @@ let
       git-lfs
       delta
       gnupg
-      jujutsu
-      lazyjj
+      unstable.jujutsu
     ];
     nix = [
       nil
