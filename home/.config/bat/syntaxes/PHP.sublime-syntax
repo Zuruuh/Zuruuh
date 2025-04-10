@@ -16,7 +16,6 @@ scope: embedding.php
 contexts:
   main:
     - match: ''
-      push: scope:text.html.basic
       push:
         - meta_scope: meta.embedded.block.php
         - meta_content_scope: source.php

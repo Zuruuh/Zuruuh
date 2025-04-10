@@ -61,4 +61,10 @@ in
   security.sudo.wheelNeedsPassword = true;
 
   system.stateVersion = "24.11";
+  system.userActivationScripts.buildBatCache = {
+    text = /*sh*/ ''
+      ${pkgs.bat}/bin/bat cache --build
+    '';
+    deps = [ pkgs.bat ];
+  };
 }

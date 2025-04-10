@@ -341,6 +341,12 @@ in
         AppleKeyboardUIMode = 3;
       };
     };
+
+    # activationScripts.buildBatCache = {
+    #   text = /*sh*/ ''
+    #     ${pkgs.bat}/bin/bat cache --build
+    #   '';
+    # };
   };
 
   nix-homebrew = {
@@ -352,6 +358,7 @@ in
   homebrew = {
     enable = true;
     global.autoUpdate = false;
+    onActivation.cleanup = "zap";
 
     brews = [
       "spicetify-cli"
