@@ -120,7 +120,6 @@
             modules = [
               nix-homebrew.darwinModules.nix-homebrew
               mac-app-util.darwinModules.default
-              inputs.determinate-nix.nixosModules.default
               ./nixos/packages.nix
               ./nixos/darwin.nix
             ];

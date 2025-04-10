@@ -9,7 +9,6 @@ let
 in
 {
   services = {
-    nix-daemon.enable = true;
     skhd = {
       enable = true;
       skhdConfig = ''
