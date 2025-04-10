@@ -341,12 +341,6 @@ in
         AppleKeyboardUIMode = 3;
       };
     };
-
-    # activationScripts.buildBatCache = {
-    #   text = /*sh*/ ''
-    #     ${pkgs.bat}/bin/bat cache --build
-    #   '';
-    # };
   };
 
   nix-homebrew = {
