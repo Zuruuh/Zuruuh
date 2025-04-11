@@ -77,26 +77,24 @@
       ];
     in
     {
-      nixosConfigurations = {
-        # sudo nixos-rebuild switch --flake ~/.dotfiles/#wsl
-        wsl = nixos.lib.nixosSystem rec {
-          system = "x86_64-linux";
-          specialArgs = rec {
-            outputs = self;
-            pkgs = import nixos {
-              inherit system overlays;
-              config.allowUnfree = true;
-            };
-            inherit (pkgs) lib;
+      # sudo nixos-rebuild switch --flake ~/.dotfiles/#wsl
+      nixosConfigurations.wsl = nixos.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        specialArgs = rec {
+          outputs = self;
+          pkgs = import nixos {
+            inherit system overlays;
+            config.allowUnfree = true;
           };
-
-          modules = [
-            inputs.determinate-nix.nixosModules.default
-            nixos-wsl.nixosModules.default
-            ./nixos/wsl.nix
-            ./nixos/packages.nix
-          ];
+          inherit (pkgs) lib;
         };
+
+        modules = [
+          inputs.determinate-nix.nixosModules.default
+          nixos-wsl.nixosModules.default
+          ./nixos/wsl.nix
+          ./nixos/packages.nix
+        ];
       };
 
       darwinConfigurations =

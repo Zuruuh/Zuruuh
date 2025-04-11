@@ -6,11 +6,12 @@ let
       /mnt/c/Windows/System32/${name}.exe "$@"
     '';
   });
+  user = "zuruh";
 in
 {
   wsl = {
     enable = true;
-    defaultUser = "zuruh";
+    defaultUser = user;
     wslConf = {
       interop.appendWindowsPath = false;
     };
@@ -49,14 +50,12 @@ in
     command-not-found.enable = false;
   };
 
-  users.users = {
-    zuruh = {
-      isNormalUser = true;
-      extraGroups = [ "docker" ];
-      shell = pkgs.unstable.nushell;
-    };
-    root = { };
+  users.users.${user} = {
+    isNormalUser = true;
+    extraGroups = [ "docker" ];
+    shell = pkgs.unstable.nushell;
   };
+  users.users.root = { };
 
   security.sudo.wheelNeedsPassword = true;
 
