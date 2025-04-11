@@ -64,6 +64,5 @@ in
     text = /*sh*/ ''
       ${pkgs.bat}/bin/bat cache --build
     '';
-    deps = [ pkgs.bat ];
   };
 }
