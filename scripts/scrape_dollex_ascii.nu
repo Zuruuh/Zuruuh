@@ -15,6 +15,9 @@ def main [] {
 
         $response.data |
             select title data |
+            filter {|ascii|
+                $ascii.data | str contains (char newline)
+            } |
             each {|ascii| $ascii |
                 to json -r |
                 $"($in)(char newline)" |
