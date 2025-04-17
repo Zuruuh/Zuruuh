@@ -5,7 +5,7 @@ let asciis = '~/.dotfiles/home/.config/nvim/asciis.jsonl'
 def main [] {
     mut page = 0
 
-    try {
+    if ($asciis | path exists) {
         rm $asciis
     }
 
