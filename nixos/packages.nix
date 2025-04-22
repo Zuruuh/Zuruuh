@@ -147,7 +147,7 @@ let
     ];
     database = [
       sqlx-cli
-      valkey
+      unstable.valkey
       sqls
     ];
     tools = [
