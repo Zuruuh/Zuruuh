@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-let asciis = '~/.dotfiles/home/.config/nvim/asciis.jsonl'
+let asciis = ('~/.dotfiles/home/.config/nvim/asciis.jsonl' | path expand)
 
 def main [] {
     mut page = 0
