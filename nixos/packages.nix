@@ -4,7 +4,7 @@ let
   forLinux = packages: (if pkgs.stdenv.isDarwin then [ ] else packages);
   php84 = pkgs.unstable.php84.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
-      # apcu
+      apcu
       amqp
       pcov
       redis
@@ -13,13 +13,9 @@ let
     extraConfig = /*toml*/ ''
       apc.enabled=1
       apc.enable_cli=1
-      error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+      error_reporting = E_ALL & ~E_DEPRECATED
       memory_limit = 512M
     '';
-  };
-  nodejs = pkgs.unstable.nodejs_23;
-  nodePackages = pkgs.nodePackages.override {
-    inherit nodejs;
   };
 
   packages = with pkgs; {
@@ -44,7 +40,6 @@ let
       nodejs
       nodePackages.pnpm
       nodePackages.serve
-      # unstable.biome
       unstable.typescript-language-server
       unstable.svelte-language-server
       unstable.astro-language-server
@@ -80,7 +75,6 @@ let
       unstable.phpactor
       php84
       php84.packages.composer
-      # php84.packages.php-cs-fixer
       symfony-cli
     ];
     python = [
@@ -110,7 +104,6 @@ let
       curl
       wget
       xh
-      bruno-cli
     ];
     json = [
       fx
@@ -138,6 +131,7 @@ let
       fastfetch
     ];
     monitoring = [
+      htop
       btop
       du-dust
     ];
@@ -155,7 +149,6 @@ let
       mkpasswd
       man
       openssh
-      unstable.sequoia-sq
       stow
       tlrc
       viu
@@ -169,13 +162,14 @@ let
       atuin
     ];
     dev = [
-      # (pkgs.wrapNeovim neovim { })
       unstable.neovim
       tree-sitter
       unstable.zellij
       just
       ngrok
-      harper
+      oha
+      hyperfine
+      hexyl
     ];
     xml = [
       lemminx

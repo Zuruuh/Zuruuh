@@ -269,12 +269,6 @@ in
 
   environment = {
     shells = [ shell ];
-    systemPackages = with pkgs; [
-      telegram-desktop
-      unstable.bruno
-      # Broken for now ?
-      # ghostty
-    ];
     variables = env;
   };
 
@@ -378,6 +372,7 @@ in
       "proton-pass"
       "proton-drive"
       "protonvpn"
+      "telegram"
     ];
   };
 }

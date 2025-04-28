@@ -5,7 +5,6 @@
     # Packages
     nixos.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
     determinate-nix.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
 
     # Helpers
@@ -14,20 +13,6 @@
       flake = false;
     };
     flake-utils.url = "github:numtide/flake-utils";
-
-    # Neovim
-    # neovim-src = {
-    #   url = "github:neovim/neovim/18fa61049a9e19a3e8cbac73d963ac1dac251b39";
-    #   flake = false;
-    # };
-    # neovim-nightly-overlay = {
-    #   url = "github:nix-community/neovim-nightly-overlay/81b3c44666b9e31920a6dd1de9bc8aa31f5c9b29";
-    #   inputs = {
-    #     nixpkgs.follows = "nixos";
-    #     flake-compat.follows = "flake-compat";
-    #     neovim-src.follows = "neovim-src";
-    #   };
-    # };
 
     # WSL
     nixos-wsl = {
@@ -60,20 +45,25 @@
     };
   };
 
-  outputs = inputs@{ self, nixos, /*neovim-nightly-overlay, */ nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, ... }:
+  outputs = inputs@{ self, nixos, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, ... }:
     let
       root-overlay = final: prev: {
         unstable = import inputs.nixpkgs-unstable {
           inherit (prev) system;
         };
-        # master = import inputs.nixpkgs-master {
-        #   inherit (prev) system;
-        # };
       };
+      global-nodejs-23 = (final: prev:
+        let
+          nodejs = final.unstable.nodejs_23;
+        in
+        {
+          inherit nodejs;
+          nodejs-slim = nodejs;
+        });
 
       overlays = [
         root-overlay
-        # inputs.neovim-nightly-overlay.overlays.default
+        global-nodejs-23
       ];
     in
     {
