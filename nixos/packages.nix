@@ -30,6 +30,7 @@ let
       cargo-generate
       cargo-info
       unstable.cargo-outdated
+      unstable.cargo-shear
       cargo-tarpaulin
       cargo-udeps
       rustup
@@ -158,7 +159,7 @@ let
       unstable.zoxide
       unstable.nushell
       fish # For nushell completions
-      starship
+      unstable.starship
       atuin
     ];
     dev = [
