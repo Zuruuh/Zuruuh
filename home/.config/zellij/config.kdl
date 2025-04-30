@@ -211,6 +211,8 @@ plugins {
 //
 // default_shell "nu"
 
+show_startup_tips false
+
 // Choose the path to override cwd that zellij will use for opening new panes
 //
 // default_cwd ""
