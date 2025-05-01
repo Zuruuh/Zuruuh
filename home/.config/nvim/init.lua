@@ -597,6 +597,7 @@ require('lazy').setup({
         terraformls = {},
         zls = {},
         taplo = {},
+        tailwindcss = {},
       },
     },
     config = function(_, opts)
