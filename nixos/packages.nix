@@ -76,7 +76,6 @@ let
       unstable.phpactor
       php84
       php84.packages.composer
-      php84.packages.box
       symfony-cli
     ];
     python = [
