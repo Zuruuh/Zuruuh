@@ -298,7 +298,6 @@ require('lazy').setup({
 
       'nvim-telescope/telescope-ui-select.nvim',
       'nvim-tree/nvim-web-devicons',
-      'jvgrootveld/telescope-zoxide',
     },
 
     config = function()
@@ -322,23 +321,12 @@ require('lazy').setup({
           ['ui-select'] = {
             themes.get_dropdown(),
           },
-          zoxide = {
-            prompt_title = '[ Change project ]',
-            mappings = {
-              default = {
-                action = function(selection)
-                  vim.cmd.edit(selection.path)
-                end,
-              },
-            },
-          },
         },
       })
 
       -- Enable telescope extensions, if they are installed
       pcall(telescope.load_extension, 'fzf')
       pcall(telescope.load_extension, 'ui-select')
-      pcall(telescope.load_extension, 'zoxide')
 
       local responsive_picker = function(picker, opts)
         local theme_opts = vim.tbl_deep_extend('force', {
@@ -364,7 +352,6 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader><leader>', responsive_picker(builtins.buffers), { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>sr', responsive_picker(builtins.lsp_references), { desc = '[S]earch LSP [R]eferences' })
       vim.keymap.set('n', '<leader>sb', responsive_picker(builtins.git_branches), { desc = '[S]earch Git [B]ranches' })
-      vim.keymap.set('n', '<leader>cd', telescope.extensions.zoxide.list, { desc = '[C]hange [D]irectory' })
 
       -- Slightly advanced example of overriding default behavior and theme
 
