@@ -1,4 +1,4 @@
-command_timeout = 500
+command_timeout = 50
 
 # https://starship.rs/config/#default-prompt-format
 format = """
