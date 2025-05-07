@@ -444,6 +444,16 @@ require('lazy').setup({
               require_cwd = true,
             }
           end,
+
+          dioxus = function()
+            return {
+              command = 'dx',
+              args = { 'fmt', '--file', '$FILENAME' },
+              cwd = conform.root_file({ 'Dioxus.toml' }),
+              require_cwd = true,
+              stdin = false,
+            }
+          end,
         },
 
         formatters_by_ft = {
@@ -462,7 +472,7 @@ require('lazy').setup({
           sh = { 'shfmt' },
           toml = { 'taplo' },
           php = { 'mago', 'php_cs_fixer', 'phpcbf', stop_after_first = true },
-          rust = { 'rustfmt' },
+          rust = { 'dioxus', 'rustfmt', stop_after_first = true },
           nix = { 'nixpkgs_fmt' },
           terraform = { 'tofu_fmt' },
           cs = { 'csharpier' },
