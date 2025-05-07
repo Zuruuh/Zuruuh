@@ -14,10 +14,13 @@ in
     defaultUser = user;
     wslConf = {
       interop.appendWindowsPath = false;
+      automount.options = "metadata,noatime,umask=22,fmask=11";
     };
   };
 
   time.timeZone = "Europe/Paris";
+
+  zramSwap.enable = true;
 
   environment = {
     systemPackages = with pkgs; [
