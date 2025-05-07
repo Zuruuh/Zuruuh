@@ -51,9 +51,9 @@
           inherit (prev) system;
         };
       };
-      global-nodejs-23 = (final: prev:
+      global-nodejs-24 = (final: prev:
         let
-          nodejs = final.unstable.nodejs_23;
+          nodejs = final.unstable.nodejs_24;
         in
         {
           inherit nodejs;
@@ -62,7 +62,7 @@
 
       overlays = [
         root-overlay
-        global-nodejs-23
+        global-nodejs-24
       ];
     in
     {
