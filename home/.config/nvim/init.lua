@@ -465,6 +465,7 @@ require('lazy').setup({
           rust = { 'rustfmt' },
           nix = { 'nixpkgs_fmt' },
           terraform = { 'tofu_fmt' },
+          cs = { 'csharpier' },
           ['_'] = { 'trim_whitespace' },
         },
       }
@@ -597,6 +598,7 @@ require('lazy').setup({
         terraformls = {},
         zls = {},
         taplo = {},
+        csharp_ls = {},
         tailwindcss = {},
       },
     },
