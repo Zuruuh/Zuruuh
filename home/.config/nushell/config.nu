@@ -56,6 +56,8 @@ $env.config.render_right_prompt_on_last_line = false
 $env.config.hooks.pre_prompt = [{ ||
     try {
         direnv export json | from json | default {} | load-env
+    } catch {
+        print (direnv export json)
     }
 }]
 
