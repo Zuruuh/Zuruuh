@@ -5,17 +5,23 @@ $env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
-let home = if ('HOME' in $env) { $env.HOME } else { $"C:($env.HOMEPATH)" }
+if not ('HOME' in $env) {
+    $env.HOME = $"C:($env.HOMEPATH)"
+}
 
 if $nu.os-info.name == 'windows' {
+    path add 'D:\Bin'
     $env.XDG_DATA_HOME = $env.APPDATA
     $env.XDG_STATE_HOME = $env.LOCALAPPDATA
     $env.PWSH = (which pwsh | get path.0)
-    path add 'D:\Bin'
+
     # android
     $env.ANDROID_HOME = 'D:\\Android'
     $env.NDK_HOME = (ls $"($env.ANDROID_HOME)\\ndk" | get 0.name)
     path add 'D:\\Android\\platform-tools'
+
+    # csharp
+    path add $"($env.HOME)\\.dotnet\\tools"
 }
 
 if $nu.os-info.name == 'linux' and ('/run/current-system/etc/set-environment' | path exists) {
@@ -27,21 +33,21 @@ if $nu.os-info.name == 'macos' and ('/run/current-system/etc/bashrc' | path exis
 }
 
 if $nu.os-info.name in ['linux', 'macos'] {
-    path add --append $"($home)/.local/bin"
+    path add --append $"($env.HOME)/.local/bin"
 }
 
 if $nu.os-info.name == 'macos' {
     path add '/opt/homebrew/bin'
     path add '/opt/homebrew/sbin'
-    path add $"($home)/.orbstack/bin"
+    path add $"($env.HOME)/.orbstack/bin"
 }
 
 # Cargo
-path add $"($home)/.cargo/bin"
+path add $"($env.HOME)/.cargo/bin"
 
 # Bun
-if ($"($home)/.bun" | path exists) {
-    $env.BUN_INSTALL = $"($home)/.bun"
+if ($"($env.HOME)/.bun" | path exists) {
+    $env.BUN_INSTALL = $"($env.HOME)/.bun"
     path add $"($env.BUN_INSTALL)/bin"
 }
 
