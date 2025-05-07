@@ -308,7 +308,17 @@ require('lazy').setup({
         pickers = {
           find_files = {
             hidden = true,
-            find_command = { 'rg', '--files', '--path-separator', '/', '--iglob', '!.git', '--hidden' },
+            find_command = {
+              'rg',
+              '--files',
+              '--path-separator',
+              '/',
+              '--iglob',
+              '!.git',
+              '--hidden',
+              '--ignore-file',
+              '.gitignore',
+            },
           },
           grep_string = {
             additional_args = { '--hidden' },
