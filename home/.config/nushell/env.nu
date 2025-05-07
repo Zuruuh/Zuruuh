@@ -22,6 +22,8 @@ if $nu.os-info.name == 'windows' {
 
     # csharp
     path add $"($env.HOME)\\.dotnet\\tools"
+    $env.BASH = $"($env.HOME)\\scoop\\shims\\bash.exe"
+    path add ($env.BASH | path dirname)
 }
 
 if $nu.os-info.name == 'linux' and ('/run/current-system/etc/set-environment' | path exists) {
@@ -46,7 +48,7 @@ if $nu.os-info.name == 'macos' {
 path add $"($env.HOME)/.cargo/bin"
 
 # Bun
-if ($"($env.HOME)/.bun" | path exists) {
+if (not ('BUN_INSTALL' in $env)) and ($"($env.HOME)/.bun" | path exists) {
     $env.BUN_INSTALL = $"($env.HOME)/.bun"
     path add $"($env.BUN_INSTALL)/bin"
 }
