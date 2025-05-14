@@ -161,7 +161,7 @@ let
       fish # For nushell completions
       unstable.starship
       atuin
-      watchexec
+      unstable.watchexec
     ];
     dev = [
       unstable.neovim
