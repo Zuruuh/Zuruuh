@@ -469,7 +469,7 @@ require('lazy').setup({
           sh = { 'shfmt' },
           toml = { 'taplo' },
           php = { 'mago', 'php_cs_fixer', 'phpcbf', stop_after_first = true },
-          rust = { 'dioxus', 'rustfmt', stop_after_first = true },
+          rust = { 'dioxus', 'rustfmt' },
           nix = { 'nixpkgs_fmt' },
           terraform = { 'tofu_fmt' },
           cs = { 'csharpier' },
