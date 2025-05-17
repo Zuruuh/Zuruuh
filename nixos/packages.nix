@@ -70,7 +70,6 @@ let
       gnumake
       gpp
       pkg-config
-      unstable.llvmPackages_19.clang-tools
     ] ++ forLinux [ pkgs.libgcc ];
     php = [
       unstable.phpactor
