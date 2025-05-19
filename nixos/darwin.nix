@@ -270,6 +270,7 @@ in
   environment = {
     shells = [ shell ];
     variables = env;
+    systemPackages = [ pkgs.unstable.spicetify-cli ];
   };
 
   fonts.packages = with pkgs; [
@@ -349,7 +350,6 @@ in
     onActivation.cleanup = "zap";
 
     brews = [
-      "spicetify-cli"
       "icu4c@76"
     ];
 
