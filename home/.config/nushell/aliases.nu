@@ -3,8 +3,6 @@ export alias docker-compose = docker compose
 export alias compose = docker compose
 export alias buildx = docker buildx
 export alias code = codium
-export alias xh = ^xh --session=$"($env.XDG_STATE_HOME)/xh_sessions/($env.PWD).session.json"
-export alias xhs = ^xhs --session=$"($env.XDG_STATE_HOME)/xh_sessions/($env.PWD).session.json"
 export alias "atuin uuid" = random uuid --version 7
 export alias cat = bat
 
