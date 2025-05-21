@@ -56,14 +56,8 @@ $env.config.shell_integration = {
 
 $env.config.render_right_prompt_on_last_line = false
 $env.config.hooks.pre_prompt = [{ ||
-    direnv export json | from json | default {} | load-env
-    # If direnv changes the PATH, it will become a string and we need to re-convert it to a list
-    $env.PATH = match ($env.PATH | describe) {
-        'string' => (do (env-conversions).path.from_string $env.PATH),
-        'list<string>' => $env.PATH,
-        # `Path` and not `PATH`, casing here is important on windows :)
-        'nothing' => $env.Path,
-        _ => $env.PATH
+    try {
+        direnv export json | from json | default {} | load-env
     }
 }]
 
