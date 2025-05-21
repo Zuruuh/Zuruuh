@@ -40,6 +40,9 @@
 [includeIf "gitdir:~/"]
     path = ~/.config/git/linux.gitconfig
 
+[includeIf "gitdir:Z:/"]
+    path = C:/Users/zuruh/dotfiles/home/.config/git/windows.gitconfig
+
 [includeIf "gitdir:C:/"]
     path = C:/Users/zuruh/dotfiles/home/.config/git/windows.gitconfig
 
