@@ -3,4 +3,6 @@ name = "Zuruuh"
 email = "zuruh.dev@proton.me"
 
 [signing]
+behavior = "own"
+backend = "gpg"
 key = "4C8921C0E8A4F68A78CE3EC6AFB2FC6B8FFFBCFB"

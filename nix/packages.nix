@@ -29,8 +29,8 @@ let
       cargo-expand
       cargo-generate
       cargo-info
-      unstable.cargo-outdated
-      unstable.cargo-shear
+      cargo-outdated
+      cargo-shear
       cargo-tarpaulin
       cargo-udeps
       rustup
@@ -141,7 +141,7 @@ let
     ];
     database = [
       sqlx-cli
-      unstable.valkey
+      valkey
       sqls
     ];
     tools = [
@@ -160,7 +160,7 @@ let
       fish # For nushell completions
       unstable.starship
       atuin
-      unstable.watchexec
+      watchexec
     ];
     dev = [
       unstable.neovim

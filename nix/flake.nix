@@ -3,7 +3,7 @@
 
   inputs = {
     # Packages
-    nixos.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixos.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # Helpers
@@ -15,7 +15,7 @@
 
     # WSL
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/394c77f61ac76399290bfc2ef9d47b1fba31b215";
+      url = "github:nix-community/NixOS-WSL";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-compat.follows = "flake-compat";
@@ -24,18 +24,12 @@
 
     # MacOS
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-24.11";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixos";
     };
-    nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew/04b0536479d2d2e8d71dc8c8ee97c2b61f0c9987";
-      inputs = {
-        nixpkgs.follows = "nixos";
-        nix-darwin.follows = "nix-darwin";
-      };
-    };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     mac-app-util = {
-      url = "github:hraban/mac-app-util/341ede93f290df7957047682482c298e47291b4d";
+      url = "github:hraban/mac-app-util";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-utils.follows = "flake-utils";
@@ -66,7 +60,7 @@
       ];
     in
     {
-      # sudo nixos-rebuild switch --flake ~/.dotfiles/nix#wsl
+      # sudo nixos-rebuild switch --flake ~/.dotfiles/#wsl
       nixosConfigurations.wsl = nixos.lib.nixosSystem rec {
         system = "x86_64-linux";
         specialArgs = rec {
@@ -94,9 +88,9 @@
           };
         in
         {
-          # nix run github:nix-darwin/nix-darwin#darwin-rebuild --extra-experimental-features 'nix-command flakes' -- switch --flake ~/.dotfiles/nix
-          # nix run nix-darwin/nix-darwin-24.11#darwin-rebuild -- switch --flake ~/.dotfiles/nix
-          # darwin-rebuild switch --flake ~/.dotfiles/nix
+          # nix run github:nix-darwin/nix-darwin#darwin-rebuild --extra-experimental-features 'nix-command flakes' -- switch --flake ~/.dotfiles
+          # nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake ~/.dotfiles
+          # darwin-rebuild switch --flake ~/.dotfiles
           "STM-MBTech25" = nix-darwin.lib.darwinSystem {
             specialArgs = {
               inherit pkgs system;

@@ -274,7 +274,7 @@ in
   };
 
   fonts.packages = with pkgs; [
-    unstable.nerd-fonts.monaspace
+    nerd-fonts.monaspace
   ];
 
   users = {
@@ -294,6 +294,7 @@ in
   };
 
   system = {
+    primaryUser = username;
     configurationRevision = outputs.rev or outputs.dirtyRev or null;
     stateVersion = 5;
 

@@ -28,11 +28,11 @@ export def "config dotfiles" [] {
 export alias config = config dotfiles
 
 export def "config nix" [] {
-    nvim ~/.dotfiles/nixos/
+    nvim ~/.dotfiles/nix/
 }
 
-export def "config nix-packages" [] {
-    nvim ~/.dotfiles/nixos/packages.nix
+export def "config nix packages" [] {
+    nvim ~/.dotfiles/nix/packages.nix
 }
 
 export def "config nvim" [] {
