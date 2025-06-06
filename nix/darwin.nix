@@ -326,8 +326,9 @@ in
           "/Applications/Discord.app"
           "/Applications/OrbStack.app"
           "/Applications/Proton Mail.app"
-          "/Applications/Nix Apps/DataGrip.app"
-          "/Applications/Nix Apps/Postman.app"
+          "${pkgs.postman}/Applications/Postman.app"
+          # The app keeps coming back to the dock by itself ?? wtf
+          # "${pkgs.jetbrains.datagrip}/Applications/DataGrip.app"
         ];
       };
 

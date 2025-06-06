@@ -74,8 +74,8 @@
 
         modules = [
           nixos-wsl.nixosModules.default
-          ./wsl.nix
-          ./packages.nix
+          ./nix/wsl.nix
+          ./nix/packages.nix
         ];
       };
 
@@ -100,8 +100,8 @@
             modules = [
               nix-homebrew.darwinModules.nix-homebrew
               mac-app-util.darwinModules.default
-              ./packages.nix
-              ./darwin.nix
+              ./nix/packages.nix
+              ./nix/darwin.nix
             ];
           };
         };
