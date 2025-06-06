@@ -1,7 +1,8 @@
 # -- vim: sw=2
-{ lib, pkgs, ... }:
+{ lib, pkgs, inputs, ... }:
 let
   forLinux = packages: (if pkgs.stdenv.isDarwin then [ ] else packages);
+
   php84 = pkgs.unstable.php84.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       apcu
@@ -186,5 +187,28 @@ let
   };
 in
 {
+  nix.registry =
+    let
+      unstable = {
+        type = "github";
+        owner = "NixOS";
+        repo = "nixpkgs";
+        ref = "nixos-unstable";
+      };
+      stable = {
+        type = "github";
+        owner = "NixOS";
+        repo = "nixpkgs";
+        ref = inputs.nixos.rev;
+      };
+    in
+    {
+      "unstable".to = unstable;
+      "u".to = unstable;
+
+      "stable".to = stable;
+      "s".to = stable;
+    };
+
   environment.systemPackages = lib.concatLists (lib.attrValues packages);
 }

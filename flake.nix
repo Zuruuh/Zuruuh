@@ -38,7 +38,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixos, nixos-wsl, nix-darwin, nix-homebrew, mac-app-util, ... }:
+  outputs = inputs@{ self, nixos, nixos-wsl, nix-darwin, mac-app-util, ... }:
     let
       root-overlay = final: prev: {
         unstable = import inputs.nixpkgs-unstable {
@@ -47,7 +47,7 @@
       };
       global-nodejs-24 = (final: prev:
         let
-          nodejs = final.unstable.nodejs_24;
+          nodejs = final.nodejs_24;
         in
         {
           inherit nodejs;
@@ -93,12 +93,12 @@
           # darwin-rebuild switch --flake ~/.dotfiles
           "STM-MBTech25" = nix-darwin.lib.darwinSystem {
             specialArgs = {
-              inherit pkgs system;
+              inherit pkgs system inputs;
               inherit (pkgs) lib;
               outputs = self;
             };
             modules = [
-              nix-homebrew.darwinModules.nix-homebrew
+              inputs.nix-homebrew.darwinModules.nix-homebrew
               mac-app-util.darwinModules.default
               ./nix/packages.nix
               ./nix/darwin.nix

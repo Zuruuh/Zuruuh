@@ -273,13 +273,12 @@ in
     systemPackages = with pkgs; [
       unstable.spicetify-cli
       brave
-      jetbrains.datagrip
       google-chrome
-      # ungoogled-chromium
-      postman
       libreoffice-bin
       telegram-desktop
       # ghostty # broken
+      postman
+      jetbrains.datagrip
     ];
   };
 
@@ -326,9 +325,7 @@ in
           "/Applications/Discord.app"
           "/Applications/OrbStack.app"
           "/Applications/Proton Mail.app"
-          "${pkgs.postman}/Applications/Postman.app"
-          # The app keeps coming back to the dock by itself ?? wtf
-          # "${pkgs.jetbrains.datagrip}/Applications/DataGrip.app"
+          # both datagrip and postman are added automatically for some reason ?
         ];
       };
 
@@ -373,7 +370,10 @@ in
       "slack"
       "proton-pass"
       "proton-drive"
+      "proton-mail"
       "protonvpn"
+      "zen"
+      "spotify"
     ];
   };
 }
