@@ -270,7 +270,17 @@ in
   environment = {
     shells = [ shell ];
     variables = env;
-    systemPackages = [ pkgs.unstable.spicetify-cli ];
+    systemPackages = with pkgs; [
+      unstable.spicetify-cli
+      brave
+      jetbrains.datagrip
+      google-chrome
+      # ungoogled-chromium
+      postman
+      libreoffice-bin
+      telegram-desktop
+      # ghostty # broken
+    ];
   };
 
   fonts.packages = with pkgs; [
@@ -316,8 +326,8 @@ in
           "/Applications/Discord.app"
           "/Applications/OrbStack.app"
           "/Applications/Proton Mail.app"
-          "/Applications/DataGrip.app"
-          "/Applications/Postman.app"
+          "/Applications/Nix Apps/DataGrip.app"
+          "/Applications/Nix Apps/Postman.app"
         ];
       };
 
@@ -350,29 +360,19 @@ in
     global.autoUpdate = false;
     onActivation.cleanup = "zap";
 
-    brews = [
-      "icu4c@76"
-    ];
-
     casks = [
-      "brave-browser"
-      "datagrip"
       "ghostty"
-      "google-chrome"
       "eloston-chromium"
       "obs"
       "obsidian"
       "orbstack"
       "parsec"
-      "postman"
       "proxyman"
       "shottr"
       "slack"
-      "libreoffice"
       "proton-pass"
       "proton-drive"
       "protonvpn"
-      "telegram"
     ];
   };
 }
