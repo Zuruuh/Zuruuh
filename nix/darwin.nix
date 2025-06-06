@@ -368,7 +368,6 @@ in
       "proxyman"
       "shottr"
       "slack"
-      "wkhtmltopdf"
       "libreoffice"
       "proton-pass"
       "proton-drive"
