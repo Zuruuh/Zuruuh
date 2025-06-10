@@ -76,7 +76,7 @@ export def "config git" [] {
 }
 
 export def "venv create" [python_path: string = "" ] {
-    echo "(Remember to use uv instead if possible 😀)"
+    print "(Remember to use uv instead if possible 😀)"
     if ('.venv' | path exists) {
         return (
             error make {
@@ -141,7 +141,8 @@ export def --env dev [] {
     let dir = (
         ls $dev
         | where type == 'dir'
-        | each {get name | path basename}
+        | get name
+        | path basename
         | shuffle
         | str join (char newline)
         | fzf
@@ -150,7 +151,8 @@ export def --env dev [] {
     cd $"($dev)(char path_sep)($dir)"
 }
 
-export def switch [] {
+export alias "git switch -i" = git switch --interactive
+export def "git switch --interactive" [] {
     let branch = git branch --sort=-committerdate |
         str trim |
         split row (char newline) |
@@ -164,8 +166,6 @@ export def switch [] {
         git switch $branch
     }
 }
-
-def ":q" [] { "bruh" }
 
 # Setup proxyman's http proxy by loading the https?_proxy env vars
 export def --env "proxyman-cli use" [] {
