@@ -5,6 +5,7 @@ export alias buildx = docker buildx
 export alias code = codium
 export alias "atuin uuid" = random uuid --version 7
 export alias cat = bat
+export alias base64 = print 'use `encode base64`!'
 
 export def nix-shell --wrapped [...args] {
     $"Use (ansi purple)nix shell nixpkgs#($args | get 0 -i | default '...')(ansi reset) instead!"
@@ -115,7 +116,6 @@ export def copy [path?: string] {
         cb copy (cat $path)
     }
 }
-
 
 export def "git stash diff" [--stash(-s): int] {
     if $stash == null {
