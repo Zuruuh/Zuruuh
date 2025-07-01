@@ -209,7 +209,7 @@ plugins {
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-// default_shell "nu"
+default_shell "/run/current-system/sw/bin/nu"
 
 show_startup_tips false
 
