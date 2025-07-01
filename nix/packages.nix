@@ -70,8 +70,12 @@ let
       cmake
       gnumake
       gpp
-      pkg-config
     ] ++ forLinux [ pkgs.libgcc ];
+    libs = [
+      pkg-config
+      openssl.dev
+      libiconv
+    ];
     php = [
       unstable.phpactor
       php84

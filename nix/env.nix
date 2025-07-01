@@ -7,4 +7,6 @@
   PAGER = "${pkgs.less}/bin/less -R";
   LANG = "en_US.UTF-8";
   LC_ALL = LANG;
+
+  PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
 }
