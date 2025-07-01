@@ -218,16 +218,7 @@ vim.api.nvim_set_decoration_provider(ns, {
 -- Plugins
 require('lazy').setup({
   { -- Detect tabstop and shiftwidth automatically
-    'tpope/vim-sleuth',
-    lazy = false,
-    keys = {
-      {
-        '<leader>sl',
-        vim.cmd.Sleuth,
-        silent = true,
-        desc = '[Sl]euth, detect tabstop and shiftwidth',
-      },
-    },
+    'NMAC427/guess-indent.nvim',
   },
 
   {
@@ -535,7 +526,7 @@ require('lazy').setup({
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
       {
-        'williamboman/mason.nvim',
+        'mason-org/mason.nvim',
         cond = function()
           return vim.fn.has('win32') == 1
         end,
@@ -574,7 +565,10 @@ require('lazy').setup({
         phpactor = {},
         rust_analyzer = {
           ['rust-analyzer'] = {
-            cargo = { buildScripts = { enable = true } },
+            cargo = {
+              buildScripts = { enable = true },
+              features = 'all',
+            },
             procMacro = { enable = true },
             files = {
               excludeDirs = { '.direnv' },
@@ -610,7 +604,6 @@ require('lazy').setup({
       },
     },
     config = function(_, opts)
-      local lspconfig = require('lspconfig')
       local blink = require('blink.cmp')
 
       for server, config in pairs(opts.servers) do
@@ -619,7 +612,8 @@ require('lazy').setup({
         end
         config.capabilities = blink.get_lsp_capabilities(config.capabilities)
 
-        lspconfig[server].setup(config)
+        vim.lsp.config(server, config)
+        vim.lsp.enable(server)
       end
 
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -724,6 +718,16 @@ require('lazy').setup({
 
   { -- Persistent theme selector, run with `:Themery`
     'zaldih/themery.nvim',
+    dependencies = {
+      { 'navarasu/onedark.nvim', lazy = true },
+      { 'Mofiqul/vscode.nvim', lazy = true },
+      { 'folke/tokyonight.nvim', lazy = true },
+      { 'ellisonleao/gruvbox.nvim', lazy = true },
+      { 'ellisonleao/gruvbox.nvim', lazy = true },
+      { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
+      { 'shaunsingh/nord.nvim', lazy = true },
+      { 'nyoom-engineering/oxocarbon.nvim', lazy = true },
+    },
     opts = {
       themes = {
         'onedark',
@@ -745,14 +749,6 @@ require('lazy').setup({
       livePreview = true,
     },
   },
-  { 'navarasu/onedark.nvim', lazy = true },
-  { 'Mofiqul/vscode.nvim', lazy = true },
-  { 'folke/tokyonight.nvim', lazy = true },
-  { 'ellisonleao/gruvbox.nvim', lazy = true },
-  { 'ellisonleao/gruvbox.nvim', lazy = true },
-  { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
-  { 'shaunsingh/nord.nvim', lazy = true },
-  { 'nyoom-engineering/oxocarbon.nvim', lazy = true },
 
   {
     'f-person/auto-dark-mode.nvim',
@@ -832,9 +828,12 @@ require('lazy').setup({
       statusline.section_location = function()
         return '%2l:%-2v'
       end
-
-      require('mini.pairs').setup({})
     end,
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    opts = {},
   },
 
   {
@@ -1102,26 +1101,6 @@ require('lazy').setup({
     },
   },
   {
-    'OXY2DEV/markview.nvim',
-    event = 'VeryLazy',
-
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-tree/nvim-web-devicons',
-    },
-    {
-      'dariuscorvus/tree-sitter-surrealdb.nvim',
-      dependencies = { 'nvim-treesitter/nvim-treesitter' },
-      opts = {},
-      event = { 'BufRead *.surql' },
-    },
-  },
-  {
-    'Bekaboo/dropbar.nvim',
-    -- optional, but required for fuzzy finder support
-    opts = {},
-  },
-  {
     'xzbdmw/clasp.nvim',
     opts = {
       pairs = {
@@ -1135,19 +1114,6 @@ require('lazy').setup({
       },
       keep_insert_mode = true,
     },
-    keys = function()
-      local clasp = require('clasp')
-
-      return {
-        {
-          '<c-l>',
-          function()
-            clasp.wrap('next')
-          end,
-          mode = { 'n', 'i' },
-        },
-      }
-    end,
   },
 }, {
   rocks = {
