@@ -219,6 +219,7 @@ vim.api.nvim_set_decoration_provider(ns, {
 require('lazy').setup({
   { -- Detect tabstop and shiftwidth automatically
     'NMAC427/guess-indent.nvim',
+    opts = {},
   },
 
   {
@@ -1061,7 +1062,7 @@ require('lazy').setup({
           },
 
           header = vim.fn.system({
-            'nu',
+            vim.fn.has('win32') == 1 and 'nu' or '/run/current-system/sw/bin/nu',
             '-n',
             '-c',
             [[
