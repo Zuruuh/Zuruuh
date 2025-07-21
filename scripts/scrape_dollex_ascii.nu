@@ -15,7 +15,7 @@ def main [] {
 
         $response.data |
             select title data |
-            filter {|ascii|
+            where {|ascii|
                 $ascii.data | str contains (char newline)
             } |
             each {|ascii| $ascii |

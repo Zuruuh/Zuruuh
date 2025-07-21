@@ -22,7 +22,6 @@ let
   packages = with pkgs; {
     yaml = [
       yaml-language-server
-      vacuum-go
     ];
     rust = [
       cargo-audit
@@ -77,7 +76,7 @@ let
       libiconv
     ];
     php = [
-      unstable.phpactor
+      phpactor.phpactor
       php84
       php84.packages.composer
       symfony-cli

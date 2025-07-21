@@ -22,7 +22,7 @@ export def --env load-sh-env [file: string] {
         get stdout |
         from dotenv |
         transpose key value |
-        filter {|kv|
+        where {|kv|
             if ($kv.key | is-empty) {
                 return false
             }
@@ -36,7 +36,7 @@ export def --env load-sh-env [file: string] {
 def "from dotenv" [] {
     split row (char null_byte) |
     str trim |
-    filter {is-not-empty} |
+    where {is-not-empty} |
     parse '{key}={value}' |
     default {} |
     transpose -r |

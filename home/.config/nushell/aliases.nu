@@ -156,7 +156,7 @@ export def "git switch --interactive" [] {
     let branch = git branch --sort=-committerdate |
         str trim |
         split row (char newline) |
-        filter {|branch| $branch !~ '^\* '} |
+        where {|branch| $branch !~ '^\* '} |
         each {str trim} |
         prepend '-' |
         str join (char newline) |

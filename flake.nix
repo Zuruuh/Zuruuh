@@ -5,6 +5,7 @@
     # Packages
     nixos.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    phpactor.url = "github:Zuruuh/nixpkgs/phpactor-include-tokenizer-extension";
 
     # Helpers
     flake-compat = {
@@ -42,6 +43,9 @@
     let
       root-overlay = final: prev: {
         unstable = import inputs.nixpkgs-unstable {
+          inherit (prev) system;
+        };
+        phpactor = import inputs.phpactor {
           inherit (prev) system;
         };
       };

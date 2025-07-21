@@ -594,7 +594,6 @@ require('lazy').setup({
         -- nil_ls = {},
         nixd = {},
         nushell = {},
-        vacuum = {},
         gopls = {},
         lemminx = {},
         terraformls = {},
