@@ -15,7 +15,7 @@
 
     # WSL
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
+      url = "github:nix-community/NixOS-WSL/release-25.05";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-compat.follows = "flake-compat";

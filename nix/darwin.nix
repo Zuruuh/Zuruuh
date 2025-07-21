@@ -374,6 +374,7 @@ in
       "protonvpn"
       "zen"
       "spotify"
+      "trae"
     ];
   };
 }
