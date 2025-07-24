@@ -23,87 +23,21 @@ export def "wsl open" [path: string] {
     /mnt/c/Windows/explorer.exe ("\\\\wsl.localhost\\NixOS" + ((pwd) | path join $path | str replace -a '/' '\'))
 }
 
-export def "config dotfiles" [] {
-    nvim ~/.dotfiles/
-}
-export alias config = config dotfiles
-
-export def "config nix" [] {
-    nvim ~/.dotfiles/nix/
-}
-
-export def "config nix packages" [] {
-    nvim ~/.dotfiles/nix/packages.nix
-}
-
-export def "config nvim" [] {
-    nvim ~/.dotfiles/home/.config/nvim/init.lua
-}
-
-export def "config nu" [] {
-    nvim ~/.dotfiles/home/.config/nushell/
-}
-
-export def "config aliases" [] {
-    nvim ~/.dotfiles/home/.config/nushell/aliases.nu
-}
-
-export def "config starship" [] {
-    nvim ~/.dotfiles/home/.config/starship.toml
-}
-
-export def "config alacritty" [] {
-    nvim ~/.dotfiles/home/.config/alacritty/
-}
-
-export def "config wezterm" [] {
-    nvim ~/.dotfiles/home/.config/wezterm/wezterm.lua
-}
-
-export def "config ghostty" [] {
-    nvim ~/.dotfiles/home/.config/ghostty/config
-}
-
-export def "config ssh" [] {
-    nvim ~/.dotfiles/home/.ssh/config
-}
-
-export def "config zellij" [] {
-    nvim ~/.dotfiles/home/.config/zellij/config.kdl
-}
-
-export def "config git" [] {
-    nvim ~/.dotfiles/home/.config/git/
-}
-
-export def "venv create" [python_path: string = "" ] {
-    print "(Remember to use uv instead if possible 😀)"
-    if ('.venv' | path exists) {
-        return (
-            error make {
-                msg: 'Virtual environment already exists in this directory.'
-            }
-        )
-    }
-
-    let python = if ($python_path | str length) == 0 {
-        which python | get 0.path
-    } else {
-        $python_path
-    }
-
-    do { ^$python '-m' 'venv' $"(pwd)/.venv" } | complete
-
-    return
-}
-
-export def --env "venv activate" [] {
-  if $nu.os-info.name == 'windows' {
-    path add ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'Scripts')
-  } else {
-    path add ($env.PWD + (char path_sep) + '.venv' + (char path_sep) + 'bin')
-  }
-}
+export alias config = nvim ~/.dotfiles
+export alias "config dotfiles" = nvim ~/.dotfiles/
+export alias "config nix" = nvim ~/.dotfiles/nix/
+export alias "config nix packages" = nvim ~/.dotfiles/nix/packages.nix
+export alias "config nvim" = nvim ~/.dotfiles/home/.config/nvim/init.lua
+export alias "config nu" = nvim ~/.dotfiles/home/.config/nushell/
+export alias "config aliases" = nvim ~/.dotfiles/home/.config/nushell/aliases.nu
+export alias "config starship" = nvim ~/.dotfiles/home/.config/starship.toml
+export alias "config alacritty" = nvim ~/.dotfiles/home/.config/alacritty/
+export alias "config wezterm" = nvim ~/.dotfiles/home/.config/wezterm/wezterm.lua
+export alias "config ghostty" = nvim ~/.dotfiles/home/.config/ghostty/config
+export alias "config ssh" = nvim ~/.dotfiles/home/.ssh/config
+export alias "config zellij" = nvim ~/.dotfiles/home/.config/zellij/config.kdl
+export alias "config git" = nvim ~/.dotfiles/home/.config/git/
+export alias "config jujutsu" = nvim ~/.dotfiles/home/.config/jj/
 
 export def paste [] {
     cat (do { cb show } | complete | get stderr | str trim --char '"')
