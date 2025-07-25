@@ -39,11 +39,11 @@ export alias "config zellij" = nvim ~/.dotfiles/home/.config/zellij/config.kdl
 export alias "config git" = nvim ~/.dotfiles/home/.config/git/
 export alias "config jujutsu" = nvim ~/.dotfiles/home/.config/jj/
 
-export def paste [] {
+export def "clipboard paste" [] {
     cat (do { cb show } | complete | get stderr | str trim --char '"')
 }
 
-export def copy [path?: string] {
+export def "clipboard copy" [path?: string] {
     if ($in | is-not-empty) {
         $"($in)" | cb copy
     } else if ($path | is-not-empty) {
