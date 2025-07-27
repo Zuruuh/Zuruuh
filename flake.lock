@@ -135,11 +135,11 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1752866191,
-        "narHash": "sha256-NV4S2Lf2hYmZQ3Qf4t/YyyBaJNuxLPyjzvDma0zPp/M=",
+        "lastModified": 1753749649,
+        "narHash": "sha256-+jkEZxs7bfOKfBIk430K+tK9IvXlwzqQQnppC2ZKFj4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f01fe91b0108a7aff99c99f2e9abbc45db0adc2a",
+        "rev": "1f08a4df998e21f4e8be8fb6fbf61d11a1a5076a",
         "type": "github"
       },
       "original": {
@@ -159,11 +159,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752700433,
-        "narHash": "sha256-womnvoLQ05HM9e4Eg3w8unyxEX0btlXjDWeYHHPwq98=",
+        "lastModified": 1753699774,
+        "narHash": "sha256-nO5oSkTQxf1jESzDJVTZtv9Cp0cpPMFbneXNqY71knE=",
         "owner": "nix-community",
         "repo": "NixOS-WSL",
-        "rev": "be00d518b2357e869cc9d676b293b6666cb09d6f",
+        "rev": "171f91d465bf2faea3db464f1028f99f7e1571bc",
         "type": "github"
       },
       "original": {
@@ -175,32 +175,16 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1752900028,
-        "narHash": "sha256-dPALCtmik9Wr14MGqVXm+OQcv7vhPBXcWNIOThGnB/Q=",
+        "lastModified": 1753844155,
+        "narHash": "sha256-w81jpZeM3AtYlTKIhT05p3IqvJRIHZPyp0Acgb6hXWc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6b4955211758ba47fac850c040a27f23b9b4008f",
+        "rev": "e44b8dc0882d66e2627a8ff252b04a22f4a629fd",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "phpactor": {
-      "locked": {
-        "lastModified": 1753086823,
-        "narHash": "sha256-o26WwpYSYfNVtpLe7JB2Bzxpc4WQT1vYh3hcV4fjz5s=",
-        "owner": "Zuruuh",
-        "repo": "nixpkgs",
-        "rev": "1df81cf6f810af6728f109bc89b26279b69a9d7d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Zuruuh",
-        "ref": "phpactor-include-tokenizer-extension",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -214,8 +198,7 @@
         "nix-homebrew": "nix-homebrew",
         "nixos": "nixos",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs-unstable": "nixpkgs-unstable",
-        "phpactor": "phpactor"
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
     "systems": {

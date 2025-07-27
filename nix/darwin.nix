@@ -375,6 +375,7 @@ in
       "zen"
       "spotify"
       "trae"
+      "steam"
     ];
   };
 }

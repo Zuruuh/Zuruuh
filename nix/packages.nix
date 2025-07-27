@@ -76,7 +76,7 @@ let
       libiconv
     ];
     php = [
-      phpactor.phpactor
+      unstable.phpactor
       php84
       php84.packages.composer
       symfony-cli
