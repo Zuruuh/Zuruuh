@@ -870,8 +870,8 @@ require('lazy').setup({
   },
   {
     'saecki/crates.nvim',
+    tag = 'stable',
     event = { 'BufRead Cargo.toml' },
-    dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       lsp = {
         enabled = true,

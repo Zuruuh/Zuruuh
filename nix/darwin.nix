@@ -34,7 +34,7 @@ in
         ctrl - x : skhd -k "cmd - x" # cut
 
         # Disable cmd+tab (from simple_modifications)
-        cmd - tab : :
+        # cmd - tab : :
         cmd - h : skhd -k "ctrl - h"
       '';
     };

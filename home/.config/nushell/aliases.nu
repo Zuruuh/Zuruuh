@@ -8,7 +8,7 @@ export alias cat = bat
 export alias base64 = print 'use `encode base64`!'
 
 export def nix-shell --wrapped [...args] {
-    $"Use (ansi purple)nix shell nixpkgs#($args | get 0 -i | default '...')(ansi reset) instead!"
+    $"Use (ansi purple)nix shell nixpkgs#($args | get 0 --optional | default '...')(ansi reset) instead!"
 }
 
 export def --wrapped nix-collect-garbage [...args] {

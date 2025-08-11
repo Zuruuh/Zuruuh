@@ -105,7 +105,8 @@ if $nu.os-info.name != 'windows' {
             { || $now | save -f ~/.config/nushell/plugins/plugins_refreshed_at.txt }
             { || zoxide init nushell | save -f ~/.config/nushell/plugins/zoxide.nu }
             { || starship init nu | save -f ~/.config/nushell/plugins/starship.nu }
-            { || atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu }
+            # Disable atuin for now since it uses deprecated nushell syntax
+            # { || atuin init nu --disable-up-arrow | save -f ~/.config/nushell/plugins/atuin.nu }
         ] | par-each {|callback| do $callback}
     }
 }
