@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-03-26T21:20:08.814-00:00",
+	"CreationDate" : "2025-09-09T18:14:12.040-00:00",
 	"Sources" : 
 	[
 		{
@@ -40,6 +40,9 @@
 					"PackageIdentifier" : "Proton.ProtonVPN"
 				},
 				{
+					"PackageIdentifier" : "JetBrains.RustRover"
+				},
+				{
 					"PackageIdentifier" : "Meltytech.Shotcut"
 				},
 				{
@@ -47,6 +50,9 @@
 				},
 				{
 					"PackageIdentifier" : "Unity.Unity.2022"
+				},
+				{
+					"PackageIdentifier" : "Unity.Unity.6000"
 				},
 				{
 					"PackageIdentifier" : "Unity.UnityHub"
@@ -58,19 +64,22 @@
 					"PackageIdentifier" : "Zen-Team.Zen-Browser"
 				},
 				{
+					"PackageIdentifier" : "ElementLabs.LMStudio"
+				},
+				{
 					"PackageIdentifier" : "DimitriVanHeesch.Doxygen"
+				},
+				{
+					"PackageIdentifier" : "dotPDN.PaintDotNet"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
-					"PackageIdentifier" : "LGUG2Z.whkd"
-				},
-				{
 					"PackageIdentifier" : "BlenderFoundation.Blender"
 				},
 				{
-					"PackageIdentifier" : "Inkscape.Inkscape"
+					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
@@ -82,10 +91,13 @@
 					"PackageIdentifier" : "Apple.Bonjour"
 				},
 				{
+					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+				},
+				{
 					"PackageIdentifier" : "Alacritty.Alacritty"
 				},
 				{
-					"PackageIdentifier" : "dotPDN.PaintDotNet"
+					"PackageIdentifier" : "StreetPea.chiaki-ng"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.CUDA"
@@ -94,10 +106,16 @@
 					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
+					"PackageIdentifier" : "Inkscape.Inkscape"
+				},
+				{
 					"PackageIdentifier" : "wez.wezterm"
 				},
 				{
-					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+					"PackageIdentifier" : "ThioJoe.SvgThumbnailExtension"
+				},
+				{
+					"PackageIdentifier" : "dorssel.usbipd-win"
 				},
 				{
 					"PackageIdentifier" : "TeamSpeakSystems.TeamSpeakClient.Beta.6"
@@ -119,6 +137,12 @@
 				},
 				{
 					"PackageIdentifier" : "GnuPG.Gpg4win"
+				},
+				{
+					"PackageIdentifier" : "ImperativeSoftware.InputDirector"
+				},
+				{
+					"PackageIdentifier" : "LogMeIn.Hamachi"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.Edge"
@@ -148,19 +172,28 @@
 					"PackageIdentifier" : "GnuWin32.Zip"
 				},
 				{
+					"PackageIdentifier" : "CakeWallet.CakeWallet"
+				},
+				{
 					"PackageIdentifier" : "qBittorrent.qBittorrent"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
-					"PackageIdentifier" : "Crunchyroll.MasterofGarden"
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
 				},
 				{
 					"PackageIdentifier" : "Skillbrains.Lightshot"
@@ -169,19 +202,25 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.20348"
+					"PackageIdentifier" : "PlayStation.PSRemotePlay"
 				},
 				{
-					"PackageIdentifier" : "GOG.Galaxy"
-				},
-				{
-					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.9"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
+					"PackageIdentifier" : "Microsoft.DotNet.Framework.DeveloperPack.4.6"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+				},
+				{
+					"PackageIdentifier" : "GOG.Galaxy"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
@@ -193,40 +232,31 @@
 					"PackageIdentifier" : "Mojang.MinecraftLauncher"
 				},
 				{
+					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.PhysXLegacy"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
-				},
-				{
-					"PackageIdentifier" : "HeroicGamesLauncher.HeroicGamesLauncher"
+					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier" : "Bruno.Bruno"
 				},
 				{
-					"PackageIdentifier" : "Brave.Brave"
+					"PackageIdentifier" : "FTB.App"
 				},
 				{
-					"PackageIdentifier" : "Cemu.Cemu"
+					"PackageIdentifier" : "Brave.Brave"
 				},
 				{
 					"PackageIdentifier" : "eloston.ungoogled-chromium"
@@ -238,13 +268,13 @@
 					"PackageIdentifier" : "DuckDB.cli"
 				},
 				{
-					"PackageIdentifier" : "Electrum.Electrum"
-				},
-				{
 					"PackageIdentifier" : "Figma.FigmaAgent"
 				},
 				{
 					"PackageIdentifier" : "GodotEngine.GodotEngine.Mono"
+				},
+				{
+					"PackageIdentifier" : "ZacharyL2.KeyEcho"
 				},
 				{
 					"PackageIdentifier" : "Postman.Postman"
@@ -253,7 +283,7 @@
 					"PackageIdentifier" : "Proton.ProtonPass"
 				},
 				{
-					"PackageIdentifier" : "JetBrains.RustRover.EAP"
+					"PackageIdentifier" : "Rustlang.Rustup"
 				},
 				{
 					"PackageIdentifier" : "Spotify.Spotify"
@@ -263,6 +293,9 @@
 				},
 				{
 					"PackageIdentifier" : "SamHocevar.WinCompose"
+				},
+				{
+					"PackageIdentifier" : "Yaak.app"
 				},
 				{
 					"PackageIdentifier" : "ebkr.r2modman"
@@ -283,6 +316,9 @@
 					"PackageIdentifier" : "SlackTechnologies.Slack"
 				},
 				{
+					"PackageIdentifier" : "ByteDance.Trae"
+				},
+				{
 					"PackageIdentifier" : "VSCodium.VSCodium"
 				},
 				{
@@ -295,9 +331,6 @@
 					"PackageIdentifier" : "CitraEmu.Citra"
 				},
 				{
-					"PackageIdentifier" : "DuckDuckGo.DesktopBrowser"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.AppInstaller"
 				},
 				{
@@ -308,9 +341,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCLibs.Desktop.14"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DevHome"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WindowsTerminal.Preview"
@@ -340,5 +370,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.10.340"
+	"WinGetVersion" : "1.11.430"
 }
