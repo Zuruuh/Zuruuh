@@ -6,6 +6,7 @@ export alias code = codium
 export alias "atuin uuid" = random uuid --version 7
 export alias cat = bat
 export alias base64 = print 'use `encode base64`!'
+export alias keys = print 'use `columns`!'
 
 export def nix-shell --wrapped [...args] {
     $"Use (ansi purple)nix shell nixpkgs#($args | get 0 --optional | default '...')(ansi reset) instead!"
@@ -31,7 +32,6 @@ export alias "config nvim" = nvim ~/.dotfiles/home/.config/nvim/init.lua
 export alias "config nu" = nvim ~/.dotfiles/home/.config/nushell/
 export alias "config aliases" = nvim ~/.dotfiles/home/.config/nushell/aliases.nu
 export alias "config starship" = nvim ~/.dotfiles/home/.config/starship.toml
-export alias "config alacritty" = nvim ~/.dotfiles/home/.config/alacritty/
 export alias "config wezterm" = nvim ~/.dotfiles/home/.config/wezterm/wezterm.lua
 export alias "config ghostty" = nvim ~/.dotfiles/home/.config/ghostty/config
 export alias "config ssh" = nvim ~/.dotfiles/home/.ssh/config
