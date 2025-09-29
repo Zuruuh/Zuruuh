@@ -14,7 +14,7 @@ color = "Blue"
 type = "Bookmarks"
 separator = "|"
 color = "Magenta"
-behind_symbol = "⇡"
+behind_symbol = "+"
 
 [[module]]
 type = "Commit"

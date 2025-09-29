@@ -307,6 +307,8 @@ require('lazy').setup({
               '/',
               '--iglob',
               '!.git',
+              '--iglob',
+              '!.jj',
               '--hidden',
               '--ignore-file',
               '.gitignore',

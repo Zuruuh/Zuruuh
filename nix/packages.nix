@@ -95,7 +95,7 @@ let
     ];
     bash = [
       shellcheck
-      shfmt
+      unstable.shfmt
       bash-language-server
       bashInteractive
     ];
