@@ -19,6 +19,7 @@ $git_metrics\
 $git_status\
 $hg_branch\
 $pijul_channel\
+${custom.jj}\
 $docker_context\
 $package\
 $c\
@@ -134,3 +135,11 @@ not_allowed_msg = 'without'
 [bun]
 symbol = "🍞 "
 version_format = "v${minor}.${patch}"
+
+[custom.jj]
+command = "prompt"
+format = "$output"
+ignore_timeout = true
+shell = ["starship-jj", "--ignore-working-copy", "starship"]
+use_stdin = false
+when = true
