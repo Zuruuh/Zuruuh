@@ -454,7 +454,7 @@ require('lazy').setup({
           javascriptreact = { 'biome' },
           typescriptreact = { 'biome' },
           svelte = { 'prettier' },
-          yaml = { 'prettier', lsp_format = 'fallback' },
+          -- yaml = { 'prettier', lsp_format = 'fallback' },
           astro = { 'prettier' },
           html = { 'prettier', lsp_format = 'fallback' },
           css = { 'biome' },
@@ -1115,6 +1115,20 @@ require('lazy').setup({
         ['`'] = '`',
       },
       keep_insert_mode = true,
+    },
+  },
+  {
+    'mistweaverco/kulala.nvim',
+    keys = {
+      { '<leader>Rs', desc = 'Send request' },
+      { '<leader>Ra', desc = 'Send all requests' },
+      { '<leader>Rb', desc = 'Open scratchpad' },
+    },
+    ft = { 'http', 'rest' },
+    opts = {
+      global_keymaps = false,
+      global_keymaps_prefix = '<leader>R',
+      kulala_keymaps_prefix = '',
     },
   },
 }, {
