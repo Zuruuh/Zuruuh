@@ -1119,14 +1119,14 @@ require('lazy').setup({
   {
     'mistweaverco/kulala.nvim',
     keys = {
-      { '<leader>Rs', desc = 'Send request' },
-      { '<leader>Ra', desc = 'Send all requests' },
-      { '<leader>Rb', desc = 'Open scratchpad' },
+      { '<leader>rs', desc = 'Send request' },
+      { '<leader>ra', desc = 'Send all requests' },
+      { '<leader>rb', desc = 'Open scratchpad' },
     },
     ft = { 'http', 'rest' },
     opts = {
-      global_keymaps = false,
-      global_keymaps_prefix = '<leader>R',
+      global_keymaps = true,
+      global_keymaps_prefix = '<leader>r',
       kulala_keymaps_prefix = '',
     },
   },
