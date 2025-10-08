@@ -295,30 +295,29 @@ require('lazy').setup({
     config = function()
       local themes = require('telescope.themes')
       local telescope = require('telescope')
+      function merge(a, b)
+        local result = { unpack(a) }
+        for _, v in ipairs(b) do
+          table.insert(result, v)
+        end
+        return result
+      end
+      local args = { '--path-separator', '/', '--iglob', '!.git', '--iglob', '!.jj', '--hidden', '--ignore-file', '.gitignore' }
 
       telescope.setup({
         pickers = {
           find_files = {
             hidden = true,
-            find_command = {
+            find_command = merge({
               'rg',
               '--files',
-              '--path-separator',
-              '/',
-              '--iglob',
-              '!.git',
-              '--iglob',
-              '!.jj',
-              '--hidden',
-              '--ignore-file',
-              '.gitignore',
-            },
+            }, args),
           },
           grep_string = {
-            additional_args = { '--hidden' },
+            additional_args = args,
           },
           live_grep = {
-            additional_args = { '--hidden' },
+            additional_args = args,
           },
         },
         extensions = {
