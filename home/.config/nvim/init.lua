@@ -1118,6 +1118,7 @@ require('lazy').setup({
   },
   {
     'mistweaverco/kulala.nvim',
+    branch = 'develop',
     keys = {
       { '<leader>rs', desc = 'Send request' },
       { '<leader>ra', desc = 'Send all requests' },
