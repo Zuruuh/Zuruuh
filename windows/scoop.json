@@ -3,19 +3,19 @@
         {
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main.git",
-            "Updated": "2025-08-27T18:29:55+02:00",
-            "Manifests": 1403
+            "Updated": "2025-09-09T14:31:51+02:00",
+            "Manifests": 1404
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
-            "Updated": "2025-08-27T18:29:58+02:00",
+            "Updated": "2025-09-09T14:31:59+02:00",
             "Manifests": 2180
         },
         {
             "Name": "versions",
             "Source": "https://github.com/ScoopInstaller/Versions",
-            "Updated": "2025-08-27T18:44:01+02:00",
+            "Updated": "2025-09-09T15:03:50+02:00",
             "Manifests": 510
         },
         {
@@ -33,568 +33,568 @@
         {
             "Name": "nerd-fonts",
             "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
-            "Updated": "2025-08-22T15:32:29+02:00",
+            "Updated": "2025-09-08T11:27:51+02:00",
             "Manifests": 367
         },
         {
             "Name": "nonportable",
             "Source": "https://github.com/ScoopInstaller/Nonportable",
-            "Updated": "2025-08-27T15:00:27+02:00",
+            "Updated": "2025-09-08T15:02:34+02:00",
             "Manifests": 128
         },
         {
             "Name": "java",
             "Source": "https://github.com/ScoopInstaller/Java",
-            "Updated": "2025-08-27T03:27:38+02:00",
+            "Updated": "2025-09-08T06:24:14+02:00",
             "Manifests": 299
         }
     ],
     "apps": [
         {
             "Source": "main",
-            "Info": "",
-            "Name": "7zip",
             "Version": "25.01",
-            "Updated": "2025-08-13T13:54:08.1420148+02:00"
+            "Updated": "2025-08-13T13:54:08.1420148+02:00",
+            "Name": "7zip",
+            "Info": ""
         },
         {
             "Source": "extras",
-            "Info": "",
-            "Name": "alacritty",
             "Version": "0.15.1",
-            "Updated": "2025-02-18T02:31:01.9386655+01:00"
+            "Updated": "2025-02-18T02:31:01.9386655+01:00",
+            "Name": "alacritty",
+            "Info": ""
         },
         {
             "Source": "extras",
-            "Info": "",
-            "Name": "amber",
             "Version": "0.6.0",
-            "Updated": "2024-12-31T04:39:47.6215211+01:00"
+            "Updated": "2024-12-31T04:39:47.6215211+01:00",
+            "Name": "amber",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "bat",
             "Version": "0.25.0",
-            "Updated": "2025-01-11T20:14:10.935603+01:00"
+            "Updated": "2025-01-11T20:14:10.935603+01:00",
+            "Name": "bat",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "2.2.3",
+            "Updated": "2025-09-09T18:16:05.3021509+02:00",
             "Name": "biome",
-            "Version": "2.1.4",
-            "Updated": "2025-08-13T13:54:14.0011163+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "1.2.21",
+            "Updated": "2025-09-09T18:16:18.157111+02:00",
             "Name": "bun",
-            "Version": "1.2.20",
-            "Updated": "2025-08-13T13:54:23.316843+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "2025-09-09",
+            "Updated": "2025-09-09T18:16:18.3404061+02:00",
             "Name": "cacert",
-            "Version": "2025-08-12",
-            "Updated": "2025-08-13T13:54:23.4535193+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "1.15.4",
+            "Updated": "2025-09-09T18:16:19.2747137+02:00",
             "Name": "cargo-binstall",
-            "Version": "1.14.4",
-            "Updated": "2025-08-13T13:54:24.3376118+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "clipboard",
             "Version": "0.10.0",
-            "Updated": "2025-06-03T15:32:28.786138+02:00"
+            "Updated": "2025-06-03T15:32:28.786138+02:00",
+            "Name": "clipboard",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "4.1.1",
+            "Updated": "2025-09-09T18:16:33.3437945+02:00",
             "Name": "cmake",
-            "Version": "4.1.0",
-            "Updated": "2025-08-13T13:54:36.888493+02:00"
+            "Info": ""
         },
         {
             "Source": "extras",
-            "Info": "",
-            "Name": "cnping",
             "Version": "1.0.0",
-            "Updated": "2024-04-30T15:12:34.9085223+02:00"
+            "Updated": "2024-04-30T15:12:34.9085223+02:00",
+            "Name": "cnping",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "2.8.11",
+            "Updated": "2025-09-09T18:16:34.4414194+02:00",
             "Name": "composer",
-            "Version": "2.8.10",
-            "Updated": "2025-07-17T18:39:09.8849473+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "8.15.0_5",
+            "Updated": "2025-09-09T18:16:35.5916909+02:00",
             "Name": "curl",
-            "Version": "8.15.0_4",
-            "Updated": "2025-08-13T13:54:37.8666313+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "dark",
             "Version": "3.14.1",
-            "Updated": "2025-06-03T15:34:27.3040566+02:00"
+            "Updated": "2025-06-03T15:34:27.3040566+02:00",
+            "Name": "dark",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "delta",
             "Version": "0.18.2",
-            "Updated": "2024-09-19T00:19:02.4587756+02:00"
+            "Updated": "2024-09-19T00:19:02.4587756+02:00",
+            "Name": "delta",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "dust",
             "Version": "1.2.3",
-            "Updated": "2025-08-13T13:54:38.3498186+02:00"
+            "Updated": "2025-08-13T13:54:38.3498186+02:00",
+            "Name": "dust",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "2.52.0",
+            "Updated": "2025-09-09T18:16:36.3406635+02:00",
             "Name": "fastfetch",
-            "Version": "2.49.0",
-            "Updated": "2025-08-13T13:54:39.3233633+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "10.3.0",
+            "Updated": "2025-09-09T18:16:36.908721+02:00",
             "Name": "fd",
-            "Version": "10.2.0",
-            "Updated": "2024-08-31T05:38:45.2610036+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "8.0",
+            "Updated": "2025-09-09T18:16:48.9939646+02:00",
             "Name": "ffmpeg",
-            "Version": "7.1.1",
-            "Updated": "2025-06-26T08:07:59.8964078+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "8.0",
+            "Updated": "2025-09-09T18:17:05.5526392+02:00",
             "Name": "ffmpeg-shared",
-            "Version": "7.1.1",
-            "Updated": "2025-06-26T08:09:02.0820186+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "0.65.2",
+            "Updated": "2025-09-09T18:17:06.1226317+02:00",
             "Name": "fzf",
-            "Version": "0.65.1",
-            "Updated": "2025-08-13T13:54:39.8273741+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "gcc",
             "Version": "13.2.0",
-            "Updated": "2024-04-25T15:20:34.6859715+02:00"
+            "Updated": "2024-04-25T15:20:34.6859715+02:00",
+            "Name": "gcc",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "gettext",
             "Version": "0.26-v1.17",
-            "Updated": "2025-08-13T13:54:40.993911+02:00"
+            "Updated": "2025-08-13T13:54:40.993911+02:00",
+            "Name": "gettext",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "2.78.0",
+            "Updated": "2025-09-09T18:17:08.3698353+02:00",
             "Name": "gh",
-            "Version": "2.76.2",
-            "Updated": "2025-08-13T13:54:43.0284053+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "2.51.0",
+            "Updated": "2025-09-09T18:17:19.2724845+02:00",
             "Name": "git",
-            "Version": "2.50.1",
-            "Updated": "2025-07-17T18:39:26.9963534+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "gpg",
             "Version": "2.4.8",
-            "Updated": "2025-07-17T18:39:28.5056517+02:00"
+            "Updated": "2025-07-17T18:39:28.5056517+02:00",
+            "Name": "gpg",
+            "Info": ""
         },
         {
             "Source": null,
-            "Info": "Install failed",
-            "Name": "gpg4win",
             "Version": null,
-            "Updated": "2025-08-13T14:43:50.3338668+02:00"
+            "Updated": "2025-08-13T14:43:50.3338668+02:00",
+            "Name": "gpg4win",
+            "Info": "Install failed"
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "gping",
             "Version": "1.18.0",
-            "Updated": "2024-11-24T18:41:13.3957808+01:00"
+            "Updated": "2024-11-24T18:41:13.3957808+01:00",
+            "Name": "gping",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "gsudo",
             "Version": "2.6.0",
-            "Updated": "2025-03-26T20:16:56.7802433+01:00"
+            "Updated": "2025-03-26T20:16:56.7802433+01:00",
+            "Name": "gsudo",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "gzip",
             "Version": "1.3.12",
-            "Updated": "2024-04-25T15:37:04.0386384+02:00"
+            "Updated": "2024-04-25T15:37:04.0386384+02:00",
+            "Name": "gzip",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "2.65.1",
+            "Updated": "2025-09-09T18:17:19.4812483+02:00",
             "Name": "innounp",
-            "Version": "2.64.6",
-            "Updated": "2025-08-13T13:54:43.3286724+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "0.33.0",
+            "Updated": "2025-09-09T18:17:20.7276297+02:00",
             "Name": "jj",
-            "Version": "0.32.0",
-            "Updated": "2025-08-13T13:54:44.5291233+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "jq",
             "Version": "1.8.1",
-            "Updated": "2025-07-17T18:39:30.3720286+02:00"
+            "Updated": "2025-07-17T18:39:30.3720286+02:00",
+            "Name": "jq",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "just",
             "Version": "1.42.4",
-            "Updated": "2025-08-13T13:54:45.0973514+02:00"
+            "Updated": "2025-08-13T13:54:45.0973514+02:00",
+            "Name": "just",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "less",
             "Version": "679",
-            "Updated": "2025-07-17T18:39:31.2820168+02:00"
+            "Updated": "2025-07-17T18:39:31.2820168+02:00",
+            "Name": "less",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "21.1.0",
+            "Updated": "2025-09-09T18:18:05.7071841+02:00",
             "Name": "llvm",
-            "Version": "20.1.8",
-            "Updated": "2025-07-17T18:40:18.0317417+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "make",
             "Version": "4.4.1",
-            "Updated": "2024-05-09T14:33:32.8011104+02:00"
+            "Updated": "2024-05-09T14:33:32.8011104+02:00",
+            "Name": "make",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "mdcat",
             "Version": "2.7.1",
-            "Updated": "2024-12-22T17:50:45.938561+01:00"
+            "Updated": "2024-12-22T17:50:45.938561+01:00",
+            "Name": "mdcat",
+            "Info": ""
         },
         {
             "Source": "nerd-fonts",
-            "Info": "",
-            "Name": "Monaspace-NF",
             "Version": "3.4.0",
-            "Updated": "2025-06-03T15:39:23.3110656+02:00"
+            "Updated": "2025-06-03T15:39:23.3110656+02:00",
+            "Name": "Monaspace-NF",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "2025-08-30",
+            "Updated": "2025-09-09T18:18:27.6787836+02:00",
             "Name": "msys2",
-            "Version": "2025-06-22",
-            "Updated": "2025-07-17T18:40:39.6719637+02:00"
+            "Info": ""
         },
         {
             "Source": "versions",
-            "Info": "",
+            "Version": "0.12.0-1180",
+            "Updated": "2025-09-09T18:18:32.348601+02:00",
             "Name": "neovim-nightly",
-            "Version": "0.12.0-1004",
-            "Updated": "2025-08-13T13:54:49.2211758+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "3.27.0",
+            "Updated": "2025-09-09T18:18:41.0685249+02:00",
             "Name": "ngrok",
-            "Version": "3.26.0",
-            "Updated": "2025-08-13T13:54:53.0438758+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "24.7.0",
+            "Updated": "2025-09-09T18:18:47.1599103+02:00",
             "Name": "nodejs",
-            "Version": "24.5.0",
-            "Updated": "2025-08-13T13:54:59.7287092+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "0.11.10",
+            "Updated": "2025-09-09T18:20:49.7546891+02:00",
             "Name": "ollama",
-            "Version": "0.11.4",
-            "Updated": "2025-08-13T13:57:18.4115599+02:00"
+            "Info": ""
         },
         {
             "Source": "extras",
-            "Info": "",
+            "Version": "0.11.10",
+            "Updated": "2025-09-09T18:22:58.1494773+02:00",
             "Name": "ollama-full",
-            "Version": "0.11.4",
-            "Updated": "2025-08-13T13:59:02.4631632+02:00"
+            "Info": ""
         },
         {
             "Source": "extras",
-            "Info": "",
-            "Name": "onefetch",
             "Version": "2.25.0",
-            "Updated": "2025-07-17T18:45:15.931416+02:00"
+            "Updated": "2025-07-17T18:45:15.931416+02:00",
+            "Name": "onefetch",
+            "Info": ""
         },
         {
             "Source": "java",
-            "Info": "",
-            "Name": "openjdk21",
             "Version": "21.0.2-13",
-            "Updated": "2025-08-14T20:49:20.5609298+02:00"
+            "Updated": "2025-08-14T20:49:20.5609298+02:00",
+            "Name": "openjdk21",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "openssl",
             "Version": "3.5.2",
-            "Updated": "2025-08-13T14:00:07.8259894+02:00"
+            "Updated": "2025-08-13T14:00:07.8259894+02:00",
+            "Name": "openssl",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "perl",
             "Version": "5.42.0.1",
-            "Updated": "2025-08-13T14:00:48.4900105+02:00"
+            "Updated": "2025-08-13T14:00:48.4900105+02:00",
+            "Name": "perl",
+            "Info": ""
         },
         {
             "Source": "php",
-            "Info": "",
+            "Version": "8.3.25",
+            "Updated": "2025-09-09T18:23:05.2319769+02:00",
             "Name": "php8.3",
-            "Version": "8.3.24",
-            "Updated": "2025-08-13T14:00:56.5356162+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "10.15.1",
+            "Updated": "2025-09-09T18:23:10.7128942+02:00",
             "Name": "pnpm",
-            "Version": "10.14.0",
-            "Updated": "2025-08-13T14:01:01.5219315+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "pwsh",
             "Version": "7.4.2",
-            "Updated": "2024-05-09T14:39:15.2813985+02:00"
+            "Updated": "2024-05-09T14:39:15.2813985+02:00",
+            "Name": "pwsh",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "3.13.7",
+            "Updated": "2025-09-09T18:23:32.0347569+02:00",
             "Name": "python",
-            "Version": "3.13.6",
-            "Updated": "2025-08-13T14:01:22.7050097+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "rcedit",
             "Version": "2.0.0",
-            "Updated": "2024-05-14T17:09:05.5379679+02:00"
+            "Updated": "2024-05-14T17:09:05.5379679+02:00",
+            "Name": "rcedit",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "ripgrep",
             "Version": "14.1.1",
-            "Updated": "2024-09-19T00:21:20.9340414+02:00"
+            "Updated": "2024-09-19T00:21:20.9340414+02:00",
+            "Name": "ripgrep",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "sed",
             "Version": "4.9",
-            "Updated": "2024-04-25T15:55:50.6158187+02:00"
+            "Updated": "2024-04-25T15:55:50.6158187+02:00",
+            "Name": "sed",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "shfmt",
             "Version": "3.12.0",
-            "Updated": "2025-07-17T18:48:13.7452462+02:00"
+            "Updated": "2025-07-17T18:48:13.7452462+02:00",
+            "Name": "shfmt",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "sqlite",
             "Version": "3.50.4",
-            "Updated": "2025-08-13T14:01:24.9712735+02:00"
+            "Updated": "2025-08-13T14:01:24.9712735+02:00",
+            "Name": "sqlite",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "starship",
             "Version": "1.23.0",
-            "Updated": "2025-06-03T15:54:01.888112+02:00"
+            "Updated": "2025-06-03T15:54:01.888112+02:00",
+            "Name": "starship",
+            "Info": ""
         },
         {
             "Source": "sysinternals",
-            "Info": "",
-            "Name": "strings",
             "Version": "2.54",
-            "Updated": "2024-12-22T17:50:01.4650473+01:00"
+            "Updated": "2024-12-22T17:50:01.4650473+01:00",
+            "Name": "strings",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "stylua",
             "Version": "2.1.0",
-            "Updated": "2025-06-03T15:54:26.6581279+02:00"
+            "Updated": "2025-06-03T15:54:26.6581279+02:00",
+            "Name": "stylua",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "symfony-cli",
             "Version": "5.12.0",
-            "Updated": "2025-07-17T18:48:17.9808472+02:00"
+            "Updated": "2025-07-17T18:48:17.9808472+02:00",
+            "Name": "symfony-cli",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "5.5.0",
+            "Updated": "2025-09-09T18:23:32.9768334+02:00",
             "Name": "tailspin",
-            "Version": "5.4.5",
-            "Updated": "2025-07-17T18:48:18.7566419+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "taplo",
             "Version": "0.9.3",
-            "Updated": "2024-08-18T18:57:50.6408992+02:00"
+            "Updated": "2024-08-18T18:57:50.6408992+02:00",
+            "Name": "taplo",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "tlrc",
             "Version": "1.11.1",
-            "Updated": "2025-06-03T15:55:16.6719405+02:00"
+            "Updated": "2025-06-03T15:55:16.6719405+02:00",
+            "Name": "tlrc",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "tokei",
             "Version": "12.1.2",
-            "Updated": "2024-12-31T03:36:05.6528205+01:00"
+            "Updated": "2024-12-31T03:36:05.6528205+01:00",
+            "Name": "tokei",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "unzip",
             "Version": "6.00",
-            "Updated": "2024-04-25T15:56:49.5794884+02:00"
+            "Updated": "2024-04-25T15:56:49.5794884+02:00",
+            "Name": "unzip",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "0.8.15",
+            "Updated": "2025-09-09T18:23:35.7889046+02:00",
             "Name": "uv",
-            "Version": "0.8.9",
-            "Updated": "2025-08-13T14:01:27.0137162+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "2025.08.27",
+            "Updated": "2025-09-09T18:24:01.9533853+02:00",
             "Name": "vcpkg",
-            "Version": "2025.07.25",
-            "Updated": "2025-08-13T14:01:53.2046838+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "vim",
             "Version": "9.1.0",
-            "Updated": "2025-04-09T16:06:40.6244855+02:00"
+            "Updated": "2025-04-09T16:06:40.6244855+02:00",
+            "Name": "vim",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "wget",
             "Version": "1.21.4",
-            "Updated": "2024-04-25T15:36:40.7714563+02:00"
+            "Updated": "2024-04-25T15:36:40.7714563+02:00",
+            "Name": "wget",
+            "Info": ""
         },
         {
             "Source": "extras",
-            "Info": "",
-            "Name": "winrar",
             "Version": "7.13",
-            "Updated": "2025-08-13T14:01:53.8062041+02:00"
+            "Updated": "2025-08-13T14:01:53.8062041+02:00",
+            "Name": "winrar",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "xh",
             "Version": "0.24.1",
-            "Updated": "2025-06-03T15:56:08.6551101+02:00"
+            "Updated": "2025-06-03T15:56:08.6551101+02:00",
+            "Name": "xh",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "yazi",
             "Version": "25.5.31",
-            "Updated": "2025-06-03T15:56:34.5410359+02:00"
+            "Updated": "2025-06-03T15:56:34.5410359+02:00",
+            "Name": "yazi",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "0.15.1",
+            "Updated": "2025-09-09T18:24:37.2592721+02:00",
             "Name": "zig",
-            "Version": "0.14.1",
-            "Updated": "2025-06-03T15:57:34.4037547+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "zip",
             "Version": "3.0",
-            "Updated": "2024-04-25T15:56:44.8154829+02:00"
+            "Updated": "2024-04-25T15:56:44.8154829+02:00",
+            "Name": "zip",
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
+            "Version": "0.15.0",
+            "Updated": "2025-09-09T18:24:38.3769605+02:00",
             "Name": "zls",
-            "Version": "0.14.0",
-            "Updated": "2025-06-22T19:34:49.9512783+02:00"
+            "Info": ""
         },
         {
             "Source": "main",
-            "Info": "",
-            "Name": "zoxide",
             "Version": "0.9.8",
-            "Updated": "2025-06-03T15:57:59.3010911+02:00"
+            "Updated": "2025-06-03T15:57:59.3010911+02:00",
+            "Name": "zoxide",
+            "Info": ""
         }
     ]
 }

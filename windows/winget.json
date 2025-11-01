@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-09-09T18:14:12.040-00:00",
+	"CreationDate" : "2025-09-09T19:30:30.271-00:00",
 	"Sources" : 
 	[
 		{
@@ -23,9 +23,6 @@
 				},
 				{
 					"PackageIdentifier" : "Medibang.MediBangPaintPro"
-				},
-				{
-					"PackageIdentifier" : "Modrinth.ModrinthApp"
 				},
 				{
 					"PackageIdentifier" : "Meta.Oculus"
@@ -76,7 +73,13 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
+					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+				},
+				{
 					"PackageIdentifier" : "BlenderFoundation.Blender"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier" : "LGUG2Z.whkd"
@@ -89,9 +92,6 @@
 				},
 				{
 					"PackageIdentifier" : "Apple.Bonjour"
-				},
-				{
-					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
 				},
 				{
 					"PackageIdentifier" : "Alacritty.Alacritty"
@@ -247,9 +247,6 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
-				},
-				{
 					"PackageIdentifier" : "Bruno.Bruno"
 				},
 				{
@@ -275,6 +272,9 @@
 				},
 				{
 					"PackageIdentifier" : "ZacharyL2.KeyEcho"
+				},
+				{
+					"PackageIdentifier" : "Modrinth.ModrinthApp"
 				},
 				{
 					"PackageIdentifier" : "Postman.Postman"
