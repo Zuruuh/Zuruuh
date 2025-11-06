@@ -7,6 +7,7 @@ export alias "atuin uuid" = random uuid --version 7
 export alias cat = bat
 export alias base64 = print 'use `encode base64`!'
 export alias keys = print 'use `columns`!'
+export alias pairs = print 'use `items {callback}` OR `transpose key value`!'
 export alias ':q' = print 'bouffon va'
 
 export def nix-shell --wrapped [...args] {
