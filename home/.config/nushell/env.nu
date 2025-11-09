@@ -11,6 +11,7 @@ if not ('HOME' in $env) {
 
 if $nu.os-info.name == 'windows' {
     path add 'D:\Bin'
+    path add $"($env.HOME)\\AppData\\bin"
     $env.XDG_DATA_HOME = $env.APPDATA
     $env.XDG_STATE_HOME = $env.LOCALAPPDATA
     $env.PWSH = (which pwsh | get path.0)
