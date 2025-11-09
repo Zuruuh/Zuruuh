@@ -254,24 +254,24 @@ require('lazy').setup({
     },
   },
 
-  {
-    'folke/which-key.nvim',
-    event = 'VimEnter',
-    config = function()
-      local wk = require('which-key')
-      wk.setup()
-
-      wk.add({
-        { '<leader>c', group = '[C]ode' },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>p', group = '[P]roject' },
-        { '<leader>g', group = '[G]it' },
-      })
-    end,
-  },
+  -- {
+  --   'folke/which-key.nvim',
+  --   event = 'VimEnter',
+  --   config = function()
+  --     local wk = require('which-key')
+  --     wk.setup()
+  --
+  --     wk.add({
+  --       { '<leader>c', group = '[C]ode' },
+  --       { '<leader>d', group = '[D]ocument' },
+  --       { '<leader>r', group = '[R]ename' },
+  --       { '<leader>s', group = '[S]earch' },
+  --       { '<leader>w', group = '[W]orkspace' },
+  --       { '<leader>p', group = '[P]roject' },
+  --       { '<leader>g', group = '[G]it' },
+  --     })
+  --   end,
+  -- },
 
   {
     'nvim-telescope/telescope.nvim',
