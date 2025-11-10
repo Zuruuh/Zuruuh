@@ -360,7 +360,7 @@ in
 
     casks = [
       "ghostty"
-      "eloston-chromium"
+      "ungoogled-chromium"
       "obs"
       "obsidian"
       "orbstack"
