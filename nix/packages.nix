@@ -38,7 +38,7 @@ let
     javascript = [
       unstable.bun
       deno
-      nodejs
+      nodejs_24
       nodePackages.pnpm
       nodePackages.serve
       unstable.typescript-language-server

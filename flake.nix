@@ -48,7 +48,7 @@
       };
       global-nodejs = (final: prev:
         let
-          nodejs = final.nodejs_20;
+          nodejs = final.nodejs_24;
         in
         {
           inherit nodejs;

@@ -1,1 +1,1 @@
-nix/flake.nix
+../flake.nix
