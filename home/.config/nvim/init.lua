@@ -1134,6 +1134,9 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'sphamba/smear-cursor.nvim',
+  },
 }, {
   rocks = {
     enabled = false,
