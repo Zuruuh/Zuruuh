@@ -1134,6 +1134,19 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'saghen/blink.indent',
+    --- @module 'blink.indent'
+    --- @type blink.indent.Config
+    opts = {
+      static = {
+        char = '┆',
+      },
+      scope = {
+        char = '╎',
+      },
+    },
+  },
 }, {
   rocks = {
     enabled = false,
