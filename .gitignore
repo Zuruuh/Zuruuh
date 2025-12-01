@@ -23,3 +23,5 @@
 /home/.config/Cypress/
 /home/.config/qBittorrent
 /home/.config/nvim/asciis.jsonl
+# fuck you configstore
+/home/.config/configstore/
