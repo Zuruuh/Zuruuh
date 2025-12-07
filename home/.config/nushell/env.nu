@@ -16,10 +16,10 @@ if $nu.os-info.name == 'windows' {
     $env.XDG_STATE_HOME = $env.LOCALAPPDATA
     $env.PWSH = (which pwsh | get path.0)
 
-    # android
-    $env.ANDROID_HOME = 'D:\\Android'
-    $env.NDK_HOME = (ls $"($env.ANDROID_HOME)\\ndk" | get 0.name)
-    path add 'D:\\Android\\platform-tools'
+    # # android
+    # $env.ANDROID_HOME = 'D:\\Android'
+    # $env.NDK_HOME = (ls $"($env.ANDROID_HOME)\\ndk" | get 0.name)
+    # path add 'D:\\Android\\platform-tools'
 
     # csharp
     path add $"($env.HOME)\\.dotnet\\tools"
