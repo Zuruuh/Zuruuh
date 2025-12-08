@@ -34,7 +34,6 @@
         nixpkgs.follows = "nixos";
         flake-utils.follows = "flake-utils";
         flake-compat.follows = "flake-compat";
-        cl-nix-lite.url = "github:r4v3n6101/cl-nix-lite/6deefd29913ad23b73db8f1ade0a397e1518619f";
       };
     };
   };

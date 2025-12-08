@@ -200,7 +200,7 @@ local ns = vim.api.nvim_create_namespace('evenoddlines')
 vim.api.nvim_set_decoration_provider(ns, {
   on_win = function() end,
   on_line = function(_, _, buf, row)
-    if vim.api.nvim_buf_get_name(buf):match('fyler://') == nil then
+    if vim.api.nvim_buf_get_name(buf):match('NvimTree') == nil then
       return
     end
 
@@ -919,92 +919,91 @@ require('lazy').setup({
       vim.opt.undodir = vim.fn.stdpath('data') .. '/undodir'
     end,
   },
+  {
+    'nvim-tree/nvim-tree.lua',
+    lazy = false,
+    keys = {
+      {
+        '<leader>pv',
+        vim.cmd.NvimTreeOpen,
+        desc = 'Open [P]roject [V]iew (File explorer)',
+      },
+    },
+    opts = {
+      git = { enable = true },
+      renderer = {
+        highlight_git = true,
+        icons = {
+          show = {
+            git = true,
+          },
+        },
+      },
+      view = {
+        side = 'right',
+        relativenumber = true,
+      },
+    },
+    config = function(_, opts)
+      require('nvim-tree').setup(opts)
+
+      local nvim_tree_normal_hl = vim.api.nvim_get_hl(0, { name = 'NvimTreeNormal' })
+      if nvim_tree_normal_hl == nil or nvim_tree_normal_hl.bg == nil then
+        return
+      end
+
+      -- + 5 on all 3 RGB channels
+      vim.api.nvim_set_hl(0, 'NvimTreeNormalOdd', { bg = nvim_tree_normal_hl.bg - 591878 })
+    end,
+  },
   -- {
-  --   'nvim-tree/nvim-tree.lua',
-  --   lazy = false,
-  --   keys = {
-  --     {
-  --       '<leader>pv',
-  --       vim.cmd.NvimTreeOpen,
-  --       desc = 'Open [P]roject [V]iew (File explorer)',
-  --     },
-  --   },
+  --   'A7Lavinraj/fyler.nvim',
+  --   dependencies = 'nvim-tree/nvim-web-devicons',
+  --   lazy = false, -- Necessary for `default_explorer` to work properly
   --   opts = {
-  --     git = { enable = true },
-  --     renderer = {
-  --       highlight_git = true,
-  --       icons = {
-  --         show = {
-  --           git = true,
+  --     integrations = {
+  --       icon = 'nvim_web_devicons',
+  --     },
+  --     views = {
+  --       finder = {
+  --         close_on_select = true,
+  --         default_explorer = true,
+  --         git_status = {
+  --           enabled = true,
+  --         },
+  --         icon = {
+  --           directory_empty = '',
+  --           directory_expanded = '',
+  --         },
+  --         indentscope = {
+  --           marker = '┆',
+  --         },
+  --         follow_current_file = true,
+  --         watcher = {
+  --           enabled = true,
+  --         },
+  --         win = {
+  --           kind = 'split_right',
+  --           win_opts = {
+  --             number = true,
+  --             relativenumber = true,
+  --           },
   --         },
   --       },
   --     },
-  --     view = {
-  --       side = 'right',
-  --       relativenumber = true,
-  --     },
   --   },
-  --   config = function(_, opts)
-  --     require('nvim-tree').setup(opts)
-  --
-  --     local nvim_tree_normal_hl = vim.api.nvim_get_hl(0, { name = 'NvimTreeNormal' })
-  --     if nvim_tree_normal_hl == nil or nvim_tree_normal_hl.bg == nil then
-  --       return
-  --     end
-  --
-  --     -- + 5 on all 3 RGB channels
-  --     vim.api.nvim_set_hl(0, 'NvimTreeNormalOdd', { bg = nvim_tree_normal_hl.bg - 591878 })
+  --   keys = function()
+  --     local fyler = require('fyler')
+  --     return {
+  --       {
+  --         '<leader>pv',
+  --         function()
+  --           fyler.focus()
+  --         end,
+  --       },
+  --     }
   --   end,
   -- },
-  {
-    'A7Lavinraj/fyler.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    branch = 'stable', -- Use stable branch for production
-    lazy = false, -- Necessary for `default_explorer` to work properly
-    opts = {
-      integrations = {
-        icon = 'nvim_web_devicons',
-      },
-      views = {
-        finder = {
-          close_on_select = true,
-          default_explorer = true,
-          git_status = {
-            enabled = true,
-          },
-          icon = {
-            directory_empty = '',
-            directory_expanded = '',
-          },
-          indentscope = {
-            marker = '┆',
-          },
-          follow_current_file = true,
-          watcher = {
-            enabled = true,
-          },
-          win = {
-            kind = 'split_right',
-            win_opts = {
-              number = true,
-              relativenumber = true,
-            },
-          },
-        },
-      },
-    },
-    keys = function()
-      local fyler = require('fyler')
-      return {
-        {
-          '<leader>pv',
-          function()
-            fyler.focus()
-          end,
-        },
-      }
-    end,
-  },
   {
     'akinsho/bufferline.nvim',
     version = '*',

@@ -25,7 +25,6 @@ export def "wsl ip" [] {
 export def "wsl open" [path: string] {
     /mnt/c/Windows/explorer.exe ("\\\\wsl.localhost\\NixOS" + ((pwd) | path join $path | str replace -a '/' '\'))
 }
-
 export alias config = nvim ~/.dotfiles
 export alias "config dotfiles" = nvim ~/.dotfiles/
 export alias "config nix" = nvim ~/.dotfiles/nix/
@@ -116,4 +115,8 @@ export def --env "proxyman-cli use" [] {
     each {|var| [$var 'http://localhost:9090']} |
     into record |
     load-env
+}
+
+export def "jj merge" [branch: string] {
+    print $"Use `jj new @- ($branch)` instead!"
 }
