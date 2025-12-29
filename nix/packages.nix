@@ -37,7 +37,7 @@ let
     ];
     javascript = [
       unstable.bun
-      # deno
+      unstable.deno
       nodejs_24
       nodePackages.pnpm
       nodePackages.serve
@@ -156,7 +156,7 @@ let
       stow
       tlrc
       viu
-      yazi
+      # yazi
     ] ++ forLinux [ pkgs.sudo ];
     shell = [
       unstable.zoxide

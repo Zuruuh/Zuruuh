@@ -44,8 +44,8 @@ in
     nix-ld.enable = true;
     gnupg.agent = {
       enable = true;
-      enableSSHSupport = true;
-      pinentryPackage = pkgs.pinentry-curses;
+      enableSSHSupport = false;
+      pinentryPackage = pkgs.unstable.pinentry-tty;
     };
     direnv = {
       enable = true;

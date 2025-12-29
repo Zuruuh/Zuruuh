@@ -9,6 +9,13 @@ export alias base64 = print 'use `encode base64`!'
 export alias keys = print 'use `columns`!'
 export alias pairs = print 'use `items {callback}` OR `transpose key value`!'
 export alias ':q' = print 'bouffon va'
+export def mago --wrapped [...args] {
+    if ('vendor/bin/mago' | path exists) {
+        vendor/bin/mago ...$args
+    } else {
+        bin/mago ...$args
+    }
+}
 
 export def nix-shell --wrapped [...args] {
     $"Use (ansi purple)nix shell nixpkgs#($args | get 0 --optional | default '...')(ansi reset) instead!"
