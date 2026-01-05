@@ -37,7 +37,7 @@ let
     ];
     javascript = [
       unstable.bun
-      deno
+      # deno
       nodejs_24
       nodePackages.pnpm
       nodePackages.serve
@@ -47,7 +47,7 @@ let
       vscode-langservers-extracted
     ];
     docker = [
-      dockerfile-language-server-nodejs
+      dockerfile-language-server
       dive
     ] ++ forLinux (with pkgs; [ kubernetes kubectl minikube ]);
     git = [
@@ -82,7 +82,7 @@ let
       symfony-cli
     ];
     python = [
-      python312Full
+      python312
       python312Packages.pip
       uv
     ];
@@ -137,7 +137,7 @@ let
     monitoring = [
       htop
       btop
-      du-dust
+      dust
     ];
     clipboard = [
       clipboard-jh

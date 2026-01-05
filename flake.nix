@@ -3,7 +3,7 @@
 
   inputs = {
     # Packages
-    nixos.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixos.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # Helpers
@@ -15,7 +15,7 @@
 
     # WSL
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/release-25.05";
+      url = "github:nix-community/NixOS-WSL/release-25.11";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-compat.follows = "flake-compat";
@@ -24,7 +24,7 @@
 
     # MacOS
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
       inputs.nixpkgs.follows = "nixos";
     };
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
@@ -42,7 +42,7 @@
     let
       root-overlay = final: prev: {
         unstable = import inputs.nixpkgs-unstable {
-          inherit (prev) system;
+          inherit (prev.stdenv.hostPlatform) system;
         };
       };
       global-nodejs = (final: prev:
