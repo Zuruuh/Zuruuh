@@ -723,11 +723,7 @@ require('lazy').setup({
       { 'navarasu/onedark.nvim', lazy = true },
       { 'Mofiqul/vscode.nvim', lazy = true },
       { 'folke/tokyonight.nvim', lazy = true },
-      { 'ellisonleao/gruvbox.nvim', lazy = true },
-      { 'ellisonleao/gruvbox.nvim', lazy = true },
       { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
-      { 'shaunsingh/nord.nvim', lazy = true },
-      { 'nyoom-engineering/oxocarbon.nvim', lazy = true },
     },
     opts = {
       themes = {
@@ -738,13 +734,10 @@ require('lazy').setup({
         'tokyonight-night',
         'tokyonight-storm',
         'tokyonight-moon',
-        'gruvbox',
         'catppuccin-macchiato',
         'catppuccin-latte',
         'catppuccin-frappe',
         'catppuccin-mocha',
-        'nord',
-        'oxocarbon',
         'default',
       },
       livePreview = true,
@@ -1166,7 +1159,7 @@ require('lazy').setup({
   },
   {
     'mistweaverco/kulala.nvim',
-    branch = 'develop',
+    branch = 'main',
     keys = {
       { '<leader>rs', desc = 'Send request' },
       { '<leader>ra', desc = 'Send all requests' },
