@@ -3,7 +3,7 @@ export alias docker-compose = docker compose
 export alias compose = docker compose
 export alias buildx = docker buildx
 export alias code = codium
-export alias "atuin uuid" = random uuid --version 7
+export alias 'atuin uuid' = random uuid --version 7
 export alias cat = bat
 export alias base64 = print 'use `encode base64`!'
 export alias keys = print 'use `columns`!'
@@ -16,6 +16,7 @@ export def mago --wrapped [...args] {
         bin/mago ...$args
     }
 }
+export alias 'z docker' = z ~/dev/staffmatch/staffmatch-docker/
 
 export def nix-shell --wrapped [...args] {
     $"Use (ansi purple)nix shell nixpkgs#($args | get 0 --optional | default '...')(ansi reset) instead!"
