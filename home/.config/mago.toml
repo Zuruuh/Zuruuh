@@ -1,0 +1,8 @@
+[formatter]
+print-width = 100
+
+[linter.rules]
+literal-named-argument.enabled = false
+no-else-clause.enabled = false
+assert-description.enabled = false
+no-shorthand-ternary.enabled = false
