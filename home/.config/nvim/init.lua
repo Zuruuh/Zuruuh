@@ -254,25 +254,6 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   'folke/which-key.nvim',
-  --   event = 'VimEnter',
-  --   config = function()
-  --     local wk = require('which-key')
-  --     wk.setup()
-  --
-  --     wk.add({
-  --       { '<leader>c', group = '[C]ode' },
-  --       { '<leader>d', group = '[D]ocument' },
-  --       { '<leader>r', group = '[R]ename' },
-  --       { '<leader>s', group = '[S]earch' },
-  --       { '<leader>w', group = '[W]orkspace' },
-  --       { '<leader>p', group = '[P]roject' },
-  --       { '<leader>g', group = '[G]it' },
-  --     })
-  --   end,
-  -- },
-
   {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
@@ -522,11 +503,19 @@ require('lazy').setup({
     },
     opts_extend = { 'sources.default' },
   },
+  {
+    'j-hui/fidget.nvim',
+    opts = {
+      notification = {
+        window = {
+          avoid = { 'NvimTree' },
+        },
+      },
+    },
+  },
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Useful status updates for LSP.
-      { 'j-hui/fidget.nvim', opts = {} },
       {
         'mason-org/mason.nvim',
         cond = function()
@@ -949,54 +938,6 @@ require('lazy').setup({
       vim.api.nvim_set_hl(0, 'NvimTreeNormalOdd', { bg = nvim_tree_normal_hl.bg - 591878 })
     end,
   },
-  -- {
-  --   'A7Lavinraj/fyler.nvim',
-  --   dependencies = 'nvim-tree/nvim-web-devicons',
-  --   lazy = false, -- Necessary for `default_explorer` to work properly
-  --   opts = {
-  --     integrations = {
-  --       icon = 'nvim_web_devicons',
-  --     },
-  --     views = {
-  --       finder = {
-  --         close_on_select = true,
-  --         default_explorer = true,
-  --         git_status = {
-  --           enabled = true,
-  --         },
-  --         icon = {
-  --           directory_empty = '',
-  --           directory_expanded = '',
-  --         },
-  --         indentscope = {
-  --           marker = '┆',
-  --         },
-  --         follow_current_file = true,
-  --         watcher = {
-  --           enabled = true,
-  --         },
-  --         win = {
-  --           kind = 'split_right',
-  --           win_opts = {
-  --             number = true,
-  --             relativenumber = true,
-  --           },
-  --         },
-  --       },
-  --     },
-  --   },
-  --   keys = function()
-  --     local fyler = require('fyler')
-  --     return {
-  --       {
-  --         '<leader>pv',
-  --         function()
-  --           fyler.focus()
-  --         end,
-  --       },
-  --     }
-  --   end,
-  -- },
   {
     'akinsho/bufferline.nvim',
     version = '*',
@@ -1187,6 +1128,11 @@ require('lazy').setup({
         char = '╎',
       },
     },
+  },
+  {
+    'Zuruuh/mago.nvim',
+    ft = 'php',
+    opts = {},
   },
 }, {
   rocks = {
