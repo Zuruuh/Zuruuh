@@ -126,7 +126,7 @@ style = 'italic yellow'
 disabled = false
 
 [direnv]
-disabled = false
+disabled = true
 format = '$allowed 📁 [direnv]($style) '
 style = 'bold orange'
 allowed_msg = 'with'
