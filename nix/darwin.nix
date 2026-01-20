@@ -261,9 +261,7 @@ in
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs = {
-    hostPlatform = platform;
-
-    config.allowUnfree = true;
+    inherit pkgs;
   };
 
 
