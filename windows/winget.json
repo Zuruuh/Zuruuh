@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-09-09T19:30:30.271-00:00",
+	"CreationDate" : "2026-01-26T19:24:24.273-00:00",
 	"Sources" : 
 	[
 		{
@@ -14,6 +14,12 @@
 				},
 				{
 					"PackageIdentifier" : "Git.Git"
+				},
+				{
+					"PackageIdentifier" : "GnuPG.GnuPG"
+				},
+				{
+					"PackageIdentifier" : "GnuPG.Gpg4win"
 				},
 				{
 					"PackageIdentifier" : "Hex-Rays.IDA.Free"
@@ -46,6 +52,9 @@
 					"PackageIdentifier" : "SteelSeries.GG"
 				},
 				{
+					"PackageIdentifier" : "LizardByte.Sunshine"
+				},
+				{
 					"PackageIdentifier" : "Unity.Unity.2022"
 				},
 				{
@@ -58,6 +67,9 @@
 					"PackageIdentifier" : "VideoLAN.VLC"
 				},
 				{
+					"PackageIdentifier" : "RARLab.WinRAR"
+				},
+				{
 					"PackageIdentifier" : "Zen-Team.Zen-Browser"
 				},
 				{
@@ -67,7 +79,13 @@
 					"PackageIdentifier" : "DimitriVanHeesch.Doxygen"
 				},
 				{
-					"PackageIdentifier" : "dotPDN.PaintDotNet"
+					"PackageIdentifier" : "Elgato.4KCaptureUtility"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier" : "Alacritty.Alacritty"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
@@ -76,13 +94,10 @@
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
 				},
 				{
+					"PackageIdentifier" : "dotPDN.PaintDotNet"
+				},
+				{
 					"PackageIdentifier" : "BlenderFoundation.Blender"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
-				},
-				{
-					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
@@ -94,10 +109,19 @@
 					"PackageIdentifier" : "Apple.Bonjour"
 				},
 				{
-					"PackageIdentifier" : "Alacritty.Alacritty"
+					"PackageIdentifier" : "Flameshot.Flameshot"
 				},
 				{
-					"PackageIdentifier" : "StreetPea.chiaki-ng"
+					"PackageIdentifier" : "LGUG2Z.whkd"
+				},
+				{
+					"PackageIdentifier" : "ViGEm.ViGEmBus"
+				},
+				{
+					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+				},
+				{
+					"PackageIdentifier" : "PlayStation.PlayStationAccessories"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.CUDA"
@@ -106,10 +130,10 @@
 					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
-					"PackageIdentifier" : "Inkscape.Inkscape"
+					"PackageIdentifier" : "wez.wezterm"
 				},
 				{
-					"PackageIdentifier" : "wez.wezterm"
+					"PackageIdentifier" : "Inkscape.Inkscape"
 				},
 				{
 					"PackageIdentifier" : "ThioJoe.SvgThumbnailExtension"
@@ -118,25 +142,19 @@
 					"PackageIdentifier" : "dorssel.usbipd-win"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.GameInput"
+				},
+				{
 					"PackageIdentifier" : "TeamSpeakSystems.TeamSpeakClient.Beta.6"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WSL"
 				},
 				{
-					"PackageIdentifier" : "Elgato.4KCaptureUtility"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
 				},
 				{
 					"PackageIdentifier" : "JetBrains.DataGrip"
-				},
-				{
-					"PackageIdentifier" : "GnuPG.GnuPG"
-				},
-				{
-					"PackageIdentifier" : "GnuPG.Gpg4win"
 				},
 				{
 					"PackageIdentifier" : "ImperativeSoftware.InputDirector"
@@ -178,19 +196,19 @@
 					"PackageIdentifier" : "qBittorrent.qBittorrent"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
+					"PackageIdentifier" : "WinSCP.WinSCP"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
@@ -199,28 +217,31 @@
 					"PackageIdentifier" : "Skillbrains.Lightshot"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
-				},
-				{
 					"PackageIdentifier" : "PlayStation.PSRemotePlay"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.9"
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.9"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.DotNet.Framework.DeveloperPack.4.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+					"PackageIdentifier" : "Microsoft.VCRedist.2005.x86"
 				},
 				{
 					"PackageIdentifier" : "GOG.Galaxy"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerShell"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
@@ -232,22 +253,19 @@
 					"PackageIdentifier" : "Mojang.MinecraftLauncher"
 				},
 				{
-					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.PhysXLegacy"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
-				},
-				{
-					"PackageIdentifier" : "Bruno.Bruno"
 				},
 				{
 					"PackageIdentifier" : "FTB.App"
@@ -268,7 +286,7 @@
 					"PackageIdentifier" : "Figma.FigmaAgent"
 				},
 				{
-					"PackageIdentifier" : "GodotEngine.GodotEngine.Mono"
+					"PackageIdentifier" : "Voidstar.FilePilot"
 				},
 				{
 					"PackageIdentifier" : "ZacharyL2.KeyEcho"
@@ -278,6 +296,9 @@
 				},
 				{
 					"PackageIdentifier" : "Postman.Postman"
+				},
+				{
+					"PackageIdentifier" : "PrismLauncher.PrismLauncher"
 				},
 				{
 					"PackageIdentifier" : "Proton.ProtonPass"
@@ -331,6 +352,9 @@
 					"PackageIdentifier" : "CitraEmu.Citra"
 				},
 				{
+					"PackageIdentifier" : "SamsidParty.TopNotify"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.AppInstaller"
 				},
 				{
@@ -370,5 +394,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.11.430"
+	"WinGetVersion" : "1.12.460"
 }
