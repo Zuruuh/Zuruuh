@@ -16,7 +16,6 @@ export def mago --wrapped [...args] {
         bin/mago ...$args
     }
 }
-export alias 'z docker' = z ~/dev/staffmatch/staffmatch-docker/
 
 export def nix-shell --wrapped [...args] {
     $"Use (ansi purple)nix shell nixpkgs#($args | get 0 --optional | default '...')(ansi reset) instead!"
