@@ -53,12 +53,13 @@ in
       nix-direnv.enable = true;
     };
     command-not-found.enable = false;
+    zsh.enable = true;
   };
 
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "docker" ];
-    shell = pkgs.unstable.nushell;
+    shell = pkgs.zsh;
   };
   users.users.root = { };
 
