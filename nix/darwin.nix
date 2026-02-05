@@ -277,6 +277,7 @@ in
       # ghostty # broken
       postman
       jetbrains.datagrip
+      youtube-music
     ];
   };
 
