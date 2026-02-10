@@ -25,3 +25,4 @@
 /home/.config/nvim/asciis.jsonl
 # fuck you configstore
 /home/.config/configstore/
+/home/.config/jj/repos
