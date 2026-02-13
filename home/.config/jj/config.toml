@@ -16,3 +16,8 @@ pager = ["delta", "--pager", "less -FRX"]
 
 [ui.movement]
 edit = true
+
+[aliases]
+push = ['git', 'push']
+fetch = ['git', 'fetch']
+move = ['bookmark', 'move', '--from=@--', '--to=@-', '--allow-backwards']
