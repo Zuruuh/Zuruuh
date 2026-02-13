@@ -271,7 +271,7 @@ in
     systemPackages = with pkgs; [
       unstable.spicetify-cli
       brave
-      google-chrome
+      # google-chrome
       libreoffice-bin
       telegram-desktop
       # ghostty # broken
