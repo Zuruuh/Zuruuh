@@ -57,6 +57,7 @@ let
       delta
       gnupg
       unstable.jujutsu
+      unstable.mergiraf
     ];
     nix = [
       nil
