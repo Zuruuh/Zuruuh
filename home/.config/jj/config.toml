@@ -13,3 +13,6 @@ private-commits = '''description(glob:'private:*')'''
 [ui]
 diff-formatter = ":git"
 pager = ["delta", "--pager", "less -FRX"]
+
+[ui.movement]
+edit = true
