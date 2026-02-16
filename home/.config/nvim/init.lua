@@ -468,7 +468,7 @@ require('lazy').setup({
         preset = 'super-tab',
         ['<Enter>'] = { 'accept', 'fallback' },
         ['<C-Space>'] = { 'show', 'fallback' },
-        ['<C-e>'] = { 'show', 'fallback' },
+        ['<C-e>'] = { 'show' },
       },
 
       fuzzy = {
@@ -529,74 +529,77 @@ require('lazy').setup({
       },
     },
     opts = {
-      servers = {
-        astro = {},
-        bashls = {},
-        clangd = {},
-        cssls = {},
-        dockerls = {},
-        html = {},
-        jsonls = function()
-          return {
-            settings = {
-              json = {
-                schemas = require('schemastore').json.schemas(),
-                validate = { enable = true },
-              },
-            },
-          }
-        end,
-        lua_ls = {
-          Lua = {
-            completion = {
-              callSnippet = 'Replace',
+      astro = {},
+      bashls = {},
+      clangd = {},
+      cssls = {},
+      dockerls = {},
+      html = {},
+      jsonls = function()
+        return {
+          settings = {
+            json = {
+              schemas = require('schemastore').json.schemas(),
+              validate = { enable = true },
             },
           },
-        },
-        phpactor = {},
-        rust_analyzer = {
-          ['rust-analyzer'] = {
-            cargo = {
-              buildScripts = { enable = true },
-              features = 'all',
-            },
-            procMacro = { enable = true },
-            files = {
-              excludeDirs = { '.direnv' },
-            },
+        }
+      end,
+      lua_ls = {
+        Lua = {
+          completion = {
+            callSnippet = 'Replace',
           },
         },
-        sqlls = {},
-        ts_ls = {},
-        yamlls = function()
-          return {
-            settings = {
-              yaml = {
-                schemaStore = {
-                  enable = true,
-                  url = 'https://www.schemastore.org/api/json/catalog.json',
-                },
-                schemas = require('schemastore').yaml.schemas(),
+      },
+      phpactor = {},
+      rust_analyzer = {
+        ['rust-analyzer'] = {
+          cargo = {
+            buildScripts = { enable = true },
+            features = 'all',
+          },
+          procMacro = { enable = true },
+          files = {
+            excludeDirs = { '.direnv' },
+          },
+        },
+      },
+      sqlls = {},
+      ts_ls = {},
+      yamlls = function()
+        return {
+          settings = {
+            yaml = {
+              schemaStore = {
+                enable = true,
+                url = 'https://www.schemastore.org/api/json/catalog.json',
               },
+              schemas = require('schemastore').yaml.schemas(),
             },
-          }
-        end,
-        -- nil_ls = {},
-        nixd = {},
-        nushell = {},
-        gopls = {},
-        lemminx = {},
-        terraformls = {},
-        zls = {},
-        taplo = {},
-        csharp_ls = {},
-        tailwindcss = {},
+          },
+        }
+      end,
+      -- nil_ls = {},
+      nixd = {},
+      nushell = {},
+      gopls = {},
+      lemminx = {},
+      terraformls = {},
+      zls = {},
+      taplo = {},
+      csharp_ls = {},
+      tailwindcss = {},
+      behat_ls = {
+        filetypes = { 'cucumber' },
+        cmd = { 'behat-lsp' },
+        single_file_support = true,
       },
     },
     config = function(_, opts)
       local blink = require('blink.cmp')
 
-      for server, config in pairs(opts.servers) do
+      for server, config in pairs(opts) do
         if type(config) == 'function' then
           config = config()
         end
