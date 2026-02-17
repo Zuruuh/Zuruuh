@@ -81,6 +81,7 @@ let
       php84
       php84.packages.composer
       symfony-cli
+      behat-lsp
     ];
     python = [
       python312

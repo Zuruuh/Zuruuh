@@ -13,6 +13,15 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
 
+    # CLIs
+    behat-lsp = {
+      url = "github:Zuruuh/behat-lsp?ref=main";
+      inputs = {
+        nixpkgs.follows = "nixpkgs-unstable";
+        flake-utils.follows = "flake-utils";
+      };
+    };
+
     # WSL
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/release-25.11";
@@ -38,12 +47,13 @@
     };
   };
 
-  outputs = inputs@{ self, nixos, nixos-wsl, nix-darwin, mac-app-util, ... }:
+  outputs = inputs@{ self, nixos, nixos-wsl, nix-darwin, mac-app-util, behat-lsp, ... }:
     let
       root-overlay = final: prev: {
         unstable = import inputs.nixpkgs-unstable {
           inherit (prev.stdenv.hostPlatform) system;
         };
+        behat-lsp = behat-lsp.packages.${prev.stdenv.hostPlatform.system}.default;
       };
       global-nodejs = (final: prev:
         let
