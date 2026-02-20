@@ -378,16 +378,6 @@ require('lazy').setup({
         end,
 
         formatters = {
-          phpcbf = function()
-            return {
-              async = true,
-              command = conform.find_executable({
-                'vendor/bin/phpcbf',
-                'bin/phpcbf',
-              }, 'phpcbf'),
-            }
-          end,
-
           prettier = function()
             return {
               command = conform.from_node_modules('prettier'),
@@ -442,7 +432,7 @@ require('lazy').setup({
           markdown = { 'deno_fmt' },
           sh = { 'shfmt' },
           toml = { 'taplo' },
-          php = { 'mago', 'php_cs_fixer', 'phpcbf', stop_after_first = true },
+          php = { 'mago', 'php_cs_fixer', stop_after_first = true },
           rust = { 'dioxus', 'rustfmt' },
           nix = { 'nixpkgs_fmt' },
           terraform = { 'tofu_fmt' },
@@ -507,6 +497,7 @@ require('lazy').setup({
     'j-hui/fidget.nvim',
     opts = {
       notification = {
+        override_vim_notify = true,
         window = {
           avoid = { 'NvimTree' },
         },
