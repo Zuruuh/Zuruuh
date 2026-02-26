@@ -111,3 +111,6 @@ if $nu.os-info.name != 'windows' {
         ] | par-each {|callback| do $callback}
     }
 }
+
+$env.PNPM_HOME = $"($env.home)/.local/share/pnpm"
+$env.PATH = ($env.PATH | split row (char esep) | prepend $env.PNPM_HOME)
