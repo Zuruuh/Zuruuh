@@ -373,8 +373,8 @@ in
       "protonvpn"
       "zen"
       "spotify"
-      "trae"
       "steam"
+      "notunes"
     ];
   };
 }
