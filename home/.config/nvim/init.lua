@@ -255,99 +255,53 @@ require('lazy').setup({
   },
 
   {
-    'nvim-telescope/telescope.nvim',
-    event = 'VimEnter',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      { -- If encountering errors, see telescope-fzf-native README for install instructions
-        'nvim-telescope/telescope-fzf-native.nvim',
-
-        build = 'make',
-
-        cond = function()
-          return vim.fn.executable('make') == 1
-        end,
+    'dmtrKovalenko/fff.nvim',
+    build = vim.fn.has('win32') == 1 and function()
+      require('fff.download').download_or_build_binary()
+    end or 'nix run .#release',
+    opts = {
+      debug = {
+        enabled = true, -- we expect your collaboration at least during the beta
+        show_scores = true, -- to help us optimize the scoring system, feel free to share your scores!
       },
-
-      'nvim-telescope/telescope-ui-select.nvim',
-      'nvim-tree/nvim-web-devicons',
     },
-
-    config = function()
-      local themes = require('telescope.themes')
-      local telescope = require('telescope')
-      function merge(a, b)
-        local result = { unpack(a) }
-        for _, v in ipairs(b) do
-          table.insert(result, v)
-        end
-        return result
-      end
-      local args = { '--path-separator', '/', '--iglob', '!.git', '--iglob', '!.jj', '--hidden', '--ignore-file', '.gitignore' }
-
-      telescope.setup({
-        pickers = {
-          find_files = {
-            hidden = true,
-            find_command = merge({
-              'rg',
-              '--files',
-            }, args),
-          },
-          grep_string = {
-            additional_args = args,
-          },
-          live_grep = {
-            additional_args = args,
-          },
-        },
-        extensions = {
-          ['ui-select'] = {
-            themes.get_dropdown(),
-          },
-        },
-      })
-
-      -- Enable telescope extensions, if they are installed
-      pcall(telescope.load_extension, 'fzf')
-      pcall(telescope.load_extension, 'ui-select')
-
-      local responsive_picker = function(picker, opts)
-        local theme_opts = vim.tbl_deep_extend('force', {
-          winblend = 10,
-        }, opts or {})
-
-        local picker_opts = (vim.o.columns / 2 > vim.o.lines) and theme_opts or themes.get_dropdown(theme_opts)
-
-        return function()
-          picker(picker_opts)
-        end
-      end
-
-      local builtins = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>sh', responsive_picker(builtins.help_tags), { desc = '[S]earch [H]elp' })
-      vim.keymap.set('n', '<leader>sk', responsive_picker(builtins.keymaps), { desc = '[S]earch [K]eymaps' })
-      vim.keymap.set('n', '<leader>sf', responsive_picker(builtins.find_files), { desc = '[S]earch [F]iles' })
-      vim.keymap.set('n', '<leader>ss', responsive_picker(builtins.builtin), { desc = '[S]earch [S]elect Telescope' })
-      vim.keymap.set('n', '<leader>sw', responsive_picker(builtins.grep_string), { desc = '[S]earch current [W]ord' })
-      vim.keymap.set('n', '<leader>sg', responsive_picker(builtins.live_grep), { desc = '[S]earch by [G]rep' })
-      vim.keymap.set('n', '<leader>sd', responsive_picker(builtins.diagnostics), { desc = '[S]earch [D]iagnostics' })
-      vim.keymap.set('n', '<leader>s.', responsive_picker(builtins.oldfiles), { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', responsive_picker(builtins.buffers), { desc = '[ ] Find existing buffers' })
-      vim.keymap.set('n', '<leader>sr', responsive_picker(builtins.lsp_references), { desc = '[S]earch LSP [R]eferences' })
-      vim.keymap.set('n', '<leader>sb', responsive_picker(builtins.git_branches), { desc = '[S]earch Git [B]ranches' })
-
-      -- Slightly advanced example of overriding default behavior and theme
-
-      -- Also possible to pass additional configuration options.
-      --  See `:help telescope.builtin.live_grep()` for information about particular keys
-      vim.keymap.set(
-        'n',
-        '<leader>s/',
-        responsive_picker(builtins.live_grep, { grep_open_files = true, prompt_title = 'Live Grep in Open Files' }),
-        { desc = '[S]earch [/] in Open Files' }
-      )
-    end,
+    -- No need to lazy-load with lazy.nvim.
+    -- This plugin initializes itself lazily.
+    lazy = false,
+    keys = {
+      {
+        '<leader>ff', -- try it if you didn't it is a banger keybinding for a picker
+        function()
+          require('fff').find_files()
+        end,
+        desc = 'FFFind files',
+      },
+      {
+        '<leader>fg',
+        function()
+          require('fff').live_grep()
+        end,
+        desc = 'LiFFFe grep',
+      },
+      {
+        '<leader>fz',
+        function()
+          require('fff').live_grep({
+            grep = {
+              modes = { 'fuzzy', 'plain' },
+            },
+          })
+        end,
+        desc = 'Live fffuzy grep',
+      },
+      {
+        '<leader>fc',
+        function()
+          require('fff').live_grep({ query = vim.fn.expand('<cword>') })
+        end,
+        desc = 'Search current word',
+      },
+    },
   },
 
   { -- Autoformat
@@ -356,7 +310,7 @@ require('lazy').setup({
     cmd = 'ConformInfo',
     keys = {
       {
-        '<leader>f',
+        'ff',
         function()
           require('conform').format({ async = true, lsp_format = 'fallback' })
         end,
@@ -610,28 +564,8 @@ require('lazy').setup({
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
           map('gb', '<C-t>', '[G]o [B]ack')
-
-          -- Find references for the word under your cursor.
-          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]references')
-
-          -- Jump to the implementation of the word under your cursor.
-          --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-
-          -- Jump to the type of the word under your cursor.
-          --  Useful when you're not sure what type a variable is and you want to see
-          --  the definition of its *type*, not where it was *defined*.
-          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-
-          -- Fuzzy find all the symbols in your current document.
-          --  Symbols are things like variables, functions, types, etc.
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]symbols')
-
-          -- Fuzzy find all the symbols in your current workspace
-          --  Similar to document symbols, except searches over your whole project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]symbols')
 
           -- Rename the variable under your cursor
           --  Most Language Servers support renaming across files, etc.
@@ -995,6 +929,7 @@ require('lazy').setup({
     opts = {
       bigfile = {},
       dashboard = {
+        enabled = false,
         sections = {
           { section = 'header' },
           {
@@ -1005,10 +940,6 @@ require('lazy').setup({
         },
         preset = {
           keys = {
-            { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
-            { icon = ' ', key = 'g', desc = 'Find Text', action = ":lua Snacks.dashboard.pick('live_grep')" },
-            { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
-            -- { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
             { icon = '󰒲 ', key = 'L', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
             { icon = '󱊣', key = 'c', desc = 'Healthcheck', action = ':checkhealth' },
             { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
