@@ -49,9 +49,16 @@ if $nu.os-info.name == 'macos' {
 path add $"($env.HOME)/.cargo/bin"
 
 # Bun
-if (not ('BUN_INSTALL' in $env)) and ($"($env.HOME)/.bun" | path exists) {
-    $env.BUN_INSTALL = $"($env.HOME)/.bun"
-    path add $"($env.BUN_INSTALL)/bin"
+if not ('BUN_INSTALL' in $env) {
+    if ($"($env.HOME)/.bun" | path exists) {
+        $env.BUN_INSTALL = $"($env.HOME)/.bun"
+    } else if ($"($env.HOME)/.cache/.bun" | path exists) {
+        $env.BUN_INSTALL = $"($env.HOME)/.cache/.bun"
+    }
+
+    if 'BUN_INSTALL' in $env {
+        path add $"($env.BUN_INSTALL)/bin"
+    }
 }
 
 # Python
