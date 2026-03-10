@@ -55,6 +55,7 @@ let
       git
       git-lfs
       delta
+      difftastic
       gnupg
       unstable.jujutsu
       unstable.mergiraf

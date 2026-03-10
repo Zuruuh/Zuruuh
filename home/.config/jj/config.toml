@@ -11,8 +11,14 @@ key = "4C8921C0E8A4F68A78CE3EC6AFB2FC6B8FFFBCFB"
 private-commits = '''description(glob:'private:*')'''
 
 [ui]
-diff-formatter = ":git"
-pager = ["delta", "--pager", "less -FRX"]
+diff-formatter = [
+  "difft",
+  "--syntax-highlight=on",
+  "--color=always",
+  "$left",
+  "$right",
+]
+# pager = ["delta", "--pager", "less -FRX"]
 merge-editor = 'mergiraf'
 
 [ui.movement]
