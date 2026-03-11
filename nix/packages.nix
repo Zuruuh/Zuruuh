@@ -83,6 +83,7 @@ let
       php84.packages.composer
       symfony-cli
       behat-lsp
+      (vimfony pkgs)
     ];
     python = [
       python312

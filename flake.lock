@@ -334,7 +334,8 @@
         "nix-homebrew": "nix-homebrew",
         "nixos": "nixos",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "vimfony": "vimfony"
       }
     },
     "rust-analyzer-src": {
@@ -432,6 +433,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "vimfony": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773220335,
+        "narHash": "sha256-exq9KCjEG1lVeSkJf7csY8CGez+K0I4dnwmcZmvpXKo=",
+        "owner": "shinyvision",
+        "repo": "vimfony",
+        "rev": "9e32b5c7e755b196bc25b1c01fe74d52b78cc1af",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shinyvision",
+        "repo": "vimfony",
         "type": "github"
       }
     }

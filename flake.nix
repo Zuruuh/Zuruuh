@@ -21,6 +21,10 @@
         flake-utils.follows = "flake-utils";
       };
     };
+    vimfony = {
+      url = "github:shinyvision/vimfony?ref=main";
+      flake = false;
+    };
 
     # WSL
     nixos-wsl = {
@@ -54,6 +58,15 @@
           inherit (prev.stdenv.hostPlatform) system;
         };
         behat-lsp = behat-lsp.packages.${prev.stdenv.hostPlatform.system}.default;
+        vimfony = (pkgs: pkgs.buildGoModule {
+          pname = "vimfony";
+          version = "0.1.1";
+          vendorHash = "sha256-NvEBp3iSLv+UipQ8xfUN151jlzPndUPob3tnFhUsn98=";
+          buildTestBinaries = false;
+          doCheck = false;
+
+          src = inputs.vimfony;
+        });
       };
       global-nodejs = (final: prev:
         let

@@ -498,6 +498,22 @@ require('lazy').setup({
         },
       },
       phpactor = {},
+      vimfony = {
+        cmd = { 'vimfony' },
+        filetypes = { 'php', 'twig', 'yaml' },
+        root_markers = { 'symfony.lock' },
+        single_file_support = true,
+        init_options = {
+          roots = {
+            'templates',
+          },
+          container_xml_path = {
+            'var/cache/dev/Staffmatch_KernelDevDebugContainer.xml',
+            'var/cache/dev/App_KernelDevDebugContainer.xml',
+          },
+          vendor = 'vendor',
+        },
+      },
       rust_analyzer = {
         ['rust-analyzer'] = {
           cargo = {
@@ -525,7 +541,6 @@ require('lazy').setup({
           },
         }
       end,
-      -- nil_ls = {},
       nixd = {},
       nushell = {},
       gopls = {},
@@ -703,7 +718,6 @@ require('lazy').setup({
         content = {
           active = function()
             local mode, mode_hl = statusline.section_mode({ trunc_width = 120 })
-            -- local git = statusline.section_git({ trunc_width = 40 })
             local diff = statusline.section_diff({ trunc_width = 75 })
             local diagnostics = statusline.section_diagnostics({ trunc_width = 75 })
             local lsp = statusline.section_lsp({ trunc_width = 75 })
@@ -717,7 +731,6 @@ require('lazy').setup({
               {
                 hl = 'statuslineDevinfo',
                 strings = {
-                  -- git,
                   diff,
                   diagnostics,
                   lsp,
@@ -817,7 +830,9 @@ require('lazy').setup({
       },
     },
     opts = {
-      git = { enable = true },
+      git = {
+        enable = true,
+      },
       renderer = {
         highlight_git = true,
         icons = {
