@@ -1,8 +1,9 @@
 /.vscode/
 /.idea/
 /.ignored/
-/.git
+/.git/
 /**/.phpactor.json
-/.venv
-/.direnv
+/.venv/
+/.direnv/
 /.session.xh.json
+/.serena/

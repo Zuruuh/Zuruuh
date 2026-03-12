@@ -26,3 +26,5 @@
 # fuck you configstore
 /home/.config/configstore/
 /home/.config/jj/repos
+/home/.codex/
+/home/.serena/
