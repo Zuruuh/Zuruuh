@@ -1,6 +1,5 @@
 { pkgs, outputs, ... }:
 let
-  platform = "aarch64-darwin";
   username = "YZiadi";
   env = (import ./env.nix { inherit pkgs; });
   shell = pkgs.writeShellScript "nu" ''
@@ -271,13 +270,14 @@ in
     systemPackages = with pkgs; [
       unstable.spicetify-cli
       brave
-      # google-chrome
       libreoffice-bin
-      telegram-desktop
-      # ghostty # broken
       postman
       jetbrains.datagrip
       youtube-music
+      unstable.ghostty-bin
+      unstable.orbstack
+      unstable.protonmail-desktop
+      unstable.proton-pass
     ];
   };
 
@@ -317,13 +317,13 @@ in
         showhidden = false;
         tilesize = 48;
         persistent-apps = [
-          "/Applications/Ghostty.app"
+          "${pkgs.unstable.ghostty-bin}/Applications/Ghostty.app"
           "/Applications/Zen Browser.app"
           "/Applications/Slack.app"
           "/Applications/Spotify.app"
           "/Applications/Discord.app"
-          "/Applications/OrbStack.app"
-          "/Applications/Proton Mail.app"
+          "${pkgs.unstable.orbstack}/Applications/OrbStack.app"
+          "${pkgs.unstable.protonmail-desktop}/Applications/Proton Mail.app"
           # both datagrip and postman are added automatically for some reason ?
         ];
       };
@@ -358,22 +358,16 @@ in
     onActivation.cleanup = "zap";
 
     casks = [
-      "ghostty"
       "ungoogled-chromium"
       "obs"
-      "obsidian"
-      "orbstack"
       "parsec"
       "proxyman"
       "shottr"
       "slack"
-      "proton-pass"
       "proton-drive"
-      "proton-mail"
       "protonvpn"
       "zen"
       "spotify"
-      "steam"
       "notunes"
     ];
   };

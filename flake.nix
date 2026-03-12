@@ -56,6 +56,7 @@
       root-overlay = final: prev: {
         unstable = import inputs.nixpkgs-unstable {
           inherit (prev.stdenv.hostPlatform) system;
+          config.allowUnfree = true;
         };
         behat-lsp = behat-lsp.packages.${prev.stdenv.hostPlatform.system}.default;
         vimfony = (pkgs: pkgs.buildGoModule {
