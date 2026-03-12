@@ -255,8 +255,32 @@ require('lazy').setup({
   },
 
   {
+    'nvim-telescope/telescope.nvim',
+    event = 'VimEnter',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-ui-select.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+
+    config = function()
+      local themes = require('telescope.themes')
+      local telescope = require('telescope')
+      telescope.setup({
+        extensions = {
+          ['ui-select'] = {
+            themes.get_dropdown(),
+          },
+        },
+      })
+
+      pcall(telescope.load_extension, 'ui-select')
+    end,
+  },
+
+  {
     'dmtrKovalenko/fff.nvim',
-    build = vim.fn.has('win32') == 1 and function()
+    build = vim.fn.has('win32') == 1 or vim.fn.has('macunix') and function()
       require('fff.download').download_or_build_binary()
     end or 'nix run .#release',
     opts = {
@@ -466,6 +490,7 @@ require('lazy').setup({
         cond = function()
           return vim.fn.has('win32') == 1
         end,
+        optional = true,
         opts = {},
       },
       {
