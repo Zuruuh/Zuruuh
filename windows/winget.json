@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2026-01-26T19:24:24.273-00:00",
+	"CreationDate" : "2026-03-23T23:14:34.702-00:00",
 	"Sources" : 
 	[
 		{
@@ -124,6 +124,9 @@
 					"PackageIdentifier" : "PlayStation.PlayStationAccessories"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.GameInput"
+				},
+				{
 					"PackageIdentifier" : "Nvidia.CUDA"
 				},
 				{
@@ -140,9 +143,6 @@
 				},
 				{
 					"PackageIdentifier" : "dorssel.usbipd-win"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.GameInput"
 				},
 				{
 					"PackageIdentifier" : "TeamSpeakSystems.TeamSpeakClient.Beta.6"
@@ -211,6 +211,9 @@
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
 				},
 				{
@@ -223,10 +226,13 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
-					"PackageIdentifier" : "ElectronicArts.EADesktop"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.9"
+				},
+				{
+					"PackageIdentifier" : "ElectronicArts.EADesktop"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.Framework.DeveloperPack.4.6"
@@ -257,12 +263,6 @@
 				},
 				{
 					"PackageIdentifier" : "Nvidia.PhysXLegacy"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
@@ -349,13 +349,13 @@
 					"PackageIdentifier" : "Proton.ProtonDrive"
 				},
 				{
-					"PackageIdentifier" : "CitraEmu.Citra"
-				},
-				{
 					"PackageIdentifier" : "SamsidParty.TopNotify"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.AppInstaller"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DirectX"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.UI.Xaml.2.7"
@@ -394,5 +394,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.12.460"
+	"WinGetVersion" : "1.28.220"
 }
