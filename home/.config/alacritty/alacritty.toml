@@ -13,13 +13,14 @@ family = "MonaspiceAr Nerd Font"
 y = 5
 x = 0
 
-## wip native zellij on windows
 [general]
 working_directory = "D:\\dev"
 
+[env]
+SHELL = "C:\\Users\\zuruh\\.cargo\\bin\\nu.exe"
+
 [terminal.shell]
-# program = "D:\\dev\\zellij\\target\\release\\zellij.exe"
-program = "C:\\Users\\zuruh\\scoop\\apps\\rustup\\current\\.cargo\\bin\\nu.exe"
+program = "C:\\Users\\zuruh\\.cargo\\bin\\zellij.exe"
 
 [[keyboard.bindings]]
 key = "v"

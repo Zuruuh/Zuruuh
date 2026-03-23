@@ -280,7 +280,7 @@ require('lazy').setup({
 
   {
     'dmtrKovalenko/fff.nvim',
-    build = vim.fn.has('win32') == 1 or vim.fn.has('macunix') and function()
+    build = (vim.fn.has('win32') == 1 or vim.fn.has('macunix')) and function()
       require('fff.download').download_or_build_binary()
     end or 'nix run .#release',
     opts = {
