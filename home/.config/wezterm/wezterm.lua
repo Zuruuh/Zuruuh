@@ -37,13 +37,11 @@ if home == nil then
     '--cd',
     '/home/zuruh',
     '--',
-    '/run/current-system/sw/bin/zellij',
+    '/bin/sh',
+    '-c',
+    'SHELL=/run/current-system/sw/bin/nu /run/current-system/sw/bin/zellij',
   }
   config.font_size = 14.0
-elseif home:find('^/Users/') then
-  -- Darwin
-  config.default_prog = { '/run/current-system/sw/bin/zellij' }
-  config.font_size = 18.0
 end
 
 config.keys = {
