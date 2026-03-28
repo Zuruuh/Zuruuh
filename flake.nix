@@ -7,6 +7,10 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # Helpers
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixos";
+    };
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
@@ -23,6 +27,10 @@
     };
     vimfony = {
       url = "github:shinyvision/vimfony?ref=main";
+      flake = false;
+    };
+    phpantom = {
+      url = "github:AJenbo/phpantom_lsp?ref=0.6.0";
       flake = false;
     };
 
@@ -51,24 +59,47 @@
     };
   };
 
-  outputs = inputs@{ self, nixos, nixos-wsl, nix-darwin, mac-app-util, behat-lsp, ... }:
+  outputs = inputs@{ self, nixos, nixos-wsl, nix-darwin, mac-app-util, ... }:
     let
-      root-overlay = final: prev: {
-        unstable = import inputs.nixpkgs-unstable {
-          inherit (prev.stdenv.hostPlatform) system;
-          config.allowUnfree = true;
-        };
-        behat-lsp = behat-lsp.packages.${prev.stdenv.hostPlatform.system}.default;
-        vimfony = (pkgs: pkgs.buildGoModule {
-          pname = "vimfony";
-          version = "0.1.1";
-          vendorHash = "sha256-NvEBp3iSLv+UipQ8xfUN151jlzPndUPob3tnFhUsn98=";
-          buildTestBinaries = false;
-          doCheck = false;
+      root-overlay = final: prev:
+        let
+          system = prev.stdenv.hostPlatform.system;
+        in
+        {
+          unstable = import inputs.nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          behat-lsp = inputs.behat-lsp.packages.${system}.default;
+          vimfony = (pkgs: pkgs.buildGoModule {
+            pname = "vimfony";
+            version = "0.1.1";
+            vendorHash = "sha256-NvEBp3iSLv+UipQ8xfUN151jlzPndUPob3tnFhUsn98=";
+            buildTestBinaries = false;
+            doCheck = false;
 
-          src = inputs.vimfony;
-        });
-      };
+            src = inputs.vimfony;
+          });
+
+          phpantom = (pkgs:
+            let
+              toolchain = inputs.fenix.packages.${system}.fromToolchainName {
+                name = "nightly";
+                sha256 = "sha256-XLL6/CdeXqrWICWZt2lnbzhUX7yk0iHHDd7V6ZqBeRY=";
+              };
+              rustPlatform = pkgs.makeRustPlatform {
+                inherit (toolchain) cargo rustc;
+              };
+            in
+            rustPlatform.buildRustPackage {
+              pname = "phpantom_lsp";
+              version = inputs.phpantom.shortRev;
+              doCheck = false;
+
+              src = inputs.phpantom;
+              cargoHash = "sha256-oRjXf1zR0Ajot6l6ljNAfT7o9yi8m9v8Iwc2xBlTxHM=";
+            });
+        };
       global-nodejs = (final: prev:
         let
           nodejs = final.nodejs_24;

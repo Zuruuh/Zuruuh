@@ -84,6 +84,7 @@ let
       symfony-cli
       behat-lsp
       (vimfony pkgs)
+      (phpantom pkgs)
     ];
     python = [
       python312
