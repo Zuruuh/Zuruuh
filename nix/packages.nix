@@ -170,6 +170,7 @@ let
       unstable.starship
       atuin
       watchexec
+      bubblewrap
     ];
     dev = [
       unstable.neovim
