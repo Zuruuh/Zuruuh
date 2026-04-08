@@ -219,7 +219,14 @@ vim.api.nvim_set_decoration_provider(ns, {
 require('lazy').setup({
   { -- Detect tabstop and shiftwidth automatically
     'NMAC427/guess-indent.nvim',
+    lazy = false,
     opts = {},
+    keys = {
+      {
+        '<leader>sl',
+        vim.cmd.GuessIndent,
+      },
+    },
   },
 
   {
@@ -294,7 +301,7 @@ require('lazy').setup({
     lazy = false,
     keys = {
       {
-        '<leader>ff', -- try it if you didn't it is a banger keybinding for a picker
+        '<leader>ff',
         function()
           require('fff').find_files()
         end,
@@ -787,32 +794,26 @@ require('lazy').setup({
 
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
+    lazy = false,
     build = ':TSUpdate',
-
     dependencies = {
       'nvim-treesitter/nvim-treesitter-context',
       'windwp/nvim-ts-autotag',
     },
-    opts = {
-      auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
-    },
-    config = function(_, opts)
-      ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
-      require('treesitter-context').setup({
-        enable = true,
-        max_lines = 3,
-      })
-
-      require('nvim-ts-autotag').setup({
-        autotag = {
-          enable = true,
-        },
+    init = function()
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = '*',
+        callback = function()
+          -- Enable treesitter highlighting and disable regex syntax
+          pcall(vim.treesitter.start)
+          -- Enable treesitter-based indentation
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
       })
     end,
   },
+
   {
     'isobit/vim-caddyfile',
     event = 'VeryLazy',
@@ -1038,24 +1039,6 @@ require('lazy').setup({
         ['`'] = '`',
       },
       keep_insert_mode = true,
-    },
-  },
-  {
-    'mistweaverco/kulala.nvim',
-    branch = 'main',
-    keys = {
-      { '<leader>rs', desc = 'Send request' },
-      { '<leader>ra', desc = 'Send all requests' },
-      { '<leader>rb', desc = 'Open scratchpad' },
-    },
-    ft = { 'http', 'rest' },
-    opts = {
-      global_keymaps = true,
-      global_keymaps_prefix = '<leader>r',
-      kulala_keymaps_prefix = '',
-      ui = {
-        max_response_size = 1048576, -- 1Mib
-      },
     },
   },
   {
