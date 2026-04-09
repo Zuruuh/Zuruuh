@@ -297,22 +297,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-staging": {
-      "locked": {
-        "lastModified": 1775594379,
-        "narHash": "sha256-uj9WbotFCQpGzjjrWGPiRntMn/0V00ALcDXNjvsYwzQ=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e3c796aa4cb9fe53bde59d5fa166ec40140308d4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "staging",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1775549110,
@@ -389,7 +373,6 @@
         "nix-homebrew": "nix-homebrew",
         "nixos": "nixos",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs-staging": "nixpkgs-staging",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "phpantom": "phpantom",
         "vimfony": "vimfony"

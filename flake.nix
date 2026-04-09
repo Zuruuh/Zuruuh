@@ -5,7 +5,6 @@
     # Packages
     nixos.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-staging.url = "github:nixos/nixpkgs/staging";
 
     # Helpers
     fenix = {
@@ -71,9 +70,6 @@
             inherit system;
             config.allowUnfree = true;
           };
-          staging = import inputs.nixpkgs-staging {
-            inherit system;
-          };
 
           behat-lsp = inputs.behat-lsp.packages.${system}.default;
           vimfony = (pkgs: pkgs.buildGoModule {
@@ -90,7 +86,7 @@
             let
               toolchain = inputs.fenix.packages.${system}.fromToolchainName {
                 name = "nightly";
-                sha256 = "sha256-bolWw9A8sBZf3JDd7F/OMZgQelmuAuGO7ng2HSSEDIg=";
+                sha256 = if pkgs.stdenv.isDarwin then "sha256-IaSkzuTWqMclPsQGrZzvcyz4VJYgrLdD+mZHrgay6+Q=" else "sha256-bolWw9A8sBZf3JDd7F/OMZgQelmuAuGO7ng2HSSEDIg=";
               };
               rustPlatform = pkgs.makeRustPlatform {
                 inherit (toolchain) cargo rustc;

@@ -84,7 +84,7 @@ let
       symfony-cli
       behat-lsp
       (vimfony pkgs)
-      (phpantom pkgs)
+      # (phpantom pkgs)
     ];
     python = [
       python312
@@ -170,11 +170,10 @@ let
       unstable.starship
       atuin
       watchexec
-      bubblewrap
-    ];
+    ] ++ forLinux [ pkgs.bubblewrap ];
     dev = [
       unstable.neovim
-      staging.tree-sitter
+      # staging.tree-sitter
       unstable.zellij
       just
       ngrok
