@@ -798,7 +798,7 @@ require('lazy').setup({
     lazy = false,
     build = ':TSUpdate',
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-context',
+      { 'nvim-treesitter/nvim-treesitter-context', opts = { enable = true, max_lines = 3 } },
       'windwp/nvim-ts-autotag',
     },
     init = function()
