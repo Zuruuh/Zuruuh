@@ -369,6 +369,7 @@ in
       "zen"
       "spotify"
       "notunes"
+      "rtk"
     ];
   };
 }

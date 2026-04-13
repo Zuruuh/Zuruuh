@@ -127,3 +127,15 @@ export def --env "proxyman-cli use" [] {
 export def "jj merge" [branch: string] {
     print $"Use `jj new @- ($branch)` instead!"
 }
+
+export def "jj slug" [] {
+    ^jj log -r @ --no-graph -T 'description'
+    | lines
+    | each {|line| $line | str trim }
+    | where {|line| $line != '' }
+    | first
+    | str downcase
+    | str replace --all --regex '[^a-z0-9]+' '-'
+    | str replace --all --regex '(^-+|-+$)' ''
+    | str replace --all --regex '-+' '-'
+}
