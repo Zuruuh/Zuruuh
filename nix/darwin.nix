@@ -273,7 +273,6 @@ in
       libreoffice-bin
       postman
       jetbrains.datagrip
-      youtube-music
       unstable.ghostty-bin
       unstable.orbstack
       unstable.protonmail-desktop
@@ -357,6 +356,8 @@ in
     global.autoUpdate = false;
     onActivation.cleanup = "zap";
 
+    brews = [ "rtk" ];
+
     casks = [
       "ungoogled-chromium"
       "obs"
@@ -369,7 +370,6 @@ in
       "zen"
       "spotify"
       "notunes"
-      "rtk"
     ];
   };
 }
