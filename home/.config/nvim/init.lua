@@ -579,11 +579,11 @@ require('lazy').setup({
       taplo = {},
       csharp_ls = {},
       tailwindcss = {},
-      behat_ls = {
-        filetypes = { 'cucumber' },
-        cmd = { 'behat-lsp' },
-        single_file_support = true,
-      },
+      -- behat_ls = {
+      --   filetypes = { 'cucumber' },
+      --   cmd = { 'behat-lsp' },
+      --   single_file_support = true,
+      -- },
     },
     config = function(_, opts)
       local blink = require('blink.cmp')
