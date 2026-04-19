@@ -52,6 +52,7 @@ let
     ] ++ forLinux (with pkgs; [ kubernetes kubectl minikube ]);
     git = [
       gh
+      glab
       git
       git-lfs
       delta
