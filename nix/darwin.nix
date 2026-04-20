@@ -3,7 +3,7 @@ let
   username = "YZiadi";
   env = (import ./env.nix { inherit pkgs; });
   shell = pkgs.writeShellScript "nu" ''
-    XDG_CONFIG_HOME=${env.XDG_CONFIG_HOME} exec ${pkgs.unstable.nushell}/bin/nu "$@";
+    XDG_CONFIG_HOME=${env.XDG_CONFIG_HOME} exec ${pkgs.unstable.nushell.overrideAttrs {doCheck = false;}}/bin/nu "$@";
   '';
 in
 {
@@ -370,6 +370,7 @@ in
       "zen"
       "spotify"
       "notunes"
+      "raycast"
     ];
   };
 }

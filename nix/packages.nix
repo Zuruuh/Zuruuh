@@ -166,7 +166,7 @@ let
     ] ++ forLinux [ pkgs.sudo ];
     shell = [
       unstable.zoxide
-      unstable.nushell
+      (unstable.nushell.overrideAttrs { doCheck = false; })
       fish # For nushell completions
       unstable.starship
       atuin
