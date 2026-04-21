@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2026-03-23T23:14:34.702-00:00",
+	"CreationDate" : "2026-04-21T23:25:19.104-00:00",
 	"Sources" : 
 	[
 		{
@@ -8,6 +8,9 @@
 			[
 				{
 					"PackageIdentifier" : "Upscayl.Upscayl"
+				},
+				{
+					"PackageIdentifier" : "Audacity.Audacity"
 				},
 				{
 					"PackageIdentifier" : "Docker.DockerDesktop"
@@ -70,6 +73,9 @@
 					"PackageIdentifier" : "RARLab.WinRAR"
 				},
 				{
+					"PackageIdentifier" : "AntibodySoftware.WizTree"
+				},
+				{
 					"PackageIdentifier" : "Zen-Team.Zen-Browser"
 				},
 				{
@@ -82,19 +88,7 @@
 					"PackageIdentifier" : "Elgato.4KCaptureUtility"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
-				},
-				{
-					"PackageIdentifier" : "Alacritty.Alacritty"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
-				},
-				{
-					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
-				},
-				{
-					"PackageIdentifier" : "dotPDN.PaintDotNet"
 				},
 				{
 					"PackageIdentifier" : "BlenderFoundation.Blender"
@@ -109,16 +103,19 @@
 					"PackageIdentifier" : "Apple.Bonjour"
 				},
 				{
+					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+				},
+				{
 					"PackageIdentifier" : "Flameshot.Flameshot"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
 					"PackageIdentifier" : "ViGEm.ViGEmBus"
-				},
-				{
-					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
 				},
 				{
 					"PackageIdentifier" : "PlayStation.PlayStationAccessories"
@@ -133,16 +130,25 @@
 					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
+					"PackageIdentifier" : "dotPDN.PaintDotNet"
+				},
+				{
 					"PackageIdentifier" : "wez.wezterm"
 				},
 				{
 					"PackageIdentifier" : "Inkscape.Inkscape"
 				},
 				{
+					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+				},
+				{
 					"PackageIdentifier" : "ThioJoe.SvgThumbnailExtension"
 				},
 				{
 					"PackageIdentifier" : "dorssel.usbipd-win"
+				},
+				{
+					"PackageIdentifier" : "Alacritty.Alacritty"
 				},
 				{
 					"PackageIdentifier" : "TeamSpeakSystems.TeamSpeakClient.Beta.6"
@@ -172,6 +178,9 @@
 					"PackageIdentifier" : "OBSProject.OBSStudio"
 				},
 				{
+					"PackageIdentifier" : "CreativeTechnology.OpenAL"
+				},
+				{
 					"PackageIdentifier" : "Parsec.Parsec"
 				},
 				{
@@ -196,10 +205,10 @@
 					"PackageIdentifier" : "qBittorrent.qBittorrent"
 				},
 				{
-					"PackageIdentifier" : "WinSCP.WinSCP"
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
@@ -209,9 +218,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
@@ -224,12 +230,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.9"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
@@ -247,6 +247,9 @@
 					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.9"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
@@ -259,16 +262,31 @@
 					"PackageIdentifier" : "Mojang.MinecraftLauncher"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.10"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.PhysXLegacy"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.26100"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+				},
+				{
+					"PackageIdentifier" : "BetterCrewLink.BetterCrewLink"
+				},
+				{
 					"PackageIdentifier" : "FTB.App"
+				},
+				{
+					"PackageIdentifier" : "ArkaneSystems.MouseJiggler"
 				},
 				{
 					"PackageIdentifier" : "Brave.Brave"
@@ -367,6 +385,30 @@
 					"PackageIdentifier" : "Microsoft.VCLibs.Desktop.14"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.VCLibs.14"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsAppRuntime.1.1"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsAppRuntime.1.3"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsAppRuntime.1.4"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsAppRuntime.1.5"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsAppRuntime.1.6"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsAppRuntime.1.7"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsAppRuntime.1.8"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.WindowsTerminal.Preview"
 				}
 			],
@@ -394,5 +436,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.28.220"
+	"WinGetVersion" : "1.28.240"
 }
