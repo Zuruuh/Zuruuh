@@ -59,6 +59,7 @@ let
       difftastic
       gnupg
       unstable.jujutsu
+      unstable.jjui
       unstable.mergiraf
     ];
     nix = [
