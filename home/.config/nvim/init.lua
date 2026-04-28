@@ -433,6 +433,9 @@ require('lazy').setup({
       -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
+      'moyiz/blink-emoji.nvim',
+      'niuiic/blink-cmp-rg.nvim',
+      'bydlw98/blink-cmp-env',
     },
 
     opts = {
@@ -464,12 +467,24 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev', 'emoji', 'ripgrep', 'env' },
         providers = {
           lazydev = {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
             score_offset = 100,
+          },
+          emoji = {
+            name = 'Emoji',
+            module = 'blink-emoji',
+          },
+          ripgrep = {
+            module = 'blink-cmp-rg',
+            name = 'Ripgrep',
+          },
+          env = {
+            name = 'Env',
+            module = 'blink-cmp-env',
           },
         },
       },
