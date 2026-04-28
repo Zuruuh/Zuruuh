@@ -68,6 +68,12 @@ $env.VIRTUAL_ENV_DISABLE_PROMPT = true
 $env.COMPOSER_HOME = $"($env.XDG_DATA_HOME)/composer"
 $env.APP_ENV = 'dev'
 
+# pnpm
+$env.PNPM_HOME = "/Users/YZiadi/.local/share/pnpm"
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PNPM_HOME | path join "bin") )
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PNPM_HOME))
+# pnpm end
+
 # telemetry and ads
 $env.DO_NOT_TRACK = 1
 $env.ADBLOCK = 1
@@ -118,6 +124,3 @@ if $nu.os-info.name != 'windows' {
         ] | par-each {|callback| do $callback}
     }
 }
-
-$env.PNPM_HOME = $"($env.home)/.local/share/pnpm"
-$env.PATH = ($env.PATH | split row (char esep) | prepend $env.PNPM_HOME)

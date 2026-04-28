@@ -258,6 +258,8 @@ in
     };
   };
 
+  launchd.user.agents.aerospace.serviceConfig.Nice = -10;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs = {
     inherit pkgs;

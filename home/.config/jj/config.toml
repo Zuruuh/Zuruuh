@@ -28,3 +28,4 @@ edit = true
 push = ['git', 'push']
 fetch = ['git', 'fetch']
 move = ['bookmark', 'move', '--from=@--', '--to=@-', '--allow-backwards']
+drop = ['abandon']
