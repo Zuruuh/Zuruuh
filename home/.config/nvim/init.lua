@@ -434,7 +434,6 @@ require('lazy').setup({
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
       'moyiz/blink-emoji.nvim',
-      'niuiic/blink-cmp-rg.nvim',
       'bydlw98/blink-cmp-env',
     },
 
@@ -467,7 +466,7 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev', 'emoji', 'ripgrep', 'env' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev', 'emoji', 'env' },
         providers = {
           lazydev = {
             name = 'LazyDev',
@@ -477,10 +476,6 @@ require('lazy').setup({
           emoji = {
             name = 'Emoji',
             module = 'blink-emoji',
-          },
-          ripgrep = {
-            module = 'blink-cmp-rg',
-            name = 'Ripgrep',
           },
           env = {
             name = 'Env',
