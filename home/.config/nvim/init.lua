@@ -589,7 +589,7 @@ require('lazy').setup({
       zls = {},
       taplo = {},
       csharp_ls = {},
-      tailwindcss = {},
+      -- tailwindcss = {},
       -- behat_ls = {
       --   filetypes = { 'cucumber' },
       --   cmd = { 'behat-lsp' },
