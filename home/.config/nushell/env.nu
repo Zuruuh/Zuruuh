@@ -64,6 +64,10 @@ if not ('BUN_INSTALL' in $env) {
 # Python
 $env.VIRTUAL_ENV_DISABLE_PROMPT = true
 
+if ('XDG_DATA_HOME' in $env | not $in) {
+    $env.XDG_DATA_HOME = $"($env.HOME)/.local/share"
+}
+
 # PHP
 $env.COMPOSER_HOME = $"($env.XDG_DATA_HOME)/composer"
 $env.APP_ENV = 'dev'
@@ -124,3 +128,9 @@ if $nu.os-info.name != 'windows' {
         ] | par-each {|callback| do $callback}
     }
 }
+
+# pnpm
+$env.PNPM_HOME = $"($env.home)/.local/share/pnpm"
+$env.PATH = ($env.PATH | split row (char esep) | prepend $env.PNPM_HOME)
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PNPM_HOME | path join "bin") )
+# pnpm end
