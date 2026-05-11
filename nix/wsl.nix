@@ -28,7 +28,7 @@ in
       (createWindowsBashAlias "findstr")
       wslu
     ];
-    sessionVariables = (import ./env.nix { inherit pkgs; });
+    sessionVariables = (import ./env.nix { inherit pkgs; }) // { DIRENV_CONFIG = "/etc/direnv"; };
     etc."current-system-packages".text =
       let
         packages = builtins.map (p: "${p.name}") config.environment.systemPackages;
