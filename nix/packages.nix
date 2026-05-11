@@ -152,7 +152,7 @@ let
     ];
     database = [
       sqlx-cli
-      valkey
+      unstable.valkey
       sqls
     ];
     tools = [
@@ -176,7 +176,7 @@ let
     dev = [
       unstable.neovim
       # staging.tree-sitter
-      unstable.zellij
+      zellij
       just
       ngrok
       oha

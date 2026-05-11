@@ -194,16 +194,16 @@ plugins {
     strider { path "strider"; }
     compact-bar { path "compact-bar"; }
     session-manager { path "session-manager"; }
-    smart-tabs location="https://github.com/YesYouKenSpace/zellij-smart-tabs/releases/download/v0.1.0/zellij-smart-tabs.wasm" {
-        sub {
-            program {
-                nu ""
-                docker "󰡨"
-                cargo "󱘗"
-                nix "󱄅"
-            }
-        }
-    }
+    // smart-tabs location="https://github.com/YesYouKenSpace/zellij-smart-tabs/releases/download/v0.1.0/zellij-smart-tabs.wasm" {
+    //     sub {
+    //         program {
+    //             nu ""
+    //             docker "󰡨"
+    //             cargo "󱘗"
+    //             nix "󱄅"
+    //         }
+    //     }
+    // }
 }
 
 load_plugins {
