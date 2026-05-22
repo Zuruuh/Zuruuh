@@ -373,7 +373,8 @@ in
       "spotify"
       "notunes"
       "raycast"
-      "tailscale"
+      "tailscale-app"
+      "maccy"
     ];
   };
 }

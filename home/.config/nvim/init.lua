@@ -340,7 +340,7 @@ require('lazy').setup({
       {
         'ff',
         function()
-          require('conform').format({ async = true, lsp_format = 'fallback' })
+          require('conform').format({ async = true, lsp_format = 'never' })
         end,
         mode = '',
         desc = '[F]ormat buffer',
@@ -356,7 +356,7 @@ require('lazy').setup({
           if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
             return
           end
-          return { timeout_ms = 500, lsp_fallback = true }
+          return { timeout_ms = 500, lsp_fallback = 'never' }
         end,
 
         formatters = {
@@ -374,19 +374,19 @@ require('lazy').setup({
             }
           end,
 
-          mago = function()
-            return {
-              inherit = false,
-              command = conform.find_executable({
-                'vendor/bin/mago',
-                'bin/mago',
-              }, ' mago'),
-              args = { 'fmt', '--stdin-input' },
-              stdin = true,
-              cwd = conform.root_file({ '__mago.toml' }),
-              require_cwd = true,
-            }
-          end,
+          -- mago = function()
+          --   return {
+          --     inherit = false,
+          --     command = conform.find_executable({
+          --       'vendor/bin/mago',
+          --       'bin/mago',
+          --     }, ' mago'),
+          --     args = { 'fmt', '--stdin-input' },
+          --     stdin = true,
+          --     cwd = conform.root_file({ '__mago.toml' }),
+          --     require_cwd = true,
+          --   }
+          -- end,
 
           dioxus = function()
             return {
@@ -537,22 +537,12 @@ require('lazy').setup({
           },
         },
       },
-      phpactor = {},
-      vimfony = {
-        cmd = { 'vimfony' },
-        filetypes = { 'php', 'twig', 'yaml' },
-        root_markers = { 'symfony.lock' },
+      -- phpactor = {},
+      phantom_lsp = {
+        cmd = { 'phpantom_lsp' },
+        filetypes = { 'php' },
+        root_markers = { 'composer.json' },
         single_file_support = true,
-        init_options = {
-          roots = {
-            'templates',
-          },
-          container_xml_path = {
-            'var/cache/dev/Staffmatch_KernelDevDebugContainer.xml',
-            'var/cache/dev/App_KernelDevDebugContainer.xml',
-          },
-          vendor = 'vendor',
-        },
       },
       rust_analyzer = {
         ['rust-analyzer'] = {
@@ -590,11 +580,6 @@ require('lazy').setup({
       taplo = {},
       csharp_ls = {},
       -- tailwindcss = {},
-      -- behat_ls = {
-      --   filetypes = { 'cucumber' },
-      --   cmd = { 'behat-lsp' },
-      --   single_file_support = true,
-      -- },
     },
     config = function(_, opts)
       local blink = require('blink.cmp')
@@ -1071,11 +1056,6 @@ require('lazy').setup({
         char = '╎',
       },
     },
-  },
-  {
-    'Zuruuh/mago.nvim',
-    ft = 'php',
-    opts = {},
   },
 }, {
   rocks = {

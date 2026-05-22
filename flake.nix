@@ -3,60 +3,28 @@
 
   inputs = {
     # Packages
-    nixos.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixos.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # Helpers
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixos";
-    };
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
+    flake-compat.url = "github:edolstra/flake-compat";
+    flake-compat.flake = false;
     flake-utils.url = "github:numtide/flake-utils";
 
-    # CLIs
-    behat-lsp = {
-      url = "github:Zuruuh/behat-lsp?ref=main";
-      inputs = {
-        nixpkgs.follows = "nixpkgs-unstable";
-        flake-utils.follows = "flake-utils";
-      };
-    };
-    vimfony = {
-      url = "github:shinyvision/vimfony?ref=main";
-      flake = false;
-    };
-    phpantom = {
-      url = "github:AJenbo/phpantom_lsp?ref=0.6.0";
-      flake = false;
-    };
-
     # WSL
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/release-25.11";
-      inputs = {
-        nixpkgs.follows = "nixos";
-        flake-compat.follows = "flake-compat";
-      };
-    };
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    nixos-wsl.inputs.nixpkgs.follows = "nixos";
+    nixos-wsl.inputs.flake-compat.follows = "flake-compat";
 
     # MacOS
-    nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
-      inputs.nixpkgs.follows = "nixos";
-    };
+    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
+    nix-darwin.inputs.nixpkgs.follows = "nixos";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-    mac-app-util = {
-      url = "github:hraban/mac-app-util";
-      inputs = {
-        nixpkgs.follows = "nixos";
-        flake-utils.follows = "flake-utils";
-        flake-compat.follows = "flake-compat";
-      };
-    };
+    mac-app-util.url = "github:hraban/mac-app-util";
+    mac-app-util.inputs.nixpkgs.follows = "nixpkgs-stable";
+    mac-app-util.inputs.flake-utils.follows = "flake-utils";
+    mac-app-util.inputs.flake-compat.follows = "flake-compat";
   };
 
   outputs = inputs@{ self, nixos, nixos-wsl, nix-darwin, mac-app-util, ... }:
@@ -70,36 +38,6 @@
             inherit system;
             config.allowUnfree = true;
           };
-
-          behat-lsp = inputs.behat-lsp.packages.${system}.default;
-          vimfony = (pkgs: pkgs.buildGoModule {
-            pname = "vimfony";
-            version = "0.1.1";
-            vendorHash = "sha256-NvEBp3iSLv+UipQ8xfUN151jlzPndUPob3tnFhUsn98=";
-            buildTestBinaries = false;
-            doCheck = false;
-
-            src = inputs.vimfony;
-          });
-
-          phpantom = (pkgs:
-            let
-              toolchain = inputs.fenix.packages.${system}.fromToolchainName {
-                name = "nightly";
-                sha256 = if pkgs.stdenv.isDarwin then "sha256-IaSkzuTWqMclPsQGrZzvcyz4VJYgrLdD+mZHrgay6+Q=" else "sha256-bolWw9A8sBZf3JDd7F/OMZgQelmuAuGO7ng2HSSEDIg=";
-              };
-              rustPlatform = pkgs.makeRustPlatform {
-                inherit (toolchain) cargo rustc;
-              };
-            in
-            rustPlatform.buildRustPackage {
-              pname = "phpantom_lsp";
-              version = inputs.phpantom.shortRev;
-              doCheck = false;
-
-              src = inputs.phpantom;
-              cargoHash = "sha256-oRjXf1zR0Ajot6l6ljNAfT7o9yi8m9v8Iwc2xBlTxHM=";
-            });
         };
       global-nodejs = (final: prev:
         let

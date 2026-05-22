@@ -2,7 +2,6 @@ command_timeout = 50
 
 # https://starship.rs/config/#default-prompt-format
 format = """
-$username\
 $hostname\
 $localip\
 $shlvl\
@@ -121,8 +120,9 @@ powershell_indicator = 'using pwsh'
 pwsh_indicator = 'using pwsh'
 cmd_indicator = 'using cmd'
 # Make prompt less verbose with default shell
-nu_indicator = "$"
+nu_indicator = ''
 style = 'italic yellow'
+format = '(@$indicator)($format) '
 disabled = false
 
 [direnv]

@@ -39,8 +39,6 @@ let
       unstable.bun
       unstable.deno
       nodejs_24
-      nodePackages.pnpm
-      nodePackages.serve
       unstable.typescript-language-server
       unstable.svelte-language-server
       unstable.astro-language-server
@@ -84,9 +82,6 @@ let
       php84
       php84.packages.composer
       symfony-cli
-      behat-lsp
-      (vimfony pkgs)
-      # (phpantom pkgs)
     ];
     python = [
       python312
