@@ -373,6 +373,7 @@ in
       "spotify"
       "notunes"
       "raycast"
+      "tailscale"
     ];
   };
 }
