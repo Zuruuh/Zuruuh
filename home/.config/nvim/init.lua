@@ -1022,41 +1022,6 @@ require('lazy').setup({
     priority = 1000,
     opts = {
       bigfile = {},
-      dashboard = {
-        enabled = false,
-        sections = {
-          { section = 'header' },
-          {
-            pane = 2,
-            { section = 'keys', gap = 1, padding = 1 },
-            { section = 'startup' },
-          },
-        },
-        preset = {
-          keys = {
-            { icon = '󰒲 ', key = 'L', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
-            { icon = '󱊣', key = 'c', desc = 'Healthcheck', action = ':checkhealth' },
-            { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
-          },
-
-          header = vim.fn.system({
-            vim.fn.has('win32') == 1 and 'nu' or '/run/current-system/sw/bin/nu',
-            '-n',
-            '-c',
-            [[
-              try {
-                open ~/.dotfiles/home/.config/nvim/asciis.jsonl |
-                from json --objects |
-                shuffle |
-                first |
-                $"($in.data)(char newline)- ($in.title) -"
-              } catch {
-                'No asciis found :c'
-              }
-            ]],
-          }),
-        },
-      },
       gitbrowse = {
         url_patterns = {
           ['git.staffmatch.it'] = {
