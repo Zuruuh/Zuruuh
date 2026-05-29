@@ -46,6 +46,7 @@ export alias "config ssh" = nvim ~/.dotfiles/home/.ssh/config
 export alias "config zellij" = nvim ~/.dotfiles/home/.config/zellij/config.kdl
 export alias "config git" = nvim ~/.dotfiles/home/.config/git/
 export alias "config jujutsu" = nvim ~/.dotfiles/home/.config/jj/
+export alias 'config opencode' = nvim ~/.dotfiles/home/.config/opencode/opencode.jsonc
 
 export def "clipboard paste" [] {
     cat (do { cb show } | complete | get stderr | str trim --char '"')
