@@ -84,8 +84,8 @@ let
       symfony-cli
     ];
     python = [
-      python312
-      python312Packages.pip
+      python313
+      python313Packages.pip
       uv
     ];
     java = [
