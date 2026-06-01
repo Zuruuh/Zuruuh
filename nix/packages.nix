@@ -3,7 +3,7 @@
 let
   forLinux = packages: (if pkgs.stdenv.isDarwin then [ ] else packages);
 
-  php84 = pkgs.unstable.php84.buildEnv {
+  php85 = pkgs.unstable.php85.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       apcu
       amqp
@@ -79,8 +79,8 @@ let
     ];
     php = [
       unstable.phpactor
-      php84
-      php84.packages.composer
+      php85
+      php85.packages.composer
       symfony-cli
     ];
     python = [
