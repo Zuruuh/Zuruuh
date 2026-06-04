@@ -278,7 +278,6 @@ in
       unstable.ghostty-bin
       unstable.orbstack
       unstable.protonmail-desktop
-      unstable.proton-pass
     ];
   };
 
@@ -358,8 +357,6 @@ in
     global.autoUpdate = false;
     onActivation.cleanup = "zap";
 
-    brews = [ "rtk" ];
-
     casks = [
       "ungoogled-chromium"
       "obs"
@@ -367,8 +364,6 @@ in
       "proxyman"
       "shottr"
       "slack"
-      "proton-drive"
-      "protonvpn"
       "zen"
       "spotify"
       "notunes"
