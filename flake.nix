@@ -38,6 +38,9 @@
             inherit system;
             config.allowUnfree = true;
           };
+          stable = import inputs.nixpkgs-stable {
+            inherit system;
+          };
         };
       global-nodejs = (final: prev:
         let

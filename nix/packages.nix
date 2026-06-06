@@ -171,7 +171,7 @@ let
     dev = [
       unstable.neovim
       # staging.tree-sitter
-      zellij
+      stable.zellij
       just
       ngrok
       oha
