@@ -273,7 +273,6 @@ in
       unstable.spicetify-cli
       brave
       libreoffice-bin
-      postman
       jetbrains.datagrip
       unstable.ghostty-bin
       unstable.orbstack
@@ -316,16 +315,7 @@ in
         show-recents = false;
         showhidden = false;
         tilesize = 48;
-        persistent-apps = [
-          "${pkgs.unstable.ghostty-bin}/Applications/Ghostty.app"
-          "/Applications/Zen Browser.app"
-          "/Applications/Slack.app"
-          "/Applications/Spotify.app"
-          "/Applications/Discord.app"
-          "${pkgs.unstable.orbstack}/Applications/OrbStack.app"
-          "${pkgs.unstable.protonmail-desktop}/Applications/Proton Mail.app"
-          # both datagrip and postman are added automatically for some reason ?
-        ];
+        persistent-apps = [ ];
       };
 
       finder = {
@@ -370,6 +360,7 @@ in
       "raycast"
       "tailscale-app"
       "maccy"
+      "yaak"
     ];
   };
 }
