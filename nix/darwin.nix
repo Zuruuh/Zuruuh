@@ -361,6 +361,7 @@ in
       "tailscale-app"
       "maccy"
       "yaak"
+      "localsend"
     ];
   };
 }
