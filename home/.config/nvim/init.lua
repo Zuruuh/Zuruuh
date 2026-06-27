@@ -533,12 +533,7 @@ require('lazy').setup({
         },
       },
       -- phpactor = {},
-      phantom_lsp = {
-        cmd = { 'phpantom_lsp' },
-        filetypes = { 'php' },
-        root_markers = { 'composer.json' },
-        single_file_support = true,
-      },
+      phantom = {},
       rust_analyzer = {
         ['rust-analyzer'] = {
           cargo = {

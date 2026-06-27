@@ -3,7 +3,6 @@
   "plugin": [
     "opencode-openai-codex-auth"
   ],
-  "model": "openai/gpt-5.4-mini",
   "provider": {
     "openai": {
       "options": {
