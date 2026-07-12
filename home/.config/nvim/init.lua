@@ -323,7 +323,7 @@ require('lazy').setup({
         desc = 'Live fffuzy grep',
       },
       {
-        '<leader>fc',
+        '<leader>sw',
         function()
           require('fff').live_grep({ query = vim.fn.expand('<cword>') })
         end,
