@@ -278,6 +278,7 @@ in
       unstable.orbstack
       unstable.protonmail-desktop
       monitorcontrol
+      fladder
     ];
   };
 
