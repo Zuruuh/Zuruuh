@@ -277,6 +277,7 @@ in
       unstable.ghostty-bin
       unstable.orbstack
       unstable.protonmail-desktop
+      monitorcontrol
     ];
   };
 
@@ -362,7 +363,6 @@ in
       "maccy"
       "yaak"
       "localsend"
-      "monitorcontrol"
     ];
   };
 }
