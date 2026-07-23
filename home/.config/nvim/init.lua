@@ -693,6 +693,7 @@ require('lazy').setup({
   {
     'f-person/auto-dark-mode.nvim',
     event = 'VeryLazy',
+    cond = os.getenv('NEOVIM_DISABLE_AUTO_DARK_MODE') ~= nil,
     opts = {
       update_interval = 5000,
       fallback = 'dark',
