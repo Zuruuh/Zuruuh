@@ -695,6 +695,7 @@ require('lazy').setup({
     event = 'VeryLazy',
     opts = {
       update_interval = 5000,
+      fallback = 'dark',
     },
   },
 
