@@ -362,6 +362,7 @@ in
       "maccy"
       "yaak"
       "localsend"
+      "monitorcontrol"
     ];
   };
 }
