@@ -21,6 +21,8 @@ if home == nil then
   home = 'C:' .. os.getenv('HOMEPATH')
 end
 
+vim.o.background = 'dark'
+
 -- Config
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
