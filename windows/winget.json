@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2026-04-21T23:25:19.104-00:00",
+	"CreationDate" : "2026-07-26T15:00:36.066-00:00",
 	"Sources" : 
 	[
 		{
@@ -11,6 +11,9 @@
 				},
 				{
 					"PackageIdentifier" : "Audacity.Audacity"
+				},
+				{
+					"PackageIdentifier" : "JetBrains.DataGrip"
 				},
 				{
 					"PackageIdentifier" : "Docker.DockerDesktop"
@@ -34,19 +37,13 @@
 					"PackageIdentifier" : "Medibang.MediBangPaintPro"
 				},
 				{
-					"PackageIdentifier" : "Meta.Oculus"
+					"PackageIdentifier" : "Mozilla.Firefox"
 				},
 				{
 					"PackageIdentifier" : "PPSSPPTeam.PPSSPP"
 				},
 				{
 					"PackageIdentifier" : "Parsec.ParsecVDD"
-				},
-				{
-					"PackageIdentifier" : "Proton.ProtonVPN"
-				},
-				{
-					"PackageIdentifier" : "JetBrains.RustRover"
 				},
 				{
 					"PackageIdentifier" : "Meltytech.Shotcut"
@@ -62,9 +59,6 @@
 				},
 				{
 					"PackageIdentifier" : "Unity.Unity.6000"
-				},
-				{
-					"PackageIdentifier" : "Unity.UnityHub"
 				},
 				{
 					"PackageIdentifier" : "VideoLAN.VLC"
@@ -85,7 +79,16 @@
 					"PackageIdentifier" : "DimitriVanHeesch.Doxygen"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.GameInput"
+				},
+				{
 					"PackageIdentifier" : "Elgato.4KCaptureUtility"
+				},
+				{
+					"PackageIdentifier" : "Inkscape.Inkscape"
+				},
+				{
+					"PackageIdentifier" : "Tailscale.Tailscale"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
@@ -97,16 +100,13 @@
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
 				},
 				{
+					"PackageIdentifier" : "ThioJoe.SvgThumbnailExtension"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
 					"PackageIdentifier" : "Apple.Bonjour"
-				},
-				{
-					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
-				},
-				{
-					"PackageIdentifier" : "Flameshot.Flameshot"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerToys"
@@ -121,9 +121,6 @@
 					"PackageIdentifier" : "PlayStation.PlayStationAccessories"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.GameInput"
-				},
-				{
 					"PackageIdentifier" : "Nvidia.CUDA"
 				},
 				{
@@ -136,13 +133,7 @@
 					"PackageIdentifier" : "wez.wezterm"
 				},
 				{
-					"PackageIdentifier" : "Inkscape.Inkscape"
-				},
-				{
 					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
-				},
-				{
-					"PackageIdentifier" : "ThioJoe.SvgThumbnailExtension"
 				},
 				{
 					"PackageIdentifier" : "dorssel.usbipd-win"
@@ -157,10 +148,13 @@
 					"PackageIdentifier" : "Microsoft.WSL"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
+					"PackageIdentifier" : "Flameshot.Flameshot"
 				},
 				{
-					"PackageIdentifier" : "JetBrains.DataGrip"
+					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VisualStudio.Community"
 				},
 				{
 					"PackageIdentifier" : "ImperativeSoftware.InputDirector"
@@ -208,19 +202,22 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.9"
 				},
 				{
 					"PackageIdentifier" : "Skillbrains.Lightshot"
@@ -238,6 +235,9 @@
 					"PackageIdentifier" : "Microsoft.DotNet.Framework.DeveloperPack.4.6"
 				},
 				{
+					"PackageIdentifier" : "EpicGames.EpicOnlineServices"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2005.x86"
 				},
 				{
@@ -247,22 +247,22 @@
 					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.9"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.10"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
 				},
 				{
-					"PackageIdentifier" : "Mojang.MinecraftLauncher"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.10"
+					"PackageIdentifier" : "Mojang.MinecraftLauncher"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
@@ -277,13 +277,16 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
-				},
-				{
 					"PackageIdentifier" : "BetterCrewLink.BetterCrewLink"
 				},
 				{
+					"PackageIdentifier" : "Proxyman.Proxyman"
+				},
+				{
 					"PackageIdentifier" : "FTB.App"
+				},
+				{
+					"PackageIdentifier" : "AnthonyBeaumont.AchievementWatcher"
 				},
 				{
 					"PackageIdentifier" : "ArkaneSystems.MouseJiggler"
@@ -298,19 +301,13 @@
 					"PackageIdentifier" : "Discord.Discord"
 				},
 				{
-					"PackageIdentifier" : "DuckDB.cli"
-				},
-				{
-					"PackageIdentifier" : "Figma.FigmaAgent"
-				},
-				{
-					"PackageIdentifier" : "Voidstar.FilePilot"
-				},
-				{
 					"PackageIdentifier" : "ZacharyL2.KeyEcho"
 				},
 				{
 					"PackageIdentifier" : "Modrinth.ModrinthApp"
+				},
+				{
+					"PackageIdentifier" : "MongoDB.Compass.Full"
 				},
 				{
 					"PackageIdentifier" : "Postman.Postman"
@@ -337,9 +334,6 @@
 					"PackageIdentifier" : "Yaak.app"
 				},
 				{
-					"PackageIdentifier" : "ebkr.r2modman"
-				},
-				{
 					"PackageIdentifier" : "Balena.Etcher"
 				},
 				{
@@ -349,22 +343,28 @@
 					"PackageIdentifier" : "Overwolf.CurseForge"
 				},
 				{
+					"PackageIdentifier" : "garyttierney.me3"
+				},
+				{
 					"PackageIdentifier" : "Proton.ProtonMail"
 				},
 				{
 					"PackageIdentifier" : "SlackTechnologies.Slack"
 				},
 				{
-					"PackageIdentifier" : "ByteDance.Trae"
+					"PackageIdentifier" : "BillStewart.SyncthingWindowsSetup"
+				},
+				{
+					"PackageIdentifier" : "ZedIndustries.Zed"
 				},
 				{
 					"PackageIdentifier" : "VSCodium.VSCodium"
 				},
 				{
-					"PackageIdentifier" : "KhronosGroup.VulkanSDK"
+					"PackageIdentifier" : "Hass.Agent"
 				},
 				{
-					"PackageIdentifier" : "Proton.ProtonDrive"
+					"PackageIdentifier" : "KhronosGroup.VulkanSDK"
 				},
 				{
 					"PackageIdentifier" : "SamsidParty.TopNotify"
@@ -374,6 +374,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DirectX"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.Native.Runtime"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.UI.Xaml.2.7"
@@ -436,5 +439,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.28.240"
+	"WinGetVersion" : "1.29.280"
 }
