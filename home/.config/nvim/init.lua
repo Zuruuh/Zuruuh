@@ -674,6 +674,7 @@ require('lazy').setup({
       { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
     },
     opts = {
+      themeConfigFile =  vim.fn.has('win32') == 1 and "c:\\v:null" or nil,
       themes = {
         'onedark',
         'vscode',
@@ -691,7 +692,6 @@ require('lazy').setup({
       livePreview = true,
     },
   },
-
   {
     'f-person/auto-dark-mode.nvim',
     event = 'VeryLazy',
