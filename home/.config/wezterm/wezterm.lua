@@ -37,9 +37,8 @@ if home == nil then
     '--cd',
     '/home/zuruh',
     '--',
-    '/bin/sh',
-    '-c',
-    'SHELL=/run/current-system/sw/bin/nu /run/current-system/sw/bin/zellij',
+    '/run/current-system/sw/bin/nu',
+    '--login',
   }
   config.font_size = 14.0
 end

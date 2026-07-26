@@ -8,6 +8,7 @@
     pager = delta
     autocrlf = false
     eol = lf
+	longpaths = true
 
 [interactive]
     diffFilter = delta --color-only
