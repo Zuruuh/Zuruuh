@@ -359,7 +359,7 @@ in
       "zen"
       "spotify"
       "notunes"
-      "raycast"
+      "abue-ammar/tinycast/tinycast"
       "tailscale-app"
       "maccy"
       "yaak"
