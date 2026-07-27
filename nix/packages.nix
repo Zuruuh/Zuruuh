@@ -1,8 +1,6 @@
 # -- vim: sw=2
 { lib, pkgs, inputs, ... }:
 let
-  forLinux = packages: (if pkgs.stdenv.isDarwin then [ ] else packages);
-
   php85 = pkgs.unstable.php85.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       apcu
@@ -47,7 +45,7 @@ let
     docker = [
       dockerfile-language-server
       dive
-    ] ++ forLinux (with pkgs; [ kubernetes kubectl minikube ]);
+    ];
     git = [
       gh
       glab
@@ -71,7 +69,7 @@ let
       cmake
       gnumake
       gpp
-    ] ++ forLinux [ pkgs.libgcc ];
+    ];
     libs = [
       pkg-config
       openssl.dev
@@ -159,7 +157,7 @@ let
       tlrc
       viu
       # yazi
-    ] ++ forLinux [ pkgs.sudo ];
+    ];
     shell = [
       unstable.zoxide
       (unstable.nushell.overrideAttrs { doCheck = false; })
@@ -167,7 +165,7 @@ let
       unstable.starship
       atuin
       watchexec
-    ] ++ forLinux [ pkgs.bubblewrap ];
+    ];
     dev = [
       unstable.neovim
       # staging.tree-sitter

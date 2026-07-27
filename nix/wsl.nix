@@ -23,9 +23,11 @@ in
   zramSwap.enable = true;
 
   environment = {
-    systemPackages = [
+    systemPackages = with pkgs; [
       (createWindowsBashAlias "reg")
       (createWindowsBashAlias "findstr")
+      libgcc
+      sudo
     ];
     sessionVariables = (import ./env.nix { inherit pkgs; }) // { DIRENV_CONFIG = "/etc/direnv"; };
     etc."current-system-packages".text =
