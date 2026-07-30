@@ -279,6 +279,7 @@ in
       unstable.protonmail-desktop
       monitorcontrol
       fladder
+      raycast
     ];
   };
 
@@ -359,7 +360,7 @@ in
       "zen"
       "spotify"
       "notunes"
-      "abue-ammar/tinycast/tinycast"
+      # "abue-ammar/tinycast/tinycast"
       "tailscale-app"
       "maccy"
       "yaak"
