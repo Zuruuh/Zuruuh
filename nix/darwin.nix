@@ -280,6 +280,7 @@ in
       monitorcontrol
       fladder
       raycast
+      moonlight-qt
     ];
   };
 
@@ -365,6 +366,7 @@ in
       "maccy"
       "yaak"
       "localsend"
+      "steam"
     ];
   };
 }
