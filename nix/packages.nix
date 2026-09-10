@@ -160,7 +160,8 @@ let
     ];
     shell = [
       unstable.zoxide
-      (unstable.nushell.overrideAttrs { doCheck = false; })
+      # (unstable.nushell.overrideAttrs { doCheck = false; })
+      nushell
       fish # For nushell completions
       unstable.starship
       atuin
