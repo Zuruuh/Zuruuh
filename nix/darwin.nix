@@ -367,6 +367,8 @@ in
       "yaak"
       "localsend"
       "steam"
+      "protonvpn"
+      "cloudflare-warp"
     ];
   };
 }
