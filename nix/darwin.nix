@@ -268,7 +268,7 @@ in
 
   environment = {
     shells = [ shell ];
-    variables = env;
+    variables = env // { LIBRARY_PATH = "${pkgs.libiconv}/lib"; };
     systemPackages = with pkgs; [
       unstable.spicetify-cli
       brave

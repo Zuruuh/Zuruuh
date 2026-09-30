@@ -40,3 +40,14 @@ limits. Do not silently fall back to training data.
 <!-- context7 -->
 
 Enable by default the caveman ultra skill
+
+## Version Control
+
+Never use `git` commands. Use `jj` / Jujutsu for all version-control operations.
+
+Examples:
+- status: `jj status`
+- diff: `jj diff`
+- log: `jj log`
+- commit: `jj commit`
+- new change: `jj new`

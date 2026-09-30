@@ -4,6 +4,7 @@
     "opencode-openai-codex-auth",
     "@dietrichgebert/ponytail"
   ],
+  "shell": "/run/current-system/sw/bin/bash",
   "provider": {
     "openai": {
       "options": {
@@ -256,6 +257,11 @@
       "oauth": {
         "clientId": "http://127.0.0.1:19876"
       }
+    }
+  },
+  "permission": {
+    "bash": {
+      "git *": "deny"
     }
   }
 }
