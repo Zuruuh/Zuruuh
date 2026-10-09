@@ -376,19 +376,19 @@ require('lazy').setup({
             }
           end,
 
-          -- mago = function()
-          --   return {
-          --     inherit = false,
-          --     command = conform.find_executable({
-          --       'vendor/bin/mago',
-          --       'bin/mago',
-          --     }, ' mago'),
-          --     args = { 'fmt', '--stdin-input' },
-          --     stdin = true,
-          --     cwd = conform.root_file({ '__mago.toml' }),
-          --     require_cwd = true,
-          --   }
-          -- end,
+          mago = function()
+            return {
+              inherit = false,
+              command = conform.find_executable({
+                'vendor/bin/mago',
+                'bin/mago',
+              }, ' mago'),
+              args = { 'fmt', '--stdin-input' },
+              stdin = true,
+              cwd = conform.root_file({ 'mago.toml' }),
+              require_cwd = true,
+            }
+          end,
 
           dioxus = function()
             return {
@@ -674,7 +674,7 @@ require('lazy').setup({
       { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
     },
     opts = {
-      themeConfigFile =  vim.fn.has('win32') == 1 and "c:\\v:null" or nil,
+      themeConfigFile = vim.fn.has('win32') == 1 and 'c:\\v:null' or nil,
       themes = {
         'onedark',
         'vscode',
