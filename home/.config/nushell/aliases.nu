@@ -1,5 +1,3 @@
-export alias dotfiles = print 'use `config dotfiles`!'
-export alias docker-compose = docker compose
 export alias compose = docker compose
 export alias buildx = docker buildx
 export alias code = codium
@@ -8,6 +6,7 @@ export alias cat = bat
 export alias base64 = print 'use `encode base64`!'
 export alias keys = print 'use `columns`!'
 export alias pairs = print 'use `items {callback}` OR `transpose key value`!'
+export alias entries = pairs
 export alias ':q' = print 'bouffon va'
 export def mago --wrapped [...args] {
     if ('vendor/bin/mago' | path exists) {
@@ -15,14 +14,6 @@ export def mago --wrapped [...args] {
     } else {
         bin/mago ...$args
     }
-}
-
-export def nix-shell --wrapped [...args] {
-    $"Use (ansi purple)nix shell nixpkgs#($args | get 0 --optional | default '...')(ansi reset) instead!"
-}
-
-export def --wrapped nix-collect-garbage [...args] {
-    $"Use (ansi purple)nix store gc -v(ansi reset) instead!"
 }
 
 export def "wsl ip" [] {
@@ -77,39 +68,6 @@ export def --env mkcd [dir: string] {
     cd $dir
 }
 
-export def --env dev [] {
-    let dev = if $nu.os-info.name == 'windows' { 'D:\\dev' } else { '~/dev' }
-    let dev = ($dev | path expand)
-
-    let dir = (
-        ls $dev
-        | where type == 'dir'
-        | get name
-        | path basename
-        | shuffle
-        | str join (char newline)
-        | fzf
-    )
-
-    cd $"($dev)(char path_sep)($dir)"
-}
-
-export alias "git switch -i" = git switch --interactive
-export def "git switch --interactive" [] {
-    let branch = git branch --sort=-committerdate |
-        str trim |
-        split row (char newline) |
-        where {|branch| $branch !~ '^\* '} |
-        each {str trim} |
-        prepend '-' |
-        str join (char newline) |
-        fzf --height '50%'
-
-    if ($branch | is-not-empty) {
-        git switch $branch
-    }
-}
-
 # Setup proxyman's http proxy by loading the https?_proxy env vars
 export def --env "proxyman-cli use" [] {
     ['http'] |
@@ -125,22 +83,20 @@ export def --env "proxyman-cli use" [] {
     load-env
 }
 
-export def "jj merge" [branch: string] {
-    print $"Use `jj new @- ($branch)` instead!"
-}
+export def "jj slug" [ --create(-c) ] {
+    let branch = (
+        ^jj log -r @ --no-graph -T 'description'
+        | lines
+        | each {str trim}
+        | where {$in != '' }
+        | first
+        | str downcase
+        | str replace --all --regex '[^a-z0-9]+' '-'
+        | str replace --all --regex '(^-+|-+$)' ''
+        | str replace --all --regex '-+' '-'
+    )
 
-export def "jj slug" [ -c ] {
-    let branch = (^jj log -r @ --no-graph -T 'description'
-    | lines
-    | each {|line| $line | str trim }
-    | where {|line| $line != '' }
-    | first
-    | str downcase
-    | str replace --all --regex '[^a-z0-9]+' '-'
-    | str replace --all --regex '(^-+|-+$)' ''
-    | str replace --all --regex '-+' '-')
-
-    if not $c {
+    if not $create {
         return $branch
     }
 

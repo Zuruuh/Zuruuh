@@ -98,6 +98,9 @@ docker_context.disabled = true
 php.symbol = ' '
 nix_shell.symbol = "⛄️ "
 git_status.format = "([\\[$all_status$ahead_behind\\]]($style))"
+git_status.disabled = false
+git_commit.disabled = true
+git_branch.disabled = true
 
 [character]
 success_symbol = "[](bold green)"

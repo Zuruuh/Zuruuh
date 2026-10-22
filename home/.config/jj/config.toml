@@ -18,7 +18,6 @@ diff-formatter = [
   "$left",
   "$right",
 ]
-# pager = ["delta", "--pager", "less -FRX"]
 merge-editor = 'mergiraf'
 
 [ui.movement]
