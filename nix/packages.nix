@@ -169,7 +169,7 @@ let
     ];
     dev = [
       unstable.neovim
-      # staging.tree-sitter
+      unstable.tree-sitter
       stable.zellij
       just
       ngrok
