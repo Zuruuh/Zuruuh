@@ -176,6 +176,7 @@ let
       oha
       hyperfine
       hexyl
+      unstable.devenv
     ];
     xml = [
       lemminx
