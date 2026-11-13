@@ -359,6 +359,7 @@ in
       "shottr"
       "slack"
       "zen"
+      "firefox"
       "spotify"
       "notunes"
       # "abue-ammar/tinycast/tinycast"
@@ -369,6 +370,7 @@ in
       "steam"
       "protonvpn"
       "cloudflare-warp"
+      "moonfin"
     ];
   };
 }
